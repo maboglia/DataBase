@@ -42,17 +42,17 @@ Nei diagrammi Entità-Relazione (ER), vengono utilizzati diversi simboli per rap
 1. **Entità:**
    - Rappresentata da un rettangolo. All'interno del rettangolo viene inserito il nome dell'entità.
 
-   ![Simbolo Entità](https://i.imgur.com/Za9QcGW.png)
+   ![Simbolo Entità](http://linuxdidattica.org/docs/fb_db/figures/esempioER.png)
 
 2. **Attributo:**
    - Rappresentato da un'ellisse o un ovale. Viene inserito il nome dell'attributo all'interno dell'ovale e può includere il tipo di dato.
 
-   ![Simbolo Attributo](https://i.imgur.com/w2IY5Fv.png)
+   ![Simbolo Attributo](http://linuxdidattica.org/docs/fb_db/figures/attributo.png)
 
 3. **Relazione:**
    - Rappresentata da una linea che collega due entità coinvolte nella relazione. La relazione può essere annotata con un nome che descrive la natura della relazione.
 
-   ![Simbolo Relazione](https://i.imgur.com/0Esiq1L.png)
+   ![Simbolo Relazione](http://linuxdidattica.org/docs/fb_db/figures/alunnoclassebis.png)
 
 4. **Cardinalità:**
    - Viene utilizzato per indicare il numero di occorrenze associate attraverso una relazione. I simboli comuni includono:
@@ -61,7 +61,7 @@ Nei diagrammi Entità-Relazione (ER), vengono utilizzati diversi simboli per rap
      - 0..1 (zero o uno) - Indica una relazione opzionale da uno a uno.
      - 0..M (zero o molti) - Indica una relazione opzionale da uno a molti.
 
-   ![Simboli Cardinalità](https://i.imgur.com/zkQPUln.png)
+   ![Simboli Cardinalità](http://linuxdidattica.org/docs/fb_db/figures/alunnoclasseer.png)
 
 5. **Chiave Primaria:**
    - Viene indicata sottolineando l'attributo che funge da chiave primaria all'interno dell'entità.
