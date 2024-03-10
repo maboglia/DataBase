@@ -541,54 +541,6 @@ Le principali differenze tra SQL (Structured Query Language) e NoSQL (Not Only S
 
 ---
 
-### Modello di Dati
-
-1. **Modello di Dati
-   - **SQL:** Utilizza un modello relazionale dei dati, dove le informazioni sono organizzate in tabelle con righe e colonne. I dati sono strutturati e seguono uno schema predefinito.
-   - **NoSQL:** Può utilizzare vari modelli di dati, tra cui documenti, chiave-valore, colonne o grafi. Non segue necessariamente uno schema fisso e offre maggiore flessibilità nella gestione di dati strutturati, semi-strutturati o non strutturati.
-
----
-
-### Schema
-
-2. **Schema
-   - **SQL:** Richiede uno schema predefinito in cui la struttura delle tabelle, i tipi di dati e le relazioni devono essere definiti in anticipo. Qualsiasi modifica dello schema può essere complessa e richiedere l'interruzione del servizio.
-   - **NoSQL:** Può essere schema-less o schema-dynamic, il che significa che non è necessario definire uno schema prima di inserire i dati. Questa flessibilità rende più agevole l'aggiunta di nuovi campi o modifiche agli schemi.
-
----
-
-### Transazioni
-
-3. **Transazioni
-   - **SQL:** Supporta transazioni ACID (Atomicità, Coerenza, Isolamento, Durabilità), garantendo la consistenza dei dati anche in caso di errori o fallimenti.
-   - **NoSQL:** Non tutti i database NoSQL supportano transazioni ACID in modo completo. Alcuni preferiscono garantire la disponibilità e la partizione dei dati seguendo il teorema CAP (Consistency, Availability, Partition Tolerance).
-
----
-
-### Scalabilità
-
-4. **Scalabilità
-   - **SQL:** La scalabilità verticale (aggiunta di risorse su una singola macchina) è comune nei database SQL. La scalabilità orizzontale (distribuzione su più nodi) può essere più complessa da implementare.
-   - **NoSQL:** Solitamente progettato per la scalabilità orizzontale, consentendo una gestione più agevole di grandi volumi di dati attraverso l'aggiunta di nuovi nodi.
-
----
-
-### Relazioni
-
-5. **Relazioni
-   - **SQL:** Gestisce relazioni complesse tra tabelle attraverso chiavi esterne. Il linguaggio SQL offre un potente supporto per query complesse che coinvolgono più tabelle.
-   - **NoSQL:** Le relazioni sono spesso gestite in modo diverso. Alcuni database NoSQL possono gestire relazioni attraverso chiavi o riferimenti, mentre altri preferiscono l'approccio di incorporare i dati direttamente nei documenti.
-
----
-
-### Uso Tipico
-
-6. **Uso Tipico
-   - **SQL:** Adatto per applicazioni con schemi stabili e relazioni complesse, come sistemi di gestione aziendale (ERP), sistemi di supporto decisionale (DSS), e applicazioni basate su transazioni.
-   - **NoSQL:** Adatto per situazioni in cui la flessibilità dello schema, la gestione di grandi volumi di dati, e la scalabilità orizzontale sono essenziali. Applicazioni tipiche includono social media, applicazioni web, analisi di big data e gestione di contenuti.
-
----
-
 ### Esempi di Database
 
 7. **Esempi di Database SQL e NoSQL
