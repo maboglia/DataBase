@@ -84,3 +84,21 @@ Nei diagrammi Entità-Relazione (ER), vengono utilizzati diversi simboli per rap
 
 
 Ricorda che la notazione può variare leggermente in base agli standard specifici o alle preferenze del progettista, ma questi sono i simboli generalmente accettati nei diagrammi ER.
+
+---
+
+## Chiavi candidate
+
+Una chiave candidata in un modello relazionale di un database è un insieme minimo di attributi che può essere utilizzato per identificare univocamente una tupla all'interno di una relazione. L'insieme di attributi deve soddisfare due requisiti:
+
+1. **Unicità:** Ogni combinazione di valori nell'insieme di attributi deve identificare in modo univoco una tupla all'interno della relazione. Non può esistere un'altra tupla con gli stessi valori in quegli attributi.
+
+2. **Irreducibilità:** Nessun sottoinsieme dell'insieme di attributi può garantire unicità. In altre parole, se si rimuove qualsiasi attributo dall'insieme, non è più possibile garantire l'identificazione univoca delle tuple.
+
+Le chiavi candidate sono importanti perché forniscono le basi per la determinazione della chiave primaria di una relazione. La chiave primaria è selezionata da tra le chiavi candidate per rappresentare in modo univoco ogni tupla all'interno della relazione.
+
+Ecco un esempio pratico:
+
+Supponiamo di avere una relazione "Studente" con gli attributi "Matricola", "Nome", e "Cognome". L'insieme di attributi {"Matricola"} potrebbe essere una chiave candidata poiché soddisfa i requisiti di unicità e irreducibilità. Tuttavia, anche l'insieme di attributi {"Nome", "Cognome"} potrebbe essere una chiave candidata se ogni studente ha un nome e un cognome unici all'interno della relazione.
+
+La scelta della chiave primaria da tra le chiavi candidate dipenderà dalle esigenze specifiche del database e del sistema che si sta progettando.
