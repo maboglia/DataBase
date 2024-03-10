@@ -66,26 +66,21 @@ Nei diagrammi Entità-Relazione (ER), vengono utilizzati diversi simboli per rap
 5. **Chiave Primaria:**
    - Viene indicata sottolineando l'attributo che funge da chiave primaria all'interno dell'entità.
 
-   ![Chiave Primaria](https://i.imgur.com/JPlxrBk.png)
 
 6. **Chiave Esterna:**
    - Viene indicata sottolineando l'attributo che funge da chiave esterna all'interno di un'entità che partecipa a una relazione.
 
-   ![Chiave Esterna](https://i.imgur.com/nzKwYmN.png)
 
 7. **Azione sulle Relazioni:**
    - Viene utilizzato per indicare azioni come "cascata" o "imposta a NULL" in caso di eliminazione o aggiornamento di una relazione.
 
-   ![Azione sulle Relazioni](https://i.imgur.com/mldInwF.png)
 
 8. **Ruolo:**
    - Può essere utilizzato per specificare il ruolo di un'entità nella relazione.
 
-   ![Ruolo](https://i.imgur.com/ZCc7Yih.png)
 
 9. **Attributo Derivato:**
    - Viene indicato da un'ellisse con una "D" al suo interno e rappresenta un attributo il cui valore può essere derivato da altri attributi.
 
-   ![Attributo Derivato](https://i.imgur.com/Zs2cPbi.png)
 
 Ricorda che la notazione può variare leggermente in base agli standard specifici o alle preferenze del progettista, ma questi sono i simboli generalmente accettati nei diagrammi ER.
