@@ -4,6 +4,49 @@ marp: true
 footer: Mauro Bogliaccino
 ---
 
+## DDL
+
+Le istruzioni DDL (Data Definition Language) in SQL sono utilizzate per definire, modificare e cancellare strutture di database e oggetti ad alto livello come tabelle, indici, viste, e altro. Le principali istruzioni DDL includono `CREATE`, `ALTER`, e `DROP`. Ecco una descrizione di ciascuna:
+
+1. **CREATE:** L'istruzione `CREATE` è utilizzata per creare nuovi oggetti nel database, come tabelle, viste, indici, procedure, e così via.
+
+   Esempio:
+
+   ```sql
+   CREATE TABLE Nomi (
+       ID INT PRIMARY KEY,
+       Nome VARCHAR(50),
+       Cognome VARCHAR(50)
+   );
+   ```
+
+   Questa query crea una nuova tabella chiamata "Nomi" con tre colonne: "ID", "Nome", e "Cognome".
+
+2. **ALTER:** L'istruzione `ALTER` è utilizzata per modificare la struttura degli oggetti esistenti nel database, come aggiungere o eliminare colonne da una tabella, modificare il tipo di dati di una colonna, o aggiungere vincoli.
+
+   Esempio:
+
+   ```sql
+   ALTER TABLE Nomi
+   ADD Età INT;
+   ```
+
+   Questa query modifica la tabella "Nomi" aggiungendo una nuova colonna chiamata "Età".
+
+3. **DROP:** L'istruzione `DROP` è utilizzata per eliminare oggetti dal database, come tabelle, viste o indici. L'eliminazione di un oggetto comporta la perdita permanente di tutti i dati associati a quell'oggetto.
+
+   Esempio:
+
+   ```sql
+   DROP TABLE Nomi;
+   ```
+
+   Questa query elimina completamente la tabella "Nomi" dal database.
+
+Le istruzioni DDL sono fondamentali per la progettazione e la gestione della struttura di un database. Possono essere utilizzate per creare, modificare o eliminare oggetti in modo da adattarsi alle esigenze del sistema o dell'applicazione.
+
+---
+
 ## DDL (Data Definition Language) e DML (Data Manipulation Language)
 
 ---
@@ -57,12 +100,86 @@ DDL è utilizzato per definire la struttura del database, creare oggetti del dat
 
 ---
 
-### GRANT e REVOKE
+## DCL
 
-6. **GRANT e REVOKE
-   - `GRANT`: Concede privilegi agli utenti su oggetti del database.
-   - `REVOKE`: Revoca privilegi precedentemente concessi.
+Le istruzioni DCL (Data Control Language) in SQL sono utilizzate per gestire i permessi di accesso e di controllo dei dati in un database. Le principali istruzioni DCL includono `GRANT` e `REVOKE`. Ecco una descrizione di entrambe:
 
+1. **GRANT:** L'istruzione `GRANT` è utilizzata per concedere privilegi o permessi specifici agli utenti o ai ruoli. I privilegi possono includere il diritto di eseguire determinate operazioni, come SELECT, INSERT, UPDATE, DELETE, o altri privilegi specifici del sistema.
+
+   Esempio:
+
+   ```sql
+   GRANT SELECT, INSERT ON Tabella1 TO Utente1;
+   ```
+
+   Questa query concede a "Utente1" il permesso di eseguire le operazioni di SELECT e INSERT sulla tabella "Tabella1".
+
+2. **REVOKE:** L'istruzione `REVOKE` è utilizzata per revocare o rimuovere i privilegi precedentemente concessi agli utenti o ai ruoli.
+
+   Esempio:
+
+   ```sql
+   REVOKE INSERT ON Tabella1 FROM Utente1;
+   ```
+
+   Questa query revoca il permesso di eseguire l'operazione di INSERT sulla tabella "Tabella1" da parte di "Utente1".
+
+Le istruzioni DCL sono fondamentali per garantire la sicurezza e il controllo degli accessi nei database. È importante gestire attentamente i privilegi per evitare accessi non autorizzati o modifiche indesiderate ai dati. I permessi possono essere concessi o revocati a livello di tabella, vista o database, e possono essere specifici per determinate operazioni o per l'intero set di dati.
+
+
+---
+
+## DML
+
+Le istruzioni DML (Data Manipulation Language) in SQL sono utilizzate per manipolare i dati all'interno delle tabelle di un database. Le principali istruzioni DML includono `SELECT`, `INSERT`, `UPDATE` e `DELETE`. Ecco una descrizione di ciascuna:
+
+1. **SELECT:** L'istruzione `SELECT` è utilizzata per recuperare dati da una o più tabelle nel database. Consente di specificare le colonne desiderate, condizioni di ricerca e join tra tabelle.
+
+   Esempio:
+
+   ```sql
+   SELECT Nome, Cognome
+   FROM Nomi
+   WHERE Età > 18;
+   ```
+
+   Questa query restituisce i nomi e i cognomi delle persone con un'età superiore a 18 anni dalla tabella "Nomi".
+
+2. **INSERT:** L'istruzione `INSERT` è utilizzata per inserire nuovi dati in una tabella esistente. Si possono specificare i valori per ogni colonna o inserire valori provenienti da un'altra query.
+
+   Esempio:
+
+   ```sql
+   INSERT INTO Nomi (Nome, Cognome, Età)
+   VALUES ('Marco', 'Rossi', 25);
+   ```
+
+   Questa query inserisce una nuova riga nella tabella "Nomi" con i valori specificati.
+
+3. **UPDATE:** L'istruzione `UPDATE` è utilizzata per modificare i dati esistenti in una tabella. Si possono specificare i valori da modificare e le condizioni per identificare le righe da aggiornare.
+
+   Esempio:
+
+   ```sql
+   UPDATE Nomi
+   SET Età = 26
+   WHERE Nome = 'Marco' AND Cognome = 'Rossi';
+   ```
+
+   Questa query aggiorna l'età di Marco Rossi nella tabella "Nomi" a 26 anni.
+
+4. **DELETE:** L'istruzione `DELETE` è utilizzata per eliminare dati da una tabella. Si possono specificare le condizioni per identificare le righe da eliminare.
+
+   Esempio:
+
+   ```sql
+   DELETE FROM Nomi
+   WHERE Età < 18;
+   ```
+
+   Questa query elimina tutte le righe dalla tabella "Nomi" dove l'età è inferiore a 18 anni.
+
+Le istruzioni DML sono fondamentali per manipolare e gestire i dati all'interno di un database, consentendo operazioni come l'inserimento, l'aggiornamento e l'eliminazione di informazioni
 ---
 
 ## DML (Data Manipulation Language)
@@ -140,5 +257,3 @@ DML è utilizzato per manipolare i dati all'interno delle tabelle del database.
     - `SET TRANSACTION`: Imposta le caratteristiche di una transazione, come l'isolamento e la consistenza.
 
 Utilizzando DDL e DML in combinazione, è possibile definire la struttura di un database, creare, modificare o eliminare tabelle e indici, e manipolare i dati all'interno del database.
-
----
