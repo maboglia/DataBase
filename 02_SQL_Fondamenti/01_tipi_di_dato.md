@@ -4,11 +4,11 @@ marp: true
 footer: Mauro Bogliaccino
 ---
 
-## I tipi di dati
+## I tipi di dato
 
 ---
 
-I tipi di dati in un database rappresentano il formato e il tipo di informazioni che possono essere memorizzate in una colonna di una tabella. I database relazionali offrono una varietà di tipi di dati che consentono di gestire diverse informazioni. Ecco alcuni tipi di dati comuni:
+I tipi di dato in un database rappresentano il formato e il tipo di informazioni che possono essere memorizzate in una colonna di una tabella. I database relazionali offrono una varietà di tipi di dato che consentono di gestire diverse informazioni. Ecco alcuni tipi di dato comuni:
 
 ---
 
@@ -81,7 +81,7 @@ I tipi di dati in un database rappresentano il formato e il tipo di informazioni
 ### Geospaziali
 
 9. **Geospaziali
-   - Tipi di dati specializzati per gestire dati geografici e geospaziali, come `POINT`, `LINESTRING`, `POLYGON` (in alcuni database).
+   - Tipi di dato specializzati per gestire dati geografici e geospaziali, come `POINT`, `LINESTRING`, `POLYGON` (in alcuni database).
 
 ---
 
@@ -103,10 +103,10 @@ I tipi di dati in un database rappresentano il formato e il tipo di informazioni
 ### Money
 
 12. **Money
-    - `MONEY`: Tipi di dati per rappresentare valori monetari.
+    - `MONEY`: Tipi di dato per rappresentare valori monetari.
 
 ---
 
-Questi sono solo alcuni esempi di tipi di dati comuni. La disponibilità dei tipi di dati può variare leggermente tra i diversi database relazionali. Alcuni database forniscono anche estensioni e tipi di dati specializzati in base alle esigenze specifiche.
+Questi sono solo alcuni esempi di tipi di dato comuni. La disponibilità dei tipi di dato può variare leggermente tra i diversi database relazionali. Alcuni database forniscono anche estensioni e tipi di dato specializzati in base alle esigenze specifiche.
 
 ---
