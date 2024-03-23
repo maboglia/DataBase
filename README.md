@@ -2,6 +2,38 @@
 
 ---
 
+- Cos’è un database 
+- DBMS
+- Il Modello RELAZIONALE 
+- Normalizzazione
+- Tipi di dato
+- SQL
+- DDL
+  - 1 parte
+  - 2 parte
+- DCL 
+- DML 
+- Query
+- Integrità referenziale 
+- Union e JOIN 
+- Funzioni
+- Raggruppamenti
+- Funzioni finestra (Windows Function) 
+- Viste
+- Sub Query
+- Indici
+- Triggers
+- Stored Function
+- Events
+- Stored Procedures
+- Transaction
+- Installazione MySQL
+- Accesso DBMS (DBA)
+- Accesso DBMS (user) 
+- Backup/Restoring
+
+---
+
 ## Le basi di dati
 
 Le basi di dati sono strumenti essenziali nell'ambito dell'informatica e vengono utilizzate per organizzare, archiviare e recuperare dati in modo efficiente. Ecco alcuni concetti fondamentali:
