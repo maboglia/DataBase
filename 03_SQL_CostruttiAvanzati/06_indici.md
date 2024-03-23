@@ -1,10 +1,4 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
----
-
-## Indici in un Database
+# Indici in un Database
 
 Parliamo ora degli "Indici" in un database. Gli indici sono strumenti critici per migliorare le prestazioni delle query e accelerare l'accesso ai dati all'interno di un database relazionale.
 

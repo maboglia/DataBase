@@ -1,12 +1,4 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
----
-
 # Procedure Memorizzate
-
----
 
 Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizzate sono un tipo di oggetto di database che contengono una o più istruzioni SQL e possono essere eseguite da un'applicazione o da altri oggetti del database.
 

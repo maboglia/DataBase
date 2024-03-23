@@ -1,10 +1,4 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
----
-
-## Normalizzazione
+# Normalizzazione
 
 Parliamo ora di "Normalizzazione", un processo chiave nella progettazione di database relazionali. La normalizzazione è un insieme di regole e linee guida che mirano a organizzare i dati in modo efficiente, riducendo la duplicazione e garantendo l'integrità dei dati.
 
