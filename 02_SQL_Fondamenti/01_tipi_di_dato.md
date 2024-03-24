@@ -1,10 +1,4 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
----
-
-## I tipi di dato
+# I tipi di dato
 
 ---
 

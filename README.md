@@ -2,32 +2,30 @@
 
 ---
 
-- Cos’è un database 
-- DBMS
-- Il Modello RELAZIONALE 
-- Normalizzazione
-- Tipi di dato
-- SQL
-- DDL
-  - 1 parte
-  - 2 parte
-- DCL 
-- DML 
-- Query
-- Integrità referenziale 
-- Union e JOIN 
-- Funzioni
+- [Algebra Relazionale](01_AlgebraRelazionale/01_alegbra_relazionale.md) 
+- [Il Modello RELAZIONALE](./01_AlgebraRelazionale/02_modello_relazionale.md) 
+- [DMNS](02_SQL_Fondamenti/00_Fondamenti_DB.md)
+- [Normalizzazione](02_SQL_Fondamenti/03_normalizzazione.md)
+- [SQL](02_SQL_Fondamenti/00_fondamenti-DB2.md)
+- [Tipi di dato](02_SQL_Fondamenti/01_tipi_di_dato.md)
+- [DDL](03_SQL_CostruttiAvanzati/01_DDL.md)
+- [DCL](03_SQL_CostruttiAvanzati/01_DCL.md) 
+- [DML](03_SQL_CostruttiAvanzati/01_DML.md) 
+- [Query](03_SQL_CostruttiAvanzati/01_QueryLanguage.md)
+- [Integrità referenziale](03_SQL_CostruttiAvanzati/08_vincoli_integrita.md) 
+- [Union e JOIN](03_SQL_CostruttiAvanzati/05_Join.md) 
+- [Funzioni](03_SQL_CostruttiAvanzati/11_funzioni.md)
 - Raggruppamenti
 - Funzioni finestra (Windows Function) 
-- Viste
-- Sub Query
-- Indici
-- Triggers
+- [Viste](03_SQL_CostruttiAvanzati/07_viste.md)
+- [Sub Query](03_SQL_CostruttiAvanzati/04_Filtraggio.md)
+- [Indici](03_SQL_CostruttiAvanzati/06_indici.md)
+- [Triggers](03_SQL_CostruttiAvanzati/12_trigger.md)
 - Stored Function
 - Events
-- Stored Procedures
-- Transaction
-- Installazione MySQL
+- [Stored Procedures](03_SQL_CostruttiAvanzati/13_stored_procedures.md)
+- [Transaction](03_SQL_CostruttiAvanzati/14_transazioni.md)
+- [Installazione MySQL](07_TipiDB/27_mysql.md)
 - Accesso DBMS (DBA)
 - Accesso DBMS (user) 
 - Backup/Restoring

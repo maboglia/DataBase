@@ -1,8 +1,6 @@
 # Query Language - interrogazione dei dati
 
-### Interrogazione dei dati
-
-#### Creazione di query di base
+## Creazione di query di base
 
 Abbiamo già introdotto il comando `SELECT` per visualizzare i record inseriti in una tabella.
 
@@ -15,6 +13,8 @@ Utilizzando il carattere jolly `*`, selezioniamo tutte le colonne dei campi di d
 ```sql
 SELECT * FROM tableName;
 ```
+
+---
 
 ### ORDER BY
 
@@ -45,6 +45,8 @@ FROM studenti
 ORDER BY cognome DESC, eta;
 ```
 
+---
+
 ### LIMIT
 
 L'istruzione `LIMIT` consente di definire il numero massimo di record da visualizzare.
@@ -73,6 +75,8 @@ LIMIT 10, 10;
 
 Ricordate che l'indice parte da 0, quindi l'undicesimo record ha l'indice 10.
 
+---
+
 ### SELECT e WHERE
 
 L'istruzione `WHERE` consente di filtrare i risultati di una query, mostrando solo i record che soddisfano la condizione imposta.
@@ -89,27 +93,39 @@ WHERE genere = 'm';
 
 Questa query selezionerà il nome e il cognome degli studenti di genere maschile dalla tabella `studenti`.
 
+---
+
 ### Operatori
 
-#### Operatori Matematici
+## Operatori Matematici
+
 - `+` (addizione)
 - `-` (sottrazione)
 - `*` (moltiplicazione)
 - `/` (divisione)
 - `%` (modulo)
 
-#### Operatori di Confronto
+---
+
+### Operatori di Confronto
+
 - `=`, `<>`, `!=` (uguaglianza e disuguaglianza)
 - `>` (maggiore di)
 - `>=` (maggiore o uguale a)
 - `<` (minore di)
 - `<=` (minore o uguale a)
 
-#### Operatori Logici
+---
+
+### Operatori Logici
+
 - `AND` (e logico)
 - `OR` (o logico)
 
-#### Operatori Avanzati di Confronto
+---
+
+### Operatori Avanzati di Confronto
+
 - `BETWEEN` (tra due valori inclusi)
 - `NOT BETWEEN` (non tra due valori inclusi)
 - `IN` (presente in un elenco)
@@ -121,6 +137,8 @@ Questa query selezionerà il nome e il cognome degli studenti di genere maschile
 - `REGEXP` (corrispondenza con espressione regolare)
 
 Questi operatori sono utilizzati per formulare condizioni nei comandi SQL come `SELECT`, `UPDATE`, `DELETE`, ecc.
+
+---
 
 ### Operatori di confronto
 
@@ -134,6 +152,8 @@ Gli operatori di confronto sono utilizzati per confrontare valori e stabilire co
 - `<=` (Minore o uguale a): Verifica se il valore a sinistra è minore o uguale al valore a destra.
 
 Questi operatori sono fondamentali per filtrare i dati nelle query SQL e stabilire le condizioni di ricerca dei dati desiderati.
+
+---
 
 ### Operatori di confronto nelle query SQL
 
@@ -165,6 +185,8 @@ Ecco alcuni esempi di utilizzo degli operatori di confronto nelle query SQL:
 
 Questi esempi illustrano come utilizzare gli operatori di confronto per filtrare i dati in base a determinate condizioni nelle query SQL.
 
+---
+
 ### operatori logici: AND e OR
 
 Quando si utilizza l'operatore AND, tutte le condizioni specificate devono essere vere affinché un record venga selezionato. Ad esempio:
@@ -195,6 +217,10 @@ WHERE genere = 'm' OR provincia = 'to';
 
 In questo caso, vengono selezionati i record degli studenti maschi e quelli che provengono dalla provincia di Torino, inclusi gli studenti di sesso femminile che possono essere presenti nella provincia di Torino.
 
+---
+
+### Parentesi
+
 Attraverso l’uso delle parentesi potete creare e combinare i vostri criteri di ricerca. I risultati saranno diversi:
 
 ```sql
@@ -209,9 +235,12 @@ SELECT * FROM studenti
 WHERE (cognome='verdi' OR cognome='rossi')
 AND (provincia='to' OR provincia='al');
 ```
+
 In questa query, vengono selezionati i record degli studenti con il cognome "verdi" o "rossi" e che sono residenti sia nella provincia di Torino che nella provincia di Alessandria.
 
-Operatori di confronto avanzati: IN, NOT IN
+---
+
+### Operatori di confronto avanzati: IN, NOT IN
 
 L’operatore IN ci consente di selezionare i record indicando più valori di campo. Possiamo farlo con l'operatore OR, ma può diventare complicato quando confrontiamo molti valori. Prendiamo ad esempio l'esecuzione di una query in cui cerchiamo solo gli studenti di alcune province:
 
@@ -229,7 +258,9 @@ FROM studenti
 WHERE provincia NOT IN ('to','cn','at','no');
 ```
 
-BETWEEN, NOT BETWEEN
+---
+
+### BETWEEN, NOT BETWEEN
 
 Utilizzando l'operatore BETWEEN possiamo selezionare un intervallo di valori. I valori di inizio e fine dell’intervallo sono inclusi. I valori dell’intervallo possono essere numeri, testo o date.
 
@@ -239,7 +270,9 @@ FROM studenti
 WHERE data_nascita BETWEEN '1985-01-01' AND '1994-12-31';
 ```
 
-IS NULL e IS NOT NULL
+---
+
+### IS NULL e IS NOT NULL
 
 L'operatore IS NULL viene utilizzato per visualizzare i record che non hanno un valore impostato per un campo. Viceversa, IS NOT NULL mostra i record che hanno un valore impostato per un campo. Questi operatori possono essere utilizzati per trovare i record che hanno bisogno di informazioni aggiuntive.
 
@@ -249,7 +282,9 @@ FROM studenti
 WHERE data_nascita IS NULL;
 ```
 
-LIKE, NOT LIKE
+---
+
+### LIKE, NOT LIKE
 
 Un operatore piuttosto "particolare" è LIKE, il quale consente di effettuare dei "paragoni di somiglianza".
 
@@ -270,7 +305,9 @@ Descrizione:
 
 Tuttavia, è consigliabile non abusare degli operatori di somiglianza, in quanto i criteri di ricerca che iniziano con caratteri jolly possono avere tempi di elaborazione più lunghi.
 
-REGEXP_LIKE() (REGEXP e RLIKE sono sinonimi di REGEXP_LIKE())
+---
+
+### REGEXP_LIKE() (REGEXP e RLIKE sono sinonimi di REGEXP_LIKE())
 
 Un operatore più potente di LIKE è REGEXP, il quale consente di utilizzare molti più simboli per ricerche più complesse.
 
@@ -296,7 +333,9 @@ Per ulteriori approfondimenti, si consiglia di consultare la documentazione uffi
 - [Operator REGEXP](https:/dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp)
 - [Sintassi REGEXP](https:/dev.mysql.com/doc/refman/8.0/en/regexp.html#regexp-syntax)
 
-Operatori matematici
+---
+
+### Operatori matematici
 
 MySQL supporta i classici operatori matematici tradizionali, cioè:
 
@@ -334,11 +373,15 @@ FROM prodotti;
 
 Usare gli operatori permette di fare un calcolo per ogni campo.
 
-Colonne generate (virtuali e persistenti / memorizzate)
+---
+
+### Colonne generate (virtuali e persistenti / memorizzate)
 
 Una colonna generata è una colonna in una tabella che non può essere impostata esplicitamente su un valore specifico in una query DML. Il suo valore viene invece generato automaticamente in base a un’espressione. Questa espressione potrebbe generare il valore in base ai valori di altre colonne nella tabella oppure potrebbe generare il valore chiamando funzioni incorporate o funzioni definite dall'utente (UDF).
 
-Esistono due tipi di colonne generate:
+---
+
+### Esistono due tipi di colonne generate:
 
 - PERSISTENT (STORED): il valore di questo tipo è effettivamente memorizzato nella tabella.
 - VIRTUAL: Il valore di questo tipo non viene memorizzato affatto. Il valore viene invece generato dinamicamente quando viene eseguita una query sulla tabella. Questo tipo è l'impostazione predefinita.
@@ -352,12 +395,20 @@ Sintassi:
 [VIRTUAL | PERSISTENT | STORED] [UNIQUE] [UNIQUE KEY] [COMMENT <text>]
 ```
 
+---
+
+### tabella studente
+
 Esempio sulla tabella studente. Creiamo un campo generato al volo che contenga il nome e il cognome dello studente:
 
 ```sql
 ALTER TABLE studente
 ADD fullName VARCHAR(255) AS (CONCAT(nome, ' ', cognome)) AFTER cognome;
 ```
+
+---
+
+### tabella corsi
 
 Esempio sulla tabella corsi. Creiamo un campo generato al volo che calcoli il prezzo del corso compreso di IVA:
 
@@ -369,7 +420,9 @@ AFTER prezzo;
 
 Approfondimenti: [Documentazione MySQL - Colonne generate](https:/dev.mysql.com/doc/refman/8.0/en/create-table-generated-columns.html)
 
-Limiti nella scrittura dell'espressione:
+---
+
+### Limiti nella scrittura dell'espressione:
 
 La maggior parte delle espressioni deterministiche legali che possono essere calcolate sono supportate nelle espressioni per le colonne generate.
 La maggior parte delle funzioni integrate è supportata nelle espressioni per le colonne generate.
@@ -388,6 +441,10 @@ ALTER TABLE studente ADD eta TINYINT AS (TIMESTAMPDIFF(YEAR, data_nascita, CURDA
 
 Non si può usare l’espressione perché utilizza la funzione CURDATE() non deterministica.
 
+---
+
+### espressione deterministica
+
 Un'espressione deterministica in MySQL è un'espressione il cui risultato è sempre lo stesso quando ha gli stessi valori di input, senza importare quando o dove viene eseguita. In altre parole, una funzione o un'espressione è considerata deterministica se, date le stesse condizioni in input, produce sempre lo stesso risultato.
 
 Esempi di espressioni deterministiche includono operazioni matematiche semplici, come l'addizione o la moltiplicazione, nonché funzioni come CONCAT, DATE_FORMAT e altre che restituiscono sempre lo stesso risultato per un determinato set di input.
@@ -397,6 +454,10 @@ D'altra parte, le funzioni che coinvolgono l'ora corrente, come NOW() o CURDATE(
 Le espressioni deterministiche sono importanti quando si utilizzano colonne generate, poiché tali colonne devono essere valutate in modo coerente e prevedibile ogni volta che vengono lette o aggiornate.
 
 La scrittura di espressioni per le colonne generate in MySQL è soggetta a diversi limiti e restrizioni che è importante tenere in considerazione durante la progettazione del database e della tabella.
+
+---
+
+### principali limiti
 
 Ecco un riepilogo dei principali limiti nella scrittura delle espressioni per le colonne generate:
 
@@ -416,6 +477,10 @@ Ecco un riepilogo dei principali limiti nella scrittura delle espressioni per le
 
 8. **Errore di valutazione dell'espressione**: Se l'evaluazione dell'espressione per una colonna generata provoca il troncamento o fornisce un input errato a una funzione, l'operazione di creazione della tabella termina con un errore.
 
+---
+
+### limiti
+
 Tenendo conto di questi limiti, è possibile progettare e definire colonne generate in modo sicuro e efficace all'interno delle tue tabelle MySQL.
 
 Quando si definiscono colonne generate in MySQL, è importante tenere conto del fatto che la maggior parte delle espressioni deterministiche e delle funzioni integrate sono supportate. Tuttavia, ci sono alcune funzioni integrate che potrebbero non essere supportate per motivi tecnici.
@@ -430,6 +495,10 @@ ERROR 1901 (HY000): Function or expression 'CURDATE()' cannot be used in the GEN
 Questo errore indica che la funzione CURDATE() non può essere utilizzata nella clausola GENERATED ALWAYS AS per una colonna generata a causa della sua natura non deterministica.
 
 Per evitare questo tipo di errore, è necessario assicurarsi di utilizzare solo espressioni deterministiche e funzioni integrate supportate nelle definizioni delle colonne generate. Questo garantirà che le colonne generate possano essere create correttamente e che le operazioni di inserimento, aggiornamento e query funzionino come previsto.
+
+---
+
+### alias
 
 Gli alias sono utili per rinominare temporaneamente una tabella o un'intestazione di campo all'interno di una query. Possono essere utilizzati per rendere più leggibile il risultato della query o per riferirsi più facilmente a una colonna con un nome più intuitivo.
 
@@ -455,6 +524,10 @@ FROM nome_tabella
 Qui l'espressione `(campo1 - campo2)` viene calcolata e rinominata come `risultato` utilizzando l'alias.
 
 Ricorda che gli alias possono essere utilizzati anche con altre clausole come GROUP BY, ORDER BY o HAVING per riferirsi più facilmente alle colonne nei risultati della query.
+
+---
+
+### alias per le tabelle
 
 Gli alias per le tabelle sono utilizzati per abbreviare i nomi delle tabelle all'interno di una query, rendendo così la query più semplice da scrivere e leggere.
 
@@ -490,6 +563,10 @@ WHERE s.id = i.studente_id
 AND c.id = i.corso_id
 AND d.id = c.docente_id;
 ```
+
+---
+
+### utilizzando gli alias
 
 In questa query:
 - Le tabelle `studenti`, `corsi`, `iscrizioni` e `docenti` vengono rinominate rispettivamente come `s`, `c`, `i` e `d` utilizzando gli alias.
