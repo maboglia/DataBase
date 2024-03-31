@@ -1,6 +1,6 @@
 # Esercitazione 03
 
-Esercizio studenti, corsi, esami e docenti:
+## Esercizio studenti, corsi, esami e docenti:
 
 Supponiamo di avere le seguenti tabelle:
 

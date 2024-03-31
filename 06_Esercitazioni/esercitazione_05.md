@@ -28,16 +28,32 @@ CREATE TABLE AUTORE (
 Ora, inseriamo dei dati di esempio nelle tabelle:
 
 ```sql
-INSERT INTO AUTORE (CodAutore, Nome, Cognome) VALUES
-(1, 'Mario', 'Rossi'),
-(2, 'Giulia', 'Verdi');
+-- Inserimento dati di prova nella tabella Autore
+INSERT INTO Autore (CodAutore, Nome, Cognome) VALUES
+(1, 'Stephen', 'King'),
+(2, 'J.K.', 'Rowling'),
+(3, 'George', 'Orwell'),
+(4, 'Agatha', 'Christie'),
+(5, 'Haruki', 'Murakami'),
+(6, 'Jane', 'Austen'),
+(7, 'Fyodor', 'Dostoevsky'),
+(8, 'Leo', 'Tolstoy'),
+(9, 'Gabriel', 'García Márquez'),
+(10, 'Charles', 'Dickens');
 
-INSERT INTO LIBRO (CodLibro, Titolo, Genere, CodAutore) VALUES
-(1, 'Libro1', 'Romanzo', 1),
-(2, 'Libro2', 'Fantasy', 2),
-(3, 'Libro3', 'Thriller', 1),
-(4, 'Libro4', 'Fantascienza', 2),
-(5, 'Libro5', 'Saggio', 1);
+-- Inserimento dati di prova nella tabella Libro
+INSERT INTO Libro (CodLibro, Titolo, Genere, CodAutore) VALUES
+(1, 'It', 'Horror', 1),
+(2, 'Harry Potter and the Philosopher''s Stone', 'Fantasy', 2),
+(3, '1984', 'Distopia', 3),
+(4, 'Murder on the Orient Express', 'Mystery', 4),
+(5, 'Norwegian Wood', 'Fiction', 5),
+(6, 'Pride and Prejudice', 'Romance', 6),
+(7, 'Crime and Punishment', 'Psychological Fiction', 7),
+(8, 'War and Peace', 'Historical Fiction', 8),
+(9, 'One Hundred Years of Solitude', 'Magic Realism', 9),
+(10, 'Great Expectations', 'Classic Literature', 10);
+
 ```
 
 Ora, risponderò a delle domande utilizzando interrogazioni SQL:

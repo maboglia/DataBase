@@ -93,19 +93,41 @@ CREATE TABLE Inventario (
 INSERT INTO Prodotti (ProdottoID, NomeProdotto, Prezzo, Categoria) VALUES
 (1, 'Laptop Dell', 1200, 'Computer'),
 (2, 'Stampante HP', 300, 'Periferica'),
-(3, 'Mouse Logitech', 50, 'Accessorio');
+(3, 'Mouse Logitech', 50, 'Accessorio'),
+(4, 'Smartphone Samsung', 800, 'Elettronica'),
+(5, 'Tablet Apple', 600, 'Elettronica'),
+(6, 'Tastiera Wireless', 80, 'Accessorio'),
+(7, 'Monitor LG', 400, 'Periferica'),
+(8, 'Cuffie Sony', 150, 'Accessorio'),
+(9, 'Hard Disk esterno', 120, 'Periferica'),
+(10, 'Fotocamera Canon', 700, 'Elettronica');
 
 -- Inserimento dati di prova nella tabella Fornitori
 INSERT INTO Fornitori (FornitoreID, NomeFornitore, Indirizzo, Email) VALUES
 (101, 'ABC Elettronica', 'Via Roma, 123', 'abc@example.com'),
 (102, 'XYZ Computer', 'Via Verdi, 456', 'xyz@example.com'),
-(103, 'Tech Supplies', 'Corso Italia, 789', 'tech@example.com');
+(103, 'Tech Supplies', 'Corso Italia, 789', 'tech@example.com'),
+(104, 'Elettronica srl', 'Via Milano, 10', 'elettronica@example.com'),
+(105, 'Computer World', 'Via Torino, 5', 'computer@example.com'),
+(106, 'Accessori Plus', 'Via Napoli, 20', 'accessori@example.com'),
+(107, 'Periferiche Italia', 'Corso Firenze, 15', 'periferiche@example.com'),
+(108, 'ElettronicaFutura', 'Via Bologna, 30', 'futura@example.com'),
+(109, 'FornitureTech', 'Corso Venezia, 25', 'forniture@example.com'),
+(110, 'Elettronica Store', 'Via Genova, 40', 'store@example.com');
 
 -- Inserimento dati di prova nella tabella Inventario
 INSERT INTO Inventario (MovimentoID, ProdottoID, FornitoreID, Quantita, DataMovimento) VALUES
 (1, 1, 101, 10, '2022-03-01'),
 (2, 2, 102, 5, '2022-03-02'),
-(3, 3, 103, 20, '2022-03-03');
+(3, 3, 103, 20, '2022-03-03'),
+(4, 4, 104, 15, '2022-03-04'),
+(5, 5, 105, 8, '2022-03-05'),
+(6, 6, 106, 30, '2022-03-06'),
+(7, 7, 107, 12, '2022-03-07'),
+(8, 8, 108, 25, '2022-03-08'),
+(9, 9, 109, 18, '2022-03-09'),
+(10, 10, 110, 22, '2022-03-10');
+
 ```
 
 **Esempi di Query:**
