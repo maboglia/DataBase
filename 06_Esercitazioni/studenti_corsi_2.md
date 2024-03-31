@@ -147,3 +147,303 @@ WHERE CodDocente IN (
 Questa query usa una serie di subquery per selezionare i codici dei corsi a cui ha partecipato lo studente Mario Rossi, i codici dei docenti che hanno insegnato questi corsi, e infine i nomi e i cognomi dei docenti selezionati. Si noti che le subquery sono annidate in modo da usare i risultati delle subquery precedenti come condizioni per le subquery successive.
 ```
 
+---
+
+## 10 domande SQL fondamentali su questa base dati:
+
+1. **Quali sono i nomi completi degli studenti?**
+
+```sql
+SELECT CONCAT(Nome, ' ', Cognome) AS NomeCompleto
+FROM Studenti;
+```
+
+2. **Quali corsi sono disponibili e quanti crediti offrono ciascuno?**
+
+```sql
+SELECT NomeCorso, Crediti
+FROM Corsi;
+```
+
+3. **Chi sono i docenti e qual è la loro email?**
+
+```sql
+SELECT Nome, Cognome, Email
+FROM Docenti;
+```
+
+4. **Quali esami sono stati sostenuti da uno specifico studente?**
+
+```sql
+SELECT *
+FROM Esami
+WHERE Matricola = <MatricolaDesiderata>;
+```
+
+5. **Quali sono i voti ottenuti dagli studenti in un corso specifico?**
+
+```sql
+SELECT Voto
+FROM Esami
+WHERE CodCorso = <CodCorsoDesiderato>;
+```
+
+6. **Quali studenti hanno superato un determinato corso con un voto superiore a 25?**
+
+```sql
+SELECT s.*
+FROM Studenti s
+JOIN Esami e ON s.Matricola = e.Matricola
+WHERE e.CodCorso = <CodCorsoDesiderato> AND e.Voto > 25;
+```
+
+7. **Qual è la media dei voti ottenuti dagli studenti in tutti i corsi?**
+
+```sql
+SELECT AVG(Voto) AS MediaVoti
+FROM Esami;
+```
+
+8. **Quali corsi hanno ottenuto la media dei voti più alta?**
+
+```sql
+SELECT c.NomeCorso, AVG(e.Voto) AS MediaVoti
+FROM Corsi c
+JOIN Esami e ON c.CodCorso = e.CodCorso
+GROUP BY c.NomeCorso
+ORDER BY AVG(e.Voto) DESC;
+```
+
+9. **Quali sono i corsi che nessuno ha ancora sostenuto?**
+
+```sql
+SELECT c.NomeCorso
+FROM Corsi c
+LEFT JOIN Esami e ON c.CodCorso = e.CodCorso
+WHERE e.Matricola IS NULL;
+```
+
+10. **Quali sono i corsi tenuti da un docente specifico?**
+
+```sql
+SELECT c.NomeCorso
+FROM Corsi c
+JOIN Docenti d ON c.CodDocente = d.CodDocente
+WHERE d.Nome = '<NomeDocenteDesiderato>';
+```
+
+---
+
+## 10 domande SQL leggermente più complesse:
+
+1. **Quali sono gli studenti che hanno sostenuto tutti i corsi offerti?**
+
+```sql
+SELECT Matricola
+FROM Studenti
+GROUP BY Matricola
+HAVING COUNT(DISTINCT CodCorso) = (SELECT COUNT(*) FROM Corsi);
+```
+
+2. **Quali sono i corsi con il numero massimo di crediti?**
+
+```sql
+SELECT *
+FROM Corsi
+WHERE Crediti = (SELECT MAX(Crediti) FROM Corsi);
+```
+
+3. **Qual è il docente che ha tenuto il maggior numero di corsi?**
+
+```sql
+SELECT d.Nome, d.Cognome, COUNT(*) AS NumeroCorsi
+FROM Docenti d
+JOIN Corsi c ON d.CodDocente = c.CodDocente
+GROUP BY d.Nome, d.Cognome
+ORDER BY NumeroCorsi DESC
+LIMIT 1;
+```
+
+4. **Quali sono gli studenti che non hanno ancora sostenuto esami?**
+
+```sql
+SELECT Matricola
+FROM Studenti
+WHERE Matricola NOT IN (SELECT DISTINCT Matricola FROM Esami);
+```
+
+5. **Quali sono i corsi che hanno una media di voti superiore a 27?**
+
+```sql
+SELECT c.NomeCorso
+FROM Corsi c
+JOIN Esami e ON c.CodCorso = e.CodCorso
+GROUP BY c.NomeCorso
+HAVING AVG(e.Voto) > 27;
+```
+
+6. **Quali sono gli studenti che hanno sostenuto almeno un esame con un voto inferiore a 18?**
+
+```sql
+SELECT DISTINCT Matricola
+FROM Esami
+WHERE Voto < 18;
+```
+
+7. **Quali sono i corsi in cui nessuno ha ottenuto un voto superiore a 20?**
+
+```sql
+SELECT NomeCorso
+FROM Corsi
+WHERE CodCorso NOT IN (SELECT CodCorso FROM Esami WHERE Voto > 20);
+```
+
+8. **Quali sono gli studenti che hanno sostenuto esami in tutti i corsi con un voto superiore a 25?**
+
+```sql
+SELECT Matricola
+FROM Esami
+WHERE Voto > 25
+GROUP BY Matricola
+HAVING COUNT(DISTINCT CodCorso) = (SELECT COUNT(*) FROM Corsi);
+```
+
+9. **Quali sono i docenti che non hanno tenuto alcun corso?**
+
+```sql
+SELECT d.Nome, d.Cognome
+FROM Docenti d
+LEFT JOIN Corsi c ON d.CodDocente = c.CodDocente
+WHERE c.CodCorso IS NULL;
+```
+
+10. **Quali sono gli studenti che hanno sostenuto esami in tutti i corsi tenuti da un docente specifico?**
+
+```sql
+SELECT Matricola
+FROM Esami
+WHERE CodCorso IN (SELECT CodCorso FROM Corsi WHERE CodDocente = <CodiceDocente>)
+GROUP BY Matricola
+HAVING COUNT(DISTINCT CodCorso) = (SELECT COUNT(*) FROM Corsi WHERE CodDocente = <CodiceDocente>);
+```
+
+---
+
+## 10 domande SQL di livello avanzato
+
+1. **Qual è la percentuale di studenti che ha sostenuto esami in almeno tre corsi?**
+
+```sql
+SELECT COUNT(*) * 100.0 / (SELECT COUNT(*) FROM Studenti) AS Percentuale
+FROM (
+    SELECT Matricola
+    FROM Esami
+    GROUP BY Matricola
+    HAVING COUNT(DISTINCT CodCorso) >= 3
+) AS StudentiTreCorsi;
+```
+
+2. **Quali sono gli studenti che hanno ottenuto la media più alta nei loro esami, e qual è la loro media?**
+
+```sql
+SELECT Matricola, AVG(Voto) AS MediaVoti
+FROM Esami
+GROUP BY Matricola
+ORDER BY MediaVoti DESC
+LIMIT 1;
+```
+
+3. **Quali sono i corsi in cui gli studenti hanno ottenuto un voto superiore alla media dei voti complessivi degli studenti in quel corso?**
+
+```sql
+SELECT c.NomeCorso
+FROM Corsi c
+JOIN (
+    SELECT CodCorso, AVG(Voto) AS MediaVotiCorso
+    FROM Esami
+    GROUP BY CodCorso
+) AS MediaPerCorso ON c.CodCorso = MediaPerCorso.CodCorso
+JOIN Esami e ON c.CodCorso = e.CodCorso
+GROUP BY c.NomeCorso
+HAVING AVG(e.Voto) > MediaVotiCorso;
+```
+
+4. **Quali sono gli studenti che hanno ottenuto un voto superiore a tutti i voti degli altri studenti nello stesso corso?**
+
+```sql
+SELECT DISTINCT e.Matricola
+FROM Esami e
+WHERE NOT EXISTS (
+    SELECT *
+    FROM Esami
+    WHERE CodCorso = e.CodCorso AND Voto < e.Voto AND Matricola != e.Matricola
+);
+```
+
+5. **Qual è il numero medio di esami sostenuti dagli studenti per ogni corso?**
+
+```sql
+SELECT AVG(NumeroEsami) AS MediaEsamiPerCorso
+FROM (
+    SELECT CodCorso, COUNT(*) AS NumeroEsami
+    FROM Esami
+    GROUP BY CodCorso, Matricola
+) AS EsamiPerCorso;
+```
+
+6. **Qual è il periodo in cui gli studenti hanno sostenuto più esami?**
+
+```sql
+SELECT EXTRACT(YEAR FROM Data) AS Anno, EXTRACT(MONTH FROM Data) AS Mese, COUNT(*) AS NumeroEsami
+FROM Esami
+GROUP BY Anno, Mese
+ORDER BY NumeroEsami DESC
+LIMIT 1;
+```
+
+7. **Qual è il docente che ha tenuto corsi in più anni?**
+
+```sql
+SELECT d.Nome, d.Cognome, COUNT(DISTINCT EXTRACT(YEAR FROM c.Anno)) AS AnniDiversi
+FROM Docenti d
+JOIN Corsi c ON d.CodDocente = c.CodDocente
+GROUP BY d.Nome, d.Cognome
+ORDER BY AnniDiversi DESC
+LIMIT 1;
+```
+
+8. **Quali studenti hanno ottenuto un voto superiore a 25 in tutti i corsi del loro anno di immatricolazione?**
+
+```sql
+SELECT Matricola
+FROM Studenti s
+WHERE DataNascita >= 'Data di inizio anno di immatricolazione'
+AND NOT EXISTS (
+    SELECT CodCorso
+    FROM Corsi
+    WHERE CodCorso NOT IN (
+        SELECT CodCorso
+        FROM Esami
+        WHERE Esami.Matricola = s.Matricola AND Voto > 25
+    )
+);
+```
+
+9. **Qual è il numero massimo di crediti totali che uno studente può ottenere iscrivendosi a tutti i corsi disponibili?**
+
+```sql
+SELECT SUM(Crediti) AS MassimoCrediti
+FROM Corsi;
+```
+
+10. **Quali sono i corsi in cui tutti gli studenti hanno ottenuto un voto superiore a 18?**
+
+```sql
+SELECT NomeCorso
+FROM Corsi
+WHERE CodCorso NOT IN (
+    SELECT CodCorso
+    FROM Esami
+    WHERE Voto <= 18
+);
+```
