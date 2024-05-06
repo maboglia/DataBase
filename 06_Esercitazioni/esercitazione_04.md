@@ -40,7 +40,9 @@ INSERT INTO PRODOTTO (CodP, Nome, Prezzo, CodF) VALUES
 (5, 'Prodotto5', 5.99, 1);
 ```
 
-Ora, risponderò a delle domande utilizzando interrogazioni SQL:
+---
+
+Interrogazioni SQL:
 
 (a) Trovare il nome dei fornitori che forniscono almeno un prodotto.
 

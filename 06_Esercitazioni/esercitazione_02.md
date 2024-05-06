@@ -43,7 +43,21 @@ INSERT INTO PRODOTTO (CodP, Nome, Prezzo, Quantita, CodM) VALUES
 (5, 'Prodotto5', 5.99, 200, 1);
 ```
 
-Ora, risponderò a delle domande utilizzando interrogazioni SQL simili a quelle dell'esercizio precedente:
+---
+
+## Domande
+
+(a) Trovare il codice e il nome dei magazzini che contengono almeno un prodotto con l'argomento 'maglietta'.
+(b) Trovare il codice e il nome dei magazzini che non contengono prodotti con l'argomento 'maglietta'.
+(c) Trovare il codice e il nome dei magazzini che contengono solo prodotti con l'argomento 'scarpe'.
+(d) Trovare il codice e il nome dei magazzini che contengono almeno un prodotto con l'argomento 'borsa' oppure 'zaino'.
+(e) Trovare il codice e il nome dei magazzini che contengono prodotti sia con l'argomento 'scarpe' sia con l'argomento 'maglietta'.
+(f) Trovare il codice e il nome dei magazzini che contengono almeno 2 prodotti di scarpe.
+(g) Trovare il codice e il nome dei magazzini che contengono un solo prodotto di borsa.
+
+---
+
+## Risposte
 
 (a) Trovare il codice e il nome dei magazzini che contengono almeno un prodotto con l'argomento 'maglietta'.
 
