@@ -3,196 +3,211 @@
 *by mosh hamedani*
 
 ## Basics
-USE sql_store;
-SELECT *
-FROM customers  WHERE state = ‘CA’ ORDER BY first_name LIMIT 3;
+`USE sql_store;`
+`SELECT * FROM customers  WHERE state = ‘CA’ ORDER BY first_name LIMIT 3;`
 
-- SQLisnotacase-sensitivelanguage.
+- SQL is not a case-sensitive language.
 
-- InMySQL,everystatementmustbeterminatedwithasemicolon.
+- In MySQL, every statement must be terminated with a semicolon.
 
 ## Comments
 
 We use comments to add notes to our code.
 
-### This is a comment and it won’t get executed.
+`-- This is a comment and it won’t get executed.`
 
 
 ## SELECT Clause
 
 ### Using expressions
 
-SELECT (points * 10 + 20) AS discount_factor FROM customers
+`SELECT (points * 10 + 20) AS discount_factor FROM customers`
+
 Order of operations:
 
 - Parenthesis
-
 - Multiplication/division 
 - Addition/subtraction
 
 
 ### Removing duplicates
 
-SELECT DISTINCT state FROM customers 
+`SELECT DISTINCT state FROM customers` 
 
- WHERE Clause
+## WHERE Clause
+
 We use the WHERE clause to filter data.
 
 Comparison operators:
 
-- Greaterthan:>
+- Greaterthan:`>`
+- Greaterthanorequalto:`>=` 
+- Lessthan:`<`
+- Lessthanorequalto:`<=`
+- Equal:`=`
+- Notequal:`<>`
+- Notequal:`!=`
 
-- Greaterthanorequalto:>= 
-- Lessthan:<
-
-- Lessthanorequalto:<=
-
-- Equal:=
-
-- Notequal:<>
-
-- Notequal:!=
-Logical Operators
+## Logical Operators
 
 
 ### AND (both conditions must be True) 
 
-SELECT *
+`SELECT *
 FROM customers 
-WHERE birthdate > ‘1990-01-01’ AND points > 1000 
+WHERE birthdate > ‘1990-01-01’ AND points > 1000` 
 
 ### OR (at least one condition must be True) 
 
-SELECT *
+`SELECT *
 FROM customers 
-WHERE birthdate > ‘1990-01-01’ OR points > 1000  
+WHERE birthdate > ‘1990-01-01’ OR points > 1000`  
 
 ### NOT (to negate a condition) 
 
-SELECT *
+`SELECT *
 FROM customers 
-WHERE NOT (birthdate > ‘1990-01-01’)
+WHERE NOT (birthdate > ‘1990-01-01’)`
 
- IN Operator
+## IN Operator
 
 ### Returns customers in any of these states: VA, NY, CA
 
-SELECT *
+`SELECT *
 FROM customers 
 WHERE state IN (‘VA’, ‘NY’, ‘CA’)
-BETWEEN Operator
-SELECT *
+
+`
+## BETWEEN Operator
+
+`SELECT *
 FROM customers 
 WHERE points BETWEEN 100 AND 200
-LIKE Operator
+`
+
+## LIKE Operator
 
 ### Returns customers whose first name starts with b 
 
-SELECT *
+`SELECT *
 FROM customers 
-WHERE first_name LIKE ‘b%’
+WHERE first_name LIKE ‘b%’`
 
-- %:anynumberofcharacters 
-- _:exactlyonecharacter
-REGEXP Operator
+- `%`:anynumberofcharacters 
+- `_`:exactlyonecharacter
+
+## REGEXP Operator
 
 ### Returns customers whose first name starts with a 
 
-SELECT *
+`SELECT *
 FROM customers 
-WHERE first_name REGEXP ‘^a’
+WHERE first_name REGEXP ‘^a’`
 
-- ^:beginningofastring
+- `^`:beginningofastring
+- `$`:endofastring
+- `|`:logicalOR
+- `[abc]`:matchanysinglecharacters 
+- `[a-d]`:anycharactersfromatod
 
-- $:endofastring
-
-- |:logicalOR
-
-- [abc]:matchanysinglecharacters 
-- [a-d]:anycharactersfromatod
-
- More Examples 
+## More Examples 
 
 ### Returns customers whose first name ends with EY or ON 
 
-WHERE first_name REGEXP ‘ey$|on$’
+`SELECT *
+FROM customers
+WHERE first_name REGEXP ‘ey$|on$’`
 
-### Returns customers whose first name starts with MY  
+### Returns customers whose first name starts with MY or contains SE
 
-### or contains SE
+`SELECT *
+FROM customers
+WHERE first_name REGEXP ‘^my|se’`
 
-WHERE first_name REGEXP ‘^my|se’
+### Returns customers whose first name contains B followed by R or U
 
-### Returns customers whose first name contains B followed by  
+`SELECT *
+FROM customers
+WHERE first_name REGEXP ‘b[ru]’`
 
-### R or U
-
-WHERE first_name REGEXP ‘b[ru]’
-IS NULL Operator
+## IS NULL Operator
 
 ### Returns customers who don’t have a phone number 
 
-SELECT *
-FROM customers  WHERE phone IS NULL
-ORDER BY Clause
+`SELECT *
+FROM customers  WHERE phone IS NULL`
+
+## ORDER BY Clause
 
 ### Sort customers by state (in ascending order), and then  
 
 ### by their first name (in descending order) 
 
-SELECT *
+`SELECT *
 FROM customers 
-ORDER BY state, first_name DESC
-LIMIT Clause
+ORDER BY state, first_name DESC`
+
+## LIMIT Clause
 
 ### Return only 3 customers 
 
-SELECT *
-FROM customers  LIMIT 3
+`SELECT *
+FROM customers  LIMIT 3`
 
  
  ### Skip 6 customers and return 3
-S
-ELECT *
-FROM customers  LIMIT 6, 3
-Inner Joins
-SELECT *
+
+`SELECT *
+FROM customers  LIMIT 6, 3`
+
+## Inner Joins
+
+`SELECT *
 FROM customers c JOIN orders o 
-   ON c.customer_id = o.customer_id
-Outer Joins
+   ON c.customer_id = o.customer_id`
 
-### Return all customers whether they have any orders or not SELECT *
+## Outer Joins
 
+### Return all customers whether they have any orders or not 
+
+`SELECT *
 FROM customers c
 LEFT JOIN orders o 
-   ON c.customer_id = o.customer_id
-USING Clause
+   ON c.customer_id = o.customer_id`
+
+## USING Clause
+
 If column names are exactly the same, you can simplify the join with the USING clause.
-SELECT *
+
+`SELECT *
 FROM customers c JOIN orders o 
-   USING (customer_id)
-Cross Joins
+   USING (customer_id)`
 
-### Combine every color with every size SELECT *
+## Cross Joins
 
+### Combine every color with every size 
+
+`SELECT *
 FROM colors 
-CROSS JOIN sizes
+CROSS JOIN sizes`
 
-Unions
+## Unions
 
-### Combine records from multiple result sets SELECT name, address
+### Combine records from multiple result sets 
 
+`SELECT name, address
 FROM customers 
 UNION
-SELECT name, address FROM clients 
-Inserting Data
+SELECT name, address FROM clients` 
+
+## Inserting Data
 
 ### Insert a single record
 
-INSERT INTO customers(first_name, phone, points) VALUES (‘Mosh’, NULL, DEFAULT)
+`INSERT INTO customers(first_name, phone, points) VALUES (‘Mosh’, NULL, DEFAULT)`
 
 ### Insert multiple single records
 
-INSERT INTO customers(first_name, phone, points) VALUES 
+`INSERT INTO customers(first_name, phone, points) VALUES 
 (‘Mosh’, NULL, DEFAULT),
-(‘Bob’, ‘1234’, 10) 
+(‘Bob’, ‘1234’, 10) `
