@@ -1,3 +1,10 @@
+---
+header: Fondamenti di basi di dati
+marp: true
+footer: Mauro Bogliaccino
+theme: Gaia
+---
+
 # I tipi di dato
 
 ---

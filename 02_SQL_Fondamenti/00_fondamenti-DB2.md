@@ -1,3 +1,9 @@
+---
+header: Fondamenti di basi di dati
+marp: true
+footer: Mauro Bogliaccino
+theme: Gaia
+---
 # Tabelle e Record
 
 Parliamo ora di "Tabelle e Record". Le tabelle costituiscono uno degli elementi chiave in un database, fornendo una struttura organizzata per immagazzinare i dati. 
