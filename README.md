@@ -16,19 +16,19 @@
 - [Union e JOIN](03_SQL_CostruttiAvanzati/05_Join.md) 
 - [Funzioni](03_SQL_CostruttiAvanzati/11_funzioni.md)
 - Raggruppamenti
-- Funzioni finestra (Windows Function) 
+- [Funzioni finestra (Windows Function)](03_SQL_CostruttiAvanzati/15_windows_functions.md) 
 - [Viste](03_SQL_CostruttiAvanzati/07_viste.md)
 - [Sub Query](03_SQL_CostruttiAvanzati/04_Filtraggio.md)
 - [Indici](03_SQL_CostruttiAvanzati/06_indici.md)
 - [Triggers](03_SQL_CostruttiAvanzati/12_trigger.md)
-- Stored Function
+- [Stored Function](03_SQL_CostruttiAvanzati/11_funzioni.md)
 - Events
 - [Stored Procedures](03_SQL_CostruttiAvanzati/13_stored_procedures.md)
 - [Transaction](03_SQL_CostruttiAvanzati/14_transazioni.md)
 - [Installazione MySQL](07_TipiDB/27_mysql.md)
-- Accesso DBMS (DBA)
-- Accesso DBMS (user) 
-- Backup/Restoring
+- [Accesso DBMS (DBA)](03_SQL_CostruttiAvanzati/17_DBA_access.md)
+- [Accesso DBMS (user)](03_SQL_CostruttiAvanzati/18_User_access.md) 
+- [Backup/Restoring](03_SQL_CostruttiAvanzati/16_backup_restore.md)
 
 ---
 
