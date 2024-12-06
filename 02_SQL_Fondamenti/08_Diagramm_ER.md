@@ -12,6 +12,10 @@ I diagrammi Entità-Relazione (ER) sono utilizzati per modellare la struttura de
 
 ---
 
+![Diagramma](scuola-e-r.webp)
+
+---
+
 1. **Entità:**
    - Un'entità rappresenta un oggetto o un concetto del mondo reale che può essere identificato e memorizzato nei dati. Ad esempio, "Cliente" o "Prodotto" possono essere entità.
 
