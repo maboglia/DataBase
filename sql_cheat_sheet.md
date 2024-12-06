@@ -1,213 +1,313 @@
+---
+header: Fondamenti di basi di dati
+marp: true
+footer: Mauro Bogliaccino
+theme: uncover
+---
+
 # SQL Cheat Sheet
 
-*by mosh hamedani*
+---
 
-## Basics
-`USE sql_store;`
-`SELECT * FROM customers  WHERE state = ‘CA’ ORDER BY first_name LIMIT 3;`
+## Concetti di Base
 
-- SQL is not a case-sensitive language.
+```sql
+USE sql_store;
+SELECT * FROM customers WHERE state = 'CA' ORDER BY first_name LIMIT 3;
+```
 
-- In MySQL, every statement must be terminated with a semicolon.
+- **SQL non è sensibile alle maiuscole/minuscole.** Puoi usare maiuscole o minuscole indifferentemente.
+- **In MySQL, ogni istruzione deve terminare con un punto e virgola (`;`).**
 
-## Comments
+---
 
-We use comments to add notes to our code.
+## Commenti
 
-`-- This is a comment and it won’t get executed.`
+I commenti servono per aggiungere note al codice senza influenzarne l'esecuzione.
 
+```sql
+-- Questo è un commento e non verrà eseguito.
+```
 
-## SELECT Clause
+---
 
-### Using expressions
+## Clausola SELECT
 
-`SELECT (points * 10 + 20) AS discount_factor FROM customers`
+---
 
-Order of operations:
+### Uso delle espressioni
 
-- Parenthesis
-- Multiplication/division 
-- Addition/subtraction
+```sql
+SELECT (points * 10 + 20) AS discount_factor FROM customers;
+```
 
+**Ordine di esecuzione delle operazioni matematiche:**
 
-### Removing duplicates
+1. Parentesi
+2. Moltiplicazione/Divisione
+3. Addizione/Sottrazione
 
-`SELECT DISTINCT state FROM customers` 
+---
 
-## WHERE Clause
+### Rimuovere duplicati
 
-We use the WHERE clause to filter data.
+```sql
+SELECT DISTINCT state FROM customers;
+```
 
-Comparison operators:
+Usa `DISTINCT` per ottenere solo valori unici.
 
-- Greaterthan:`>`
-- Greaterthanorequalto:`>=` 
-- Lessthan:`<`
-- Lessthanorequalto:`<=`
-- Equal:`=`
-- Notequal:`<>`
-- Notequal:`!=`
+---
 
-## Logical Operators
+## Clausola WHERE
 
+Usiamo `WHERE` per filtrare i dati.
 
-### AND (both conditions must be True) 
+**Operatori di confronto:**
 
-`SELECT *
-FROM customers 
-WHERE birthdate > ‘1990-01-01’ AND points > 1000` 
+- **Maggiore di:** `>`
+- **Maggiore o uguale a:** `>=`
+- **Minore di:** `<`
+- **Minore o uguale a:** `<=`
+- **Uguale a:** `=`
+- **Diverso da:** `<>` o `!=`
 
-### OR (at least one condition must be True) 
+---
 
-`SELECT *
-FROM customers 
-WHERE birthdate > ‘1990-01-01’ OR points > 1000`  
+## Operatori Logici
 
-### NOT (to negate a condition) 
+---
 
-`SELECT *
-FROM customers 
-WHERE NOT (birthdate > ‘1990-01-01’)`
+### **AND** (entrambe le condizioni devono essere vere)
 
-## IN Operator
-
-### Returns customers in any of these states: VA, NY, CA
-
-`SELECT *
-FROM customers 
-WHERE state IN (‘VA’, ‘NY’, ‘CA’)
-
-`
-## BETWEEN Operator
-
-`SELECT *
-FROM customers 
-WHERE points BETWEEN 100 AND 200
-`
-
-## LIKE Operator
-
-### Returns customers whose first name starts with b 
-
-`SELECT *
-FROM customers 
-WHERE first_name LIKE ‘b%’`
-
-- `%`:anynumberofcharacters 
-- `_`:exactlyonecharacter
-
-## REGEXP Operator
-
-### Returns customers whose first name starts with a 
-
-`SELECT *
-FROM customers 
-WHERE first_name REGEXP ‘^a’`
-
-- `^`:beginningofastring
-- `$`:endofastring
-- `|`:logicalOR
-- `[abc]`:matchanysinglecharacters 
-- `[a-d]`:anycharactersfromatod
-
-## More Examples 
-
-### Returns customers whose first name ends with EY or ON 
-
-`SELECT *
+```sql
+SELECT *
 FROM customers
-WHERE first_name REGEXP ‘ey$|on$’`
+WHERE birthdate > '1990-01-01' AND points > 1000;
+```
 
-### Returns customers whose first name starts with MY or contains SE
+---
 
-`SELECT *
+### **OR** (almeno una delle condizioni deve essere vera)
+
+```sql
+SELECT *
 FROM customers
-WHERE first_name REGEXP ‘^my|se’`
+WHERE birthdate > '1990-01-01' OR points > 1000;
+```
 
-### Returns customers whose first name contains B followed by R or U
+---
 
-`SELECT *
+### **NOT** (nega una condizione)
+
+```sql
+SELECT *
 FROM customers
-WHERE first_name REGEXP ‘b[ru]’`
+WHERE NOT (birthdate > '1990-01-01');
+```
 
-## IS NULL Operator
+---
 
-### Returns customers who don’t have a phone number 
+## Operatore IN
 
-`SELECT *
-FROM customers  WHERE phone IS NULL`
+Trova valori in una lista specifica.
 
-## ORDER BY Clause
+```sql
+SELECT *
+FROM customers
+WHERE state IN ('VA', 'NY', 'CA');
+```
 
-### Sort customers by state (in ascending order), and then  
+---
 
-### by their first name (in descending order) 
+## Operatore BETWEEN
 
-`SELECT *
-FROM customers 
-ORDER BY state, first_name DESC`
+Trova valori in un intervallo.
 
-## LIMIT Clause
+```sql
+SELECT *
+FROM customers
+WHERE points BETWEEN 100 AND 200;
+```
 
-### Return only 3 customers 
+---
 
-`SELECT *
-FROM customers  LIMIT 3`
+## Operatore LIKE
 
- 
- ### Skip 6 customers and return 3
+Trova valori che corrispondono a un pattern.
 
-`SELECT *
-FROM customers  LIMIT 6, 3`
+```sql
+SELECT *
+FROM customers
+WHERE first_name LIKE 'b%';
+```
 
-## Inner Joins
+- `%` = qualsiasi numero di caratteri.
+- `_` = esattamente un carattere.
 
-`SELECT *
-FROM customers c JOIN orders o 
-   ON c.customer_id = o.customer_id`
+---
 
-## Outer Joins
+## Operatore REGEXP
 
-### Return all customers whether they have any orders or not 
+Trova valori usando espressioni regolari.
 
-`SELECT *
-FROM customers c
-LEFT JOIN orders o 
-   ON c.customer_id = o.customer_id`
+```sql
+SELECT *
+FROM customers
+WHERE first_name REGEXP '^a';
+```
 
-## USING Clause
+**Caratteri utili:**
 
-If column names are exactly the same, you can simplify the join with the USING clause.
+- `^`: inizio della stringa.
+- `$`: fine della stringa.
+- `|`: OR logico.
+- `[abc]`: qualsiasi carattere tra le parentesi.
+- `[a-d]`: qualsiasi carattere nel range specificato.
 
-`SELECT *
-FROM customers c JOIN orders o 
-   USING (customer_id)`
+---
 
-## Cross Joins
+**Esempi REGEXP:**
 
-### Combine every color with every size 
+- Nomi che terminano con "EY" o "ON":
 
-`SELECT *
-FROM colors 
-CROSS JOIN sizes`
+  ```sql
+  SELECT * FROM customers WHERE first_name REGEXP 'ey$|on$';
+  ```
 
-## Unions
+- Nomi che iniziano con "MY" o contengono "SE":
 
-### Combine records from multiple result sets 
+  ```sql
+  SELECT * FROM customers WHERE first_name REGEXP '^my|se';
+  ```
 
-`SELECT name, address
-FROM customers 
+---
+
+## Operatore IS NULL
+
+Trova righe con valori null.
+
+```sql
+SELECT *
+FROM customers
+WHERE phone IS NULL;
+```
+
+---
+
+## Clausola ORDER BY
+
+Ordina i risultati.
+
+```sql
+SELECT *
+FROM customers
+ORDER BY state, first_name DESC;
+```
+
+- **ASC** (ordine crescente) è predefinito.
+- **DESC** (ordine decrescente) deve essere specificato.
+
+---
+
+## Clausola LIMIT
+
+Limita il numero di righe restituite.
+
+```sql
+SELECT * FROM customers LIMIT 3;
+```
+
+Per saltare righe e limitare il risultato:
+
+```sql
+SELECT * FROM customers LIMIT 6, 3;
+```
+
+---
+
+## JOIN
+
+---
+
+### **Inner Join**
+
+Restituisce solo le righe con corrispondenze in entrambe le tabelle.
+
+```sql
+SELECT *
+FROM customers c JOIN orders o
+ON c.customer_id = o.customer_id;
+```
+
+---
+
+### **Outer Join**
+
+Restituisce tutte le righe da una tabella, anche se non ci sono corrispondenze.
+
+```sql
+SELECT *
+FROM customers c LEFT JOIN orders o
+ON c.customer_id = o.customer_id;
+```
+
+---
+
+### Clausola USING
+
+Semplifica il join quando i nomi delle colonne sono identici.
+
+```sql
+SELECT *
+FROM customers c JOIN orders o USING (customer_id);
+```
+
+---
+
+## Cross Join
+
+Combina ogni riga di una tabella con ogni riga di un'altra tabella.
+
+```sql
+SELECT *
+FROM colors CROSS JOIN sizes;
+```
+
+---
+
+## UNION
+
+Unisce i risultati di più query.
+
+```sql
+SELECT name, address
+FROM customers
 UNION
-SELECT name, address FROM clients` 
+SELECT name, address
+FROM clients;
+```
 
-## Inserting Data
+---
 
-### Insert a single record
+## Inserimento di Dati
 
-`INSERT INTO customers(first_name, phone, points) VALUES (‘Mosh’, NULL, DEFAULT)`
+---
 
-### Insert multiple single records
+### Inserire un singolo record
 
-`INSERT INTO customers(first_name, phone, points) VALUES 
-(‘Mosh’, NULL, DEFAULT),
-(‘Bob’, ‘1234’, 10) `
+```sql
+INSERT INTO customers(first_name, phone, points)
+VALUES ('Brad Pitt', NULL, DEFAULT);
+```
+
+---
+
+### Inserire più record
+
+```sql
+INSERT INTO customers(first_name, phone, points) VALUES
+('Brad Pitt', NULL, DEFAULT),
+('Bob', '1234', 10);
+```
+

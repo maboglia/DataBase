@@ -1,10 +1,3 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
-theme: uncover
----
-
 # I principali comandi SQL
 
 [Esempi d'uso](./SQL%20Commands%20List%20for%20the%20Most%20Common%20Actions.md)
