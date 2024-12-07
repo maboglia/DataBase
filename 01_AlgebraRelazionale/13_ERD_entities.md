@@ -1,3 +1,5 @@
+# Entità
+
 I **Diagrammi Entità-Relazioni (ERD)** sono strumenti di modellazione dei dati utilizzati nell'ingegneria del software per rappresentare il modello concettuale dei dati di un sistema informativo. Servono per comprendere, documentare e comunicare la logica del database agli utenti.
 
 ### Scopi principali

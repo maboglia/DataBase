@@ -15,6 +15,8 @@
 
 Edgar F. Codd è noto per la formulazione del modello relazionale nel 1970 mentre lavorava per IBM. La sua proposta ha rivoluzionato il modo in cui i dati vengono memorizzati e manipolati nei database.
 
+![Alt text](codd.png)
+
 ---
 
 ## Il Modello Relazionale
