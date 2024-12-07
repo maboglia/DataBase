@@ -8,7 +8,7 @@ Il modello relazionale organizza i dati in tabelle chiamate relazioni, garantend
 
 ---
 
-# Caratteristiche Principali del Modello Relazionale
+![modello relazionale](https://upload.wikimedia.org/wikipedia/commons/b/bf/Relational_Model.jpg)
 
 ---
 
