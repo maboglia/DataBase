@@ -1,10 +1,14 @@
 # DML - Data Manipulation
 
+---
+
 ### Creazione, Lettura, Aggiornamento e Eliminazione dei Record (CRUD)
 
 Una volta creata la struttura del nostro database, ci ritroveremo, ovviamente, con una serie di tabelle vuote. Prima di aggiungere record a una tabella, è necessario conoscere il tipo di dati previsto per ogni campo, quali campi non possono avere valore nullo e quali campi hanno l’incremento automatico.
 
 Quando si inseriscono i dati, bisogna utilizzare le virgolette o gli apici per i dati di tipo stringa (compresa la data), mentre non si utilizzano virgolette o apici per i dati di tipo numerico. Inoltre, non si inseriscono i valori per i campi definiti con l’attributo auto_increment.
+
+---
 
 ### INSERT INTO
 
@@ -32,6 +36,8 @@ INSERT INTO tableName
 SET field1 = 'value1', field2 = 'value2', field3 = 'value2';
 ```
 
+---
+
 ### INSERT INTO
 
 È possibile utilizzare il comando `INSERT INTO` senza l'uso di nomi di campo se si inserisce un record rispettando l’ordine dei campi della tabella. In questo caso, devono essere inseriti i valori di tutti i campi, anche i valori AUTO_INCREMENT o TIMESTAMP (passando "default" per inserimento automatico). Per i campi che accettano i valori nulli, è possibile passare "null".
@@ -48,6 +54,8 @@ INSERT INTO studente
 VALUES (default, 'fabio', 'rossi', 'fbr@gmail.com', null, default);
 ```
 
+---
+
 ### Mostrare i Record di una Tabella
 
 È possibile visualizzare i record di una tabella utilizzando l’istruzione `SELECT`. Per visualizzare tutti i record da una tabella, si usa il carattere jolly `*`. Dobbiamo anche utilizzare l’istruzione `FROM` per identificare la tabella che vogliamo interrogare. Di solito si visualizzano campi specifici, piuttosto che l'intera tabella. Dopo l’istruzione `SELECT`, elencare i campi che interessano, separati da una virgola.
@@ -59,6 +67,8 @@ SELECT * FROM tableName;
 ```sql
 SELECT fieldName, fieldName2, fieldName3 FROM tableName;
 ```
+
+---
 
 ### INSERT INTO ... SELECT
 
@@ -73,6 +83,8 @@ FROM studenti;
 Nell'esempio qui sopra, abbiamo immaginato di popolare la tabella `amici` inserendo automaticamente i dati già presenti nella tabella `studenti`.
 
 È importante notare che i campi nelle due tabelle devono contenere lo stesso tipo di dato e che la tabella `amici` deve esistere.
+
+---
 
 ### CREATE TABLE ... SELECT
 
@@ -90,6 +102,8 @@ CREATE TABLE parenti (
 ```
 
 Nell'esempio qui sopra, abbiamo creato la tabella `parenti` con la stessa struttura della tabella `amici`, popolandola con i dati prelevati dalla tabella `amici`.
+
+---
 
 ### Duplicare Tabelle e Contenuti
 
@@ -109,6 +123,8 @@ CREATE TABLE studenti_bk2 AS SELECT * FROM studenti;
 ```
 
 Nell'esempio sopra, abbiamo duplicato la tabella `studenti` nella tabella `studenti_bk` mantenendo la struttura e i dati.
+
+---
 
 ### UPDATE
 
@@ -144,6 +160,8 @@ Questo errore indica che il valore inserito è stato troncato perché non è con
 
 È importante notare che il comportamento dipende dall'impostazione della variabile globale `@@sql_mode`: di default, MySQL lavora in strict mode.
 
+---
+
 ### SQL Mode: STRICT MODE
 
 Il server MySQL può funzionare in diverse modalità SQL e può applicare queste modalità in modo diverso per client diversi, a seconda del valore della variabile di sistema: `SQL_MODE`.
@@ -171,6 +189,8 @@ SET SQL_MODE='TRADITIONAL';
 
 Per ulteriori informazioni, si veda la [documentazione ufficiale](https:/dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
 
+---
+
 ### Eliminazione dei Record in una Tabella
 
 L'istruzione `DELETE` viene utilizzata per eliminare gruppi di record in una tabella. È necessario utilizzare la parola chiave condizionale `WHERE` per isolare quali record si desidera eliminare, altrimenti si eliminano tutti i record.
@@ -191,6 +211,8 @@ WHERE genere = 'm';
 
 Nell'esempio sopra, stiamo eliminando i record dalla tabella `studenti` dove il genere è "m".
 
+---
+
 ### Eliminare Tutti i Record della Tabella
 
 Per svuotare una tabella, si usa l’istruzione `TRUNCATE`. Questa soluzione è la più veloce perché elimina la struttura della tabella per poi ricrearne una uguale vuota, azzerando il valore di eventuali campi AUTO_INCREMENT.
@@ -206,6 +228,8 @@ ALTER TABLE tableName AUTO_INCREMENT = 1;
 ```
 
 La differenza principale tra `TRUNCATE` e `DELETE` è che `TRUNCATE` è un'operazione non registrata, mentre `DELETE` viene registrato in log, quindi `TRUNCATE` è generalmente più veloce su grandi tabelle. Tuttavia, `TRUNCATE` non può essere eseguito su tabelle referenziate da vincoli esterni di chiave, mentre `DELETE` può.
+
+---
 
 ### INFORMAZIONI SULLE TABELLE
 
@@ -234,6 +258,8 @@ WHERE table_schema = 'databaseName';
 SET PERSIST information_schema_stats_expiry = 0;
 ```
 
+---
+
 ### Commenti
 
 MySQL Server supporta tre stili di commento:
@@ -255,6 +281,8 @@ su più linee
 */
 1;
 ```
+
+---
 
 ### Scrivere e utilizzare uno script .sql
 
@@ -284,8 +312,7 @@ SOURCE C:\/Users\/UtenteCorrente\/Desktop\/script.sql
 SOURCE "C:\Users\UtenteCorrente\Desktop\script.sql"
 ```
 
-
-
+---
 
 1. **Linguaggi di Manipolazione dei Dati (DML - Data Manipulation Language):**
    - I linguaggi DML sono utilizzati per manipolare i dati all'interno delle tabelle del database. Consentono di eseguire operazioni come l'interrogazione, l'inserimento, l'aggiornamento e la cancellazione dei dati. Alcuni esempi di comandi DML includono:
@@ -298,9 +325,7 @@ Il linguaggio SQL (Structured Query Language) è uno dei linguaggi di accesso ai
 
 Gli utenti e gli sviluppatori interagiscono con il database utilizzando questi linguaggi, sia attraverso interfacce utente grafiche che attraverso chiamate di programmazione in applicazioni software. La conoscenza di questi linguaggi è essenziale per gestire e sfruttare appieno le potenzialità di un sistema di gestione delle basi di dati.
 
-
 ---
-
 
 ## DML
 
@@ -318,6 +343,8 @@ Le istruzioni DML (Data Manipulation Language) in SQL sono utilizzate per manipo
 
    Questa query restituisce i nomi e i cognomi delle persone con un'età superiore a 18 anni dalla tabella "Nomi".
 
+---
+
 2. **INSERT:** L'istruzione `INSERT` è utilizzata per inserire nuovi dati in una tabella esistente. Si possono specificare i valori per ogni colonna o inserire valori provenienti da un'altra query.
 
    Esempio:
@@ -328,6 +355,8 @@ Le istruzioni DML (Data Manipulation Language) in SQL sono utilizzate per manipo
    ```
 
    Questa query inserisce una nuova riga nella tabella "Nomi" con i valori specificati.
+
+---
 
 3. **UPDATE:** L'istruzione `UPDATE` è utilizzata per modificare i dati esistenti in una tabella. Si possono specificare i valori da modificare e le condizioni per identificare le righe da aggiornare.
 
@@ -340,6 +369,8 @@ Le istruzioni DML (Data Manipulation Language) in SQL sono utilizzate per manipo
    ```
 
    Questa query aggiorna l'età di Marco Rossi nella tabella "Nomi" a 26 anni.
+
+---
 
 4. **DELETE:** L'istruzione `DELETE` è utilizzata per eliminare dati da una tabella. Si possono specificare le condizioni per identificare le righe da eliminare.
 

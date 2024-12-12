@@ -2,6 +2,8 @@
 
 Le istruzioni di aggiornamento in SQL vengono utilizzate per modificare i dati esistenti nelle tabelle. Le due istruzioni principali per l'aggiornamento sono `UPDATE` e `ALTER TABLE`. Ecco come vengono utilizzate:
 
+---
+
 1. **UPDATE:**
    - L'istruzione `UPDATE` viene utilizzata per modificare i valori esistenti in una o più colonne di una tabella.
 
@@ -21,6 +23,8 @@ Le istruzioni di aggiornamento in SQL vengono utilizzate per modificare i dati e
 
      Questo esempio modifica il valore della colonna "Voto" a 90 per uno studente con matricola 12345.
 
+---
+
 2. **ALTER TABLE:**
    - L'istruzione `ALTER TABLE` può essere utilizzata per modificare la struttura di una tabella, inclusa la modifica di colonne esistenti.
 
@@ -37,6 +41,8 @@ Le istruzioni di aggiornamento in SQL vengono utilizzate per modificare i dati e
      ```
 
      Questo esempio modifica il tipo di dati della colonna "Nome" nella tabella "Studenti" a VARCHAR(100).
+
+---
 
 3. **Sintassi combinata (UPDATE con JOIN):**
    - È possibile utilizzare la clausola `UPDATE` in combinazione con `JOIN` per eseguire aggiornamenti basati su condizioni che coinvolgono più tabelle.

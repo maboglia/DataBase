@@ -2,6 +2,8 @@
 
 Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
 
+---
+
 1. **Filtro su un Valore Specifico:**
    - Restituisci tutte le righe dove la colonna "Nome" è uguale a 'Mario'.
 
@@ -10,6 +12,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    FROM Tabella
    WHERE Nome = 'Mario';
    ```
+
+---
 
 2. **Filtro con Operatori di Confronto:**
    - Restituisci le righe dove la colonna "Quantità" è maggiore di 10.
@@ -20,6 +24,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    WHERE Quantità > 10;
    ```
 
+---
+
 3. **Filtro con Operatori Logici:**
    - Restituisci le righe dove la colonna "Categoria" è 'Elettronica' e la colonna "Prezzo" è inferiore a 500.
 
@@ -28,6 +34,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    FROM Prodotti
    WHERE Categoria = 'Elettronica' AND Prezzo < 500;
    ```
+
+---
 
 4. **Filtro con Operatori di Stringa:**
    - Restituisci le righe che contengono la parola 'Java' nella colonna "Linguaggio".
@@ -38,6 +46,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    WHERE Linguaggio LIKE '%Java%';
    ```
 
+---
+
 5. **Filtro con IN:**
    - Restituisci le righe dove la colonna "Colore" è 'Rosso' o 'Blu'.
 
@@ -46,6 +56,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    FROM Auto
    WHERE Colore IN ('Rosso', 'Blu');
    ```
+
+---
 
 6. **Filtro con IS NULL:**
    - Restituisci le righe dove la colonna "Note" è NULL.
@@ -56,6 +68,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    WHERE Note IS NULL;
    ```
 
+---
+
 7. **Filtro con BETWEEN:**
    - Restituisci le righe dove la colonna "Punteggio" è compresa tra 70 e 90 inclusi.
 
@@ -64,6 +78,8 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    FROM Studenti
    WHERE Punteggio BETWEEN 70 AND 90;
    ```
+
+---
 
 8. **Filtro con LIKE e ESCAPE:**
    - Restituisci le righe che iniziano con 'A' e contengono una seconda lettera che può essere 'r' o 't'.
@@ -80,6 +96,8 @@ Sperimenta con questi esempi per comprendere come la clausola WHERE può essere 
 
 Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
 
+---
+
 1. **Conteggio delle righe:**
    - Trova il numero totale di prodotti presenti in magazzino.
 
@@ -88,6 +106,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    FROM Prodotti;
    ```
 
+---
+
 2. **Somma dei valori:**
    - Calcola la somma totale del valore degli ordini.
 
@@ -95,6 +115,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    SELECT SUM(Valore) AS SommaValoreOrdini
    FROM Ordini;
    ```
+
+---
 
 3. **Media dei valori:**
    - Calcola la media dei prezzi dei prodotti nella categoria "Elettronica".
@@ -105,6 +127,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    WHERE Categoria = 'Elettronica';
    ```
 
+---
+
 4. **Valore massimo:**
    - Trova il prezzo massimo tra tutti i prodotti.
 
@@ -113,6 +137,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    FROM Prodotti;
    ```
 
+---
+
 5. **Valore minimo:**
    - Trova il prezzo minimo tra tutti i prodotti.
 
@@ -120,6 +146,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    SELECT MIN(Prezzo) AS PrezzoMinimo
    FROM Prodotti;
    ```
+
+---
 
 6. **Raggruppamento con COUNT:**
    - Conta il numero di prodotti disponibili in ciascuna categoria.
@@ -130,6 +158,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    GROUP BY Categoria;
    ```
 
+---
+
 7. **Raggruppamento con SUM:**
    - Calcola il valore totale degli ordini per ciascun cliente.
 
@@ -138,6 +168,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    FROM Ordini
    GROUP BY ClienteID;
    ```
+
+---
 
 8. **Raggruppamento con AVG:**
    - Calcola la media delle valutazioni per ciascun fornitore.
@@ -148,6 +180,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    GROUP BY ID_Fornitore;
    ```
 
+---
+
 9. **Raggruppamento con HAVING:**
    - Trova le categorie con un numero minimo di prodotti.
 
@@ -157,6 +191,8 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    GROUP BY Categoria
    HAVING COUNT(*) >= 5;
    ```
+
+---
 
 10. **Utilizzo di funzioni di data:**
 
@@ -175,6 +211,8 @@ Questi sono esempi di come puoi utilizzare funzioni aggregate e clausole di ragg
 
 Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola HAVING:
 
+---
+
 1. **Raggruppamento e Conteggio:**
    - Conta quanti prodotti ci sono in ciascuna categoria.
 
@@ -184,6 +222,8 @@ Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola 
    GROUP BY Categoria;
    ```
 
+---
+
 2. **Raggruppamento e Somma:**
    - Calcola la somma delle quantità disponibili per ciascun fornitore.
 
@@ -192,6 +232,8 @@ Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola 
    FROM Prodotti
    GROUP BY ID_Fornitore;
    ```
+
+---
 
 3. **Raggruppamento e Media con Filtraggio:**
    - Calcola la media dei prezzi solo per i prodotti con valutazione superiore a 4.
@@ -203,6 +245,8 @@ Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola 
    GROUP BY Categoria;
    ```
 
+---
+
 4. **Raggruppamento e Minimo/Massimo:**
    - Trova il prezzo minimo e massimo per ciascuna categoria.
 
@@ -211,6 +255,8 @@ Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola 
    FROM Prodotti
    GROUP BY Categoria;
    ```
+
+---
 
 5. **Filtraggio con HAVING:**
    - Trova le categorie con una media di valutazione superiore a 3.
@@ -222,6 +268,8 @@ Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola 
    HAVING AVG(Valutazione) > 3;
    ```
 
+---
+
 6. **Filtraggio con HAVING e Conteggio:**
    - Trova i fornitori con più di 5 prodotti in magazzino.
 
@@ -231,6 +279,8 @@ Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola 
    GROUP BY ID_Fornitore
    HAVING COUNT(*) > 5;
    ```
+
+---
 
 7. **Raggruppamento su più colonne:**
    - Conta il numero di prodotti per ciascun fornitore in ogni categoria.

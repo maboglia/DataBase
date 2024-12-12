@@ -167,6 +167,8 @@ Ecco alcuni esempi di utilizzo degli operatori di confronto nelle query SQL:
    ORDER BY cognome, nome;
    ```
 
+---
+
 2. Seleziona il nome, il cognome, l'email e la data di nascita degli studenti che non vivono a Torino, ordinati per cognome e poi per nome:
    ```sql
    SELECT nome, cognome, email, data_nascita
@@ -174,6 +176,8 @@ Ecco alcuni esempi di utilizzo degli operatori di confronto nelle query SQL:
    WHERE citta != 'torino'
    ORDER BY cognome, nome;
    ```
+
+---
 
 3. Seleziona il nome, il cognome, l'email e la data di nascita degli studenti nati dopo il 31 dicembre 1989, ordinati per data di nascita:
    ```sql
@@ -197,6 +201,8 @@ FROM tableName
 WHERE condition1 AND condition2 AND condition3;
 ```
 
+---
+
 Un esempio pratico potrebbe essere:
 
 ```sql
@@ -206,6 +212,8 @@ WHERE genere = 'm' AND provincia = 'to';
 ```
 
 In questa query, vengono selezionati i record degli studenti maschi provenienti dalla provincia di Torino.
+
+---
 
 D'altro canto, quando si utilizza l'operatore OR, almeno una delle condizioni specificate deve essere vera per selezionare un record. Ad esempio:
 
@@ -228,7 +236,10 @@ SELECT * FROM studenti
 WHERE cognome='verdi' OR cognome='rossi'
 AND provincia='to';
 ```
+
 In questa query, vengono selezionati i record degli studenti con il cognome "verdi" o "rossi" e che sono residenti nella provincia di Torino.
+
+---
 
 ```sql
 SELECT * FROM studenti
@@ -249,6 +260,8 @@ SELECT nome, cognome, email, data_nascita
 FROM studenti
 WHERE provincia IN ('to','cn','at','no');
 ```
+
+---
 
 L'operatore NOT IN funziona in modo simile a IN, mostra i record che NON contengono i valori selezionati. Così la seguente query mostrerà tutti i record di studenti che non appartengono alle province in elenco:
 
@@ -297,9 +310,12 @@ SELECT * FROM studenti WHERE nome LIKE 'paol_';
 SELECT * FROM studenti WHERE nome LIKE '_a%';
 ```
 
+---
+
 La differenza è data dalla posizione del carattere percentuale (%), che sta ad indicare "qualsiasi carattere dopo" e "qualsiasi carattere prima".
 
 Descrizione:
+
 - `%`: sostituisce zero o più caratteri (wildcard)
 - `_`: indica un solo carattere
 
@@ -319,6 +335,8 @@ SELECT * FROM studenti WHERE nome REGEXP 'co$';
 SELECT * FROM studenti WHERE nome REGEXP 'mar|ara|ola';
 ```
 
+---
+
 Potete combinare i simboli per creare combinazioni di pattern:
 
 ```sql
@@ -328,6 +346,8 @@ SELECT * FROM studenti WHERE nome REGEXP 'a[ero]';
 SELECT * FROM studenti WHERE nome REGEXP 'l[ao]$';
 SELECT * FROM studenti WHERE nome REGEXP '^[a-m]'; -- '^[n-z]'
 ```
+
+---
 
 Per ulteriori approfondimenti, si consiglia di consultare la documentazione ufficiale:
 - [Operator REGEXP](https:/dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp)
@@ -345,6 +365,8 @@ MySQL supporta i classici operatori matematici tradizionali, cioè:
 - **/** (divisione)
 - **%** (modulo - il resto della divisione tra due numeri)
 
+---
+
 Questi operatori risultano molto utili quando si devono svolgere dei calcoli all'interno di una SELECT. Per fare un esempio, si supponga di voler restituire il valore dato dalla sottrazione di due campi:
 
 ```sql
@@ -354,6 +376,8 @@ FROM tableName
 [WHERE condition(s)];
 ```
 
+---
+
 Alcuni esempi di calcoli matematici:
 
 ```sql
@@ -361,6 +385,8 @@ SELECT 6 / 2; -- 3
 SELECT 35 % 3; -- 2
 SELECT (35 / 3) * 2; -- 11.6667
 ```
+
+---
 
 ## Calcolo campi al volo
 
@@ -433,6 +459,8 @@ ERROR 1901 (HY000): Function or expression 'dayname()' cannot be used in the GEN
 ALWAYS AS clause of `v`
 ```
 
+---
+
 Vediamo un esempio:
 
 ```sql
@@ -447,9 +475,13 @@ Non si può usare l’espressione perché utilizza la funzione CURDATE() non det
 
 Un'espressione deterministica in MySQL è un'espressione il cui risultato è sempre lo stesso quando ha gli stessi valori di input, senza importare quando o dove viene eseguita. In altre parole, una funzione o un'espressione è considerata deterministica se, date le stesse condizioni in input, produce sempre lo stesso risultato.
 
+---
+
 Esempi di espressioni deterministiche includono operazioni matematiche semplici, come l'addizione o la moltiplicazione, nonché funzioni come CONCAT, DATE_FORMAT e altre che restituiscono sempre lo stesso risultato per un determinato set di input.
 
 D'altra parte, le funzioni che coinvolgono l'ora corrente, come NOW() o CURDATE(), sono considerate non deterministiche poiché il loro risultato dipende dal momento in cui vengono eseguite. Inoltre, alcune funzioni che coinvolgono l'accesso a dati esterni o il comportamento del sistema operativo potrebbero essere considerate non deterministiche.
+
+---
 
 Le espressioni deterministiche sono importanti quando si utilizzano colonne generate, poiché tali colonne devono essere valutate in modo coerente e prevedibile ogni volta che vengono lette o aggiornate.
 
@@ -569,6 +601,7 @@ AND d.id = c.docente_id;
 ### utilizzando gli alias
 
 In questa query:
+
 - Le tabelle `studenti`, `corsi`, `iscrizioni` e `docenti` vengono rinominate rispettivamente come `s`, `c`, `i` e `d` utilizzando gli alias.
 - Viene selezionato il nome, il cognome e l'email dello studente dalla tabella `studenti` utilizzando l'alias `s`.
 - Viene selezionato il titolo del corso dalla tabella `corsi` utilizzando l'alias `c`.
