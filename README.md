@@ -3,11 +3,11 @@
 ---
 
 - [Algebra Relazionale](01_AlgebraRelazionale/01_alegbra_relazionale.md) 
-- [Il Modello RELAZIONALE](./01_AlgebraRelazionale/02_modello_relazionale.md) 
+- [Modello_concettuale_logico](01_AlgebraRelazionale/10_Modello_concettuale_logico.md)
+- [Il Modello RELAZIONALE](02_SQL_Fondamenti/02_modello_relazionale.md) 
 - [Codd](01_AlgebraRelazionale/codd.png)
 - [12 regole](01_AlgebraRelazionale/04_Boyce-Codd.md)
 - [Diagramm_ER](01_AlgebraRelazionale/08_Diagramm_ER.md)
-- [Modello_concettuale_logico](01_AlgebraRelazionale/10_Modello_concettuale_logico.md)
 - [ERD_entities](01_AlgebraRelazionale/13_ERD_entities.md)
 - [ERD_attributes](01_AlgebraRelazionale/14_ERD_attributes.md)
 - [ERD_relations](01_AlgebraRelazionale/15_ERD_relations.md)
@@ -23,12 +23,12 @@
 - [Integrità referenziale](03_SQL_CostruttiAvanzati/08_vincoli_integrita.md) 
 - [Union e JOIN](03_SQL_CostruttiAvanzati/05_Join.md) 
 - [Funzioni](03_SQL_CostruttiAvanzati/11_funzioni.md)
-- Raggruppamenti
-- [Funzioni finestra (Windows Function)](03_SQL_CostruttiAvanzati/15_windows_functions.md) 
+- [Raggruppamenti](03_SQL_CostruttiAvanzati/04_Filtraggio.md)
 - [Viste](03_SQL_CostruttiAvanzati/07_viste.md)
 - [Sub Query](03_SQL_CostruttiAvanzati/04_Filtraggio.md)
 - [Indici](03_SQL_CostruttiAvanzati/06_indici.md)
 - [Triggers](03_SQL_CostruttiAvanzati/12_trigger.md)
+- [Funzioni finestra (Windows Function)](03_SQL_CostruttiAvanzati/15_windows_functions.md) 
 - [Stored Function](03_SQL_CostruttiAvanzati/11_funzioni.md)
 - Events
 - [Stored Procedures](03_SQL_CostruttiAvanzati/13_stored_procedures.md)
