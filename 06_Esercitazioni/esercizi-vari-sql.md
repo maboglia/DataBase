@@ -1,6 +1,6 @@
 # Esercizi
 
-## 1. Esercizio (1.a)
+## 1. Esercizio
 **Tabelle:**
 - **CORSO** (CodCorso, NomeC, Anno, Semestre)  
 - **ORARIO-LEZIONI** (CodCorso, GiornoSettimana, OraInizio, OraFine, Aula)  
@@ -10,7 +10,7 @@ Trovare le aule in cui non si tengono mai lezioni di corsi del primo anno.
 
 ---
 
-## 2. Esercizio (1.b)
+## 2. Esercizio
 **Tabelle:**
 - **CORSO** (CodCorso, NomeC, Anno, Semestre)  
 - **ORARIO-LEZIONI** (CodCorso, GiornoSettimana, OraInizio, OraFine, Aula)  
@@ -20,7 +20,7 @@ Trovare codice corso, nome corso e numero totale di ore di lezione settimanali p
 
 ---
 
-## 3. Esercizio (1.a)
+## 3. Esercizio
 **Tabelle:**
 - **ALLOGGIO** (CodA, Indirizzo, Città, Superficie, CostoAffittoMensile)  
 - **CONTRATTO-AFFITTO** (CodC, DataInizio, DataFine, NomePersona, CodA)  
@@ -39,7 +39,7 @@ Trovare, per le città in cui sono stati stipulati almeno 100 contratti:
 
 ---
 
-## 4. Esercizio (1.b)
+## 4. Esercizio
 **Tabelle:**
 - **ALLOGGIO** (CodA, Indirizzo, Città, Superficie, CostoAffittoMensile)  
 - **CONTRATTO-AFFITTO** (CodC, DataInizio, DataFine, NomePersona, CodA)  
@@ -52,7 +52,7 @@ Trovare il nome delle persone che non hanno mai affittato alloggi con superficie
 
 ---
 
-## 5. Esercizio (2.a)
+## 5. Esercizio
 **Tabelle:**
 - **AEREI** (Matr, Modello, NumPosti)  
 - **ORARIO** (Sigla, ParteDa, Destinaz, OraPart, OraArr)  
@@ -63,7 +63,7 @@ Trovare la sigla e l’ora di partenza dei voli in partenza da Milano per Napoli
 
 ---
 
-## 6. Esercizio (2.a)
+## 6. Esercizio
 **Tabelle:**
 - **ORCHESTRA** (CodO, NomeO, NomrDirettore, numElementi)  
 - **CONCERTI** (CodC, Data, CodO, CodS, PrezzoBiglietto)  
@@ -74,7 +74,7 @@ Trovare il codice e il nome delle orchestre con più di 30 elementi che hanno te
 
 ---
 
-## 7. Esercizio (2.a)
+## 7. Esercizio
 **Tabelle:**
 - **CLIENTE** (Cod-Cli, Nome)  
 - **CONTO** (Cod-Conto, Saldo, Agenzia, Stato)  
@@ -85,7 +85,7 @@ Trovare tutte le agenzie che hanno almeno un cliente titolare da solo (senza coi
 
 ---
 
-## 8. Esercizio (2.a)
+## 8. Esercizio
 **Tabelle:**
 - **CONTRIBUENTE** (CodFiscale, Nome, Via, Città)  
 - **DICHIARAZIONE** (CodDichiarazione, Tipo, Reddito)  
@@ -96,7 +96,7 @@ Visualizzare codice, nome e media dei redditi dichiarati dal 1990 in poi per i c
 
 ---
 
-## 9. Esercizio (2.a)
+## 9. Esercizio
 **Tabelle:**
 - **PERSONA** (Nome, Sesso, Età)  
 - **GENITORE** (Nome-Gen, Nome-Figlio)  

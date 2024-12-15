@@ -1,6 +1,79 @@
 # Esercitazione 01
 
-## Rivista-articolo
+### Risoluzione delle interrogazioni in algebra relazionale
+
+---
+
+#### **Tabelle**
+
+- **RIVISTA** (\(CodR, NomeR, Editore\))
+- **ARTICOLO** (\(CodA, Titolo, Argomento, CodR\))
+
+**Relazione tra le tabelle:** \(ARTICOLO[CodR] \rightarrow RIVISTA[CodR]\) (chiave esterna).
+
+---
+
+#### **(a) Trovare il codice e il nome delle riviste che hanno pubblicato almeno un articolo di argomento ‘motociclismo’.**
+
+```plaintext
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento = 'motociclismo' (ARTICOLO)))
+```
+
+---
+
+#### **(b) Trovare il codice e il nome delle riviste che non hanno mai pubblicato articoli di argomento ‘motociclismo’.**
+
+```plaintext
+πCodR, NomeR (RIVISTA) − πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento = 'motociclismo' (ARTICOLO)))
+```
+
+---
+
+#### **(c) Trovare il codice e il nome delle riviste che hanno pubblicato solo articoli di motociclismo.**
+
+```plaintext
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento = 'motociclismo' (ARTICOLO)))
+−
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento ≠ 'motociclismo' (ARTICOLO)))
+```
+
+---
+
+#### **(d) Trovare il codice e il nome delle riviste che pubblicano articoli di motociclismo oppure di auto.**
+
+```plaintext
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento = 'motociclismo' ∨ Argomento = 'auto' (ARTICOLO)))
+```
+
+---
+
+#### **(e) Trovare il codice e il nome delle riviste che pubblicano articoli sia di motociclismo sia di auto.**
+
+```plaintext
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento = 'motociclismo' (ARTICOLO)))
+∩
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (σArgomento = 'auto' (ARTICOLO)))
+```
+
+---
+
+#### **(f) Trovare il codice e il nome delle riviste che hanno pubblicato almeno 2 articoli di motociclismo.**
+
+```plaintext
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (γCodR, count(CodA) → NumArticoli (σArgomento = 'motociclismo' (ARTICOLO)) ∧ NumArticoli ≥ 2))
+```
+
+---
+
+#### **(g) Trovare il codice e il nome delle riviste che hanno pubblicato un solo articolo di motociclismo. (Possono aver scritto quanti articoli desiderano relativamente ad altri argomenti).**
+
+```plaintext
+πCodR, NomeR (RIVISTA ⨝ CodR = CodR (γCodR, count(CodA) → NumArticoli (σArgomento = 'motociclismo' (ARTICOLO)) ∧ NumArticoli = 1))
+```
+
+---
+
+## Rivista-articolo  SQL
 
 ```sql
 -- Creazione delle tabelle
