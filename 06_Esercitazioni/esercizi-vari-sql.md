@@ -1,7 +1,9 @@
 # Esercizi
 
 ## 1. Esercizio
+
 **Tabelle:**
+
 - **CORSO** (CodCorso, NomeC, Anno, Semestre)  
 - **ORARIO-LEZIONI** (CodCorso, GiornoSettimana, OraInizio, OraFine, Aula)  
 
@@ -11,7 +13,9 @@ Trovare le aule in cui non si tengono mai lezioni di corsi del primo anno.
 ---
 
 ## 2. Esercizio
+
 **Tabelle:**
+
 - **CORSO** (CodCorso, NomeC, Anno, Semestre)  
 - **ORARIO-LEZIONI** (CodCorso, GiornoSettimana, OraInizio, OraFine, Aula)  
 
@@ -21,7 +25,9 @@ Trovare codice corso, nome corso e numero totale di ore di lezione settimanali p
 ---
 
 ## 3. Esercizio
+
 **Tabelle:**
+
 - **ALLOGGIO** (CodA, Indirizzo, Città, Superficie, CostoAffittoMensile)  
 - **CONTRATTO-AFFITTO** (CodC, DataInizio, DataFine, NomePersona, CodA)  
 
@@ -40,7 +46,9 @@ Trovare, per le città in cui sono stati stipulati almeno 100 contratti:
 ---
 
 ## 4. Esercizio
+
 **Tabelle:**
+
 - **ALLOGGIO** (CodA, Indirizzo, Città, Superficie, CostoAffittoMensile)  
 - **CONTRATTO-AFFITTO** (CodC, DataInizio, DataFine, NomePersona, CodA)  
 
@@ -53,7 +61,9 @@ Trovare il nome delle persone che non hanno mai affittato alloggi con superficie
 ---
 
 ## 5. Esercizio
+
 **Tabelle:**
+
 - **AEREI** (Matr, Modello, NumPosti)  
 - **ORARIO** (Sigla, ParteDa, Destinaz, OraPart, OraArr)  
 - **VOLI** (Sigla, Matr, Data, PostiPren)  
@@ -64,7 +74,9 @@ Trovare la sigla e l’ora di partenza dei voli in partenza da Milano per Napoli
 ---
 
 ## 6. Esercizio
+
 **Tabelle:**
+
 - **ORCHESTRA** (CodO, NomeO, NomrDirettore, numElementi)  
 - **CONCERTI** (CodC, Data, CodO, CodS, PrezzoBiglietto)  
 - **SALE** (CodS, NomeS, Città, Capienza)  
@@ -75,7 +87,9 @@ Trovare il codice e il nome delle orchestre con più di 30 elementi che hanno te
 ---
 
 ## 7. Esercizio
+
 **Tabelle:**
+
 - **CLIENTE** (Cod-Cli, Nome)  
 - **CONTO** (Cod-Conto, Saldo, Agenzia, Stato)  
 - **CONTO-CLIENTE** (Cod-Conto, Cod-Cli)  
@@ -86,7 +100,9 @@ Trovare tutte le agenzie che hanno almeno un cliente titolare da solo (senza coi
 ---
 
 ## 8. Esercizio
+
 **Tabelle:**
+
 - **CONTRIBUENTE** (CodFiscale, Nome, Via, Città)  
 - **DICHIARAZIONE** (CodDichiarazione, Tipo, Reddito)  
 - **PRESENTA** (CodFiscale, CodDichiarazione, Data)  
@@ -97,7 +113,9 @@ Visualizzare codice, nome e media dei redditi dichiarati dal 1990 in poi per i c
 ---
 
 ## 9. Esercizio
+
 **Tabelle:**
+
 - **PERSONA** (Nome, Sesso, Età)  
 - **GENITORE** (Nome-Gen, Nome-Figlio)  
 
@@ -271,4 +289,223 @@ WHERE Età < 10
           HAVING COUNT(Nome-Gen) > 1
       )
   );
+```
+
+---
+
+### Esercizio 10  
+
+**Relazioni:**
+
+- **APPARTAMENTO(CodA, Superficie, Indirizzo, Città)**
+- **CONTRATTO-AFFITTO(CodA, DataInizio, DataFine, NomePersona, RettaMensile)**  
+
+(a) Trovare il nome delle persone che hanno stipulato più di due contratti di affitto per lo stesso appartamento (in tempi diversi).  
+(b) Trovare il codice e l’indirizzo degli appartamenti di Torino in cui la retta mensile è sempre stata superiore a 500 euro e per cui sono stati stipulati al più 5 contratti.  
+(c) Trovare il codice e l’indirizzo degli appartamenti di Torino per cui sono stati stipulati al più 5 contratti (un numero variabile tra 0 e 5).  
+
+---
+
+### Esercizio 11  
+
+**Relazioni:**
+
+- **GARA(CodG, Luogo, Data, Disciplina)**  
+- **ATLETA(CodA, Nome, Nazione, DataNascita)**  
+- **PARTECIPAZIONE(CodG, CodA, PosizioneArrivo, Tempo)**  
+
+(a) Trovare il nome e la data di nascita degli atleti italiani che non hanno partecipato a nessuna gara di discesa libera.  
+(b) Trovare le nazioni per cui concorrono almeno 5 atleti nati prima del 1980, ciascuno dei quali abbia partecipato ad almeno 10 gare di sci di fondo.  
+
+---
+
+### Esercizio 12  
+
+**Relazioni:**
+
+- **EDITORE(CodE, NomeEditore, Indirizzo, Città)**  
+- **PUBBLICAZIONE(CodP, Titolo, NomeAutore, CodE)**  
+- **LIBRERIA(CodL, NomeLibreria, Indirizzo, Città)**  
+- **VENDITA(CodP, CodL, Data, CopieVendute)**  
+
+(a) Trovare il nome delle librerie in cui non è stata venduta nessuna pubblicazione di editori con sede a Torino.  
+(b) Trovare il nome degli editori per cui almeno 10 pubblicazioni sono state vendute nel 2002 nelle librerie di Roma in più di 2.000 copie.  
+
+---
+
+### Esercizio 13  
+
+**Relazioni:**
+
+- **QUIZ(CodQuiz, Argomento, Punteggio)**  
+- **STUDENTE(Matricola, Nome, Indirizzo, Città)**  
+- **RISULTATO-TEST(Matricola, CodQuiz, RispostaCorretta)**  
+
+(a) Trovare il nome degli studenti che non hanno risposto correttamente a nessun quiz di matematica.  
+(b) Trovare il nome degli studenti di Torino che hanno conseguito il punteggio massimo possibile nei quiz di matematica.  
+
+---
+
+### Esercizio 14  
+
+**Relazioni:**
+
+- **ALLOGGIO(CodA, Indirizzo, Città, Superficie, CostoAffittoMensile)**  
+- **CONTRATTO-AFFITTO(CodC, DataInizio, DataFine, NomePersona, CodA)**  
+
+(a) Trovare il codice, l’indirizzo e la città degli alloggi che hanno una superficie superiore alla superficie media degli alloggi delle città in cui si trovano.  
+
+---
+
+### Esercizio 15  
+
+**Relazioni:**
+
+- **AEREI(Matr, Modello, NumPosti)**  
+- **ORARIO(Sigla, ParteDa, Destinaz, OraPart, OraArr)**  
+- **VOLI(Sigla, Matr, Data, PostiPren)**  
+
+(a) Trovare le tratte (città di partenza, città di arrivo) che non sono state mai effettuate con un aereo modello Boing-747.  
+
+---
+
+## Soluzioni  
+
+### Esercizio 10  
+
+**(a)**  
+```sql
+SELECT NomePersona  
+FROM CONTRATTO_AFFITTO  
+GROUP BY CodA, NomePersona  
+HAVING COUNT(*) > 2;
+```
+
+**(b)**  
+```sql
+SELECT CodA, Indirizzo  
+FROM APPARTAMENTO A  
+WHERE Città = 'Torino'  
+  AND CodA IN (SELECT CodA  
+               FROM CONTRATTO_AFFITTO  
+               GROUP BY CodA  
+               HAVING MIN(RettaMensile) > 500 AND COUNT(*) <= 5);
+```
+
+**(c)**  
+```sql
+SELECT CodA, Indirizzo  
+FROM APPARTAMENTO  
+WHERE Città = 'Torino'  
+  AND CodA IN (SELECT CodA  
+               FROM CONTRATTO_AFFITTO  
+               GROUP BY CodA  
+               HAVING COUNT(*) <= 5);
+```
+
+---
+
+### Esercizio 11  
+
+**(a)**  
+```sql
+SELECT Nome, DataNascita  
+FROM ATLETA  
+WHERE Nazione = 'Italia'  
+  AND CodA NOT IN (SELECT CodA  
+                   FROM PARTECIPAZIONE P  
+                   JOIN GARA G ON P.CodG = G.CodG  
+                   WHERE Disciplina = 'Discesa Libera');
+```
+
+**(b)**  
+```sql
+SELECT Nazione  
+FROM ATLETA A  
+WHERE DataNascita < '1980-01-01'  
+  AND (SELECT COUNT(*) FROM PARTECIPAZIONE WHERE CodA = A.CodA AND Disciplina = 'Sci di Fondo') >= 10  
+GROUP BY Nazione  
+HAVING COUNT(*) >= 5;
+```
+
+---
+
+### Esercizio 12  
+
+**(a)**  
+```sql
+SELECT NomeLibreria  
+FROM LIBRERIA  
+WHERE CodL NOT IN (SELECT CodL  
+                   FROM VENDITA V  
+                   JOIN PUBBLICAZIONE P ON V.CodP = P.CodP  
+                   JOIN EDITORE E ON P.CodE = E.CodE  
+                   WHERE E.Città = 'Torino');
+```
+
+**(b)**  
+```sql
+SELECT NomeEditore  
+FROM EDITORE E  
+JOIN PUBBLICAZIONE P ON E.CodE = P.CodE  
+JOIN VENDITA V ON P.CodP = V.CodP  
+JOIN LIBRERIA L ON V.CodL = L.CodL  
+WHERE L.Città = 'Roma'  
+  AND YEAR(V.Data) = 2002  
+GROUP BY E.CodE, NomeEditore  
+HAVING SUM(CopieVendute) > 2000 AND COUNT(P.CodP) >= 10;
+```
+
+---
+
+### Esercizio 13  
+
+**(a)**  
+```sql
+SELECT Nome  
+FROM STUDENTE S  
+WHERE NOT EXISTS (SELECT 1  
+                  FROM RISULTATO_TEST R  
+                  JOIN QUIZ Q ON R.CodQuiz = Q.CodQuiz  
+                  WHERE S.Matricola = R.Matricola AND Q.Argomento = 'Matematica' AND R.RispostaCorretta = TRUE);
+```
+
+**(b)**  
+```sql
+SELECT Nome  
+FROM STUDENTE S  
+WHERE Città = 'Torino'  
+  AND NOT EXISTS (SELECT 1  
+                  FROM QUIZ Q  
+                  WHERE Q.Argomento = 'Matematica'  
+                    AND Q.Punteggio > (SELECT SUM(RispostaCorretta)  
+                                       FROM RISULTATO_TEST R  
+                                       WHERE R.Matricola = S.Matricola AND R.CodQuiz = Q.CodQuiz));
+```
+
+---
+
+### Esercizio 14  
+
+**(a)**  
+```sql
+SELECT CodA, Indirizzo, Città  
+FROM ALLOGGIO A  
+WHERE Superficie > (SELECT AVG(Superficie)  
+                    FROM ALLOGGIO  
+                    WHERE Città = A.Città);
+```
+
+---
+
+### Esercizio 15  
+
+**(a)**  
+```sql
+SELECT DISTINCT ParteDa, Destinaz  
+FROM ORARIO  
+WHERE Sigla NOT IN (SELECT O.Sigla  
+                    FROM VOLI V  
+                    JOIN AEREI A ON V.Matr = A.Matr  
+                    WHERE A.Modello = 'Boing-747');
 ```
