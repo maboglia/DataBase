@@ -1,3 +1,9 @@
+---
+header: Fondamenti di basi di dati
+marp: true
+footer: Mauro Bogliaccino
+---
+
 # Algebra relazionale
 
 L'algebra relazionale è un linguaggio formale utilizzato nel contesto dei database relazionali per manipolare e interrogare dati. 
@@ -127,6 +133,8 @@ Alcuni simboli dell'algebra relazionale sono rappresentati con lettere greche o 
 
 4. **Intersezione** - **∩** (Intersezione)
    - Rappresenta l'operatore di intersezione tra due relazioni.
+
+---
 
 5. **Differenza** - **−** (Segno meno)
    - Rappresenta l'operatore di differenza tra due relazioni.
