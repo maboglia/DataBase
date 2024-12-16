@@ -177,3 +177,10 @@ WHERE table_schema = 'databaseName';
 ```
 
 L'`INFORMATION_SCHEMA` fornisce accesso ai metadati del database, come il nome delle tabelle, il tipo di dati delle colonne e altri dettagli. Si tratta di un database di sola lettura che contiene informazioni sul server MySQL.
+
+---
+
+## Esercizi su Create Table
+
+- [Esercizi](../02_SQL_Fondamenti/99_esempi_create_table.md)
+- [Esercizi PDF](../02_SQL_Fondamenti/99_esempi_create_table.pdf)

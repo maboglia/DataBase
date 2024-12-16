@@ -40,7 +40,7 @@ SET field1 = 'value1', field2 = 'value2', field3 = 'value2';
 
 ### INSERT INTO
 
-È possibile utilizzare il comando `INSERT INTO` senza l'uso di nomi di campo se si inserisce un record rispettando l’ordine dei campi della tabella. In questo caso, devono essere inseriti i valori di tutti i campi, anche i valori AUTO_INCREMENT o TIMESTAMP (passando "default" per inserimento automatico). Per i campi che accettano i valori nulli, è possibile passare "null".
+È possibile utilizzare il comando `INSERT INTO` senza l'uso di nomi di campo se si inserisce un record rispettando l’ordine dei campi della tabella. In questo caso, devono essere inseriti i valori di tutti i campi, **anche i valori AUTO_INCREMENT o TIMESTAMP** (passando "default" per inserimento automatico). Per i campi che accettano i valori nulli, è possibile passare "null".
 
 ```sql
 INSERT INTO tableName
@@ -138,11 +138,11 @@ WHERE field3 = value3;
 
 Dopo `UPDATE`, indichiamo quale tabella è interessata. Con `SET`, specifichiamo quali colonne modificare e quali valori assegnare. Con `WHERE` (opzionale), stabiliamo le condizioni che determinano quali righe saranno interessate dalle modifiche. Attenzione: se non specifichiamo una condizione, tutte le righe saranno modificate.
 
-Per operare simultaneamente su più campi, è sufficiente suddividere le coppie chiave/valore con una virgola.
+- Per operare simultaneamente su più campi, è sufficiente suddividere le coppie chiave/valore con una virgola.
+- Quando si inseriscono i dati in una tabella, è importante considerare sempre come sono stati definiti gli attributi per evitare errori di inserimento.
+- Se si inserisce un valore troppo lungo o non compreso dalla definizione dell’attributo, MySQL restituirà un errore e non effettuerà alcuna modifica.
 
-Quando si inseriscono i dati in una tabella, è importante sempre considerare come sono stati definiti gli attributi per evitare errori di inserimento.
-
-Se si inserisce un valore troppo lungo o non compreso dalla definizione dell’attributo, MySQL restituirà un errore e non effettuerà alcuna modifica.
+---
 
 Ad esempio, consideriamo il seguente comando di aggiornamento:
 
@@ -170,22 +170,25 @@ I DBA possono impostare la modalità SQL globale in modo che corrisponda ai requ
 
 Le modalità influiscono sulla sintassi SQL supportata da MySQL e sui controlli di convalida dei dati che esegue. Ciò semplifica l'utilizzo di MySQL in ambienti diversi e l'utilizzo di MySQL insieme ad altri server di database.
 
+---
+
 ```sql
 SELECT @@SQL_MODE;
 ```
-```
+
 +-----------------------------------------------------+
 | @@SQL_MODE                                          |
 +-----------------------------------------------------+
 | NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION |
 +-----------------------------------------------------+
-```
 
 Questo significa che se si desidera operare con una sessione che lavori in STRICT MODE (che attiva i controlli sui campi, ad esempio), è necessario impostare la variabile all'inizio della sessione di connessione:
 
 ```sql
 SET SQL_MODE='TRADITIONAL';
 ```
+
+---
 
 Per ulteriori informazioni, si veda la [documentazione ufficiale](https:/dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
 

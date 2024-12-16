@@ -407,10 +407,10 @@ Una colonna generata è una colonna in una tabella che non può essere impostata
 
 ---
 
-### Esistono due tipi di colonne generate:
+### Esistono due tipi di colonne generate
 
-- PERSISTENT (STORED): il valore di questo tipo è effettivamente memorizzato nella tabella.
-- VIRTUAL: Il valore di questo tipo non viene memorizzato affatto. Il valore viene invece generato dinamicamente quando viene eseguita una query sulla tabella. Questo tipo è l'impostazione predefinita.
+- **PERSISTENT** (STORED): il valore di questo tipo è effettivamente memorizzato nella tabella.
+- **VIRTUAL**: Il valore di questo tipo non viene memorizzato affatto. Il valore viene invece generato dinamicamente quando viene eseguita una query sulla tabella. Questo tipo è l'impostazione predefinita.
 
 Le colonne generate sono talvolta chiamate anche colonne calcolate o colonne virtuali.
 
@@ -473,13 +473,13 @@ Non si può usare l’espressione perché utilizza la funzione CURDATE() non det
 
 ### espressione deterministica
 
-Un'espressione deterministica in MySQL è un'espressione il cui risultato è sempre lo stesso quando ha gli stessi valori di input, senza importare quando o dove viene eseguita. In altre parole, una funzione o un'espressione è considerata deterministica se, date le stesse condizioni in input, produce sempre lo stesso risultato.
+Un'espressione deterministica in MySQL è un'espressione il cui **risultato è sempre lo stesso** quando ha gli **stessi valori di input**, senza importare quando o dove viene eseguita. In altre parole, una funzione o un'espressione è considerata deterministica se, **date le stesse condizioni in input, produce sempre lo stesso risultato**.
 
 ---
 
-Esempi di espressioni deterministiche includono operazioni matematiche semplici, come l'addizione o la moltiplicazione, nonché funzioni come CONCAT, DATE_FORMAT e altre che restituiscono sempre lo stesso risultato per un determinato set di input.
+Esempi di espressioni deterministiche includono operazioni matematiche semplici, come l'**addizione** o la **moltiplicazione**, nonché funzioni come **CONCAT**, **DATE_FORMAT** e altre che restituiscono sempre lo stesso risultato per un determinato set di input.
 
-D'altra parte, le funzioni che coinvolgono l'ora corrente, come NOW() o CURDATE(), sono considerate non deterministiche poiché il loro risultato dipende dal momento in cui vengono eseguite. Inoltre, alcune funzioni che coinvolgono l'accesso a dati esterni o il comportamento del sistema operativo potrebbero essere considerate non deterministiche.
+D'altra parte, le funzioni che coinvolgono l'ora corrente, come NOW() o CURDATE(), sono considerate **non deterministiche** poiché il loro risultato dipende dal momento in cui vengono eseguite. Inoltre, alcune funzioni che coinvolgono l'accesso a dati esterni o il comportamento del sistema operativo potrebbero essere considerate non deterministiche.
 
 ---
 
@@ -491,7 +491,7 @@ La scrittura di espressioni per le colonne generate in MySQL è soggetta a diver
 
 ### principali limiti
 
-Ecco un riepilogo dei principali limiti nella scrittura delle espressioni per le colonne generate:
+Ecco un riepilogo dei principali **limiti nella scrittura delle espressioni** per le colonne generate:
 
 1. **Valori letterali, funzioni integrate deterministiche e operatori**: È possibile utilizzare valori letterali (come stringhe o numeri), funzioni integrate deterministiche (che producono sempre lo stesso risultato per lo stesso set di input) e operatori nelle espressioni per le colonne generate.
 
@@ -607,5 +607,3 @@ In questa query:
 - Viene selezionato il titolo del corso dalla tabella `corsi` utilizzando l'alias `c`.
 - Viene selezionato il cognome e il nome del docente dalla tabella `docenti` utilizzando l'alias `d`.
 - La clausola WHERE specifica le condizioni di join tra le tabelle `studenti`, `corsi`, `iscrizioni` e `docenti` utilizzando gli alias definiti.
-
-
