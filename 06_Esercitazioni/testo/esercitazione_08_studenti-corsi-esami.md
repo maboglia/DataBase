@@ -114,60 +114,19 @@ Consideriamo le tabelle "Studenti", "Esami" e "Corsi". Ecco alcuni esempi di que
 
 1. **Seleziona tutti gli studenti:**
 
-   ```sql
-   SELECT * FROM Studenti;
-   ```
-
 2. **Seleziona tutti gli esami:**
-
-   ```sql
-   SELECT * FROM Esami;
-   ```
 
 3. **Seleziona tutti i corsi:**
 
-   ```sql
-   SELECT * FROM Corsi;
-   ```
-
 4. **Trova gli studenti che hanno superato l'esame con ID 1:**
-
-   ```sql
-   SELECT S.NomeStudente
-   FROM Studenti S
-   INNER JOIN Esami E ON S.StudenteID = E.StudenteID
-   WHERE E.EsameID = 1;
-   ```
 
 5. **Calcola la media dei voti di ogni studente:**
 
-   ```sql
-   SELECT S.NomeStudente, AVG(E.Voto) AS MediaVoti
-   FROM Studenti S
-   LEFT JOIN Esami E ON S.StudenteID = E.StudenteID
-   GROUP BY S.NomeStudente;
-   ```
-
 6. **Trova tutti gli esami che sono corsi nel Dipartimento di Informatica:**
-
-   ```sql
-   SELECT * FROM Esami
-   WHERE CorsoID IN (SELECT CorsoID FROM Corsi WHERE Dipartimento = 'Informatica');
-   ```
 
 7. **Conta il numero totale di esami svolti:**
 
-   ```sql
-   SELECT COUNT(*) AS NumeroEsami FROM Esami;
-   ```
-
 8. **Trova gli studenti che hanno frequentato almeno un corso:**
-
-   ```sql
-   SELECT S.NomeStudente
-   FROM Studenti S
-   WHERE S.StudenteID IN (SELECT DISTINCT E.StudenteID FROM Esami E);
-   ```
 
 
 ---
@@ -215,28 +174,9 @@ Ora, puoi eseguire alcune query su queste tabelle, come ad esempio:
 
 1. **Seleziona tutti i corsi con i relativi docenti:**
 
-   ```sql
-   SELECT Corsi.NomeCorso, Docenti.NomeDocente
-   FROM Corsi
-   INNER JOIN Docenti ON Corsi.DocenteID = Docenti.DocenteID;
-   ```
-
 2. **Trova tutti i corsi tenuti dal ProfessoreX:**
 
-   ```sql
-   SELECT Corsi.NomeCorso
-   FROM Corsi
-   INNER JOIN Docenti ON Corsi.DocenteID = Docenti.DocenteID
-   WHERE Docenti.NomeDocente = 'ProfessoreX';
-   ```
-
 3. **Calcola il numero totale di corsi per ogni dipartimento:**
-
-   ```sql
-   SELECT Dipartimento, COUNT(*) AS NumeroCorsi
-   FROM Corsi
-   GROUP BY Dipartimento;
-   ```
 
 ### Esercizi
 
