@@ -27,33 +27,27 @@ Creiamo un esempio di database per un magazzino di prodotti informatici con tre 
 
 **Prodotti:**
 
-```markdown
 | ProdottoID | NomeProdotto     | Prezzo | Categoria       |
 |------------|------------------|--------|-----------------|
 | 1          | Laptop Dell      | 1200   | Computer        |
 | 2          | Stampante HP     | 300    | Periferica      |
 | 3          | Mouse Logitech   | 50     | Accessorio      |
-```
 
 **Fornitori:**
 
-```markdown
 | FornitoreID | NomeFornitore | Indirizzo          | Email                   |
 |-------------|---------------|--------------------|-------------------------|
 | 101         | ABC Elettronica| Via Roma, 123      | abc@example.com         |
 | 102         | XYZ Computer   | Via Verdi, 456     | xyz@example.com         |
 | 103         | Tech Supplies  | Corso Italia, 789  | tech@example.com        |
-```
 
 **Inventario:**
 
-```markdown
 | MovimentoID | ProdottoID | FornitoreID | Quantita | DataMovimento |
 |-------------|------------|-------------|----------|---------------|
 | 1           | 1          | 101         | 10       | 2022-03-01    |
 | 2           | 2          | 102         | 5        | 2022-03-02    |
 | 3           | 3          | 103         | 20       | 2022-03-03    |
-```
 
 **Statement SQL per la Creazione delle Tabelle:**
 

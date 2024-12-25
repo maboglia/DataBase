@@ -102,10 +102,11 @@ WHERE Matricola IN (
   FROM Esami
   WHERE CodCorso = 102 AND Voto >= 28
 );
+```
 
 -- Spiegazione
 Questa query usa una subquery per selezionare le matricole degli studenti che hanno superato l'esame di informatica con un voto maggiore o uguale a 28. Poi, usa la clausola IN per filtrare i record della tabella Studenti che corrispondono a queste matricole. Infine, restituisce il nome e il cognome degli studenti selezionati.
-```
+
 
 **Esercizio 2**: Trova il nome del corso e il numero di crediti dei corsi che sono stati insegnati da docenti il cui cognome inizia per F.
 
