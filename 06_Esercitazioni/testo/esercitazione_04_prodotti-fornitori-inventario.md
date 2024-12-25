@@ -85,57 +85,20 @@ Puoi eseguire queste query in un sistema di gestione di database (DBMS) come MyS
 
 ---
 
-Ecco alcuni esempi di query SQL più semplici senza utilizzare le join:
+## Interrogazioni SQL
 
 1. **Seleziona tutti i prodotti:**
 
-   ```sql
-   SELECT * FROM P;
-   ```
-
 2. **Seleziona tutti i fornitori:**
-
-   ```sql
-   SELECT * FROM F;
-   ```
 
 3. **Seleziona tutte le forniture:**
 
-   ```sql
-   SELECT * FROM FP;
-   ```
-
 4. **Trova i prodotti con un prezzo superiore a 20:**
-
-   ```sql
-   SELECT * FROM P
-   WHERE Prezzo > 20;
-   ```
 
 5. **Conta il numero totale di fornitori:**
 
-   ```sql
-   SELECT COUNT(*) AS NumeroFornitori FROM F;
-   ```
-
 6. **Trova il prodotto con il prezzo massimo:**
-
-   ```sql
-   SELECT * FROM P
-   WHERE Prezzo = (SELECT MAX(Prezzo) FROM P);
-   ```
 
 7. **Calcola la quantità totale di tutte le forniture:**
 
-   ```sql
-   SELECT SUM(Quantita) AS QuantitaTotale FROM FP;
-   ```
-
 8. **Trova i fornitori con almeno 3 forniture:**
-
-   ```sql
-   SELECT F.NomeFornitore
-   FROM F
-   WHERE F.FornitoreID IN (SELECT FornitoreID FROM FP GROUP BY FornitoreID HAVING COUNT(*) >= 3);
-   ```
-
