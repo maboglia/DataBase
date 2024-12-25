@@ -3,7 +3,7 @@
 Nei database, i concetti di schema e istanza si riferiscono rispettivamente alla struttura e ai dati presenti all'interno di una base di dati. Ecco cosa si intende con ciascuno di essi:
 
 1. **Schema:**
-   - L'**schema** di una base di dati definisce la struttura logica del database, inclusi i tipi di dati, gli attributi delle tabelle e le relazioni tra le tabelle. In termini più semplici, lo schema descrive come sono organizzati i dati nel database. È una definizione fissa e solitamente non cambia spesso nel tempo.
+   - Lo **schema** di una base di dati definisce la struttura logica del database, inclusi i tipi di dati, gli attributi delle tabelle e le relazioni tra le tabelle. In termini più semplici, lo schema descrive come sono organizzati i dati nel database. È una definizione fissa e solitamente non cambia spesso nel tempo.
    - Lo schema specifica le tabelle, gli attributi, le chiavi primarie e esterne, le relazioni, e altri vincoli che determinano la struttura e le regole del database.
    - Ad esempio, uno schema potrebbe definire una tabella "Studenti" con attributi come "Matricola", "Nome" e "Cognome", e una relazione con una tabella "Corsi" attraverso una chiave esterna.
 
