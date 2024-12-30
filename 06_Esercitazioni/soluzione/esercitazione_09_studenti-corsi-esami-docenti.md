@@ -143,10 +143,10 @@ WHERE CodDocente IN (
     )
   )
 );
+```
 
 -- Spiegazione
 Questa query usa una serie di subquery per selezionare i codici dei corsi a cui ha partecipato lo studente Mario Rossi, i codici dei docenti che hanno insegnato questi corsi, e infine i nomi e i cognomi dei docenti selezionati. Si noti che le subquery sono annidate in modo da usare i risultati delle subquery precedenti come condizioni per le subquery successive.
-```
 
 ---
 
