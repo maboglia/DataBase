@@ -52,5 +52,3 @@ Gli indici sono strumenti critici per migliorare le prestazioni delle query e ac
    - Gli indici devono essere mantenuti e aggiornati durante le operazioni di inserimento, aggiornamento e cancellazione dei dati per garantire l'accuratezza delle informazioni indicizzate.
 
 Gli indici sono uno strumento potente per ottimizzare le prestazioni delle query, ma la loro progettazione e gestione richiedono una valutazione attenta delle esigenze specifiche del sistema e delle query frequenti. Una progettazione degli indici ben eseguita può contribuire in modo significativo a migliorare l'efficienza complessiva del sistema di gestione di database.
-
----

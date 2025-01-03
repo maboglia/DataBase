@@ -4,14 +4,14 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-### Definizione di Vincoli
+## Definizione di Vincoli
 
 1. **Definizione di Vincoli di Integrità Referenziale
    - I vincoli di integrità referenziale sono regole che definiscono le relazioni tra le tabelle di un database. Essi garantiscono che i riferimenti tra tabelle siano validi e che non si verifichino situazioni di "orfanità" o "padri multipli".
 
 ---
 
-### Chiavi Primarie e Chiavi Esterne
+## Chiavi Primarie e Chiavi Esterne
 
 2. **Chiavi Primarie e Chiavi Esterne
    - Un vincolo di integrità referenziale coinvolge comunemente due tipi di chiavi:
@@ -21,14 +21,14 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-### Obbligatorietà del Vincolo
+## Obbligatorietà del Vincolo
 
 3. **Obbligatorietà del Vincolo di Chiave Esterna
    - Un vincolo di chiave esterna può essere definito come opzionale o obbligatorio. Se è obbligatorio, significa che ogni valore nella colonna esterna deve fare riferimento a un valore valido nella colonna primaria della tabella correlata.
 
 ---
 
-### esempio FOREIGN KEY
+## esempio FOREIGN KEY
 
    ```sql
    CREATE TABLE Dipartimenti (
@@ -48,7 +48,7 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-### Azione sul Riferimento
+## Azione sul Riferimento
 
 4. **Azione sul Riferimento (Cascade, Set Null, Set Default, No Action)
    - È possibile specificare l'azione da intraprendere quando si modifica o si cancella una riga nella tabella principale che è referenziata da una chiave esterna. Le opzioni comuni includono:
@@ -60,7 +60,7 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-### esempio Azione
+## esempio Azione
 
    ```sql
    CREATE TABLE Ordini (
@@ -75,7 +75,7 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-### Controllo dell'Integrità
+## Controllo dell'Integrità
 
 5. **Controllo dell'Integrità Referenziale
    - I DBMS eseguono automaticamente il controllo dell'integrità referenziale, garantendo che le regole definite nei vincoli siano rispettate.
@@ -83,7 +83,7 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-### Creazione di Vincoli
+## Creazione di Vincoli
 
 6. **Creazione di Vincoli di Integrità Referenziale
    - I vincoli di integrità referenziale possono essere definiti durante la creazione della tabella o successivamente con l'istruzione `ALTER TABLE`.

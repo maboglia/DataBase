@@ -4,14 +4,14 @@ I vincoli di unicità assicurano che i valori in una colonna o un insieme di col
 
 ---
 
-### Definizione di Vincoli
+## Definizione di Vincoli
 
 1. **Definizione di Vincoli di Unicità
    - I vincoli di unicità sono regole che garantiscono che i valori in una colonna o un insieme di colonne siano unici all'interno di una tabella. Questo significa che non possono esistere duplicati di tali valori.
 
 ---
 
-### Chiavi Uniche
+## Chiavi Uniche
 
 2. **Chiavi Uniche
    - Un tipo comune di vincolo di unicità è la chiave unica. Una chiave unica è una colonna o un insieme di colonne che devono contenere valori unici in ogni riga della tabella.
@@ -27,7 +27,7 @@ I vincoli di unicità assicurano che i valori in una colonna o un insieme di col
 
 ---
 
-### Chiavi Uniche Composite
+## Chiavi Uniche Composite
 
 3. **Chiavi Uniche Composite
    - Le chiavi uniche possono coinvolgere più di una colonna, creando così chiavi uniche composite.
@@ -45,7 +45,7 @@ I vincoli di unicità assicurano che i valori in una colonna o un insieme di col
 
 ---
 
-### Vincoli di Unicità
+## Vincoli di Unicità
 
 4. **Vincoli di Unicità e NULL
    - I vincoli di unicità considerano NULL come un valore, ma un campo contrassegnato come NULL può contenere più di un valore NULL. Pertanto, è possibile avere più di una riga con valori NULL in una colonna contrassegnata come unica.
@@ -62,7 +62,7 @@ I vincoli di unicità assicurano che i valori in una colonna o un insieme di col
 
 ---
 
-### Vincoli di Unicità
+## Vincoli di Unicità
 
 5. **Vincoli di Unicità con Indici Unici
    - Nei database relazionali, i vincoli di unicità sono spesso implementati attraverso indici unici. Gli indici unici accelerano la ricerca di valori unici e consentono una rapida verifica dell'univocità.
@@ -81,14 +81,14 @@ I vincoli di unicità assicurano che i valori in una colonna o un insieme di col
 
 ---
 
-### Vincoli di Unicità
+## Vincoli di Unicità
 
 6. **Vincoli di Unicità e Controllo Automatico
    - I DBMS eseguono automaticamente il controllo dei vincoli di unicità. Se si tenta di inserire o aggiornare una riga che viola il vincolo di unicità, il DBMS restituirà un errore e impedirà l'esecuzione dell'operazione.
 
 ---
 
-### Eliminazione di Vincoli
+## Eliminazione di Vincoli
 
 7. **Eliminazione di Vincoli di Unicità
    - I vincoli di unicità possono essere eliminati se necessario. L'eliminazione di un vincolo di unicità rimuoverà anche l'indice unico associato, se presente.
@@ -104,14 +104,14 @@ I vincoli di unicità sono strumenti importanti per garantire l'integrità dei d
 
 ---
 
-### Definizione di Vincoli
+## Definizione di Vincoli
 
 1. **Definizione di Vincoli di Unicità
    - I vincoli di unicità sono regole che assicurano che i valori in una colonna o in un insieme di colonne siano univoci all'interno di una tabella. Questo significa che non possono esistere duplicati nei dati di una colonna o di un gruppo di colonne specifico.
 
 ---
 
-### Chiavi Uniche
+## Chiavi Uniche
 
 2. **Chiavi Uniche
    - Un tipo comune di vincolo di unicità è la chiave unica. Una chiave unica garantisce che i valori in una colonna o in un gruppo di colonne siano univoci. A differenza delle chiavi primarie, le chiavi uniche possono contenere valori NULL, ma ogni valore non NULL deve essere unico.
@@ -128,7 +128,7 @@ I vincoli di unicità sono strumenti importanti per garantire l'integrità dei d
 
 ---
 
-### Vincoli di Unicità
+## Vincoli di Unicità
 
 3. **Vincoli di Unicità su più Colonne
    - È possibile applicare vincoli di unicità a più colonne, creando un'unicità basata sulla combinazione di valori in queste colonne.
@@ -146,14 +146,14 @@ I vincoli di unicità sono strumenti importanti per garantire l'integrità dei d
 
 ---
 
-### Vincoli di Unicità
+## Vincoli di Unicità
 
 4. **Vincoli di Unicità e Indici
    - I DBMS possono implementare i vincoli di unicità utilizzando gli indici per migliorare le prestazioni delle operazioni di ricerca. L'indice associato al vincolo di unicità accelera la verifica dell'unicità dei valori.
 
 ---
 
-### Controllo dell'Integrità
+## Controllo dell'Integrità
 
 5. **Controllo dell'Integrità con Vincoli di Unicità
    - I vincoli di unicità aiutano a garantire l'integrità dei dati, evitando la presenza di duplicati nelle colonne specificate. Il DBMS impedirà l'inserimento o l'aggiornamento di dati che violerebbero il vincolo.
@@ -169,7 +169,7 @@ I vincoli di unicità sono strumenti importanti per garantire l'integrità dei d
 
 ---
 
-### Rimozione di Vincoli
+## Rimozione di Vincoli
 
 6. **Rimozione di Vincoli di Unicità
    - È possibile rimuovere un vincolo di unicità se necessario. L'operazione può variare a seconda del DBMS utilizzato.
@@ -184,7 +184,7 @@ I vincoli di unicità sono strumenti importanti per garantire l'integrità dei d
 
 ---
 
-### Uso dei Vincoli
+## Uso dei Vincoli
 
 7. **Uso dei Vincoli di Unicità in Applicazioni
    - I vincoli di unicità possono essere utilizzati nelle applicazioni per garantire che i dati siano coerenti e privi di duplicati. Quando si progetta il modello di dati, è importante considerare quali colonne richiedono unicità per soddisfare i requisiti dell'applicazione.
@@ -201,14 +201,14 @@ Parliamo ora degli "Indici nei Database Relazionali". Gli indici sono strumenti 
 
 ---
 
-### Definizione di Indice
+## Definizione di Indice
 
 1. **Definizione di Indice
    - Un indice è una struttura dati che migliora la velocità delle operazioni di ricerca, ordinamento e accesso ai dati di una tabella. Gli indici sono costruiti su una o più colonne della tabella.
 
 ---
 
-### Scopi degli Indici
+## Scopi degli Indici
 
 2. **Scopi degli Indici
    - **Miglioramento delle Prestazioni delle Query:** Gli indici accelerano le operazioni di ricerca, rendendo più efficienti le query che coinvolgono le colonne indicizzate.
@@ -218,7 +218,7 @@ Parliamo ora degli "Indici nei Database Relazionali". Gli indici sono strumenti 
 
 ---
 
-### Tipi di Indici
+## Tipi di Indici
 
 3. **Tipi di Indici
    - I database relazionali supportano vari tipi di indici, tra cui:
@@ -238,7 +238,7 @@ Parliamo ora degli "Indici nei Database Relazionali". Gli indici sono strumenti 
 
 ---
 
-### Creazione di Indici
+## Creazione di Indici
 
 4. **Creazione di Indici
    - Gli indici possono essere creati durante la definizione della tabella o successivamente mediante l'istruzione `CREATE INDEX`. Ad esempio:
@@ -253,7 +253,7 @@ Parliamo ora degli "Indici nei Database Relazionali". Gli indici sono strumenti 
 
 ---
 
-### Eliminazione di Indici
+## Eliminazione di Indici
 
 5. **Eliminazione di Indici
    - Gli indici possono essere eliminati quando non sono più necessari. La creazione o l'eliminazione di indici deve essere bilanciata per ottimizzare le prestazioni senza aggiungere eccessivamente al carico di manutenzione.
@@ -265,136 +265,16 @@ Parliamo ora degli "Indici nei Database Relazionali". Gli indici sono strumenti 
 
 ---
 
-### Considerazioni sull'Impatto
+## Considerazioni sull'Impatto
 
 6. **Considerazioni sull'Impatto delle Modifiche
    - Le modifiche alla struttura di una tabella, come l'inserimento, l'aggiornamento o la cancellazione di dati, possono influire sugli indici. Bisogna bilanciare l'ottimizzazione delle query con l'impatto delle modifiche sulle prestazioni degli indici.
 
 ---
 
-### Monitoraggio degli Indici
+## Monitoraggio degli Indici
 
 7. **Monitoraggio degli Indici
    - Il monitoraggio delle prestazioni degli indici è importante per garantire che continuino a fornire benefici. Gli strumenti di gestione del database spesso forniscono informazioni sulle statistiche degli indici, che possono essere utili per l'ottimizzazione.
 
 Gli indici sono uno strumento essenziale per migliorare le prestazioni delle query nei database relazionali. La loro progettazione e gestione richiedono un equilibrio attento tra le esigenze delle query e l'impatto sulle prestazioni globali del database.
-
----
-
-Parliamo ora delle "Procedure di Ottimizzazione delle Query" nei database relazionali. L'ottimizzazione delle query è un aspetto cruciale per garantire prestazioni efficienti nei sistemi di gestione di database, specialmente quando si lavora con grandi volumi di dati.
-
----
-
-### Definizione di Ottimizzazione
-
-1. **Definizione di Ottimizzazione delle Query
-   - L'ottimizzazione delle query si riferisce al processo di miglioramento delle prestazioni di una query SQL. Questo coinvolge la progettazione e l'implementazione di strategie per eseguire le query in modo più veloce ed efficiente.
-
----
-
-### Piano di Esecuzione
-
-2. **Piano di Esecuzione delle Query
-   - Il piano di esecuzione di una query è un piano dettagliato che il sistema di gestione di database crea per determinare il modo più efficiente per eseguire una query. Comprende informazioni sulle operazioni, gli accessi alle tabelle, gli indici utilizzati e altro.
-
----
-
-### Indici
-
-3. **Indici
-   - Gli indici sono strutture di dati che migliorano la velocità di recupero dei dati. L'uso di indici appropriati può notevolmente accelerare le operazioni di ricerca, filtraggio e ordinamento.
-
-   ```sql
-   -- Esempio di creazione di un indice su una colonna
-   CREATE INDEX idx_NomeIndice ON Tabella (Colonna);
-   ```
-
----
-
-### Statistiche delle Tabelle
-
-4. **Statistiche delle Tabelle
-   - Le statistiche delle tabelle forniscono informazioni al sistema di gestione del database sulla distribuzione dei dati all'interno di una tabella. Queste statistiche aiutano il sistema a prendere decisioni migliori riguardo al piano di esecuzione delle query.
-
-   ```sql
-   -- Aggiornamento delle statistiche
-   UPDATE STATISTICS Tabella;
-   ```
-
----
-
-### Riscrittura delle Query
-
-5. **Riscrittura delle Query
-   - Talvolta, una semplice riscrittura della query può migliorare notevolmente le prestazioni. Ciò può includere la modifica del modo in cui vengono effettuate le join, la suddivisione di una query complessa in più query più semplici o la riduzione del numero di colonne restituite.
-
----
-
-### Utilizzo di Indici
-
-6. **Utilizzo di Indici Coperti (Covering Index)
-   - Un indice coperto è un indice che contiene tutte le colonne richieste da una query, eliminando la necessità di accedere alla tabella stessa. Questo può ridurre significativamente il costo delle operazioni di lettura.
-
-   ```sql
-   -- Esempio di creazione di un indice coperto
-   CREATE INDEX idx_Coperto ON Tabella (Colonna1, Colonna2) INCLUDE (Colonna3, Colonna4);
-   ```
-
----
-
-### Uso di Ottimizzatori
-
-7. **Uso di Ottimizzatori di Query
-   - I sistemi di gestione di database utilizzano ottimizzatori di query per determinare il miglior piano di esecuzione. Comprendere come funziona l'ottimizzatore e come influenzare le sue decisioni è essenziale per migliorare le prestazioni.
-
-   ```sql
-   -- Esempio di suggerimento di indice in SQL Server
-   SELECT *
-   FROM Tabella WITH (INDEX (idx_NomeIndice))
-   WHERE Colonna = 'Valore';
-   ```
-
----
-
-### Partizionamento delle Tabelle
-
-8. **Partizionamento delle Tabelle
-   - Il partizionamento delle tabelle consiste nel suddividere una grande tabella in parti più piccole chiamate partizioni. Questo può migliorare le prestazioni delle operazioni di query e di manutenzione.
-
-   ```sql
-   -- Esempio di creazione di una tabella partizionata
-   CREATE TABLE TabellaPartizionata
-   (
-       Colonna1 INT,
-       Colonna2 VARCHAR(50)
-   )
-   PARTITION BY RANGE (Colonna1)
-   (
-       PARTITION P1 VALUES LESS THAN (100),
-       PARTITION P2 VALUES LESS THAN (200),
-       PARTITION P3 VALUES LESS THAN (MAXVALUE)
-   );
-   ```
-
----
-
-### Analisi del Piano
-
-9. **Analisi del Piano di Esecuzione
-   - Analizzare il piano di esecuzione della query può fornire informazioni preziose su come il sistema di gestione del database sta interpretando e eseguendo la query. Questo può aiutare a identificare eventuali punti di ottimizzazione.
-
-   ```sql
-   -- Abilita il piano di esecuzione
-   SET SHOWPLAN_TEXT ON;
-   ```
-
----
-
-### Utilizzo di Strumenti
-
-10. **Utilizzo di Strumenti di Monitoraggio delle Prestazioni
-    - Gli strumenti di monitoraggio delle prestazioni possono aiutare a identificare le query che richiedono ottimizzazione. Questi strumenti forniscono informazioni dettagliate sulle query in esecuzione, i tempi di esecuzione e altro.
-
-L'ottimizzazione delle query è un processo continuo e dinamico. Comprenderne i principi fondamentali
-
----
