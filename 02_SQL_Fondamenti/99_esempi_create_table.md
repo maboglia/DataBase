@@ -247,4 +247,3 @@ Spiegazione dettagliata dei tipi di dato utilizzati nelle istruzioni SQL delle t
 - **Efficienza**: Ogni tipo è scelto per ottimizzare lo spazio e la performance. Ad esempio, `DECIMAL` è più preciso rispetto a `FLOAT` per valori monetari.  
 - **Sicurezza**: Vincoli come `NOT NULL` e `UNIQUE` garantiscono integrità dei dati.  
 - **Compatibilità**: Questi tipi di dato sono ampiamente supportati nei database SQL (MySQL, PostgreSQL, SQL Server, ecc.).
-

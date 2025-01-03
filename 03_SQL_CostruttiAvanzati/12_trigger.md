@@ -6,20 +6,18 @@ footer: Mauro Bogliaccino
 
 # Trigger
 
----
-
-Parliamo ora dei "Trigger" nei database relazionali. Un trigger è un tipo di procedura memorizzata che viene eseguita automaticamente in risposta a determinati eventi sulle tabelle o le viste del database.
+Un trigger è un tipo di procedura memorizzata che viene eseguita automaticamente in risposta a determinati eventi sulle tabelle o le viste del database.
 
 ---
 
-### Definizione di Trigger
+## Definizione di Trigger
 
 1. **Definizione di Trigger
    - Un trigger è un insieme di istruzioni SQL che viene attivato automaticamente ("triggered") in risposta a specifici eventi del database, come l'inserimento, l'aggiornamento o la cancellazione di dati in una tabella.
 
 ---
 
-### Eventi che Attivano
+## Eventi che Attivano
 
 2. **Eventi che Attivano Trigger
    - I trigger possono essere attivati da diversi eventi, tra cui:
@@ -32,7 +30,7 @@ Parliamo ora dei "Trigger" nei database relazionali. Un trigger è un tipo di pr
 
 ---
 
-### Scopi dei Trigger
+## Scopi dei Trigger
 
 3. **Scopi dei Trigger
    - **Validazione dei Dati:** I trigger possono essere utilizzati per applicare regole di validazione ai dati prima che vengano inseriti o aggiornati.
@@ -42,7 +40,7 @@ Parliamo ora dei "Trigger" nei database relazionali. Un trigger è un tipo di pr
 
 ---
 
-### Creazione di Trigger
+## Creazione di Trigger
 
 4. **Creazione di Trigger
    - Ecco un esempio di creazione di un trigger in SQL Server che registra le modifiche apportate a una tabella degli ordini:
@@ -62,7 +60,7 @@ Parliamo ora dei "Trigger" nei database relazionali. Un trigger è un tipo di pr
 
 ---
 
-### Accesso ai Dati
+## Accesso ai Dati
 
 5. **Accesso ai Dati Trigger
    - I trigger possono accedere ai dati interessati attraverso i riferimenti `INSERTED` e `DELETED`, che contengono le nuove e vecchie versioni delle righe coinvolte.
@@ -87,14 +85,14 @@ Parliamo ora dei "Trigger" nei database relazionali. Un trigger è un tipo di pr
 
 ---
 
-### Gestione degli Errori
+## Gestione degli Errori
 
 6. **Gestione degli Errori nei Trigger
    - È importante gestire gli errori nei trigger per evitare comportamenti indesiderati nel database. Questo può essere fatto utilizzando blocchi TRY...CATCH o altre tecniche specifiche del DBMS.
 
 ---
 
-### Disabilitazione e Eliminazione
+## Disabilitazione e Eliminazione
 
 7. **Disabilitazione e Eliminazione dei Trigger
    - I trigger possono essere temporaneamente disabilitati o eliminati se necessario. La disabilitazione può essere utile durante l'importazione di grandi quantità di dati o durante operazioni di manutenzione.

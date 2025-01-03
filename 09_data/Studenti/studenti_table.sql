@@ -1,4 +1,6 @@
 
+DROP TABLE IF EXISTS studenti;
+
 CREATE TABLE studenti (
   id INT AUTO_INCREMENT,
   nome VARCHAR(50),

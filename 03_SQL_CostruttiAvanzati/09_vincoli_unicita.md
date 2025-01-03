@@ -1,6 +1,6 @@
 # Vincoli di Unicità
 
-Continuiamo parlando dei "Vincoli di Unicità" nei database relazionali. I vincoli di unicità assicurano che i valori in una colonna o un insieme di colonne siano unici in tutta la tabella, impedendo la presenza di duplicati.
+I vincoli di unicità assicurano che i valori in una colonna o un insieme di colonne siano unici in tutta la tabella, impedendo la presenza di duplicati.
 
 ---
 

@@ -27,7 +27,7 @@ Tabella FP -> FornitoriProdotti
 ### Esercizi
 
 - Trovare la taglia e il nome dei prodotti di colore rosso o giallo
-- rovare la taglia e il nome dei prodotti di colore rosso e taglia maggiore di 42
+- Trovare la taglia e il nome dei prodotti di colore rosso e taglia maggiore di 42
 - Trovare il codice dei fornitori che forniscono almeno un prodotto
 - Trovare il codice dei fornitori che forniscono almeno un prodotto rosso
 - Trovare il nome dei fornitori che forniscono almeno un prodotto rosso

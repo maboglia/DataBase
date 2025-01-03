@@ -1,10 +1,10 @@
 # Procedure Memorizzate
 
-Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizzate sono un tipo di oggetto di database che contengono una o più istruzioni SQL e possono essere eseguite da un'applicazione o da altri oggetti del database.
+Le procedure memorizzate sono un tipo di oggetto di database che contengono una o più istruzioni SQL e possono essere eseguite da un'applicazione o da altri oggetti del database.
 
 ---
 
-### Definizione di Procedure
+## Definizione di Procedure
 
 1. **Definizione di Procedure Memorizzate
    - Una procedura memorizzata è una raccolta di istruzioni SQL predefinite e precompilate che possono essere eseguite su richiesta.
@@ -12,7 +12,7 @@ Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizz
 
 ---
 
-### Vantaggi delle Procedure
+## Vantaggi delle Procedure
 
 2. **Vantaggi delle Procedure Memorizzate
    - **Riutilizzo del Codice:** Le procedure memorizzate consentono di riutilizzare il codice SQL, evitando la duplicazione delle istruzioni in più parti dell'applicazione.
@@ -22,7 +22,7 @@ Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizz
 
 ---
 
-### Creazione di Procedure
+## Creazione di Procedure
 
 3. **Creazione di Procedure Memorizzate
    - Le procedure memorizzate vengono create attraverso il linguaggio SQL. Un esempio di creazione di una procedura memorizzata in MySQL potrebbe apparire così:
@@ -42,7 +42,7 @@ Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizz
 
 ---
 
-### Parametri delle Procedure
+## Parametri delle Procedure
 
 4. **Parametri delle Procedure
    - Le procedure memorizzate possono accettare parametri che fungono da input o output durante l'esecuzione.
@@ -59,7 +59,7 @@ Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizz
 
 ---
 
-### Esecuzione di Procedure
+## Esecuzione di Procedure
 
 5. **Esecuzione di Procedure Memorizzate
    - Le procedure memorizzate possono essere eseguite attraverso un'applicazione o attraverso strumenti di gestione del database. L'esecuzione di una procedura può restituire risultati o modificare i dati nel database.
@@ -72,7 +72,7 @@ Parliamo ora delle "Procedure Memorizzate" in un database. Le procedure memorizz
 
 ---
 
-### Drop di Procedure
+## Drop di Procedure
 
 6. **Drop di Procedure Memorizzate
    - Le procedure memorizzate possono essere eliminate dal database quando non sono più necessarie. L'eliminazione può essere eseguita con il comando `DROP PROCEDURE`.
@@ -96,14 +96,14 @@ Parliamo ora degli "Stored Procedures di Sistema". Le Stored Procedures di Siste
 
 ---
 
-### Definizione di Stored
+## Definizione di Stored
 
 1. **Definizione di Stored Procedures di Sistema
    - Le Stored Procedures di Sistema sono un insieme di procedure predefinite fornite dal DBMS per eseguire operazioni specifiche o fornire informazioni sul sistema.
 
 ---
 
-### Scopi delle Stored
+## Scopi delle Stored
 
 2. **Scopi delle Stored Procedures di Sistema
    - **Gestione del Sistema:** Le Stored Procedures di Sistema possono essere utilizzate per gestire aspetti specifici del sistema di database, come la creazione o la modifica di tabelle, gli indici, gli utenti, ecc.
@@ -112,7 +112,7 @@ Parliamo ora degli "Stored Procedures di Sistema". Le Stored Procedures di Siste
 
 ---
 
-### Esempi di Stored
+## Esempi di Stored
 
 3. **Esempi di Stored Procedures di Sistema
    - Gli esempi di Stored Procedures di Sistema possono variare a seconda del DBMS utilizzato. Di seguito, alcuni esempi generici:
@@ -130,28 +130,28 @@ Parliamo ora degli "Stored Procedures di Sistema". Le Stored Procedures di Siste
 
 ---
 
-### Accesso alle Stored
+## Accesso alle Stored
 
 4. **Accesso alle Stored Procedures di Sistema
    - Le Stored Procedures di Sistema sono di solito accessibili agli amministratori del database o agli utenti con privilegi speciali. L'accesso può variare a seconda del DBMS specifico.
 
 ---
 
-### Personalizzazione delle Stored
+## Personalizzazione delle Stored
 
 5. **Personalizzazione delle Stored Procedures di Sistema
    - In alcuni casi, le Stored Procedures di Sistema possono essere personalizzate o estese per adattarsi alle esigenze specifiche dell'ambiente di database. Questo può essere fatto in DBMS che supportano la personalizzazione delle Stored Procedures di Sistema.
 
 ---
 
-### Monitoraggio e Diagnostica
+## Monitoraggio e Diagnostica
 
 6. **Monitoraggio e Diagnostica
    - Le Stored Procedures di Sistema spesso forniscono strumenti per monitorare le prestazioni del database e diagnosticare eventuali problemi. Possono essere utilizzate per raccogliere informazioni su query lente, blocchi, errori di sistema, ecc.
 
 ---
 
-### Esempio di Stored
+## Esempio di Stored
 
 7. **Esempio di Stored Procedure di Monitoraggio (SQL Server)
 
@@ -162,7 +162,7 @@ Parliamo ora degli "Stored Procedures di Sistema". Le Stored Procedures di Siste
 
 ---
 
-### Documentazione delle Stored
+## Documentazione delle Stored
 
 8. **Documentazione delle Stored Procedures di Sistema
    - La documentazione del DBMS fornirà dettagli su tutte le Stored Procedures di Sistema disponibili, le loro funzioni e come utilizzarle. È importante fare riferimento alla documentazione specifica del DBMS utilizzato.

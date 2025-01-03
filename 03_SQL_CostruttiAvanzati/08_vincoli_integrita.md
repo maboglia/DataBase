@@ -1,6 +1,6 @@
 # Vincoli di Integrità Referenziale
 
-Parliamo ora dei "Vincoli di Integrità Referenziale" nei database relazionali. I vincoli di integrità referenziale sono regole che assicurano che le relazioni tra le tabelle di un database siano coerenti e che i riferimenti tra chiavi esterne e chiavi primarie siano validi.
+I vincoli di integrità referenziale sono regole che assicurano che le relazioni tra le tabelle di un database siano coerenti e che i riferimenti tra chiavi esterne e chiavi primarie siano validi.
 
 ---
 
@@ -94,5 +94,3 @@ Parliamo ora dei "Vincoli di Integrità Referenziale" nei database relazionali. 
    ```
 
    Questo comando aggiunge un vincolo di integrità referenziale alla tabella `DettaglioOrdine` che fa riferimento alla chiave primaria `Prodotto
-
----

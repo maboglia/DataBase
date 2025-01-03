@@ -1,14 +1,6 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
----
+# le "Viste" in un database relazionale
 
-## le "Viste" in un database relazionale
-
----
-
-Parliamo ora delle "Viste" in un database relazionale. Una vista è un'istanza virtualizzata di una tabella, ottenuta attraverso una query SQL, che può essere utilizzata come se fosse una tabella fisica. Le viste forniscono un modo per astrarre e semplificare la complessità delle query, migliorando la gestione e la sicurezza dei dati.
+Una **vista** è un'istanza virtualizzata di una tabella, ottenuta attraverso una query SQL, che può essere utilizzata come se fosse una tabella fisica. Le viste forniscono un modo per **astrarre e semplificare la complessità delle query**, migliorando la gestione e la sicurezza dei dati.
 
 ---
 

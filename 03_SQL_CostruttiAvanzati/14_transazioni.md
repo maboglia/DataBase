@@ -12,14 +12,14 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Definizione di Transazione
+## Definizione di Transazione
 
 1. **Definizione di Transazione
    - Una transazione rappresenta una sequenza di uno o più comandi SQL eseguiti come un'unica operazione. Le transazioni sono progettate per garantire l'integrità e la coerenza dei dati, garantendo che un insieme di operazioni sia eseguito completamente o non affatto.
 
 ---
 
-### Proprietà ACID
+## Proprietà ACID
 
 2. **Proprietà ACID
    - Le transazioni devono rispettare le proprietà ACID per garantire la coerenza e la durabilità dei dati:
@@ -30,7 +30,7 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Inizio e Fine
+## Inizio e Fine
 
 3. **Inizio e Fine di una Transazione
    - Una transazione inizia con l'istruzione `BEGIN TRANSACTION` e può terminare con `COMMIT` se tutte le operazioni sono state eseguite con successo, o con `ROLLBACK` se si verifica un errore o se è necessario annullare la transazione.
@@ -45,7 +45,7 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Commit e Rollback
+## Commit e Rollback
 
 4. **Commit e Rollback
    - `COMMIT` conferma tutte le modifiche apportate dalla transazione e le rende permanenti nel database.
@@ -53,7 +53,7 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Punti di Salvataggio
+## Punti di Salvataggio
 
 5. **Punti di Salvataggio (Savepoints)
    - I punti di salvataggio consentono di creare punti intermedi all'interno di una transazione. In caso di errore, è possibile eseguire un `ROLLBACK` solo fino a un certo punto anziché annullare l'intera transazione.
@@ -68,7 +68,7 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Isolamento delle Transazioni
+## Isolamento delle Transazioni
 
 6. **Isolamento delle Transazioni
    - L'isolamento delle transazioni assicura che le operazioni di una transazione non siano visibili ad altre transazioni fino al termine della prima. Questo è gestito attraverso il concetto di livelli di isolamento, come `READ COMMITTED`, `REPEATABLE READ`, o `SERIALIZABLE`.
@@ -85,7 +85,7 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Gestione degli Errori
+## Gestione degli Errori
 
 7. **Gestione degli Errori
    - La gestione degli errori è cruciale nella gestione delle transazioni. L'utilizzo di blocchi `TRY...CATCH` (o equivalenti) può catturare errori e gestirli in modo appropriato, ad esempio eseguendo un `ROLLBACK` in caso di fallimento.
@@ -106,7 +106,7 @@ Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei datab
 
 ---
 
-### Transazioni Distribuite
+## Transazioni Distribuite
 
 8. **Transazioni Distribuite
    - In un ambiente distribuito, le transazioni possono coinvolgere più database o sistemi. La gestione delle transazioni distribuite richiede protocolli specifici, come il protocollo Two-Phase Commit (2PC).
@@ -133,7 +133,7 @@ Parliamo ora delle "Transazioni" e della "Gestione della Concorrenza". Le transa
 
 ---
 
-### Transazioni
+## Transazioni
 
 1. **Transazioni
    - Una transazione rappresenta un'unità atomica di lavoro in un database. Questo significa che tutte le operazioni all'interno di una transazione vengono eseguite con successo o, in caso di errore, vengono annullate completamente.
@@ -157,7 +157,7 @@ Parliamo ora delle "Transazioni" e della "Gestione della Concorrenza". Le transa
 
 ---
 
-### Gestione della Concorrenza
+## Gestione della Concorrenza
 
 2. **Gestione della Concorrenza
    - In ambienti in cui più utenti accedono contemporaneamente al database, la gestione della concorrenza diventa essenziale per evitare problemi come la perdita di dati o la lettura di dati non consistenti.
@@ -170,5 +170,3 @@ Parliamo ora delle "Transazioni" e della "Gestione della Concorrenza". Le transa
 ---
 
 La corretta gestione delle transazioni e della concorrenza è essenziale per garantire la coerenza e l'integrità dei dati in ambienti multiutente. Gli sviluppatori e gli amministratori di database devono essere consapevoli di queste sfide e utilizzare pratiche e strumenti appropriati per gestire efficacemente le transazioni in un ambiente di database relazionale.
-
----

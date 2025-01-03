@@ -10,7 +10,7 @@ Le **Stored Functions** (funzioni memorizzate) sono blocchi di codice SQL predef
 
 ---
 
-### **Caratteristiche principali**
+## **Caratteristiche principali**
 
 - **Restituiscono un valore unico:** Le Stored Functions sono progettate per restituire un risultato, come un numero, una stringa o una data.
 - **Riutilizzabili:** Una volta definite, possono essere richiamate più volte.
@@ -19,7 +19,7 @@ Le **Stored Functions** (funzioni memorizzate) sono blocchi di codice SQL predef
 
 ---
 
-### **Sintassi di creazione**
+## **Sintassi di creazione**
 
 ```sql
 CREATE FUNCTION NomeFunzione (parametri)
@@ -39,9 +39,9 @@ END;
 
 ---
 
-### **Esempio base**
+## **Esempio base**
 
-#### **Scenario: Calcolo dell'IVA su un prezzo**
+### **Scenario: Calcolo dell'IVA su un prezzo**
 
 Supponiamo di avere una tabella `Prodotti` con una colonna `Prezzo`. Creiamo una funzione per calcolare il prezzo con IVA al 22%.
 
@@ -65,9 +65,9 @@ FROM Prodotti;
 
 ---
 
-### **Funzioni con parametri multipli**
+## **Funzioni con parametri multipli**
 
-#### **Scenario: Calcolo del salario annuale con un bonus**
+### **Scenario: Calcolo del salario annuale con un bonus**
 
 Tabella: `Dipendenti`  
 
@@ -103,7 +103,7 @@ FROM Dipendenti;
 
 ---
 
-### **Utilizzo in condizioni**
+## **Utilizzo in condizioni**
 
 Le Stored Functions possono essere usate in clausole come `WHERE` o `HAVING`.
 
@@ -118,7 +118,7 @@ WHERE CalcolaIVA(Prezzo) < 50;
 
 ---
 
-### **Gestione di errore nelle Stored Functions**
+## **Gestione di errore nelle Stored Functions**
 
 È possibile gestire errori usando controlli condizionali nel corpo della funzione.
 
@@ -146,7 +146,7 @@ FROM Prodotti;
 
 ---
 
-### **Vantaggi delle Stored Functions**
+## **Vantaggi delle Stored Functions**
 
 1. **Riutilizzabilità:** Le funzioni possono essere richiamate ovunque, riducendo la ripetizione di codice.
 2. **Manutenibilità:** La logica complessa può essere centralizzata in una funzione, semplificando le query.
@@ -154,7 +154,7 @@ FROM Prodotti;
 
 ---
 
-### **Limitazioni delle Stored Functions**
+## **Limitazioni delle Stored Functions**
 
 - Non possono eseguire operazioni che modificano i dati (come `INSERT`, `UPDATE`, o `DELETE`).
 - In alcuni DBMS, le funzioni possono essere meno efficienti rispetto a query ottimizzate direttamente.
@@ -166,14 +166,14 @@ FROM Prodotti;
 
 ---
 
-### Definizione di Funzioni
+## Definizione di Funzioni
 
 1. **Definizione di Funzioni
    - Una funzione è un blocco di codice che esegue un'operazione specifica e restituisce un valore. Le funzioni nei database possono essere incorporare (come funzioni di aggregazione) o definite dall'utente.
 
 ---
 
-### Funzioni Incorporate
+## Funzioni Incorporate
 
 2. **Funzioni Incorporate
    - I database relazionali forniscono numerose funzioni incorporate che possono essere utilizzate per eseguire operazioni comuni sui dati. Esempi includono funzioni di aggregazione come SUM, AVG, COUNT e funzioni di manipolazione delle stringhe come CONCAT, SUBSTRING, ecc.
@@ -186,7 +186,7 @@ FROM Prodotti;
 
 ---
 
-### Creazione di Funzioni
+## Creazione di Funzioni
 
 3. **Creazione di Funzioni Definite dall'Utente
    - Alcuni database consentono agli utenti di definire le proprie funzioni per eseguire operazioni personalizzate sui dati.
@@ -207,7 +207,7 @@ FROM Prodotti;
 
 ---
 
-### Chiamata di Funzioni
+## Chiamata di Funzioni
 
 4. **Chiamata di Funzioni
    - Le funzioni possono essere chiamate in una query SQL per eseguire operazioni sui dati. Le funzioni definite dall'utente o le funzioni incorporate possono essere utilizzate in questo modo.
@@ -221,7 +221,7 @@ FROM Prodotti;
 
 ---
 
-### Parametri delle Funzioni
+## Parametri delle Funzioni
 
 5. **Parametri delle Funzioni
    - Le funzioni possono accettare parametri che fungono da input per il calcolo o la manipolazione dei dati.
@@ -241,14 +241,14 @@ FROM Prodotti;
 
 ---
 
-### Funzioni con Effetti
+## Funzioni con Effetti
 
 6. **Funzioni con Effetti Collaterali
    - Le funzioni possono avere o meno effetti collaterali, ovvero modificare o accedere a dati al di fuori della funzione stessa. Le funzioni senza effetti collaterali sono spesso preferite per garantire una progettazione più prevedibile e mantenibile.
 
 ---
 
-### Funzioni Aggregate
+## Funzioni Aggregate
 
 7. **Funzioni Aggregate
    - Le funzioni aggregate operano su un insieme di valori restituendo un singolo valore aggregato. Esempi comuni includono SUM, AVG, MIN, MAX e COUNT.

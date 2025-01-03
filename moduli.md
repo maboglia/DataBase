@@ -763,10 +763,6 @@ WHERE O.Totale > 200.00;
 
 ---
 
-Ecco la traduzione e una spiegazione dei punti elencati nella schermata:
-
----
-
 ### **Traduzione**
 
 1. **Un database è qualsiasi raccolta di informazioni correlate.**  
@@ -811,5 +807,3 @@ Ecco la traduzione e una spiegazione dei punti elencati nella schermata:
 7. **Database non relazionali**  
    - Ideali per dati non strutturati o semi-strutturati, come JSON, XML, o grandi volumi di dati.  
    - Possono gestire dati più flessibili rispetto ai database relazionali, ma non garantiscono sempre relazioni forti tra i dati.
-
----

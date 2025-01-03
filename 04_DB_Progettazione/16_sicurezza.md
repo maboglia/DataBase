@@ -4,11 +4,9 @@ marp: true
 footer: Mauro Bogliaccino
 ---
 
-## Sicurezza nei Database Relazionali
+# Sicurezza nei Database Relazionali
 
----
-
-Parliamo ora della "Sicurezza nei Database Relazionali". La sicurezza è una componente critica in un sistema di gestione di database per proteggere i dati sensibili e garantire che solo utenti autorizzati possano accedere, modificare o eliminare informazioni.
+La sicurezza è una componente critica in un sistema di gestione di database per proteggere i dati sensibili e garantire che solo utenti autorizzati possano accedere, modificare o eliminare informazioni.
 
 ---
 
@@ -202,5 +200,3 @@ Parliamo ora della "Sicurezza dei Dati" in un database. La sicurezza è un aspet
    - La definizione e l'applicazione di politiche di sicurezza, che includono procedure operative standard, protocolli di accesso e procedure di emergenza, sono essenziali per mantenere un ambiente sicuro.
 
 La sicurezza dei dati è un processo continuo e deve essere considerata una priorità nella progettazione e nella gestione di un database. La combinazione di misure tecniche, processi operativi e formazione degli utenti contribuisce a creare un ambiente sicuro per i dati.
-
----

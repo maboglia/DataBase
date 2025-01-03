@@ -4,7 +4,7 @@ Le **Windows Function** (funzioni di finestra) in SQL sono funzioni avanzate uti
 
 ---
 
-### **Caratteristiche principali**
+## **Caratteristiche principali**
 
 - Le Windows Function lavorano su un *window frame* definito da clausole come `OVER()`.
 - Non riducono il numero di righe restituite, a differenza delle funzioni aggregate.
@@ -12,7 +12,7 @@ Le **Windows Function** (funzioni di finestra) in SQL sono funzioni avanzate uti
 
 ---
 
-### **Sintassi generale**
+## **Sintassi generale**
 
 ```sql
 <window_function> (<expression>)
@@ -30,7 +30,7 @@ OVER (
 
 ---
 
-### **Principali Windows Function**
+## **Principali Windows Function**
 
 1. **Funzioni di aggregazione**  
    Calcolano aggregati su una finestra.  
@@ -85,9 +85,9 @@ OVER (
 
 ---
 
-### **Esempio pratico**
+## **Esempio pratico**
 
-#### **Scenario: Analisi dei dipendenti in un'azienda**
+### **Scenario: Analisi dei dipendenti in un'azienda**
 
 Tabella: `Dipendenti`  
 
@@ -120,7 +120,7 @@ Tabella: `Dipendenti`
 
 ---
 
-### **Vantaggi delle Windows Function**
+## **Vantaggi delle Windows Function**
 
 - Permettono di calcolare valori su subset di dati senza dover aggregare o eliminare righe.
 - Facilitano analisi come trend, classifiche, e confronti temporali.
