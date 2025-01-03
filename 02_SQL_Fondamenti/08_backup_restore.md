@@ -1,10 +1,10 @@
-# **Procedure di Backup e Restore in SQL**
+# Procedure di Backup e Restore in SQL
 
 Il backup e il ripristino (restore) dei database sono operazioni fondamentali per garantire la sicurezza e la disponibilità dei dati in caso di errori, guasti o situazioni impreviste. Di seguito, esploriamo i concetti principali e le procedure per eseguire queste operazioni.
 
 ---
 
-## **Cos'è il Backup?**
+## Cos'è il Backup?
 
 Un **backup** è una copia di sicurezza dei dati del database che può essere utilizzata per ripristinare il database in uno stato precedente in caso di perdita o corruzione dei dati.
 
@@ -16,15 +16,15 @@ Un **backup** è una copia di sicurezza dei dati del database che può essere ut
 
 ---
 
-## **Cos'è il Restore?**
+## Cos'è il Restore?
 
 Il **restore** è il processo di ripristino di un database utilizzando un file di backup. Questa operazione viene effettuata in caso di perdita di dati, errori umani o guasti hardware/software.
 
 ---
 
-## **Backup e Restore in SQL Server**
+## Backup e Restore in SQL Server
 
-### **1. Backup completo**
+### 1. Backup completo
 
 **Comando SQL:**
 
@@ -39,7 +39,7 @@ WITH FORMAT;
 
 ---
 
-### **2. Backup differenziale**
+### 2. Backup differenziale
 
 **Comando SQL:**
 
@@ -53,7 +53,7 @@ WITH DIFFERENTIAL;
 
 ---
 
-### **3. Backup dei log transazionali**
+### 3. Backup dei log transazionali
 
 **Comando SQL:**
 
@@ -66,9 +66,9 @@ TO DISK = 'C:\PercorsoBackup\NomeDatabase_Log.trn';
 
 ---
 
-## **Restore in SQL Server**
+## Restore in SQL Server
 
-### **1. Ripristino di un backup completo**
+### 1. Ripristino di un backup completo
 
 **Comando SQL:**
 
@@ -82,7 +82,7 @@ WITH RECOVERY;
 
 ---
 
-### **2. Ripristino con backup differenziale**
+### 2. Ripristino con backup differenziale
 
 **Comando SQL:**
 ```sql
@@ -98,7 +98,7 @@ WITH RECOVERY;
 
 ---
 
-### **3. Ripristino con log transazionali**
+### 3. Ripristino con log transazionali
 
 **Comando SQL:**
 
@@ -116,9 +116,9 @@ WITH RECOVERY;
 
 ---
 
-## **Backup e Restore in MySQL**
+## Backup e Restore in MySQL
 
-### **1. Backup con mysqldump**
+### 1. Backup con mysqldump
 
 **Comando da terminale:**
 
@@ -131,7 +131,7 @@ mysqldump -u utente -p NomeDatabase > backup.sql
 
 ---
 
-### **2. Ripristino con dump**
+### 2. Ripristino con dump
 
 **Comando da terminale:**
 ```bash
@@ -140,9 +140,9 @@ mysql -u utente -p NomeDatabase < backup.sql
 
 ---
 
-## **Backup e Restore in PostgreSQL**
+## Backup e Restore in PostgreSQL
 
-### **1. Backup con pg_dump**
+### 1. Backup con pg_dump
 
 **Comando da terminale:**
 ```bash
@@ -152,7 +152,7 @@ pg_dump NomeDatabase > backup.sql
 
 ---
 
-### **2. Ripristino con dump**
+### 2. Ripristino con dump
 
 **Comando da terminale:**
 ```bash
@@ -161,7 +161,7 @@ psql NomeDatabase < backup.sql
 
 ---
 
-### **Backup binario**
+### Backup binario
 
 Per un backup più veloce e completo:
 ```bash
@@ -170,7 +170,7 @@ pg_basebackup -D /percorso/destinazione -F tar -X fetch
 
 ---
 
-## **Best Practice per Backup e Restore**
+## Best Practice per Backup e Restore
 
 1. **Frequenza:** Pianificare backup regolari in base all'importanza dei dati e al loro tasso di modifica.
 2. **Test del ripristino:** Verificare periodicamente la capacità di ripristinare i backup.
@@ -180,7 +180,7 @@ pg_basebackup -D /percorso/destinazione -F tar -X fetch
 
 ---
 
-## **Strumenti di Backup avanzati**
+## Strumenti di Backup avanzati
 
 1. **SQL Server Management Studio (SSMS):**
    - Interfaccia grafica per configurare backup e restore.

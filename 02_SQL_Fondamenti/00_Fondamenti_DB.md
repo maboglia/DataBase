@@ -94,11 +94,11 @@ La scelta del DBMS dipende spesso dai requisiti specifici del progetto, compresi
 
 Il DBMS costituisce l'interfaccia critica tra gli utenti e il database, offrendo funzionalità fondamentali per la gestione, la sicurezza e la manipolazione efficace dei dati.
 
-1. **Record:** 
-2. **Campi o Colonne:** 
-3. **Chiavi:** 
-4. **Relazioni tra Tabelle:** 
-5. **Attributi e Tipi di Dati:** 
+1. **Record:**
+2. **Campi o Colonne:**
+3. **Chiavi:**
+4. **Relazioni tra Tabelle:**
+5. **Attributi e Tipi di Dati:**
 
 ---
 
