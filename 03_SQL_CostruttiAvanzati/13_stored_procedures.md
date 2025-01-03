@@ -86,13 +86,10 @@ Le procedure memorizzate sono un tipo di oggetto di database che contengono una 
 Le procedure memorizzate sono uno strumento potente per la gestione e l'esecuzione di operazioni complesse all'interno di un database. La loro creazione e gestione richiedono una buona comprensione del linguaggio SQL e delle esigenze specifiche dell'applicazione.
 
 ---
----
 
 ## Stored Procedures
 
----
-
-Parliamo ora degli "Stored Procedures di Sistema". Le Stored Procedures di Sistema sono procedure predefinite fornite dal sistema di gestione del database (DBMS) che eseguono funzioni specifiche o forniscono informazioni sullo stato del database.
+Le Stored Procedures di Sistema sono procedure predefinite fornite dal sistema di gestione del database (DBMS) che eseguono funzioni specifiche o forniscono informazioni sullo stato del database.
 
 ---
 

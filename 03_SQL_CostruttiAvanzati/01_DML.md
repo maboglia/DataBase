@@ -2,7 +2,7 @@
 
 ---
 
-### Creazione, Lettura, Aggiornamento e Eliminazione dei Record (CRUD)
+## Creazione, Lettura, Aggiornamento e Eliminazione dei Record (CRUD)
 
 Una volta creata la struttura del nostro database, ci ritroveremo, ovviamente, con una serie di tabelle vuote. Prima di aggiungere record a una tabella, è necessario conoscere il tipo di dati previsto per ogni campo, quali campi non possono avere valore nullo e quali campi hanno l’incremento automatico.
 
@@ -10,7 +10,7 @@ Quando si inseriscono i dati, bisogna utilizzare le virgolette o gli apici per i
 
 ---
 
-### INSERT INTO
+## INSERT INTO
 
 `INSERT INTO` è l'istruzione utilizzata per inserire nuovi record in una tabella. Ha due parti:
 
@@ -38,7 +38,7 @@ SET field1 = 'value1', field2 = 'value2', field3 = 'value2';
 
 ---
 
-### INSERT INTO
+## INSERT INTO
 
 È possibile utilizzare il comando `INSERT INTO` senza l'uso di nomi di campo se si inserisce un record rispettando l’ordine dei campi della tabella. In questo caso, devono essere inseriti i valori di tutti i campi, **anche i valori AUTO_INCREMENT o TIMESTAMP** (passando "default" per inserimento automatico). Per i campi che accettano i valori nulli, è possibile passare "null".
 
@@ -56,7 +56,7 @@ VALUES (default, 'fabio', 'rossi', 'fbr@gmail.com', null, default);
 
 ---
 
-### Mostrare i Record di una Tabella
+## Mostrare i Record di una Tabella
 
 È possibile visualizzare i record di una tabella utilizzando l’istruzione `SELECT`. Per visualizzare tutti i record da una tabella, si usa il carattere jolly `*`. Dobbiamo anche utilizzare l’istruzione `FROM` per identificare la tabella che vogliamo interrogare. Di solito si visualizzano campi specifici, piuttosto che l'intera tabella. Dopo l’istruzione `SELECT`, elencare i campi che interessano, separati da una virgola.
 
@@ -70,7 +70,7 @@ SELECT fieldName, fieldName2, fieldName3 FROM tableName;
 
 ---
 
-### INSERT INTO ... SELECT
+## INSERT INTO ... SELECT
 
 È possibile inserire i dati prendendoli da un’altra tabella utilizzando l'istruzione `INSERT INTO ... SELECT`:
 
@@ -86,7 +86,7 @@ Nell'esempio qui sopra, abbiamo immaginato di popolare la tabella `amici` insere
 
 ---
 
-### CREATE TABLE ... SELECT
+## CREATE TABLE ... SELECT
 
 Si possono creare delle tabelle già popolate di dati mediante l'uso congiunto delle istruzioni `CREATE TABLE` e `SELECT`. 
 
@@ -105,7 +105,7 @@ Nell'esempio qui sopra, abbiamo creato la tabella `parenti` con la stessa strutt
 
 ---
 
-### Duplicare Tabelle e Contenuti
+## Duplicare Tabelle e Contenuti
 
 Se abbiamo necessità di copiare il contenuto di una tabella in un'altra tabella, possiamo utilizzare l'istruzione `CREATE TABLE` combinata con `LIKE` e le istruzioni `SELECT`.
 
@@ -126,7 +126,7 @@ Nell'esempio sopra, abbiamo duplicato la tabella `studenti` nella tabella `stude
 
 ---
 
-### UPDATE
+## UPDATE
 
 L'istruzione `UPDATE` viene utilizzata per aggiornare i record in una tabella. Questa istruzione modifica il valore presente in una colonna di un record già esistente. Viene utilizzata insieme all’istruzione `SET`.
 
@@ -162,39 +162,7 @@ Questo errore indica che il valore inserito è stato troncato perché non è con
 
 ---
 
-### SQL Mode: STRICT MODE
-
-Il server MySQL può funzionare in diverse modalità SQL e può applicare queste modalità in modo diverso per client diversi, a seconda del valore della variabile di sistema: `SQL_MODE`.
-
-I DBA possono impostare la modalità SQL globale in modo che corrisponda ai requisiti operativi del server del sito e ogni applicazione può impostare la modalità SQL della sessione in base ai propri requisiti.
-
-Le modalità influiscono sulla sintassi SQL supportata da MySQL e sui controlli di convalida dei dati che esegue. Ciò semplifica l'utilizzo di MySQL in ambienti diversi e l'utilizzo di MySQL insieme ad altri server di database.
-
----
-
-```sql
-SELECT @@SQL_MODE;
-```
-
-+-----------------------------------------------------+
-| @@SQL_MODE                                          |
-+-----------------------------------------------------+
-| NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION |
-+-----------------------------------------------------+
-
-Questo significa che se si desidera operare con una sessione che lavori in STRICT MODE (che attiva i controlli sui campi, ad esempio), è necessario impostare la variabile all'inizio della sessione di connessione:
-
-```sql
-SET SQL_MODE='TRADITIONAL';
-```
-
----
-
-Per ulteriori informazioni, si veda la [documentazione ufficiale](https:/dev.mysql.com/doc/refman/8.0/en/sql-mode.html).
-
----
-
-### Eliminazione dei Record in una Tabella
+## Eliminazione dei Record in una Tabella
 
 L'istruzione `DELETE` viene utilizzata per eliminare gruppi di record in una tabella. È necessario utilizzare la parola chiave condizionale `WHERE` per isolare quali record si desidera eliminare, altrimenti si eliminano tutti i record.
 
@@ -216,7 +184,7 @@ Nell'esempio sopra, stiamo eliminando i record dalla tabella `studenti` dove il 
 
 ---
 
-### Eliminare Tutti i Record della Tabella
+## Eliminare Tutti i Record della Tabella
 
 Per svuotare una tabella, si usa l’istruzione `TRUNCATE`. Questa soluzione è la più veloce perché elimina la struttura della tabella per poi ricrearne una uguale vuota, azzerando il valore di eventuali campi AUTO_INCREMENT.
 
@@ -234,7 +202,7 @@ La differenza principale tra `TRUNCATE` e `DELETE` è che `TRUNCATE` è un'opera
 
 ---
 
-### INFORMAZIONI SULLE TABELLE
+## INFORMAZIONI SULLE TABELLE
 
 Per conoscere la struttura della tabella con più o meno informazioni (valore dell'auto_increment, data di creazione, collation):
 
@@ -263,7 +231,7 @@ SET PERSIST information_schema_stats_expiry = 0;
 
 ---
 
-### Commenti
+## Commenti
 
 MySQL Server supporta tre stili di commento:
 
@@ -287,7 +255,7 @@ su più linee
 
 ---
 
-### Scrivere e utilizzare uno script .sql
+## Scrivere e utilizzare uno script .sql
 
 L'istruzione `SOURCE` permette a MySQL di leggere ed eseguire istruzioni SQL salvate in un file di testo con estensione `.sql`.
 
@@ -396,70 +364,70 @@ DML è utilizzato per manipolare i dati all'interno delle tabelle del database.
 
 ---
 
-### SELECT
+## SELECT
 
 1. **SELECT
    - `SELECT`: Recupera dati da una o più tabelle.
 
 ---
 
-### INSERT
+## INSERT
 
 2. **INSERT
    - `INSERT INTO`: Aggiunge nuove righe di dati a una tabella.
 
 ---
 
-### UPDATE
+## UPDATE
 
 3. **UPDATE
    - `UPDATE`: Modifica i dati esistenti in una tabella.
 
 ---
 
-### DELETE
+## DELETE
 
 4. **DELETE
    - `DELETE FROM`: Elimina righe da una tabella.
 
 ---
 
-### MERGE
+## MERGE
 
 5. **MERGE
    - `MERGE`: Esegue una combinazione di operazioni di INSERT, UPDATE e DELETE in base a una condizione di corrispondenza.
 
 ---
 
-### CALL
+## CALL
 
 6. **CALL
    - `CALL`: Esegue una procedura o funzione memorizzata.
 
 ---
 
-### EXPLAIN
+## EXPLAIN
 
 7. **EXPLAIN
    - `EXPLAIN`: Visualizza il piano di esecuzione di una query.
 
 ---
 
-### LOCK
+## LOCK
 
 8. **LOCK
    - `LOCK TABLE`: Blocca una o più tabelle per l'accesso da parte di altri utenti durante l'esecuzione di una transazione.
 
 ---
 
-### SAVEPOINT
+## SAVEPOINT
 
 9. **SAVEPOINT
    - `SAVEPOINT`: Definisce un punto all'interno di una transazione in cui è possibile effettuare il rollback.
 
 ---
 
-### SET TRANSACTION
+## SET TRANSACTION
 
 10. **SET TRANSACTION
     - `SET TRANSACTION`: Imposta le caratteristiche di una transazione, come l'isolamento e la consistenza.

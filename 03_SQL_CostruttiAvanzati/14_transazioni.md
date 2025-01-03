@@ -6,9 +6,7 @@ footer: Mauro Bogliaccino
 
 # Gestione delle Transazioni
 
----
-
-Parliamo ora dei "Transaction Management" (Gestione delle Transazioni) nei database relazionali. Le transazioni sono un concetto fondamentale per garantire la coerenza e l'integrità dei dati in un database, consentendo l'esecuzione di più operazioni come un'unica unità atomica.
+Le transazioni sono un concetto fondamentale per garantire la coerenza e l'integrità dei dati in un database, consentendo l'esecuzione di più operazioni come un'unica unità atomica.
 
 ---
 
