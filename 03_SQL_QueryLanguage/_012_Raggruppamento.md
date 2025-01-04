@@ -1,6 +1,6 @@
 # Raggruppamento e funzioni built-in
 
-Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
+Esempi di query SQL che utilizzano **funzioni** implicite (già definite e disponibili) e raggruppamenti:
 
 ---
 
@@ -109,13 +109,13 @@ Esempi di query SQL che utilizzano funzioni principali e raggruppamenti:
    FROM Ordini;
    ```
 
-Questi sono esempi di come puoi utilizzare funzioni aggregate e clausole di raggruppamento nelle tue query SQL per ottenere informazioni aggregate e statistiche dai dati del tuo database.
+Questi sono esempi di come puoi utilizzare **funzioni aggregate e clausole di raggruppamento** nelle tue query SQL per ottenere informazioni aggregate e statistiche dai dati del tuo database.
 
 ---
 
-### Altri esempi più complessi
+## Altri esempi più complessi
 
-Esempi di utilizzo delle funzioni di raggruppamento (GROUP BY) e della clausola HAVING:
+Esempi di utilizzo delle funzioni di raggruppamento (**GROUP BY**) e della clausola **HAVING**:
 
 ---
 

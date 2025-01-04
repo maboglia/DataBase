@@ -1,6 +1,6 @@
 # Le operazioni di filtraggio dei dati
 
-Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
+Ecco alcuni **esempi** di operazioni di filtraggio usando la clausola WHERE in SQL:
 
 ---
 
@@ -91,4 +91,3 @@ Ecco alcuni esempi di operazioni di filtraggio usando la clausola WHERE in SQL:
    ```
 
 Sperimenta con questi esempi per comprendere come la clausola WHERE può essere utilizzata per filtrare dati in base a diverse condizioni.
-

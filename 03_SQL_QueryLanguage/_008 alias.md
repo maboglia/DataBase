@@ -54,7 +54,7 @@ In questo esempio, le tabelle `docenti` e `corsi` vengono rinominate rispettivam
 
 L'uso degli alias per le tabelle diventa particolarmente utile quando si devono scrivere query complesse che coinvolgono più tabelle, rendendo la query più concisa e leggibile. 
 
-È importante notare che quando si utilizzano alias per le tabelle e ci sono attributi con lo stesso nome in diverse tabelle coinvolte nella query, è necessario utilizzare il nuovo nome della tabella definito come alias per richiamare i campi in modo non ambiguo nella clausola SELECT.
+È importante notare che **quando si utilizzano alias** per le tabelle e **ci sono attributi** con lo stesso nome in diverse tabelle coinvolte nella query, è **necessario utilizzare** il nuovo nome della tabella definito come alias per richiamare i campi in modo non ambiguo nella clausola SELECT.
 
 ---
 

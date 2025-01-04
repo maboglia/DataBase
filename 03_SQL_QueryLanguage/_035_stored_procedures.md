@@ -134,23 +134,19 @@ Le Stored Procedures di Sistema sono procedure predefinite fornite dal sistema d
 
 ---
 
-## Personalizzazione delle Stored
+## Personalizzazione delle Stored Procedures di Sistema
 
-5. **Personalizzazione delle Stored Procedures di Sistema
-   - In alcuni casi, le Stored Procedures di Sistema possono essere personalizzate o estese per adattarsi alle esigenze specifiche dell'ambiente di database. Questo può essere fatto in DBMS che supportano la personalizzazione delle Stored Procedures di Sistema.
+- In alcuni casi, le Stored Procedures di Sistema possono essere personalizzate o estese per adattarsi alle esigenze specifiche dell'ambiente di database. Questo può essere fatto in DBMS che supportano la personalizzazione delle Stored Procedures di Sistema.
 
 ---
 
 ## Monitoraggio e Diagnostica
 
-6. **Monitoraggio e Diagnostica
-   - Le Stored Procedures di Sistema spesso forniscono strumenti per monitorare le prestazioni del database e diagnosticare eventuali problemi. Possono essere utilizzate per raccogliere informazioni su query lente, blocchi, errori di sistema, ecc.
+- Le Stored Procedures di Sistema spesso forniscono strumenti per monitorare le prestazioni del database e diagnosticare eventuali problemi. Possono essere utilizzate per raccogliere informazioni su query lente, blocchi, errori di sistema, ecc.
 
 ---
 
-## Esempio di Stored
-
-7. **Esempio di Stored Procedure di Monitoraggio (SQL Server)
+## Esempio di Stored Procedure
 
    ```sql
    -- Esempio di esecuzione di una Stored Procedure di Monitoraggio
@@ -159,9 +155,12 @@ Le Stored Procedures di Sistema sono procedure predefinite fornite dal sistema d
 
 ---
 
-## Documentazione delle Stored
+## Documentazione delle Stored Procedures
 
-8. **Documentazione delle Stored Procedures di Sistema
-   - La documentazione del DBMS fornirà dettagli su tutte le Stored Procedures di Sistema disponibili, le loro funzioni e come utilizzarle. È importante fare riferimento alla documentazione specifica del DBMS utilizzato.
+- La documentazione del DBMS fornirà dettagli su tutte le Stored Procedures di Sistema disponibili, le loro funzioni e come utilizzarle. È importante fare riferimento alla documentazione specifica del DBMS utilizzato.
 
-Le Stored Procedures di Sistema sono un componente fondamentale del sistema di gestione del database, offrendo funzionalità predefinite e informazioni utili per la gestione, il monitoraggio e la manutenzione del database. La loro conoscenza è essenziale per gli amministratori del database e gli sviluppatori che lavorano con un sistema di gestione del database.
+---
+
+Le Stored Procedures di Sistema sono un componente fondamentale del sistema di gestione del database, offrendo funzionalità predefinite e informazioni utili per la gestione, il monitoraggio e la manutenzione del database. 
+
+La loro conoscenza è essenziale per gli amministratori del database e gli sviluppatori che lavorano con un sistema di gestione del database.

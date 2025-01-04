@@ -122,4 +122,3 @@ Questo errore indica che l'opzione `LOCAL INFILE` è disabilitata.
    ```
    mysql --local-infile=1 -u username -p
    ```
-

@@ -31,7 +31,6 @@ SELECT 35 % 3; -- 2
 SELECT (35 / 3) * 2; -- 11.6667
 ```
 
-
 ---
 
 ## Operatori di Confronto
@@ -64,6 +63,7 @@ Questi operatori sono fondamentali per filtrare i dati nelle query SQL e stabili
 Ecco alcuni esempi di utilizzo degli operatori di confronto nelle query SQL:
 
 1. Seleziona il nome, il cognome, l'email e la data di nascita degli studenti di genere femminile, ordinati per cognome e poi per nome:
+
    ```sql
    SELECT nome, cognome, email, data_nascita
    FROM studenti
@@ -73,7 +73,8 @@ Ecco alcuni esempi di utilizzo degli operatori di confronto nelle query SQL:
 
 ---
 
-2. Seleziona il nome, il cognome, l'email e la data di nascita degli studenti che non vivono a Torino, ordinati per cognome e poi per nome:
+1. Seleziona il nome, il cognome, l'email e la data di nascita degli studenti che non vivono a Torino, ordinati per cognome e poi per nome:
+
    ```sql
    SELECT nome, cognome, email, data_nascita
    FROM studenti
@@ -84,6 +85,7 @@ Ecco alcuni esempi di utilizzo degli operatori di confronto nelle query SQL:
 ---
 
 3. Seleziona il nome, il cognome, l'email e la data di nascita degli studenti nati dopo il 31 dicembre 1989, ordinati per data di nascita:
+
    ```sql
    SELECT nome, cognome, email, data_nascita
    FROM studenti

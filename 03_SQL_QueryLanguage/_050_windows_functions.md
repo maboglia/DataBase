@@ -85,8 +85,6 @@ OVER (
 
 ---
 
-## **Esempio pratico**
-
 ### **Scenario: Analisi dei dipendenti in un'azienda**
 
 Tabella: `Dipendenti`  
@@ -125,4 +123,3 @@ Tabella: `Dipendenti`
 - Permettono di calcolare valori su subset di dati senza dover aggregare o eliminare righe.
 - Facilitano analisi come trend, classifiche, e confronti temporali.
 - Eliminano la necessità di query nidificate complesse.
-

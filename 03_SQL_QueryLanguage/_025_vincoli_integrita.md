@@ -4,27 +4,24 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-## Definizione di Vincoli
+## Definizione di Vincoli di Integrità Referenziale
 
-1. **Definizione di Vincoli di Integrità Referenziale
-   - I vincoli di integrità referenziale sono regole che definiscono le relazioni tra le tabelle di un database. Essi garantiscono che i riferimenti tra tabelle siano validi e che non si verifichino situazioni di "orfanità" o "padri multipli".
+- I vincoli di integrità referenziale sono regole che definiscono le relazioni tra le tabelle di un database. Essi garantiscono che i riferimenti tra tabelle siano validi e che non si verifichino situazioni di "orfanità" o "padri multipli".
 
 ---
 
 ## Chiavi Primarie e Chiavi Esterne
 
-2. **Chiavi Primarie e Chiavi Esterne
-   - Un vincolo di integrità referenziale coinvolge comunemente due tipi di chiavi:
+- Un vincolo di integrità referenziale coinvolge comunemente due tipi di chiavi:
 
 - **Chiave Primaria (Primary Key):** Una chiave primaria è una colonna o un insieme di colonne che identificano univocamente ogni riga in una tabella.
 - **Chiave Esterna (Foreign Key):** Una chiave esterna è una colonna o un insieme di colonne in una tabella che fa riferimento alla chiave primaria di un'altra tabella. La chiave esterna stabilisce una relazione tra le tabelle.
 
 ---
 
-## Obbligatorietà del Vincolo
+## Obbligatorietà del Vincolo di Chiave Esterna
 
-3. **Obbligatorietà del Vincolo di Chiave Esterna
-   - Un vincolo di chiave esterna può essere definito come opzionale o obbligatorio. Se è obbligatorio, significa che ogni valore nella colonna esterna deve fare riferimento a un valore valido nella colonna primaria della tabella correlata.
+- Un vincolo di chiave esterna può essere definito come opzionale o obbligatorio. Se è obbligatorio, significa che ogni valore nella colonna esterna deve fare riferimento a un valore valido nella colonna primaria della tabella correlata.
 
 ---
 
@@ -50,8 +47,8 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ## Azione sul Riferimento
 
-4. **Azione sul Riferimento (Cascade, Set Null, Set Default, No Action)
-   - È possibile specificare l'azione da intraprendere quando si modifica o si cancella una riga nella tabella principale che è referenziata da una chiave esterna. Le opzioni comuni includono:
+- Cascade, Set Null, Set Default, No Action
+- È possibile specificare l'azione da intraprendere quando si modifica o si cancella una riga nella tabella principale che è referenziata da una chiave esterna. Le opzioni comuni includono:
 
 - **CASCADE:** Modifica o cancella automaticamente le righe correlate nelle tabelle figlio.
 - **SET NULL:** Imposta a NULL i valori nelle colonne di chiave esterna nelle righe figlio.
@@ -75,18 +72,16 @@ I vincoli di integrità referenziale sono regole che assicurano che le relazioni
 
 ---
 
-## Controllo dell'Integrità
+## Controllo dell'Integrità Referenziale
 
-5. **Controllo dell'Integrità Referenziale
-   - I DBMS eseguono automaticamente il controllo dell'integrità referenziale, garantendo che le regole definite nei vincoli siano rispettate.
-   - Se un'operazione viola un vincolo di integrità referenziale, il DBMS può restituire un errore e impedire l'esecuzione dell'operazione.
+- I DBMS eseguono automaticamente il controllo dell'integrità referenziale, garantendo che le regole definite nei vincoli siano rispettate.
+- Se un'operazione viola un vincolo di integrità referenziale, il DBMS può restituire un errore e impedire l'esecuzione dell'operazione.
 
 ---
 
-## Creazione di Vincoli
+## Creazione di Vincoli di Integrità Referenziale
 
-6. **Creazione di Vincoli di Integrità Referenziale
-   - I vincoli di integrità referenziale possono essere definiti durante la creazione della tabella o successivamente con l'istruzione `ALTER TABLE`.
+- I vincoli di integrità referenziale possono essere definiti durante la creazione della tabella o successivamente con l'istruzione `ALTER TABLE`.
 
    ```sql
    ALTER TABLE DettaglioOrdine

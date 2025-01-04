@@ -1,12 +1,12 @@
 # Creazione, Lettura, Aggiornamento e Eliminazione dei Record (CRUD)
 
-Una volta creata la struttura del nostro database, ci ritroveremo, ovviamente, con una serie di tabelle vuote. Prima di aggiungere record a una tabella, è necessario conoscere il tipo di dati previsto per ogni campo, quali campi non possono avere valore nullo e quali campi hanno l’incremento automatico.
+Una volta **creata** la **struttura** del nostro database, ci ritroveremo, ovviamente, con una serie di **tabelle vuote**. Prima di **aggiungere record** a una tabella, è necessario conoscere il **tipo di dati** previsto per ogni campo, quali campi non possono avere valore nullo e quali campi hanno l’incremento automatico.
 
-Quando si inseriscono i dati, bisogna utilizzare le virgolette o gli apici per i dati di tipo stringa (compresa la data), mentre non si utilizzano virgolette o apici per i dati di tipo numerico. Inoltre, non si inseriscono i valori per i campi definiti con l’attributo auto_increment.
+Quando si inseriscono i dati, bisogna utilizzare le virgolette o gli **apici** per i dati di tipo **stringa** (compresa la data), mentre **non si utilizzano** virgolette o apici per i dati di tipo **numerico**. Inoltre, non si inseriscono i valori per i campi definiti con l’attributo auto_increment.
 
 ---
 
-## INSERT INTO
+## Create: INSERT INTO
 
 `INSERT INTO` è l'istruzione utilizzata per inserire nuovi record in una tabella. Ha due parti:
 
@@ -34,7 +34,7 @@ SET field1 = 'value1', field2 = 'value2', field3 = 'value2';
 
 ---
 
-## INSERT INTO
+## INSERT INTO 
 
 È possibile utilizzare il comando `INSERT INTO` senza l'uso di nomi di campo se si inserisce un record rispettando l’ordine dei campi della tabella. In questo caso, devono essere inseriti i valori di tutti i campi, **anche i valori AUTO_INCREMENT o TIMESTAMP** (passando "default" per inserimento automatico). Per i campi che accettano i valori nulli, è possibile passare "null".
 
@@ -52,7 +52,7 @@ VALUES (default, 'fabio', 'rossi', 'fbr@gmail.com', null, default);
 
 ---
 
-## Mostrare i Record di una Tabella
+## Read: Mostrare i Record di una Tabella
 
 È possibile visualizzare i record di una tabella utilizzando l’istruzione `SELECT`. Per visualizzare tutti i record da una tabella, si usa il carattere jolly `*`. Dobbiamo anche utilizzare l’istruzione `FROM` per identificare la tabella che vogliamo interrogare. Di solito si visualizzano campi specifici, piuttosto che l'intera tabella. Dopo l’istruzione `SELECT`, elencare i campi che interessano, separati da una virgola.
 
@@ -66,7 +66,7 @@ SELECT fieldName, fieldName2, fieldName3 FROM tableName;
 
 ---
 
-## INSERT INTO ... SELECT
+## Combinare INSERT INTO e SELECT
 
 È possibile inserire i dati prendendoli da un’altra tabella utilizzando l'istruzione `INSERT INTO ... SELECT`:
 
@@ -122,7 +122,7 @@ Nell'esempio sopra, abbiamo duplicato la tabella `studenti` nella tabella `stude
 
 ---
 
-## UPDATE
+## Update: istruzioni per modificare i dati
 
 L'istruzione `UPDATE` viene utilizzata per aggiornare i record in una tabella. Questa istruzione modifica il valore presente in una colonna di un record già esistente. Viene utilizzata insieme all’istruzione `SET`.
 
@@ -158,7 +158,7 @@ Questo errore indica che il valore inserito è stato troncato perché non è con
 
 ---
 
-## Eliminazione dei Record in una Tabella
+## Delete: Eliminazione dei Record in una Tabella
 
 L'istruzione `DELETE` viene utilizzata per eliminare gruppi di record in una tabella. È necessario utilizzare la parola chiave condizionale `WHERE` per isolare quali record si desidera eliminare, altrimenti si eliminano tutti i record.
 
@@ -182,9 +182,9 @@ Nell'esempio sopra, stiamo eliminando i record dalla tabella `studenti` dove il 
 
 ## Eliminare Tutti i Record della Tabella
 
-Per svuotare una tabella, si usa l’istruzione `TRUNCATE`. Questa soluzione è la più veloce perché elimina la struttura della tabella per poi ricrearne una uguale vuota, azzerando il valore di eventuali campi AUTO_INCREMENT.
+Per **svuotare una tabella**, si usa l’istruzione `TRUNCATE`. Questa soluzione è la più veloce perché elimina la struttura della tabella per poi ricrearne una uguale vuota, azzerando il valore di eventuali campi AUTO_INCREMENT.
 
-Usando `DELETE`, si eliminano tutti i record presenti nella tabella specificata uno per uno. Questo metodo, seppur funzionante, è poco efficiente poiché dipende dalla quantità di righe presenti in tabella. Inoltre, usando `DELETE`, il valore di un eventuale AUTO_INCREMENT rimane inalterato; per azzerarlo:
+Usando `DELETE`, si eliminano tutti i record presenti nella tabella specificata uno per uno. Questo metodo, seppur funzionante, è poco efficiente poiché **dipende dalla quantità** di righe presenti in tabella. Inoltre, usando `DELETE`, il valore di un eventuale **AUTO_INCREMENT rimane inalterato**; si può comunque modificare il valore di incremento con l'istruzione `ALTER`:
 
 ```sql
 TRUNCATE [TABLE] tableName;
