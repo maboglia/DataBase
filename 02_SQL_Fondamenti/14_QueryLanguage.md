@@ -1,6 +1,6 @@
 # Query Language - interrogazione dei dati
 
-Il linguaggio SQL (Structured Query Language) è uno dei linguaggi di accesso ai dati più ampiamente utilizzati ed è spesso utilizzato sia per DDL che per DML in sistemi di gestione delle basi di dati relazionali. SQL fornisce una sintassi standardizzata e potente per definire, manipolare e interrogare dati nei database.
+Il linguaggio **SQL** (Structured Query Language) è uno dei linguaggi di accesso ai dati più ampiamente utilizzati ed è spesso utilizzato sia per **DDL** che per **DML** in sistemi di gestione delle basi di dati relazionali. SQL fornisce una sintassi standardizzata e potente per definire, manipolare e interrogare dati nei database.
 
 ---
 
@@ -10,13 +10,13 @@ Gli utenti e gli sviluppatori interagiscono con il database utilizzando questi l
 
 ## Le query
 
-Le query rappresentano un aspetto fondamentale nell'interazione con un database, consentendo agli utenti di recuperare dati specifici, eseguire aggiornamenti, inserire nuovi dati e altro ancora. Il linguaggio di query più comune utilizzato per interagire con i database relazionali è il SQL (Structured Query Language).
+Le **query** rappresentano un aspetto fondamentale nell'interazione con un database, consentendo agli utenti di **recuperare** dati specifici, eseguire **aggiornamenti**, **inserire** nuovi dati e altro ancora. Il linguaggio di query più comune utilizzato per interagire con i database relazionali è **SQL** (Structured Query Language).
 
 ---
 
 ### Linguaggio SQL
 
-1. **Linguaggio SQL:** SQL fornisce un insieme di istruzioni standardizzate per comunicare con i database. Le principali operazioni che possono essere eseguite attraverso SQL includono SELECT (per recuperare dati), INSERT (per inserire nuovi dati), UPDATE (per modificare dati esistenti) e DELETE (per cancellare dati).
+1. **Linguaggio SQL:** SQL fornisce un insieme di istruzioni standardizzate per comunicare con i database. Le principali operazioni che possono essere eseguite attraverso SQL includono **SELECT** (per recuperare dati), **INSERT** (per inserire nuovi dati), **UPDATE** (per modificare dati esistenti) e **DELETE** (per cancellare dati).
 
 ---
 
@@ -36,7 +36,7 @@ Le query rappresentano un aspetto fondamentale nell'interazione con un database,
 
 ### Operazioni JOIN
 
-3. **Operazioni JOIN:** Le operazioni di JOIN sono utilizzate per combinare dati provenienti da più tabelle in base alle relazioni definite dalle chiavi. Ad esempio, un INNER JOIN può essere utilizzato per recuperare solo i record che hanno corrispondenze in entrambe le tabelle coinvolte.
+3. **Operazioni JOIN:** Le operazioni di JOIN sono utilizzate per **combinare dati** provenienti da più tabelle in base alle relazioni definite dalle chiavi. Ad esempio, un **INNER JOIN** può essere utilizzato per recuperare solo i record che hanno corrispondenze in entrambe le tabelle coinvolte.
 
    Esempio di query JOIN:
 
@@ -53,7 +53,7 @@ Le query rappresentano un aspetto fondamentale nell'interazione con un database,
 
 ### Operazioni di Filtraggio
 
-4. **Operazioni di Filtraggio e Ordinamento:** Le query possono includere clausole WHERE per filtrare i dati in base a condizioni specifiche e ORDER BY per ordinare i risultati in modo specifico.
+4. **Operazioni di Filtraggio e Ordinamento:** Le query possono includere clausole **WHERE** per filtrare i dati in base a condizioni specifiche e **ORDER BY** per ordinare i risultati in modo specifico.
 
 ---
 

@@ -1,10 +1,10 @@
-# Indici in un Database
+# Indici
 
 Gli indici sono strumenti critici per migliorare le prestazioni delle query e accelerare l'accesso ai dati all'interno di un database relazionale.
 
 ---
 
-### Indici in un Database
+## Indici in un Database
 
 1. **Indici in un Database
    - Un indice è una struttura dati che fornisce un meccanismo efficiente per la ricerca di dati all'interno di una tabella.
@@ -13,7 +13,7 @@ Gli indici sono strumenti critici per migliorare le prestazioni delle query e ac
 
 ---
 
-### Vantaggi degli Indici
+## Vantaggi degli Indici
 
 2. **Vantaggi degli Indici
    - **Riduzione del Tempo di Ricerca:** Gli indici accelerano la ricerca di dati, specialmente in grandi tabelle, riducendo il tempo necessario per recuperare informazioni specifiche.
@@ -22,7 +22,7 @@ Gli indici sono strumenti critici per migliorare le prestazioni delle query e ac
 
 ---
 
-### Tipi di Indici
+## Tipi di Indici
 
 3. **Tipi di Indici
    - **Indice Clustered:** Nell'indice clusterizzato, le righe della tabella sono organizzate fisicamente sulla base dell'ordine dell'indice. Ogni tabella può avere al massimo un indice clusterizzato.
@@ -30,7 +30,7 @@ Gli indici sono strumenti critici per migliorare le prestazioni delle query e ac
 
 ---
 
-### Scelta e Progettazione
+## Scelta e Progettazione
 
 4. **Scelta e Progettazione degli Indici
    - La scelta di quali colonne indicizzare dipende dalle query più frequenti e dalle esigenze di prestazioni specifiche del sistema.
@@ -46,7 +46,7 @@ Gli indici sono strumenti critici per migliorare le prestazioni delle query e ac
 
 ---
 
-### Aggiornamento degli Indici
+## Aggiornamento degli Indici
 
 5. **Aggiornamento degli Indici
    - Gli indici devono essere mantenuti e aggiornati durante le operazioni di inserimento, aggiornamento e cancellazione dei dati per garantire l'accuratezza delle informazioni indicizzate.

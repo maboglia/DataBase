@@ -2,7 +2,7 @@
 
 Le **transazioni ACID** rappresentano un insieme di proprietà fondamentali che garantiscono l'affidabilità delle transazioni nei sistemi di gestione dei database. Queste proprietà assicurano che le operazioni sui dati siano eseguite in modo corretto, anche in presenza di errori, guasti o interruzioni.
 
-### Le proprietà ACID
+## Le proprietà ACID
 
 1. **Atomicità (Atomicity)**:
    - Una transazione è un'unità indivisibile di lavoro: o tutte le operazioni contenute in essa vengono completate con successo, o nessuna viene applicata.
@@ -22,7 +22,7 @@ Le **transazioni ACID** rappresentano un insieme di proprietà fondamentali che 
 
 ---
 
-### Perché ACID è importante?
+## Perché ACID è importante?
 
 Le transazioni ACID sono cruciali in scenari dove i dati devono essere altamente affidabili e accurati, come:
 

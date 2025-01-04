@@ -5,7 +5,7 @@ I linguaggi di accesso ai dati in ambito SQL si suddividono in diverse categorie
 1. **DCL** - Data Control Language
 2. **DDL** - Data Definition Language
 3. **DML** - Data Manipulation Language
-4. **Query Language**
+4. **Query Language** - Interrogazione dei dati
 
 ---
 

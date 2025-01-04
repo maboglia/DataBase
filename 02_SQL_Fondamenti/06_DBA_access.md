@@ -1,10 +1,10 @@
-# **Accesso al DBMS (Database Administrator - DBA)**
+# Accesso al DBMS (Database Administrator - DBA)
 
 Un **DBA** (Database Administrator) è responsabile della gestione, manutenzione e sicurezza del database in un'organizzazione. L'accesso al **DBMS** da parte del DBA è critico per garantire che il sistema funzioni correttamente e che i dati siano protetti.
 
 ---
 
-## **Ruoli e responsabilità del DBA**
+## Ruoli e responsabilità del DBA
 
 1. **Gestione dell'accesso**:
    - Creazione, modifica e revoca degli account utenti.
@@ -34,11 +34,11 @@ Un **DBA** (Database Administrator) è responsabile della gestione, manutenzione
 
 ---
 
-## **Accesso al DBMS: Procedure e Strumenti**
+## Accesso al DBMS: Procedure e Strumenti
 
 ---
 
-### **1. Accesso tramite console del DBMS**
+### 1. Accesso tramite console del DBMS
 
 La maggior parte dei DBMS offre una console o un'interfaccia a riga di comando (CLI) per amministrare il sistema.
 
@@ -59,7 +59,7 @@ La maggior parte dei DBMS offre una console o un'interfaccia a riga di comando (
 
 ---
 
-### **2. Accesso tramite strumenti grafici**
+### 2. Accesso tramite strumenti grafici
 
 Molti DBMS forniscono interfacce grafiche per semplificare la gestione.
 
@@ -72,7 +72,7 @@ Questi strumenti consentono ai DBA di eseguire attività di amministrazione in u
 
 ---
 
-### **3. Accesso remoto**
+### 3. Accesso remoto
 
 I DBA possono accedere al DBMS da remoto utilizzando protocolli sicuri, come SSH o VPN, per garantire la sicurezza.
 
@@ -89,7 +89,7 @@ I DBA possono accedere al DBMS da remoto utilizzando protocolli sicuri, come SSH
 
 ---
 
-### **4. Gestione dei privilegi e utenti**
+### 4. Gestione dei privilegi e utenti
 
 I DBA hanno il compito di gestire gli utenti e i loro privilegi di accesso.
 
@@ -110,7 +110,7 @@ I DBA hanno il compito di gestire gli utenti e i loro privilegi di accesso.
 
 ---
 
-## **Sicurezza nell'accesso al DBMS**
+## Sicurezza nell'accesso al DBMS
 
 Per garantire un accesso sicuro, il DBA deve seguire best practice per la protezione del sistema:
 
@@ -132,13 +132,13 @@ Per garantire un accesso sicuro, il DBA deve seguire best practice per la protez
 
 ---
 
-## **Configurazione tipica per il DBA**
+## Configurazione tipica per il DBA
 
 Un DBA deve configurare l'ambiente per garantire una gestione efficiente del DBMS.
 
 ---
 
-### **1. Creazione di un utente DBA dedicato**
+### 1. Creazione di un utente DBA dedicato
 
 - È consigliabile non utilizzare l'account amministrativo predefinito (es. `root` o `postgres`) per le operazioni quotidiane. Creare un utente con privilegi elevati specificamente per il DBA.
 
@@ -149,14 +149,14 @@ Un DBA deve configurare l'ambiente per garantire una gestione efficiente del DBM
 
 ---
 
-### **2. Configurazione di politiche di accesso remoto**
+### 2. Configurazione di politiche di accesso remoto
 
 - Consentire l'accesso remoto solo agli indirizzi IP autorizzati.
 - Configurare il firewall per bloccare connessioni non autorizzate.
 
 ---
 
-## **Strumenti per il monitoraggio e la gestione del DBA**
+## Strumenti per il monitoraggio e la gestione del DBA
 
 Un DBA utilizza diversi strumenti per monitorare e gestire il DBMS:
 
@@ -173,11 +173,11 @@ Un DBA utilizza diversi strumenti per monitorare e gestire il DBMS:
 
 ---
 
-## **Esempio pratico: Gestione degli utenti**
+## Esempio pratico: Gestione degli utenti
 
 ---
 
-### **Creazione di un utente con accesso limitato (MySQL):**
+### Creazione di un utente con accesso limitato (MySQL):
 
 ```sql
 CREATE USER 'analista'@'localhost' IDENTIFIED BY 'password123';
@@ -187,7 +187,7 @@ FLUSH PRIVILEGES;
 
 ---
 
-### **Revoca dei privilegi:**
+### Revoca dei privilegi:
 
 ```sql
 REVOKE INSERT ON NomeDatabase.* FROM 'analista'@'localhost';
@@ -195,7 +195,7 @@ REVOKE INSERT ON NomeDatabase.* FROM 'analista'@'localhost';
 
 ---
 
-### **Eliminazione di un utente:**
+### Eliminazione di un utente:
 
 ```sql
 DROP USER 'analista'@'localhost';
@@ -203,6 +203,6 @@ DROP USER 'analista'@'localhost';
 
 ---
 
-## **Conclusioni**
+## Conclusioni
 
 L'accesso al DBMS da parte del DBA richiede competenze tecniche, una conoscenza approfondita del sistema e un forte orientamento alla sicurezza. Il DBA è la figura chiave per garantire che il database sia sicuro, performante e disponibile in ogni momento.

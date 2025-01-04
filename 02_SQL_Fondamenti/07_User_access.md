@@ -1,10 +1,10 @@
-# **Accesso al DBMS per gli Utenti (User)**
+# Accesso al DBMS per gli Utenti (User)
 
 L'accesso al DBMS da parte degli utenti è gestito attraverso un sistema di autenticazione, autorizzazione e controllo dei privilegi, implementato dal DBA per garantire sicurezza e gestione efficiente dei dati. Gli **utenti (user)**, a differenza del DBA, hanno accesso limitato alle funzionalità e ai dati in base ai loro compiti e responsabilità.
 
 ---
 
-## **Ruoli degli utenti in un DBMS**
+## Ruoli degli utenti in un DBMS
 
 1. **Utenti standard**:
    - Utilizzano il database per eseguire operazioni comuni come lettura, scrittura o aggiornamento dei dati.
@@ -20,9 +20,9 @@ L'accesso al DBMS da parte degli utenti è gestito attraverso un sistema di aute
 
 ---
 
-## **Accesso al DBMS: Procedure per gli utenti**
+## Accesso al DBMS: Procedure per gli utenti
 
-### **1. Creazione di un account utente**
+### 1. Creazione di un account utente
 
 Un utente può essere creato dal DBA per accedere al DBMS. Ecco come configurare un utente in diversi sistemi DBMS.
 
@@ -51,7 +51,7 @@ Un utente può essere creato dal DBA per accedere al DBMS. Ecco come configurare
 
 ---
 
-### **2. Accesso tramite strumenti grafici**
+### 2. Accesso tramite strumenti grafici
 
 Gli utenti possono accedere al DBMS utilizzando strumenti grafici per eseguire query o visualizzare dati.
 
@@ -69,7 +69,7 @@ Gli utenti possono accedere al DBMS utilizzando strumenti grafici per eseguire q
 
 ---
 
-### **3. Accesso tramite CLI**
+### 3. Accesso tramite CLI
 
 Gli utenti possono accedere al DBMS tramite riga di comando per eseguire query e modificare i dati (se autorizzati).
 
@@ -89,7 +89,7 @@ Gli utenti possono accedere al DBMS tramite riga di comando per eseguire query e
 
 ---
 
-### **4. Accesso remoto**
+### 4. Accesso remoto
 
 Gli utenti possono accedere al database da postazioni remote, se configurato.
 
@@ -108,7 +108,7 @@ Gli utenti possono accedere al database da postazioni remote, se configurato.
 
 ---
 
-## **Gestione dei privilegi degli utenti**
+## Gestione dei privilegi degli utenti
 
 Gli utenti accedono al database in base ai privilegi assegnati dal DBA. Questi privilegi determinano le operazioni che possono eseguire, come:
 
@@ -120,7 +120,7 @@ Gli utenti accedono al database in base ai privilegi assegnati dal DBA. Questi p
 
 ---
 
-### **Esempi di assegnazione di privilegi**
+### Esempi di assegnazione di privilegi
 
 - **MySQL:**
   
@@ -145,7 +145,7 @@ Gli utenti accedono al database in base ai privilegi assegnati dal DBA. Questi p
 
 ---
 
-## **Buone pratiche per l'accesso degli utenti**
+## Buone pratiche per l'accesso degli utenti
 
 1. **Principio del privilegio minimo:**
    - Assegnare agli utenti solo i privilegi necessari per svolgere le loro attività.
@@ -165,7 +165,7 @@ Gli utenti accedono al database in base ai privilegi assegnati dal DBA. Questi p
 
 ---
 
-## **Esempio pratico di accesso utente:**
+## Esempio pratico di accesso utente:
 
 1. **Creazione di un utente di sola lettura (MySQL):**
 

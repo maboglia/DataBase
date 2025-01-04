@@ -6,11 +6,11 @@ footer: Mauro Bogliaccino
 
 # Data Warehousing
 
-Parliamo ora del concetto di "Data Warehousing". Un data warehouse è una piattaforma di gestione dei dati progettata per consentire l'analisi e il reporting avanzati, fornendo una visione consolidata e storica dei dati provenienti da diverse fonti all'interno di un'organizzazione.
+Un data warehouse è una piattaforma di gestione dei dati progettata per consentire l'analisi e il reporting avanzati, fornendo una visione consolidata e storica dei dati provenienti da diverse fonti all'interno di un'organizzazione.
 
 ---
 
-### Definizione di Data
+## Definizione di Data
 
 1. **Definizione di Data Warehouse
    - Un data warehouse è un sistema di gestione dei dati centralizzato e orientato ai temi, progettato per supportare il processo decisionale aziendale.
@@ -18,7 +18,7 @@ Parliamo ora del concetto di "Data Warehousing". Un data warehouse è una piatta
 
 ---
 
-### Caratteristiche Principali
+## Caratteristiche Principali
 
 2. **Caratteristiche Principali
    - **Orientato ai Temi:** I dati nel data warehouse sono organizzati in base ai temi aziendali o alle aree di interesse, come vendite, marketing, finanze, ecc.
@@ -29,7 +29,7 @@ Parliamo ora del concetto di "Data Warehousing". Un data warehouse è una piatta
 
 ---
 
-### Struttura del Data Warehouse
+## Struttura del Data Warehouse
 
 3. **Struttura del Data Warehouse
    - Il data warehouse è composto da diverse componenti, tra cui:
@@ -40,7 +40,7 @@ Parliamo ora del concetto di "Data Warehousing". Un data warehouse è una piatta
 
 ---
 
-### Data Mart
+## Data Mart
 
 4. **Data Mart
    - Un data mart è una sottosezione di un data warehouse focalizzata su un particolare settore, funzione o divisione aziendale.
@@ -48,7 +48,7 @@ Parliamo ora del concetto di "Data Warehousing". Un data warehouse è una piatta
 
 ---
 
-### Vantaggi del Data Warehousing
+## Vantaggi del Data Warehousing
 
 5. **Vantaggi del Data Warehousing
    - **Supporto alle Decisioni Strategiche:** Fornisce informazioni approfondite per le decisioni strategiche aziendali.
@@ -57,5 +57,3 @@ Parliamo ora del concetto di "Data Warehousing". Un data warehouse è una piatta
    - **Conservazione dei Dati Storici:** Conserva dati storici per analisi comparative e trend nel tempo.
 
 Il data warehousing svolge un ruolo fondamentale nell'ottimizzazione del processo decisionale aziendale, fornendo agli utenti un accesso centralizzato e strutturato ai dati aziendali.
-
----
