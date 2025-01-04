@@ -1,4 +1,4 @@
-# Esercizi con OPERATORI
+# Esercizi con GROUP BY
 
 Data la struttura delle tabelle utilizzate negli esercizi:
 
@@ -120,102 +120,113 @@ CREATE TABLE OrdiniTemp (
 
 ---
 
-Esegui 10 esercizi di `OPERATORI` in SQL per esercitarsi con la sintassi e i concetti.
+Esegui 10 esercizi di `GROUP BY` in SQL per esercitarsi con la sintassi e i concetti.
 
 ---
 
-Questi esercizi coprono diversi tipi di operatori: 
-- **Aritmetici** (`+`, `*`, `/`)
-- **Logici** (`AND`, `OR`, `NOT`)
-- **Di confronto** (`=`, `<>`, `>=`, `BETWEEN`)
-- **Speciali** (`LIKE`, `IN`).
+Questi esercizi includono:
+- **Funzioni aggregate**: `SUM`, `COUNT`, `AVG`, `MAX`.
+- **GROUP BY**: per raggruppare i dati e calcolare metriche aggregate.
+- **HAVING**: per filtrare i risultati basandosi sulle funzioni aggregate.
+- **Ordinamento**: utilizzando `ORDER BY` e combinazioni con `LIMIT`.
 
 ---
 
-### **1. Selezionare il nome e il prezzo aumentato del 10% per tutti i prodotti**
+### **1. Contare il numero totale di prodotti disponibili**
 ```sql
-SELECT NomeP, Prezzo * 1.1 AS NuovoPrezzo
+SELECT COUNT(*) AS NumeroProdotti
 FROM Prodotti;
 ```
 
 ---
 
-### **2. Trovare i prodotti con un prezzo tra 50 e 100 (inclusi)**
+### **2. Calcolare la quantità totale fornita per ogni prodotto**
 ```sql
-SELECT NomeP, Prezzo
-FROM Prodotti
-WHERE Prezzo BETWEEN 50 AND 100;
+SELECT P.NomeP, SUM(FP.Qta) AS QuantitaTotale
+FROM Prodotti P
+JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
+GROUP BY P.CodP, P.NomeP;
 ```
 
 ---
 
-### **3. Visualizzare i fornitori con un numero di soci maggiore o uguale a 10**
+### **3. Determinare la quantità media di prodotti forniti da ciascun fornitore**
 ```sql
-SELECT NomeF, NSoci
-FROM Fornitori
-WHERE NSoci >= 10;
+SELECT F.NomeF, AVG(FP.Qta) AS QuantitaMedia
+FROM Fornitori F
+JOIN FornitoriProdotti FP ON F.CodF = FP.CodF
+GROUP BY F.CodF, F.NomeF;
 ```
 
 ---
 
-### **4. Calcolare la quantità totale fornita per ogni prodotto**
+### **4. Calcolare il numero di fornitori per ciascun prodotto**
 ```sql
-SELECT CodP, SUM(Qta) AS TotaleQuantita
-FROM FornitoriProdotti
-GROUP BY CodP;
+SELECT P.NomeP, COUNT(DISTINCT FP.CodF) AS NumeroFornitori
+FROM Prodotti P
+LEFT JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
+GROUP BY P.CodP, P.NomeP;
 ```
 
 ---
 
-### **5. Trovare i fornitori con il nome che inizia con "A"**
+### **5. Trovare il prodotto con la quantità massima fornita**
 ```sql
-SELECT NomeF
-FROM Fornitori
-WHERE NomeF LIKE 'A%';
+SELECT P.NomeP, MAX(FP.Qta) AS QuantitaMassima
+FROM Prodotti P
+JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
+GROUP BY P.CodP, P.NomeP
+ORDER BY QuantitaMassima DESC
+LIMIT 1;
 ```
 
 ---
 
-### **6. Mostrare tutti i prodotti che non sono né rossi né gialli**
+### **6. Determinare la quantità totale fornita per ciascun colore di prodotto**
 ```sql
-SELECT NomeP, Colore
-FROM Prodotti
-WHERE Colore NOT IN ('rosso', 'giallo');
+SELECT P.Colore, SUM(FP.Qta) AS QuantitaTotale
+FROM Prodotti P
+JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
+GROUP BY P.Colore;
 ```
 
 ---
 
-### **7. Trovare i fornitori che si trovano in città diverse da "Milano"**
+### **7. Contare il numero di prodotti forniti da ogni fornitore**
 ```sql
-SELECT NomeF, Sede
-FROM Fornitori
-WHERE Sede <> 'Milano';
+SELECT F.NomeF, COUNT(DISTINCT FP.CodP) AS NumeroProdotti
+FROM Fornitori F
+JOIN FornitoriProdotti FP ON F.CodF = FP.CodF
+GROUP BY F.CodF, F.NomeF;
 ```
 
 ---
 
-### **8. Calcolare la media delle quantità fornite da ciascun fornitore**
+### **8. Calcolare il numero medio di soci dei fornitori per città**
 ```sql
-SELECT CodF, AVG(Qta) AS MediaQuantita
-FROM FornitoriProdotti
-GROUP BY CodF;
+SELECT F.Sede, AVG(F.NSoci) AS NumeroMedioSoci
+FROM Fornitori F
+GROUP BY F.Sede;
 ```
 
 ---
 
-### **9. Selezionare tutti i fornitori che forniscono almeno un prodotto in quantità superiore a 50**
+### **9. Trovare i prodotti con una quantità totale fornita superiore a 100**
 ```sql
-SELECT DISTINCT CodF
-FROM FornitoriProdotti
-WHERE Qta > 50;
+SELECT P.NomeP, SUM(FP.Qta) AS QuantitaTotale
+FROM Prodotti P
+JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
+GROUP BY P.CodP, P.NomeP
+HAVING SUM(FP.Qta) > 100;
 ```
 
 ---
 
-### **10. Visualizzare i prodotti con prezzo maggiore di 20 e in magazzini diversi da "MZ001"**
+### **10. Determinare il numero di prodotti forniti e la quantità totale fornita da fornitori con più di 5 soci**
 ```sql
-SELECT NomeP, Prezzo, Magazzino
-FROM Prodotti
-WHERE Prezzo > 20 AND Magazzino <> 'MZ001';
+SELECT F.NomeF, COUNT(DISTINCT FP.CodP) AS NumeroProdotti, SUM(FP.Qta) AS QuantitaTotale
+FROM Fornitori F
+JOIN FornitoriProdotti FP ON F.CodF = FP.CodF
+WHERE F.NSoci > 5
+GROUP BY F.CodF, F.NomeF;
 ```
-

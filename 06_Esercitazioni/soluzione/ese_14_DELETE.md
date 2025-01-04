@@ -1,4 +1,5 @@
-# Esercizi con OPERATORI
+
+# Esercizi di DELETE
 
 Data la struttura delle tabelle utilizzate negli esercizi:
 
@@ -120,102 +121,86 @@ CREATE TABLE OrdiniTemp (
 
 ---
 
-Esegui 10 esercizi di `OPERATORI` in SQL per esercitarsi con la sintassi e i concetti.
+Esegui 10 esercizi di `DELETE` in SQL per esercitarsi con la sintassi e i concetti.
 
 ---
 
-Questi esercizi coprono diversi tipi di operatori: 
-- **Aritmetici** (`+`, `*`, `/`)
-- **Logici** (`AND`, `OR`, `NOT`)
-- **Di confronto** (`=`, `<>`, `>=`, `BETWEEN`)
-- **Speciali** (`LIKE`, `IN`).
+### **1. Eliminare i prodotti con magazzino "MZ003"**
 
----
-
-### **1. Selezionare il nome e il prezzo aumentato del 10% per tutti i prodotti**
 ```sql
-SELECT NomeP, Prezzo * 1.1 AS NuovoPrezzo
-FROM Prodotti;
+DELETE FROM Prodotti
+WHERE Magazzino = 'MZ003';
 ```
 
 ---
 
-### **2. Trovare i prodotti con un prezzo tra 50 e 100 (inclusi)**
+### **2. Rimuovere tutti i fornitori con sede a "Napoli"**
 ```sql
-SELECT NomeP, Prezzo
-FROM Prodotti
-WHERE Prezzo BETWEEN 50 AND 100;
+DELETE FROM Fornitori
+WHERE Sede = 'Napoli';
 ```
 
 ---
 
-### **3. Visualizzare i fornitori con un numero di soci maggiore o uguale a 10**
+### **3. Eliminare tutte le relazioni prodotto-fornitore per il prodotto con codice "P004"**
 ```sql
-SELECT NomeF, NSoci
-FROM Fornitori
-WHERE NSoci >= 10;
+DELETE FROM FornitoriProdotti
+WHERE CodP = 'P004';
 ```
 
 ---
 
-### **4. Calcolare la quantità totale fornita per ogni prodotto**
+### **4. Rimuovere tutti i prodotti con colore "nero"**
 ```sql
-SELECT CodP, SUM(Qta) AS TotaleQuantita
-FROM FornitoriProdotti
-GROUP BY CodP;
+DELETE FROM Prodotti
+WHERE Colore = 'nero';
 ```
 
 ---
 
-### **5. Trovare i fornitori con il nome che inizia con "A"**
+### **5. Eliminare tutti i fornitori con meno di 5 soci**
 ```sql
-SELECT NomeF
-FROM Fornitori
-WHERE NomeF LIKE 'A%';
+DELETE FROM Fornitori
+WHERE NSoci < 5;
 ```
 
 ---
 
-### **6. Mostrare tutti i prodotti che non sono né rossi né gialli**
+### **6. Eliminare le relazioni prodotto-fornitore per i fornitori con codice "F003"**
 ```sql
-SELECT NomeP, Colore
-FROM Prodotti
-WHERE Colore NOT IN ('rosso', 'giallo');
+DELETE FROM FornitoriProdotti
+WHERE CodF = 'F003';
 ```
 
 ---
 
-### **7. Trovare i fornitori che si trovano in città diverse da "Milano"**
+### **7. Eliminare tutti i prodotti mai forniti da alcun fornitore**
 ```sql
-SELECT NomeF, Sede
-FROM Fornitori
-WHERE Sede <> 'Milano';
+DELETE FROM Prodotti
+WHERE CodP NOT IN (SELECT DISTINCT CodP FROM FornitoriProdotti);
 ```
 
 ---
 
-### **8. Calcolare la media delle quantità fornite da ciascun fornitore**
+### **8. Rimuovere tutti i fornitori che non hanno fornito prodotti**
 ```sql
-SELECT CodF, AVG(Qta) AS MediaQuantita
-FROM FornitoriProdotti
-GROUP BY CodF;
+DELETE FROM Fornitori
+WHERE CodF NOT IN (SELECT DISTINCT CodF FROM FornitoriProdotti);
 ```
 
 ---
 
-### **9. Selezionare tutti i fornitori che forniscono almeno un prodotto in quantità superiore a 50**
+### **9. Eliminare tutti i prodotti con quantità inferiore a 10 in qualsiasi relazione prodotto-fornitore**
 ```sql
-SELECT DISTINCT CodF
-FROM FornitoriProdotti
-WHERE Qta > 50;
+DELETE FROM FornitoriProdotti
+WHERE Qta < 10;
 ```
 
 ---
 
-### **10. Visualizzare i prodotti con prezzo maggiore di 20 e in magazzini diversi da "MZ001"**
+### **10. Rimuovere tutti i prodotti di taglia "S" e colore "giallo"**
 ```sql
-SELECT NomeP, Prezzo, Magazzino
-FROM Prodotti
-WHERE Prezzo > 20 AND Magazzino <> 'MZ001';
+DELETE FROM Prodotti
+WHERE Taglia = 'S' AND Colore = 'giallo';
 ```
 
