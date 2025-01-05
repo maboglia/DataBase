@@ -2,6 +2,8 @@
 
 Una volta **creata** la **struttura** del nostro database, ci ritroveremo, ovviamente, con una serie di **tabelle vuote**. Prima di **aggiungere record** a una tabella, è necessario conoscere il **tipo di dati** previsto per ogni campo, quali campi non possono avere valore nullo e quali campi hanno l’incremento automatico.
 
+---
+
 Quando si inseriscono i dati, bisogna utilizzare le virgolette o gli **apici** per i dati di tipo **stringa** (compresa la data), mentre **non si utilizzano** virgolette o apici per i dati di tipo **numerico**. Inoltre, non si inseriscono i valori per i campi definiti con l’attributo auto_increment.
 
 ---
