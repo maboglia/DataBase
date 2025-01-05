@@ -152,3 +152,23 @@ Ecco un esempio pratico:
 Supponiamo di avere una relazione "Studente" con gli attributi "Matricola", "Nome", e "Cognome". L'insieme di attributi {"Matricola"} potrebbe essere una chiave candidata poiché soddisfa i requisiti di unicità e irreducibilità. Tuttavia, anche l'insieme di attributi {"Nome", "Cognome"} potrebbe essere una chiave candidata se ogni studente ha un nome e un cognome unici all'interno della relazione.
 
 La scelta della chiave primaria tra le chiavi candidate dipenderà dalle esigenze specifiche del database e del sistema che si sta progettando.
+
+---
+
+![esempio](e-r-diagrams1.gif)
+
+---
+
+![esempio](e-r_diagrams2.jpg)
+
+---
+
+![esempio](e-r_diagrams3.jpg)
+
+---
+
+![esempio](e-r-diagram3.png)
+
+---
+
+![esempio](erd-symbols.jpg)
