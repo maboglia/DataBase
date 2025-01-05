@@ -14,8 +14,9 @@ Quando si inseriscono i dati, bisogna utilizzare le virgolette o gli **apici** p
 
 1. `INSERT INTO` seleziona la tabella e i campi per i quali effettuare l’inserimento.
 2. `VALUE`/`VALUES` elenca i valori dei campi da inserire.
-
 È possibile inserire più record con un solo `INSERT`, separando l’elenco dei valori di ogni record con la virgola (`,`).
+
+---
 
 Altra sintassi per un singolo record con l'istruzione `SET`:
 
@@ -45,6 +46,8 @@ INSERT INTO tableName
 VALUES (value1, value2, value3);
 ```
 
+---
+
 Esempio:
 
 ```sql
@@ -57,6 +60,8 @@ VALUES (default, 'fabio', 'rossi', 'fbr@gmail.com', null, default);
 ## Read: Mostrare i Record di una Tabella
 
 È possibile visualizzare i record di una tabella utilizzando l’istruzione `SELECT`. Per visualizzare tutti i record da una tabella, si usa il carattere jolly `*`. Dobbiamo anche utilizzare l’istruzione `FROM` per identificare la tabella che vogliamo interrogare. Di solito si visualizzano campi specifici, piuttosto che l'intera tabella. Dopo l’istruzione `SELECT`, elencare i campi che interessano, separati da una virgola.
+
+---
 
 ```sql
 SELECT * FROM tableName;
@@ -77,6 +82,8 @@ INSERT INTO amici (nome, cognome)
 SELECT nome, cognome
 FROM studenti;
 ```
+
+---
 
 Nell'esempio qui sopra, abbiamo immaginato di popolare la tabella `amici` inserendo automaticamente i dati già presenti nella tabella `studenti`.
 
@@ -114,6 +121,8 @@ CREATE TABLE studenti_bk LIKE studenti;
 INSERT INTO studenti_bk SELECT * FROM studenti;
 ```
 
+---
+
 Si può anche utilizzare un'unica istruzione. In questo caso, gli indici non vengono ricreati, cioè le strutture delle tabelle sono diverse:
 
 ```sql
@@ -134,7 +143,11 @@ SET field1 = value1, field2 = value2
 WHERE field3 = value3;
 ```
 
+---
+
 Dopo `UPDATE`, indichiamo quale tabella è interessata. Con `SET`, specifichiamo quali colonne modificare e quali valori assegnare. Con `WHERE` (opzionale), stabiliamo le condizioni che determinano quali righe saranno interessate dalle modifiche. Attenzione: se non specifichiamo una condizione, tutte le righe saranno modificate.
+
+---
 
 - Per operare simultaneamente su più campi, è sufficiente suddividere le coppie chiave/valore con una virgola.
 - Quando si inseriscono i dati in una tabella, è importante considerare sempre come sono stati definiti gli attributi per evitare errori di inserimento.
@@ -154,6 +167,8 @@ Se il campo `genere` della tabella `studenti` è definito come `ENUM('m','f')`, 
 ERROR 1265 (01000): Data truncated for column 'genere' at row 1
 ```
 
+---
+
 Questo errore indica che il valore inserito è stato troncato perché non è conforme alla definizione dell'attributo.
 
 È importante notare che il comportamento dipende dall'impostazione della variabile globale `@@sql_mode`: di default, MySQL lavora in strict mode.
@@ -171,6 +186,8 @@ DELETE FROM tableName
 WHERE field = value;
 ```
 
+---
+
 Esempio:
 
 ```sql
@@ -186,6 +203,8 @@ Nell'esempio sopra, stiamo eliminando i record dalla tabella `studenti` dove il 
 
 Per **svuotare una tabella**, si usa l’istruzione `TRUNCATE`. Questa soluzione è la più veloce perché elimina la struttura della tabella per poi ricrearne una uguale vuota, azzerando il valore di eventuali campi AUTO_INCREMENT.
 
+---
+
 Usando `DELETE`, si eliminano tutti i record presenti nella tabella specificata uno per uno. Questo metodo, seppur funzionante, è poco efficiente poiché **dipende dalla quantità** di righe presenti in tabella. Inoltre, usando `DELETE`, il valore di un eventuale **AUTO_INCREMENT rimane inalterato**; si può comunque modificare il valore di incremento con l'istruzione `ALTER`:
 
 ```sql
@@ -195,5 +214,7 @@ DELETE FROM tableName;
 
 ALTER TABLE tableName AUTO_INCREMENT = 1;
 ```
+
+---
 
 La differenza principale tra `TRUNCATE` e `DELETE` è che `TRUNCATE` è un'operazione non registrata, mentre `DELETE` viene registrato in log, quindi `TRUNCATE` è generalmente più veloce su grandi tabelle. Tuttavia, `TRUNCATE` non può essere eseguito su tabelle referenziate da vincoli esterni di chiave, mentre `DELETE` può.
