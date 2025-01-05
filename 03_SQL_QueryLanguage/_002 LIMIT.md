@@ -17,6 +17,8 @@ ORDER BY cognome
 LIMIT 10;
 ```
 
+---
+
 La seguente query mostra 10 record della tabella `studenti` presi a partire dall'undicesimo record:
 
 ```sql

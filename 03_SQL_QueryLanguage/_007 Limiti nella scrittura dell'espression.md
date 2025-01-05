@@ -61,4 +61,6 @@ ERROR 1901 (HY000): Function or expression 'CURDATE()' cannot be used in the GEN
 
 Questo errore indica che la funzione CURDATE() **non** può essere utilizzata nella clausola GENERATED ALWAYS AS per una colonna generata a causa della sua **natura non deterministica**.
 
+---
+
 Per evitare questo tipo di errore, è necessario assicurarsi di utilizzare solo espressioni deterministiche e funzioni integrate supportate nelle definizioni delle colonne generate. Questo garantirà che le colonne generate possano essere create correttamente e che le operazioni di inserimento, aggiornamento e query funzionino come previsto.
