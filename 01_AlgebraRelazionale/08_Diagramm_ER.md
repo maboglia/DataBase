@@ -65,6 +65,10 @@ Nei diagrammi Entità-Relazione (ER), vengono utilizzati diversi simboli per rap
 
 ---
 
+![esempio](e-r_diagrams2.jpg)
+
+---
+
 1. **Entità:**
    - Rappresentata da un rettangolo. All'interno del rettangolo viene inserito il nome dell'entità.
 
@@ -152,14 +156,6 @@ Ecco un esempio pratico:
 Supponiamo di avere una relazione "Studente" con gli attributi "Matricola", "Nome", e "Cognome". L'insieme di attributi {"Matricola"} potrebbe essere una chiave candidata poiché soddisfa i requisiti di unicità e irreducibilità. Tuttavia, anche l'insieme di attributi {"Nome", "Cognome"} potrebbe essere una chiave candidata se ogni studente ha un nome e un cognome unici all'interno della relazione.
 
 La scelta della chiave primaria tra le chiavi candidate dipenderà dalle esigenze specifiche del database e del sistema che si sta progettando.
-
----
-
-![esempio](e-r-diagrams1.gif)
-
----
-
-![esempio](e-r_diagrams2.jpg)
 
 ---
 
