@@ -33,7 +33,7 @@ CREATE TABLE `serie` (
   `titolo` varchar(255) NOT NULL,
   `genere` varchar(255) NOT NULL,
   `rating` decimal(4,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Dump dei dati per la tabella `serie`

@@ -36,11 +36,9 @@ CREATE TABLE `countries` (
 -- Dumping data for table `countries`
 --
 
-LOCK TABLES `countries` WRITE;
 /*!40000 ALTER TABLE `countries` DISABLE KEYS */;
 INSERT INTO `countries` VALUES (1,'Germany','Berlin','https://flagcdn.com/w320/de.png',83240525),(2,'Moldova','Chișinău','https://flagcdn.com/w320/md.png',2617820),(3,'Serbia','Belgrade','https://flagcdn.com/w320/rs.png',6908224),(4,'Belarus','Minsk','https://flagcdn.com/w320/by.png',9398861),(5,'Latvia','Riga','https://flagcdn.com/w320/lv.png',1901548);
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

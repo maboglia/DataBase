@@ -46,11 +46,9 @@ CREATE TABLE `account` (
 -- Dumping data for table `account`
 --
 
-LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` VALUES (1,1,'CHECKING','Checking Account',1000.00,1000.00,'2014-12-04','2014-12-04','Kevin Bowersox','2014-12-04 17:30:30','Kevin Bowersox','2014-12-04 17:30:30');
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `account_type`
@@ -74,10 +72,8 @@ CREATE TABLE `account_type` (
 -- Dumping data for table `account_type`
 --
 
-LOCK TABLES `account_type` WRITE;
 /*!40000 ALTER TABLE `account_type` DISABLE KEYS */;
 /*!40000 ALTER TABLE `account_type` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `bank`
@@ -108,11 +104,9 @@ CREATE TABLE `bank` (
 -- Dumping data for table `bank`
 --
 
-LOCK TABLES `bank` WRITE;
 /*!40000 ALTER TABLE `bank` DISABLE KEYS */;
 INSERT INTO `bank` VALUES (1,'Second National Trust','301 Snowy Lane','Suite 2','Adams','PA','10003',0,'system','2014-11-01 00:00:00','system','2014-11-01 00:00:00','PRIMARY'),(2,'Third National Trust','Sunrise Drive','Suite 22','Jonestown','MI','12303',0,'system','2014-11-01 00:00:00','system','2014-11-01 00:00:00','PRIMARY'),(3,'Third National Trust','Bellvue','Suite 2','Newport','RI','18943',0,'system','2014-11-01 00:00:00','system','2014-11-01 00:00:00','PRIMARY'),(4,'Forth National Trust','403 Park Ave','Suite 221','Madison','WI','10003',0,'system','2014-11-01 00:00:00','system','2014-11-01 00:00:00','PRIMARY');
 /*!40000 ALTER TABLE `bank` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `bank_contact`
@@ -133,10 +127,8 @@ CREATE TABLE `bank_contact` (
 -- Dumping data for table `bank_contact`
 --
 
-LOCK TABLES `bank_contact` WRITE;
 /*!40000 ALTER TABLE `bank_contact` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bank_contact` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `bond`
@@ -164,11 +156,9 @@ CREATE TABLE `bond` (
 -- Dumping data for table `bond`
 --
 
-LOCK TABLES `bond` WRITE;
 /*!40000 ALTER TABLE `bond` DISABLE KEYS */;
 INSERT INTO `bond` VALUES (1451,'Long Term Bond Purchases','JP Morgan Chase','2014-12-05 15:40:08',10.22,123.22,'2014-12-05 00:00:00',2),(1452,'Long Term Bond Purchases','JP Morgan Chase','2014-12-13 16:45:53',10.22,123.22,'2014-12-13 00:00:00',NULL);
 /*!40000 ALTER TABLE `bond` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `budget`
@@ -190,10 +180,8 @@ CREATE TABLE `budget` (
 -- Dumping data for table `budget`
 --
 
-LOCK TABLES `budget` WRITE;
 /*!40000 ALTER TABLE `budget` DISABLE KEYS */;
 /*!40000 ALTER TABLE `budget` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `budget_transaction`
@@ -217,10 +205,8 @@ CREATE TABLE `budget_transaction` (
 -- Dumping data for table `budget_transaction`
 --
 
-LOCK TABLES `budget_transaction` WRITE;
 /*!40000 ALTER TABLE `budget_transaction` DISABLE KEYS */;
 /*!40000 ALTER TABLE `budget_transaction` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `credential`
@@ -244,10 +230,8 @@ CREATE TABLE `credential` (
 -- Dumping data for table `credential`
 --
 
-LOCK TABLES `credential` WRITE;
 /*!40000 ALTER TABLE `credential` DISABLE KEYS */;
 /*!40000 ALTER TABLE `credential` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `currency`
@@ -268,11 +252,9 @@ CREATE TABLE `currency` (
 -- Dumping data for table `currency`
 --
 
-LOCK TABLES `currency` WRITE;
 /*!40000 ALTER TABLE `currency` DISABLE KEYS */;
 INSERT INTO `currency` VALUES ('Dollar','United States','$'),('Pound','United Kingdom','Pound Sign');
 /*!40000 ALTER TABLE `currency` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `finances_user`
@@ -304,10 +286,8 @@ CREATE TABLE `finances_user` (
 -- Dumping data for table `finances_user`
 --
 
-LOCK TABLES `finances_user` WRITE;
 /*!40000 ALTER TABLE `finances_user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `finances_user` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `ifinances_keys`
@@ -328,10 +308,8 @@ CREATE TABLE `ifinances_keys` (
 -- Dumping data for table `ifinances_keys`
 --
 
-LOCK TABLES `ifinances_keys` WRITE;
 /*!40000 ALTER TABLE `ifinances_keys` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ifinances_keys` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `investment`
@@ -360,11 +338,9 @@ CREATE TABLE `investment` (
 -- Dumping data for table `investment`
 --
 
-LOCK TABLES `investment` WRITE;
 /*!40000 ALTER TABLE `investment` DISABLE KEYS */;
 INSERT INTO `investment` VALUES (1,6,'Private American Stock Purchases','Allen Edmonds','2014-12-05 16:37:31',NULL,NULL,NULL,100.00,1922,'STOCK'),(2,6,'Long Term Bond Purchases','JP Morgan Chase','2014-12-05 16:37:31',10.22,123.22,'2014-12-05 00:00:00',NULL,NULL,'BOND'),(3,7,'Private American Stock Purchases','Allen Edmonds','2014-12-05 16:38:06',NULL,NULL,NULL,100.00,1922,'STOCK'),(4,7,'Long Term Bond Purchases','JP Morgan Chase','2014-12-05 16:38:06',10.22,123.22,'2014-12-05 00:00:00',NULL,NULL,'BOND'),(1500,8,'Private American Stock Purchases','Allen Edmonds','2014-12-05 17:14:37',NULL,NULL,NULL,100.00,1922,'Stock'),(1501,8,'Long Term Bond Purchases','JP Morgan Chase','2014-12-05 17:14:37',10.22,123.22,'2014-12-05 00:00:00',NULL,NULL,'Bond'),(1502,9,'Private American Stock Purchases','Allen Edmonds','2014-12-05 17:15:09',NULL,NULL,NULL,100.00,1922,'Stock'),(1503,9,'Long Term Bond Purchases','JP Morgan Chase','2014-12-05 17:15:09',10.22,123.22,'2014-12-05 00:00:00',NULL,NULL,'Bond'),(1504,10,'Private American Stock Purchases','Allen Edmonds','2014-12-05 17:16:28',NULL,NULL,NULL,100.00,1922,'ST'),(1505,10,'Long Term Bond Purchases','JP Morgan Chase','2014-12-05 17:16:28',10.22,123.22,'2014-12-05 00:00:00',NULL,NULL,'BND'),(1506,12,'Private American Stock Purchases','Allen Edmonds','2014-12-13 16:49:28',NULL,NULL,NULL,100.00,1922,'ST'),(1507,12,'Long Term Bond Purchases','JP Morgan Chase','2014-12-13 16:49:28',10.22,123.22,'2014-12-13 00:00:00',NULL,NULL,'BND');
 /*!40000 ALTER TABLE `investment` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `market`
@@ -388,11 +364,9 @@ CREATE TABLE `market` (
 -- Dumping data for table `market`
 --
 
-LOCK TABLES `market` WRITE;
 /*!40000 ALTER TABLE `market` DISABLE KEYS */;
 INSERT INTO `market` VALUES (12,'Pound','United Kingdom','London Stock Exchange');
 /*!40000 ALTER TABLE `market` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `portfolio`
@@ -412,11 +386,9 @@ CREATE TABLE `portfolio` (
 -- Dumping data for table `portfolio`
 --
 
-LOCK TABLES `portfolio` WRITE;
 /*!40000 ALTER TABLE `portfolio` DISABLE KEYS */;
 INSERT INTO `portfolio` VALUES (1,'First Investments'),(2,'First Investments'),(6,'First Investments'),(7,'First Investments'),(8,'First Investments'),(9,'First Investments'),(10,'First Investments'),(12,'First Investments');
 /*!40000 ALTER TABLE `portfolio` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `stock`
@@ -443,11 +415,9 @@ CREATE TABLE `stock` (
 -- Dumping data for table `stock`
 --
 
-LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
 INSERT INTO `stock` VALUES (1450,'Private American Stock Purchases','Allen Edmonds','2014-12-05 15:40:08',100.00,1922,2),(1451,'Private American Stock Purchases','Allen Edmonds','2014-12-13 16:45:53',100.00,1922,NULL);
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `time_test`
@@ -474,10 +444,8 @@ CREATE TABLE `time_test` (
 -- Dumping data for table `time_test`
 --
 
-LOCK TABLES `time_test` WRITE;
 /*!40000 ALTER TABLE `time_test` DISABLE KEYS */;
 /*!40000 ALTER TABLE `time_test` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `transaction`
@@ -509,11 +477,9 @@ CREATE TABLE `transaction` (
 -- Dumping data for table `transaction`
 --
 
-LOCK TABLES `transaction` WRITE;
 /*!40000 ALTER TABLE `transaction` DISABLE KEYS */;
 INSERT INTO `transaction` VALUES (1,1,'Withdrawl','Dress Belt',50.00,1000.00,950.00,'New Dress Belt','Kevin Bowersox','2014-12-06 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(2,1,'Withdrawl','Work Shoes',100.00,950.00,850.00,'Nice Pair of Shoes','Kevin Bowersox','2014-12-07 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(3,1,'Withdrawl','Shirt',100.00,850.00,750.00,'Nice Shirt','Kevin Bowersox','2014-12-08 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(4,1,'Withdrawl','Socks',10.00,750.00,740.00,'Nice Socks','Kevin Bowersox','2014-12-09 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(5,1,'Withdrawl','Tie',40.00,740.00,700.00,'Nice Tie','Kevin Bowersox','2014-12-09 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(6,1,'Withdrawl','Pants',100.00,700.00,600.00,'Nice Pants','Kevin Bowersox','2014-12-10 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(7,1,'Withdrawl','Lunch',20.00,600.00,580.00,'Nice Lunch','Kevin Bowersox','2014-12-11 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(8,1,'Withdrawl','Dinner',30.00,580.00,550.00,'Great Dinner','Kevin Bowersox','2014-12-11 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(9,1,'Withdrawl','Breakfast',10.00,550.00,540.00,'Breakfast at Tiffanys','Kevin Bowersox','2014-12-12 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(10,1,'Withdrawl','Groceries',100.00,540.00,440.00,'Healthy Food','Kevin Bowersox','2014-12-13 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(11,1,'Deposit','Pay Check',1000.00,440.00,1440.00,'Pay Day','Kevin Bowersox','2014-12-14 10:53:30','Kevin Bowersox','2014-12-06 10:53:30'),(12,1,'Deposit','Bonus',500.00,1440.00,1940.00,'Annual Bonus','Kevin Bowersox','2014-12-19 10:53:30','Kevin Bowersox','2014-12-06 10:53:30');
 /*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user_account`
@@ -536,10 +502,8 @@ CREATE TABLE `user_account` (
 -- Dumping data for table `user_account`
 --
 
-LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `user_address`
@@ -564,10 +528,8 @@ CREATE TABLE `user_address` (
 -- Dumping data for table `user_address`
 --
 
-LOCK TABLES `user_address` WRITE;
 /*!40000 ALTER TABLE `user_address` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_address` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Temporary table structure for view `v_user_credential`

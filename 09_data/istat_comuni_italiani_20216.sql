@@ -36,7 +36,7 @@ CREATE TABLE `comuni` (
   `popolazione` int(11) NOT NULL,
   `altitudine` int(11) NOT NULL,
   `superficie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dumping data for table `comuni`
@@ -8110,7 +8110,7 @@ CREATE TABLE `provincie` (
   `idregione` int(11) NOT NULL,
   `denominazione` varchar(255) NOT NULL,
   `sigla` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dumping data for table `provincie`
@@ -8238,7 +8238,7 @@ CREATE TABLE `regioni` (
   `id` int(11) NOT NULL,
   `idripartizione` int(11) NOT NULL,
   `denominazione` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dumping data for table `regioni`
@@ -8275,7 +8275,7 @@ INSERT INTO `regioni` (`id`, `idripartizione`, `denominazione`) VALUES
 CREATE TABLE `ripartizioni` (
   `id` int(11) NOT NULL,
   `denominazione` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Dumping data for table `ripartizioni`
