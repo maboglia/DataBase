@@ -33,7 +33,7 @@ CREATE TABLE `biblioteca` (
   `Pagine` int(11) DEFAULT NULL,
   `Classificazione` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=910 DEFAULT CHARSET=latin1;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
