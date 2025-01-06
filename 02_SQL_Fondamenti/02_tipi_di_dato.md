@@ -1,10 +1,3 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
-theme: Gaia
----
-
 # I tipi di dato
 
 I tipi di dato in un database rappresentano il formato e il tipo di informazioni che possono essere memorizzate in una colonna di una tabella. I database relazionali offrono una varietà di tipi di dato che consentono di gestire diverse informazioni. Ecco alcuni tipi di dato comuni:

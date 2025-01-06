@@ -1,3 +1,16 @@
+---
+marp: true
+title: Fondamenti di basi di dati
+header: Fondamenti di basi di dati
+footer: Mauro Bogliaccino
+paginate: true
+author: mauro
+---
+
+![logo](../09_data/LOGO%20PNRR%20Regione.png)
+
+---
+
 # Introduzione al Modello Relazionale
 
 ---

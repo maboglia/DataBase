@@ -1,7 +1,14 @@
 ---
-header: Fondamenti di basi di dati
 marp: true
+title: Fondamenti di basi di dati
+header: Fondamenti di basi di dati
 footer: Mauro Bogliaccino
+paginate: true
+author: mauro
+---
+
+![logo](../09_data/LOGO%20PNRR%20Regione.png)
+
 ---
 
 # Algebra relazionale
@@ -23,6 +30,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 1. **Proiezione (π)**
+
 - **Simbolo:** `π`
 - **Descrizione:** L'operatore di proiezione seleziona una o più colonne (attributi) da una relazione, eliminando le colonne non selezionate. È simile all'operazione di *SELECT* in SQL.
 - **Sintassi:** `π_A1, A2, ..., An(R)`
@@ -31,6 +39,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 2. **Selezione (σ)**
+
 - **Simbolo:** `σ`
 - **Descrizione:** L'operatore di selezione estrae le righe (tuple) che soddisfano una determinata condizione da una relazione. È simile all'operazione di *WHERE* in SQL.
 - **Sintassi:** `σ_condizione(R)`
@@ -39,6 +48,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 3. **Unione (∪)**
+
 - **Simbolo:** `∪`
 - **Descrizione:** L'operatore di unione combina due relazioni con lo stesso schema (stessi attributi), restituendo tutte le tuple uniche presenti in entrambe le relazioni.
 - **Sintassi:** `R ∪ S`
@@ -47,6 +57,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 4. **Intersezione (∩)**
+
 - **Simbolo:** `∩`
 - **Descrizione:** L'operatore di intersezione restituisce le tuple comuni tra due relazioni con lo stesso schema.
 - **Sintassi:** `R ∩ S`
@@ -55,6 +66,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 5. **Differenza (−)**
+
 - **Simbolo:** `−`
 - **Descrizione:** L'operatore di differenza restituisce le tuple che sono in una relazione ma non nell'altra. È simile all'operazione di *EXCEPT* in SQL.
 - **Sintassi:** `R − S`
@@ -63,6 +75,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 6. **Prodotto cartesiano (×)**
+
 - **Simbolo:** `×`
 - **Descrizione:** L'operatore di prodotto cartesiano restituisce tutte le combinazioni possibili di tuple tra due relazioni. Ogni tupla della prima relazione viene combinata con ogni tupla della seconda relazione.
 - **Sintassi:** `R × S`
@@ -71,6 +84,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 7. **Join (⨝)**
+
 - **Simbolo:** `⨝`
 - **Descrizione:** L'operatore di join unisce due relazioni basandosi su una condizione di corrispondenza tra gli attributi. Esistono diversi tipi di join, ma il più comune è l'**inner join**.
 - **Sintassi:** `R ⨝ S`
@@ -79,6 +93,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 8. **Ridenominazione (ρ)**
+
 - **Simbolo:** `ρ`
 - **Descrizione:** L'operatore di ridenominazione cambia i nomi degli attributi o delle relazioni. È utile quando si vogliono evitare conflitti di nomi o semplificare i nomi degli attributi.
 - **Sintassi:** `ρ_NomeNuovo(R)`
@@ -87,6 +102,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 9. **Divisione (÷)**
+
 - **Simbolo:** `÷`
 - **Descrizione:** L'operatore di divisione è utilizzato per ottenere le tuple di una relazione che sono associate a tutte le tuple di una seconda relazione. È particolarmente utile quando si desidera trovare "cose che appartengono a tutto".
 - **Sintassi:** `R ÷ S`
@@ -95,6 +111,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### 10. **Aggregazione**
+
 - **Simbolo:** (Nessun simbolo universale per l'aggregazione, ma si utilizza un insieme di funzioni come `SUM`, `AVG`, `COUNT`, `MIN`, `MAX`, etc.)
 - **Descrizione:** L'aggregazione non è un operatore primario dell'algebra relazionale classica, ma viene utilizzata nelle implementazioni più moderne per calcolare valori aggregati come somma, media, numero di occorrenze, ecc.
 - **Sintassi:** `R[agg_func(A)]`
@@ -103,6 +120,7 @@ L'algebra relazionale è un linguaggio formale utilizzato per manipolare i dati 
 ---
 
 ### Esempio di combinazione degli operatori:
+
 Immagina di voler trovare tutte le persone che abitano in città con un affitto mensile maggiore di 500 euro. Potremmo utilizzare:
 
 ```text
@@ -116,6 +134,7 @@ In questo caso:
 ---
 
 ### Conclusione:
+
 Gli operatori dell'algebra relazionale sono fondamentali per esprimere query sui dati e sono la base per comprendere linguaggi più complessi come SQL. Utilizzando questi operatori, possiamo effettuare una vasta gamma di operazioni sui dati, come la selezione, la proiezione, l'unione, l'intersezione, la differenza, e molto altro.
 
 ---
@@ -160,6 +179,7 @@ Ecco degli esempi per ciascun operatore dell'algebra relazionale, con un contest
 ---
 
 ### 1. **Proiezione (π)**
+
 Se abbiamo una relazione **STUDENTI** con gli attributi `ID`, `Nome`, `Città`, e vogliamo selezionare solo i nomi e le città degli studenti, l'espressione di proiezione sarà:
 
 ```text
@@ -171,6 +191,7 @@ Questo restituirà una nuova relazione contenente solo i dati degli studenti rel
 ---
 
 ### 2. **Selezione (σ)**
+
 Supponiamo di avere una relazione **STUDENTI** con gli attributi `ID`, `Nome`, `Età`, e vogliamo selezionare gli studenti che hanno un'età maggiore di 20 anni. L'espressione di selezione sarà:
 
 ```text
@@ -182,6 +203,7 @@ Questo restituirà una relazione contenente solo gli studenti che soddisfano la 
 ---
 
 ### 3. **Unione (∪)**
+
 Immagina di avere due relazioni **STUDENTI_1** e **STUDENTI_2**, entrambe con gli stessi attributi `ID` e `Nome`. Se vogliamo unire gli studenti di entrambe le relazioni, l'espressione di unione sarà:
 
 ```text
@@ -193,6 +215,7 @@ Questo restituirà una relazione contenente tutte le tuple (studente) di **STUDE
 ---
 
 ### 4. **Intersezione (∩)**
+
 Supponiamo di avere due relazioni **STUDENTI_1** e **STUDENTI_2**, entrambe con gli stessi attributi `ID` e `Nome`, e vogliamo trovare gli studenti che sono presenti in entrambe le relazioni. L'espressione di intersezione sarà:
 
 ```text
@@ -204,6 +227,7 @@ Questo restituirà una relazione contenente solo gli studenti che sono presenti 
 ---
 
 ### 5. **Differenza (−)**
+
 Immagina di avere due relazioni **STUDENTI_1** e **STUDENTI_2** e vogliamo trovare gli studenti che sono presenti in **STUDENTI_1** ma non in **STUDENTI_2**. L'espressione di differenza sarà:
 
 ```text
@@ -215,6 +239,7 @@ Questo restituirà una relazione contenente gli studenti che sono in **STUDENTI_
 ---
 
 ### 6. **Prodotto cartesiano (×)**
+
 Se abbiamo due relazioni **CORSI** con gli attributi `CodCorso` e `NomeCorso`, e **STUDENTI** con gli attributi `ID` e `Nome`, e vogliamo fare il prodotto cartesiano tra queste due relazioni, l'espressione sarà:
 
 ```text
@@ -226,6 +251,7 @@ Questo restituirà una relazione che combina ogni tupla di **CORSI** con ogni tu
 ---
 
 ### 7. **Join (⨝)**
+
 Supponiamo di avere due relazioni **STUDENTI** con gli attributi `ID` e `Nome` e **ISCRIZIONI** con gli attributi `ID_Studente` e `CodCorso`, e vogliamo trovare tutti gli studenti iscritti a un corso specifico. L'espressione di join sarà:
 
 ```text
@@ -237,6 +263,7 @@ Questo restituirà una relazione contenente tutte le combinazioni di **STUDENTI*
 ---
 
 ### 8. **Ridenominazione (ρ)**
+
 Immagina di avere una relazione **STUDENTI** con gli attributi `ID` e `Nome`, e vogliamo ridenominare la relazione **STUDENTI** in **ALUNNI** e cambiare l'attributo `ID` in `ID_Studente`. L'espressione di ridenominazione sarà:
 
 ```text
@@ -248,6 +275,7 @@ Questo restituirà la relazione **STUDENTI**, ma con il nome della relazione cam
 ---
 
 ### 9. **Divisione (÷)**
+
 Supponiamo di avere due relazioni **STUDENTI_ISCRITTI** con gli attributi `ID_Studente`, `CodCorso`, e **CORSI** con gli attributi `CodCorso`, e vogliamo trovare gli studenti che sono iscritti a **tutti i corsi**. L'espressione di divisione sarà:
 
 ```text
@@ -268,6 +296,7 @@ Le espressioni dell'algebra relazionale rappresentano operazioni su relazioni (t
 
 ### 1. **Proiezione (π)**
 
+
 **Espressione:**
 ```text
 π_Nome, Città(STUDENTI)
@@ -281,6 +310,7 @@ La proiezione serve a selezionare solo alcune colonne da una relazione, escluden
 ---
 
 ### 2. **Selezione (σ)**
+
 
 **Espressione:**
 ```text
@@ -296,6 +326,7 @@ La selezione è un filtro che estrae solo le righe (tuple) che soddisfano una ce
 
 ### 3. **Unione (∪)**
 
+
 **Espressione:**
 ```text
 STUDENTI_1 ∪ STUDENTI_2
@@ -309,6 +340,7 @@ L'unione combina tutte le righe delle due relazioni, eliminando i duplicati.
 ---
 
 ### 4. **Intersezione (∩)**
+
 
 **Espressione:**
 ```text
@@ -324,6 +356,7 @@ L'intersezione restituisce le righe che sono comuni a entrambe le relazioni.
 
 ### 5. **Differenza (−)**
 
+
 **Espressione:**
 ```text
 STUDENTI_1 − STUDENTI_2
@@ -337,6 +370,7 @@ La differenza restituisce tutte le righe che sono presenti nella prima relazione
 ---
 
 ### 6. **Prodotto cartesiano (×)**
+
 
 **Espressione:**
 ```text
@@ -352,6 +386,7 @@ Il prodotto cartesiano combina ogni riga della prima relazione con ogni riga del
 
 ### 7. **Join (⨝)**
 
+
 **Espressione:**
 ```text
 STUDENTI ⨝ ISCRIZIONI
@@ -365,6 +400,7 @@ Il join combina le righe delle due relazioni dove esiste una corrispondenza fra 
 ---
 
 ### 8. **Ridenominazione (ρ)**
+
 
 **Espressione:**
 ```text
@@ -380,6 +416,7 @@ La ridenominazione cambia il nome di una relazione o di uno degli attributi di u
 
 ### 9. **Divisione (÷)**
 
+
 **Espressione:**
 ```text
 STUDENTI_ISCRITTI ÷ CORSI
@@ -392,9 +429,8 @@ La divisione è un'operazione complessa che restituisce le righe della prima rel
 
 ---
 
----
-
 ### Sintesi generale per leggere le espressioni:
+
 - Gli operatori (π, σ, ∪, ∩, −, ×, ⨝, ρ, ÷) sono letti come **"operazione su"**.
 - Le relazioni (ad esempio **STUDENTI**, **CORSI**, **ISCRIZIONI**) sono le tabelle sui quali l'operatore agisce.
 - Gli attributi sono specificati nelle espressioni quando è necessario, come nei casi di **π** (proiezione) o **σ** (selezione) dove specifichiamo i campi da considerare o le condizioni da applicare.

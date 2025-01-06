@@ -1,11 +1,3 @@
----
-
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
-theme: Gaia
----
-
 # Entity Relation
 
 I diagrammi Entità-Relazione (ER) sono utilizzati per modellare la struttura dei dati in un sistema informatico. Questi diagrammi forniscono una rappresentazione visuale delle entità all'interno del sistema e delle relazioni tra di esse. Ecco alcuni concetti chiave nei diagrammi ER:

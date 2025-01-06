@@ -1,10 +1,3 @@
----
-header: Fondamenti di basi di dati
-marp: true
-footer: Mauro Bogliaccino
-theme: Gaia
----
-
 # Fondamenti di basi di dati
 
 ---
