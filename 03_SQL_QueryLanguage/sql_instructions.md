@@ -29,10 +29,13 @@ DROP DATABASE Negozio;
 
 ### **3. BACKUP DATABASE**  
 
-Crea un backup del database.  
+Crea un backup del database. (MSSQL) 
+
 ```sql
 BACKUP DATABASE Negozio TO DISK = 'C:\Backup\Negozio.bak';
 ```
+
+[Per MySql > 5.5 vedi mysqldump](_070_backup_restore.md)
 
 ---
 
