@@ -69,3 +69,7 @@ Le basi di dati sono strumenti essenziali nell'ambito dell'informatica e vengono
 ---
 
 Questi sono solo alcuni dei concetti di base relativi alle basi di dati. La progettazione e la gestione di basi di dati efficaci richiedono una comprensione approfondita di questi concetti e delle pratiche migliori.
+
+---
+
+
