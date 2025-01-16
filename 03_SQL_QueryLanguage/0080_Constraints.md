@@ -143,3 +143,112 @@ CREATE TABLE clienti (
 | **DEFAULT**     | Imposta un valore predefinito.               |
 | **AUTO_INCREMENT** | Genera automaticamente ID univoci.       |
 
+---
+
+## Aggiugnere vincoli alle tabelle esistenti
+
+Ecco una serie di istruzioni `ALTER TABLE` per aggiungere i vari vincoli (**constraints**) richiesti:
+
+### 1. **Aggiungere una chiave primaria (PRIMARY KEY):**
+
+```sql
+ALTER TABLE tabella
+ADD CONSTRAINT pk_nome_primaria PRIMARY KEY (colonna);
+```
+
+### 2. **Aggiungere una chiave esterna (FOREIGN KEY):**
+
+```sql
+ALTER TABLE tabella_figlio
+ADD CONSTRAINT fk_nome_esterna FOREIGN KEY (colonna_figlio)
+REFERENCES tabella_padre(colonna_padre)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+```
+
+### 3. **Aggiungere un vincolo di unicità (UNIQUE):**
+
+```sql
+ALTER TABLE tabella
+ADD CONSTRAINT unq_nome_unico UNIQUE (colonna);
+```
+
+### 4. **Impedire valori NULL (NOT NULL):**
+
+```sql
+ALTER TABLE tabella
+MODIFY colonna tipo NOT NULL;
+```
+
+### 5. **Aggiungere un vincolo CHECK:**
+
+```sql
+ALTER TABLE tabella
+ADD CONSTRAINT chk_nome_check CHECK (colonna > 0 AND colonna < 100);
+```
+
+### 6. **Impostare un valore predefinito (DEFAULT):**
+
+```sql
+ALTER TABLE tabella
+ALTER colonna SET DEFAULT 'valore_predefinito';
+```
+
+### 7. **Abilitare AUTO_INCREMENT per una colonna:**
+
+```sql
+ALTER TABLE tabella
+MODIFY colonna INT AUTO_INCREMENT;
+```
+
+---
+
+### Esempio completo
+
+Supponiamo di avere una tabella chiamata `utenti`:
+
+```sql
+CREATE TABLE utenti (
+    id INT,
+    nome VARCHAR(50),
+    email VARCHAR(100),
+    eta INT,
+    stato VARCHAR(10)
+);
+```
+
+Aggiungiamo tutti i vincoli richiesti:
+
+```sql
+-- 1. PRIMARY KEY
+ALTER TABLE utenti
+ADD CONSTRAINT pk_utenti PRIMARY KEY (id);
+
+-- 2. FOREIGN KEY
+ALTER TABLE utenti
+ADD CONSTRAINT fk_utenti_stato FOREIGN KEY (stato)
+REFERENCES stati(codice)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+-- 3. UNIQUE
+ALTER TABLE utenti
+ADD CONSTRAINT unq_email UNIQUE (email);
+
+-- 4. NOT NULL
+ALTER TABLE utenti
+MODIFY nome VARCHAR(50) NOT NULL;
+
+-- 5. CHECK
+ALTER TABLE utenti
+ADD CONSTRAINT chk_eta CHECK (eta >= 18 AND eta <= 99);
+
+-- 6. DEFAULT
+ALTER TABLE utenti
+ALTER stato SET DEFAULT 'attivo';
+
+-- 7. AUTO_INCREMENT
+ALTER TABLE utenti
+MODIFY id INT AUTO_INCREMENT;
+```
+
