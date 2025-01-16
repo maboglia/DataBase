@@ -252,3 +252,10 @@ FROM appuntamenti
 WHERE data_ora > NOW();
 ```
 
+---
+
+### **8. Calcola età**
+
+```sql
+SELECT *, FLOOR(DATEDIFF(CURRENT_DATE, data_nascita) / 365) AS age from utenti;
+```
