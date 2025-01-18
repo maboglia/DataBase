@@ -159,6 +159,48 @@ LEFT JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
 GROUP BY P.CodP, P.NomeP;
 ```
 
+Ecco il commento al codice SQL:
+
+```sql
+-- Seleziona il nome del prodotto e il totale della quantità fornita per ciascun prodotto.
+SELECT P.NomeP, 
+       COALESCE(SUM(FP.Qta), 0) AS TotaleQuantita
+       
+-- Dalla tabella "Prodotti" (P) effettua un join con la tabella "FornitoriProdotti" (FP)
+-- utilizzando la colonna comune "CodP" per associare ogni prodotto ai fornitori che lo hanno fornito.
+FROM Prodotti P
+LEFT JOIN FornitoriProdotti FP ON P.CodP = FP.CodP
+
+-- Raggruppa i risultati per il codice e il nome del prodotto.
+-- Questo assicura che ogni prodotto sia rappresentato da una riga unica nei risultati.
+GROUP BY P.CodP, P.NomeP;
+```
+
+### Spiegazione dettagliata:
+
+1. **`SELECT P.NomeP`**:  
+   Estrae il nome del prodotto dalla tabella `Prodotti`.
+
+2. **`COALESCE(SUM(FP.Qta), 0) AS TotaleQuantita`**:  
+   - Calcola la somma (`SUM`) della quantità (`Qta`) per ogni prodotto fornito.
+   - Usa `COALESCE` per sostituire eventuali valori NULL con `0`. Questo è utile per i prodotti che non hanno fornitori registrati nella tabella `FornitoriProdotti`.
+
+3. **`FROM Prodotti P`**:  
+   Specifica la tabella principale `Prodotti`, abbreviata come `P`.
+
+4. **`LEFT JOIN FornitoriProdotti FP ON P.CodP = FP.CodP`**:  
+   - Utilizza un `LEFT JOIN` per mantenere tutti i prodotti dalla tabella `Prodotti`, anche se non ci sono corrispondenze nella tabella `FornitoriProdotti`.
+   - La condizione `ON P.CodP = FP.CodP` associa le righe delle due tabelle in base alla colonna `CodP`, che rappresenta il codice del prodotto.
+
+5. **`GROUP BY P.CodP, P.NomeP`**:  
+   - Raggruppa i risultati per prodotto utilizzando le colonne `CodP` (codice prodotto) e `NomeP` (nome prodotto).
+   - Necessario per utilizzare la funzione aggregata `SUM` in modo corretto.
+
+### Risultato della Query:
+- Ogni riga rappresenta un prodotto.
+- Se un prodotto ha fornitori registrati, viene mostrata la somma delle quantità fornite.
+- Se un prodotto non ha fornitori registrati, il totale sarà `0` grazie alla funzione `COALESCE`.
+
 ---
 
 ### **4. Visualizzare i fornitori che forniscono prodotti con quantità maggiore di 50**

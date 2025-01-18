@@ -1,0 +1,55 @@
+# Esercizi sul database Sakila
+
+
+## Parte 1
+
+- 1a. Mostra i nomi e i cognomi di tutti gli attori dalla tabella actor.
+- 1b. Mostra nome e cognome di ciascun attore in un'unica colonna, tutto in maiuscolo. Nomina la colonna "Actor Name".
+
+## Parte 2
+
+- 2a. Trova ID, nome e cognome di un attore di cui conosci solo il nome "Joe".
+- 2b. Trova tutti gli attori i cui cognomi contengono le lettere GEN.
+- 2c. Trova tutti gli attori i cui cognomi contengono le lettere LI. Ordina per cognome e poi per nome.
+- 2d. Utilizzando IN, mostra gli ID e i nomi dei seguenti paesi: Afghanistan, Bangladesh e Cina.
+
+## Parte 3
+
+- 3a. Aggiungi una colonna "description" nella tabella actor con tipo di dato BLOB.
+- 3b. Elimina la colonna "description" dalla tabella actor.
+
+## Parte 4
+
+- 4a. Elenca i cognomi degli attori e il numero di attori con ciascun cognome.
+- 4b. Elenca i cognomi degli attori con il numero di attori per ciascun cognome, mostrando solo quelli con almeno 2 attori.
+- 4c. Correggi un errore: cambia "GROUCHO WILLIAMS" in "HARPO WILLIAMS".
+- 4d. Reverti la modifica precedente: cambia "HARPO" in "GROUCHO".
+
+## Parte 5
+
+- 5a. Recupera lo schema della tabella address.
+
+## Parte 6
+
+- 6a. Usa un JOIN per mostrare nome, cognome e indirizzo di ogni membro dello staff.
+- 6b. Mostra il totale incassato da ciascun membro dello staff ad agosto 2005.
+- 6c. Elenca ciascun film e il numero di attori associati. Usa INNER JOIN.
+- 6d. Quante copie del film "Hunchback Impossible" esistono nell'inventario?
+- 6e. Mostra il totale pagato da ciascun cliente, ordinato alfabeticamente per cognome.
+
+## Parte 7
+
+- 7a. Mostra i titoli dei film che iniziano con "K" o "Q" e sono in lingua inglese.
+- 7b. Mostra gli attori che appaiono nel film "Alone Trip".
+- 7c. Mostra nome, cognome ed email dei clienti canadesi.
+- 7d. Identifica tutti i film categorizzati come "Family".
+- 7e. Mostra i film più noleggiati in ordine decrescente.
+- 7f. Mostra quanto ha incassato ogni negozio.
+- 7g. Mostra ID, città e paese di ciascun negozio.
+- 7h. Elenca i 5 generi con maggiori ricavi in ordine decrescente.
+
+## Parte 8
+
+- 8a. Crea una vista per mostrare i 5 generi con maggiori ricavi.
+- 8b. Mostra il contenuto della vista creata in 8a.
+- 8c. Elimina la vista creata.
