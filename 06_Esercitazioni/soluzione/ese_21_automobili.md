@@ -6,7 +6,7 @@ Ecco 10 query base che puoi utilizzare per esercitarti con SQL sulla [tabella `a
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT * 
 FROM automobili;
 ```
@@ -18,7 +18,7 @@ FROM automobili;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT marca, modello, prezzo 
 FROM automobili;
 ```
@@ -30,7 +30,7 @@ FROM automobili;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT * 
 FROM automobili 
 WHERE prezzo < 20000;
@@ -43,7 +43,7 @@ WHERE prezzo < 20000;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT * 
 FROM automobili 
 WHERE posti = 5;
@@ -56,7 +56,7 @@ WHERE posti = 5;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT * 
 FROM automobili 
 ORDER BY prezzo DESC;
@@ -69,7 +69,7 @@ ORDER BY prezzo DESC;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT AVG(prezzo) AS media_prezzo 
 FROM automobili;
 ```
@@ -81,7 +81,7 @@ FROM automobili;
 
 #<details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT COUNT(*) AS auto_grandi_cilindrata 
 FROM automobili 
 WHERE cilindrata > 1600;
@@ -94,7 +94,7 @@ WHERE cilindrata > 1600;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT DISTINCT marca 
 FROM automobili;
 ```
@@ -106,7 +106,7 @@ FROM automobili;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT marca, modello, prezzo 
 FROM automobili 
 ORDER BY prezzo DESC 
@@ -120,7 +120,7 @@ LIMIT 1;
 
 <details>
   <summary>sql code</summary>
-  ```sql
+```sql
 SELECT * 
 FROM automobili 
 WHERE prezzo BETWEEN 20000 AND 30000;
