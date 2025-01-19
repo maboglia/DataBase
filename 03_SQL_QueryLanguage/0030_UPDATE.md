@@ -1,50 +1,46 @@
-# Le istruzioni di aggiornamento
+# Update: istruzioni per modificare i dati
 
-Le istruzioni di aggiornamento in SQL vengono utilizzate per modificare i dati esistenti nelle tabelle. Le due istruzioni principali per l'aggiornamento sono `UPDATE` e `ALTER TABLE`. Ecco come vengono utilizzate:
+L'istruzione `UPDATE` viene utilizzata per aggiornare i record in una tabella. Questa istruzione modifica il valore presente in una colonna di un record già esistente. Viene utilizzata insieme all’istruzione `SET`.
 
----
-
-1. **UPDATE:**
-   - L'istruzione `UPDATE` viene utilizzata per modificare i valori esistenti in una o più colonne di una tabella.
-
-   ```sql
-   UPDATE nome_tabella
-   SET colonna1 = valore1, colonna2 = valore2, ...
-   WHERE condizione;
-   ```
-
-   - Esempio:
-
-     ```sql
-     UPDATE Studenti
-     SET Voto = 90
-     WHERE Matricola = 12345;
-     ```
-
-     Questo esempio modifica il valore della colonna "Voto" a 90 per uno studente con matricola 12345.
+```sql
+UPDATE tableName
+SET field1 = value1, field2 = value2
+WHERE field3 = value3;
+```
 
 ---
 
-2. **ALTER TABLE:**
-   - L'istruzione `ALTER TABLE` può essere utilizzata per modificare la struttura di una tabella, inclusa la modifica di colonne esistenti.
-
-   ```sql
-   ALTER TABLE nome_tabella
-   ALTER COLUMN nome_colonna NUOVO_TIPO_DATO;
-   ```
-
-   - Esempio:
-
-     ```sql
-     ALTER TABLE Studenti
-     ALTER COLUMN Nome VARCHAR(100);
-     ```
-
-     Questo esempio modifica il tipo di dati della colonna "Nome" nella tabella "Studenti" a VARCHAR(100).
+Dopo `UPDATE`, indichiamo quale tabella è interessata. Con `SET`, specifichiamo quali colonne modificare e quali valori assegnare. Con `WHERE` (opzionale), stabiliamo le condizioni che determinano quali righe saranno interessate dalle modifiche. Attenzione: se non specifichiamo una condizione, tutte le righe saranno modificate.
 
 ---
 
-3. **Sintassi combinata (UPDATE con JOIN):**
+- Per operare simultaneamente su più campi, è sufficiente suddividere le coppie chiave/valore con una virgola.
+- Quando si inseriscono i dati in una tabella, è importante considerare sempre come sono stati definiti gli attributi per evitare errori di inserimento.
+- Se si inserisce un valore troppo lungo o non compreso dalla definizione dell’attributo, MySQL restituirà un errore e non effettuerà alcuna modifica.
+
+---
+
+Ad esempio, consideriamo il seguente comando di aggiornamento:
+
+```sql
+UPDATE studenti SET genere = 's' WHERE id = 1;
+```
+
+Se il campo `genere` della tabella `studenti` è definito come `ENUM('m','f')`, accetta solo i valori 'm' o 'f'. Nel caso sopra riportato, stiamo tentando di inserire un valore non ammesso ('s'), il che provocherà un errore come questo:
+
+```
+ERROR 1265 (01000): Data truncated for column 'genere' at row 1
+```
+
+---
+
+Questo errore indica che il valore inserito è stato troncato perché non è conforme alla definizione dell'attributo.
+
+È importante notare che il comportamento dipende dall'impostazione della variabile globale `@@sql_mode`: di default, MySQL lavora in strict mode.
+
+---
+
+## **Sintassi combinata (UPDATE con JOIN):**
    - È possibile utilizzare la clausola `UPDATE` in combinazione con `JOIN` per eseguire aggiornamenti basati su condizioni che coinvolgono più tabelle.
 
    ```sql
