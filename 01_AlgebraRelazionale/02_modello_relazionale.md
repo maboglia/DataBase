@@ -172,3 +172,81 @@ Il modello relazionale ha avuto un grande successo e diffusione grazie a vari va
 Nonostante la proposta iniziale di Codd avesse incontrato alcune difficoltà pratiche, specialmente nell'implementazione efficiente del modello, a partire dagli anni '80 il modello relazionale è diventato il paradigma dominante per la gestione dei dati. L'introduzione di sistemi di gestione di basi di dati relazionali (RDBMS) come **Oracle**, **MySQL**, **PostgreSQL**, e **Microsoft SQL Server** ha permesso una rapida diffusione del modello grazie anche alla standardizzazione del linguaggio SQL e ai miglioramenti nelle tecniche di ottimizzazione delle performance.
 
 In sintesi, il **modello relazionale** è la base di gran parte delle applicazioni moderne di gestione dei dati, grazie alla sua semplicità, indipendenza fisica dei dati e l'efficace uso dei vincoli di integrità per garantire la coerenza e la qualità dei dati.
+
+---
+
+## Recap
+
+Il **modello relazionale** è un concetto fondamentale nei database, si può formalizzare utilizzando termini algebrici, trasformandoli poi in una rappresentazione più familiare (come tabelle, righe e colonne). Di seguito trovi una spiegazione semplificata:
+
+---
+
+### **Modello relazionale: concetti principali**
+
+1. **Relazione algebrica**:
+   - Una relazione è un insieme di n-uple (o righe), ciascuna composta da valori appartenenti a insiemi definiti, detti **domini**.
+   - Es.: Se hai due insiemi, uno con codici categoria (`01`, `02`, ecc.) e l'altro con nomi (`Autovettura`, `Furgone`, ecc.), una relazione tra loro potrebbe essere `<(01, Autovettura), (02, Furgone), ...>`.
+
+2. **Terminologia tradotta in tabelle**:
+   - **Relazione algebrica** = Tabella.
+   - **n-uple** = Riga.
+   - **Attributi** = Colonne.
+   - Es.: Una tabella "Categorie" può essere rappresentata come:
+
+     | CODICE CATEGORIA | NOME CATEGORIA  |
+     |------------------|-----------------|
+     | 01               | Autovettura    |
+     | 02               | Furgone        |
+
+---
+
+### **Proprietà delle tabelle**
+
+1. **Unicità delle righe**:
+   - Non possono esistere due righe identiche in una tabella.
+   - Per questo, ogni tabella ha una **chiave primaria** (Primary Key), cioè un insieme di attributi (colonne) che identificano in modo univoco ogni riga.
+
+2. **Ordine delle righe non significativo**:
+   - Le righe in una tabella non sono ordinate: l'ordine è irrilevante per il significato dei dati.
+
+---
+
+### **Chiavi nel modello relazionale**
+
+1. **Chiave primaria (Primary Key)**:
+   - Un attributo o insieme di attributi che identifica univocamente ogni riga.
+   - Es.: In una tabella "Categorie", `CODICE CATEGORIA` potrebbe essere la chiave primaria.
+
+2. **Chiave esterna (Foreign Key)**:
+   - Un attributo o insieme di attributi che si riferisce alla chiave primaria di un'altra tabella, creando una relazione tra tabelle.
+   - Es.: In una tabella "Veicoli", il campo `CODICE CATEGORIA` può essere una chiave esterna che si collega alla tabella "Categorie".
+
+---
+
+### **Relazioni tra tabelle (modello Entità-Relazione)**
+
+Le relazioni tra tabelle sono rappresentate tramite chiavi esterne. Esistono tre tipi principali di relazioni:
+
+1. **1:1** (uno a uno): Ogni riga di una tabella è associata a una sola riga di un'altra tabella.
+2. **1:N** (uno a molti): Una riga di una tabella è associata a più righe di un'altra tabella.
+3. **N:N** (molti a molti): Molte righe di una tabella sono associate a molte righe di un'altra tabella.
+
+---
+
+### **Importanza delle chiavi primarie e SQL**
+
+1. **SQL non obbliga** a definire una chiave primaria, ma è fortemente raccomandato farlo:
+   - Migliora l'accuratezza dei dati.
+   - Ottimizza le prestazioni del database.
+2. **SQL può restituire tabelle con righe duplicate** nei risultati di una query, ma questo non riguarda la struttura del modello relazionale stesso.
+
+---
+
+### **Conversione da schema concettuale a logico**
+
+1. **Entità** nel modello concettuale diventano tabelle.
+2. **Relazioni** nel modello concettuale diventano riferimenti tramite chiavi esterne.
+
+---
+
+Questa struttura permette di rappresentare i dati in modo logico, flessibile e ottimizzato per l'elaborazione e le relazioni.
