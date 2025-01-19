@@ -14,7 +14,7 @@ Questi operatori sono utilizzati per formulare condizioni nei comandi SQL come `
 
 ---
 
-## Operatori di confronto avanzati: IN, NOT IN
+## Operatori di confronto avanzati: [IN, NOT IN](0028_=_IN_LIKE.md)
 
 L’operatore IN ci consente di selezionare i record indicando più valori di campo. Possiamo farlo con l'operatore OR, ma può diventare complicato quando confrontiamo molti valori. Prendiamo ad esempio l'esecuzione di una query in cui cerchiamo solo gli studenti di alcune province:
 
@@ -36,7 +36,7 @@ WHERE provincia NOT IN ('to','cn','at','no');
 
 ---
 
-### BETWEEN, NOT BETWEEN
+### [BETWEEN, NOT BETWEEN](0030_BETWEEN_IN.md)
 
 Utilizzando l'operatore BETWEEN possiamo selezionare un intervallo di valori. I valori di inizio e fine dell’intervallo sono inclusi. I valori dell’intervallo possono essere numeri, testo o date.
 
@@ -48,7 +48,7 @@ WHERE data_nascita BETWEEN '1985-01-01' AND '1994-12-31';
 
 ---
 
-### IS NULL e IS NOT NULL
+### [IS NULL e IS NOT NULL](0027_IS_NULL.md)
 
 L'operatore IS NULL viene utilizzato per visualizzare i record che non hanno un valore impostato per un campo. Viceversa, IS NOT NULL mostra i record che hanno un valore impostato per un campo. Questi operatori possono essere utilizzati per trovare i record che hanno bisogno di informazioni aggiuntive.
 
@@ -60,7 +60,7 @@ WHERE data_nascita IS NULL;
 
 ---
 
-### LIKE, NOT LIKE
+### [LIKE, NOT LIKE](0028_=_IN_LIKE.md)
 
 Un operatore piuttosto "particolare" è LIKE, il quale consente di effettuare dei "paragoni di somiglianza".
 
@@ -86,7 +86,7 @@ Tuttavia, è consigliabile non abusare degli operatori di somiglianza, in quanto
 
 ---
 
-### REGEXP_LIKE() (REGEXP e RLIKE sono sinonimi di REGEXP_LIKE())
+### [REGEXP_LIKE() (REGEXP e RLIKE sono sinonimi di REGEXP_LIKE())](0032_REGEXP.md)
 
 Un operatore più potente di LIKE è REGEXP, il quale consente di utilizzare molti più simboli per ricerche più complesse.
 

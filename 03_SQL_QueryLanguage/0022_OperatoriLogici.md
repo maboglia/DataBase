@@ -64,3 +64,5 @@ AND (provincia='to' OR provincia='al');
 ```
 
 In questa query, vengono selezionati i record degli studenti con il cognome "verdi" o "rossi" e che sono residenti sia nella provincia di Torino che nella provincia di Alessandria.
+
+[esempi](0026_AND_OR_NOT.md)
