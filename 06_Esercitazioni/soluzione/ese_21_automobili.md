@@ -5,7 +5,7 @@ Ecco 10 query base che puoi utilizzare per esercitarti con SQL sulla [tabella `a
 ### 1. **Selezionare tutte le auto nella tabella**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT * 
 FROM automobili;
@@ -17,7 +17,7 @@ FROM automobili;
 ### 2. **Visualizzare solo marca, modello e prezzo di tutte le auto**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT marca, modello, prezzo 
 FROM automobili;
@@ -29,7 +29,7 @@ FROM automobili;
 ### 3. **Trovare tutte le auto con un prezzo inferiore a 20.000 euro**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT * 
 FROM automobili 
@@ -42,7 +42,7 @@ WHERE prezzo < 20000;
 ### 4. **Selezionare tutte le auto con 5 posti**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT * 
 FROM automobili 
@@ -55,7 +55,7 @@ WHERE posti = 5;
 ### 5. **Ordinare le auto in base al prezzo in ordine decrescente**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT * 
 FROM automobili 
@@ -68,7 +68,7 @@ ORDER BY prezzo DESC;
 ### 6. **Calcolare la media del prezzo delle auto**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT AVG(prezzo) AS media_prezzo 
 FROM automobili;
@@ -80,7 +80,7 @@ FROM automobili;
 ### 7. **Contare quante auto hanno una cilindrata superiore a 1600cc**
 
 #<details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT COUNT(*) AS auto_grandi_cilindrata 
 FROM automobili 
@@ -105,7 +105,7 @@ FROM automobili;
 ### 9. **Trovare la marca e il modello dell'auto più costosa**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT marca, modello, prezzo 
 FROM automobili 
@@ -119,7 +119,7 @@ LIMIT 1;
 ### 10. **Trovare tutte le auto con un prezzo tra 20.000 e 30.000 euro**
 
 <details>
-  <summary>Click me</summary>
+  <summary>sql code</summary>
   ```sql
 SELECT * 
 FROM automobili 
