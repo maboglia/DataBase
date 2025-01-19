@@ -1,3 +1,79 @@
+# # Introduzione alla Clausola `WHERE` in SQL
+
+La clausola **`WHERE`** viene utilizzata in SQL per filtrare i dati su cui operare. È applicabile non solo alle query di selezione (**`SELECT`**), ma anche alle operazioni di aggiornamento (**`UPDATE`**) e cancellazione (**`DELETE`**). Grazie a questa clausola, puoi specificare le condizioni che determinano quali righe includere o modificare.
+
+---
+
+### **Sintassi Base**
+
+- **`SELECT`**:
+
+  ```sql
+  SELECT colonne
+  FROM tabella
+  WHERE condizione;
+  ```
+
+- **`UPDATE`**:
+
+  ```sql
+  UPDATE tabella
+  SET colonna = valore
+  WHERE condizione;
+  ```
+
+- **`DELETE`**:
+
+  ```sql
+  DELETE FROM tabella
+  WHERE condizione;
+  ```
+
+---
+
+### **Esempi**
+
+#### **1. Selezione Condizionata**
+
+Ottenere tutti i prodotti con prezzo superiore a 100:
+
+```sql
+SELECT * 
+FROM prodotti
+WHERE Prezzo > 100;
+```
+
+#### **2. Aggiornamento Condizionato**
+
+Aggiornare il prezzo dei prodotti nella categoria "Casa":
+
+```sql
+UPDATE prodotti
+SET Prezzo = Prezzo * 1.1
+WHERE Categoria = 'Casa';
+```
+
+#### **3. Cancellazione Condizionata**
+
+Eliminare prodotti con prezzo inferiore a 20:
+
+```sql
+DELETE FROM prodotti
+WHERE Prezzo < 20;
+```
+
+---
+
+### **Note Importanti**
+
+1. **Condizioni Multiple**: Puoi combinare condizioni con **`AND`**, **`OR`** e parentesi per la priorità.
+2. **Valori Null**: Usa **`IS NULL`** o **`IS NOT NULL`** per filtrare valori mancanti.
+3. **Prestazioni**: Aggiungere indici sui campi usati in **`WHERE`** migliora le prestazioni delle query.
+
+La clausola **`WHERE`** è essenziale per operare in modo mirato sui dati, evitando modifiche o selezioni su intere tabelle.
+
+---
+
 # Le operazioni di filtraggio dei dati
 
 Ecco alcuni **esempi** di operazioni di filtraggio usando la clausola WHERE in SQL:

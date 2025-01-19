@@ -1,3 +1,5 @@
+# **LIKE**, **NOT LIKE**, **IN**, **NOT IN**, e **=**
+
 Gli **operatori di stringa** in SQL vengono utilizzati per filtrare i risultati basandosi sui valori di tipo testo. Questi operatori permettono di cercare, confrontare o analizzare le stringhe nelle tabelle, spesso nella clausola **WHERE**. I principali operatori includono **LIKE**, **NOT LIKE**, **IN**, **NOT IN**, e **=**.
 
 Ecco una spiegazione con esempi:

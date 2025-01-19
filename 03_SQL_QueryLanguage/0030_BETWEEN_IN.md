@@ -1,3 +1,5 @@
+# **BETWEEN**, **IN**, e **NOT IN**
+
 Gli operatori numerici in SQL vengono utilizzati per filtrare i dati basandosi su valori numerici. Oltre agli operatori di confronto standard (`=`, `>`, `<`, `>=`, `<=`, `!=`), esistono operatori speciali come **BETWEEN**, **IN**, e **NOT IN** che permettono di definire filtri più complessi ed efficienti.
 
 Ecco una spiegazione con esempi:

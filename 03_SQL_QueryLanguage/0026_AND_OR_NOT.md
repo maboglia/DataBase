@@ -1,3 +1,5 @@
+# AND, OR, NOT
+
 Gli **operatori logici** in SQL (AND, OR, NOT) vengono utilizzati per combinare più condizioni nei comandi di filtraggio delle query, solitamente nella clausola **WHERE**. Ecco una spiegazione con esempi chiari:
 
 ---
