@@ -14,8 +14,9 @@ MySQL supporta i classici operatori matematici tradizionali, cioè:
 
 Questi operatori risultano molto utili quando si devono svolgere dei calcoli all'interno di una SELECT. Per fare un esempio, si supponga di voler restituire il valore dato dalla sottrazione di due campi:
 
-```sql
 Potete eseguire dei calcoli matematici con SELECT:
+
+```sql
 SELECT (field1 - field2)
 FROM tableName
 [WHERE condition(s)];
