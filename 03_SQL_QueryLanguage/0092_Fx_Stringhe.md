@@ -105,7 +105,7 @@ SELECT UPPER('hello'); -- Risultato: HELLO
 
 [MySql 8.4](https://dev.mysql.com/doc/refman/8.4/en/string-functions.html)
 
-Name-Description
+Name|Description
 ---|---
 ASCII()|Return numeric value of left-most character
 BIN()|Return a string containing binary representation of a number
