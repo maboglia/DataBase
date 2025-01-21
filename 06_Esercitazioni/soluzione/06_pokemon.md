@@ -1,5 +1,81 @@
 # tabella **pokemon**:
 
+Ecco una sintesi dei punti principali delle query che analizzano la tabella **pokemon**:
+
+---
+
+### **Query Base**
+
+1. **Recupero dati con filtri semplici (`WHERE`)**:  
+   - Esempi: Pokémon di tipo "Fire", velocità superiore a 100, o solo di prima generazione.
+   - Uso: Filtrare i dati grezzi direttamente basandosi su colonne.
+
+2. **Ordinamento dei risultati (`ORDER BY`)**:  
+   - Es.: Pokémon ordinati per statistiche totali in ordine decrescente.
+   - Uso: Presentare i dati in modo più leggibile o focalizzarsi sui valori più alti/bassi.
+
+3. **Conteggio e aggregazione (`COUNT`, `AVG`, `SUM`)**:  
+   - Es.: Contare Pokémon leggendari o calcolare statistiche medie per ogni generazione o tipo.
+   - Uso: Riepilogare i dati e ottenere panoramiche.
+
+---
+
+### **Query Intermedie**
+
+4. **Filtri avanzati (`AND`, `OR`, `BETWEEN`)**:  
+   - Es.: Pokémon con attacco > 120 e difesa > 100, o velocità compresa tra 80 e 100.
+   - Uso: Combinare condizioni per estrazioni più mirate.
+
+5. **Raggruppamento (`GROUP BY`)**:  
+   - Es.: Contare Pokémon per generazione, tipo, o combinazioni di entrambi.
+   - Uso: Analisi su sottogruppi definiti da colonne specifiche.
+
+6. **Sottoquery**:  
+   - Es.: Pokémon con velocità superiore alla media o con statistiche totali massime per ogni combinazione di tipo.
+   - Uso: Creare filtri dinamici o calcoli complessi.
+
+---
+
+### **Query Avanzate**
+
+7. **Alias e calcoli derivati**:  
+   - Es.: Pokémon con il miglior rapporto attacco/difesa.
+   - Uso: Creare nuovi valori derivati per analisi approfondite.
+
+8. **Gestione di valori NULL**:  
+   - Es.: Escludere Pokémon senza tipo secondario o generare combinazioni di tipi con entrambi i tipi definiti.
+   - Uso: Prevenire errori e garantire coerenza nei dati.
+
+9. **Limiti e classifiche (`LIMIT`)**:  
+   - Es.: I Pokémon con il valore totale più basso o la difesa più alta.
+   - Uso: Evidenziare i migliori/peggiori in base a determinati criteri.
+
+---
+
+### **Applicazioni Complesse**
+
+10. **Creare tabelle virtuali con aggregazioni e conteggi**:  
+    - Es.: Numero di Pokémon per tipo o combinazioni di generazione e stato leggendario.
+    - Uso: Generare report dettagliati.
+
+11. **Utilizzo di statistiche in base al contesto**:  
+    - Es.: Velocità media per tipo principale o media di attacco per tipo.
+    - Uso: Evidenziare tendenze e differenze tra categorie.
+
+---
+
+### **Contributo delle Query**
+
+Queste query coprono molteplici livelli di analisi:
+
+- **Base**: Recupero e filtro dati.
+- **Intermedio**: Aggregazioni, ordinamenti e sottoquery.
+- **Avanzato**: Classifiche, rapporti, e statistiche personalizzate.
+
+Sono utili per analizzare grandi dataset, generare report e prendere decisioni basate sui dati.
+
+---
+
 Queste query coprono una varietà di scenari semplici come selezioni, ordinamenti, conteggi e filtri.
 
 ---
