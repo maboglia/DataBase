@@ -112,7 +112,7 @@ Queste query sfruttano aggregazioni, filtri avanzati, ordinamenti e alcune funzi
 ### 1. Ottenere i Pokémon con il valore totale più alto per ogni generazione
 
 ```sql
-SELECT Generation, Name, MAX(Total) AS MaxTotal 
+SELECT Generation,  MAX(Total) AS MaxTotal 
 FROM pokemon 
 GROUP BY Generation;
 ```
