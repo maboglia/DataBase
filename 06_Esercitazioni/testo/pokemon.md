@@ -1,3 +1,13 @@
+### **Query Base**
+
+### **Query Intermedie**
+
+### **Query Avanzate**
+
+### **Applicazioni Complesse**
+
+### **Contributo delle Query**
+
 ### 1. Recuperare tutti i Pokémon con il tipo principale "Fire"
 
 ### 2. Selezionare il nome e il tipo principale dei Pokémon con una velocità superiore a 100
@@ -14,46 +24,46 @@
 
 ### 8. Recuperare i Pokémon con punti salute (HP) inferiori a 50, ordinati per HP in ordine crescente
 
-### 9. Contare i Pokémon per ogni generazione
+### 9. Trovare i Pokémon con il valore totale pari o superiore a 500, ordinati per tipo principale e poi per nome
 
 ### 10. Ottenere tutti i Pokémon di tipo principale "Water" con una velocità superiore a 80
 
-### 1. Ottenere i Pokémon con il valore totale più alto per ogni generazione
+### 11. Visualizzare i tre Pokémon con il valore di difesa più alto
 
-### 2. Calcolare la media di attacco per ogni tipo principale
+### 12. Recuperare il nome e il tipo principale dei Pokémon che hanno un attacco maggiore della loro difesa
 
-### 3. Mostrare i Pokémon con velocità superiore alla media della tabella
+### 13. Ottenere i Pokémon di tipo "Dragon" che appartengono alla terza generazione
 
-### 4. Trovare i Pokémon con il valore totale pari o superiore a 500, ordinati per tipo principale e poi per nome
+### 14. Visualizzare i Pokémon non leggendari che hanno una velocità massima tra 80 e 100
 
-### 5. Visualizzare i tre Pokémon con il valore di difesa più alto
+### 15. Trovare i Pokémon con il minor valore totale tra quelli della prima generazione con entrambi i tipi definiti (`Type 1` e `Type 2` non NULL)
 
-### 6. Recuperare il nome e il tipo principale dei Pokémon che hanno un attacco maggiore della loro difesa
+### 16. Trovare i 5 Pokémon con il miglior rapporto Attacco/Difesa
 
-### 7. Contare quanti Pokémon ci sono per ogni combinazione di tipo principale e secondario
+### 17. Ottenere i Pokémon con il valore totale più alto per ogni generazione
 
-### 8. Ottenere i Pokémon di tipo "Dragon" che appartengono alla terza generazione
+### 18. Calcolare la media di attacco per ogni tipo principale
 
-### 9. Visualizzare i Pokémon non leggendari che hanno una velocità massima tra 80 e 100
+### 19. Contare i Pokémon per ogni generazione
 
-### 10. Calcolare il valore medio di HP, Attacco e Difesa per Pokémon leggendari e non leggendari
+### 20. Contare quanti Pokémon ci sono per ogni combinazione di tipo principale e secondario
 
-### 1. Creare una tabella virtuale con tutti i possibili tipi distinti (combinazioni di `Type 1` e `Type 2`) e il numero di Pokémon per ciascuna combinazione
+### 21. Calcolare il valore medio di HP, Attacco e Difesa per Pokémon leggendari e non leggendari
 
-### 2. Trovare i Pokémon leggendari con il massimo valore di ogni statistica (HP, Attack, Defense, Sp. Atk, Sp. Def, Speed)
+### 22. Creare una tabella virtuale con tutti i possibili tipi distinti (combinazioni di `Type 1` e `Type 2`) e il numero di Pokémon per ciascuna combinazione
 
-### 3. Elencare tutti i Pokémon con il valore totale massimo per ogni combinazione di tipo principale (`Type 1`) e secondario (`Type 2`)
+### 23. Trovare i Pokémon leggendari con il massimo valore di ogni statistica (HP, Attack, Defense, Sp. Atk, Sp. Def, Speed)
 
-### 4. Trovare i 5 Pokémon con il miglior rapporto Attacco/Difesa
+### 24. Creare un elenco di Pokémon raggruppati per generazione, calcolando il totale complessivo delle statistiche per ciascuna generazione
 
-### 5. Creare un elenco di Pokémon raggruppati per generazione, calcolando il totale complessivo delle statistiche per ciascuna generazione
+### 25. Contare il numero di Pokémon leggendari e non leggendari per ciascun tipo principale
 
-### 6. Elencare tutti i Pokémon con una velocità maggiore della media per il loro tipo principale (`Type 1`)
+### 26. Creare una classifica per tipo principale (`Type 1`) basata sulla media di attacco dei Pokémon di quel tipo
 
-### 7. Contare il numero di Pokémon leggendari e non leggendari per ciascun tipo principale
+### 27. Creare un elenco con il numero di Pokémon per ciascuna combinazione di generazione e stato leggendario, ordinato per generazione e numero di Pokémon
 
-### 8. Creare una classifica per tipo principale (`Type 1`) basata sulla media di attacco dei Pokémon di quel tipo
+### 28. Elencare tutti i Pokémon con il valore totale massimo per ogni combinazione di tipo principale (`Type 1`) e secondario (`Type 2`)
 
-### 9. Trovare i Pokémon con il minor valore totale tra quelli della prima generazione con entrambi i tipi definiti (`Type 1` e `Type 2` non NULL)
+### 29. Mostrare i Pokémon con velocità superiore alla media della tabella
 
-### 10. Creare un elenco con il numero di Pokémon per ciascuna combinazione di generazione e stato leggendario, ordinato per generazione e numero di Pokémon
+### 30. Elencare tutti i Pokémon con una velocità maggiore della media per il loro tipo principale (`Type 1`)
