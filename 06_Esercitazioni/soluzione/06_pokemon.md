@@ -161,12 +161,13 @@ ORDER BY HP ASC;
 
 ---
 
-### 9. Contare i Pokémon per ogni generazione
+### 9. Trovare i Pokémon con il valore totale pari o superiore a 500, ordinati per tipo principale e poi per nome
 
 ```sql
-SELECT Generation, COUNT(*) AS PokemonCount 
+SELECT Name, `Type 1`, Total 
 FROM pokemon 
-GROUP BY Generation;
+WHERE Total >= 500 
+ORDER BY `Type 1`, Name;
 ```
 
 ---
@@ -181,52 +182,8 @@ WHERE `Type 1` = 'Water' AND Speed > 80;
 
 ---
 
-Queste query sfruttano aggregazioni, filtri avanzati, ordinamenti e alcune funzionalità di calcolo per rendere l'interazione con i dati più approfondita.
 
----
-
-### 1. Ottenere i Pokémon con il valore totale più alto per ogni generazione
-
-```sql
-SELECT Generation,  MAX(Total) AS MaxTotal 
-FROM pokemon 
-GROUP BY Generation;
-```
-
----
-
-### 2. Calcolare la media di attacco per ogni tipo principale
-
-```sql
-SELECT `Type 1`, AVG(Attack) AS AvgAttack 
-FROM pokemon 
-GROUP BY `Type 1`;
-```
-
----
-
-### 3. Mostrare i Pokémon con velocità superiore alla media della tabella
-
-```sql
-SELECT Name, Speed 
-FROM pokemon 
-WHERE Speed > (SELECT AVG(Speed) FROM pokemon);
-```
-
----
-
-### 4. Trovare i Pokémon con il valore totale pari o superiore a 500, ordinati per tipo principale e poi per nome
-
-```sql
-SELECT Name, `Type 1`, Total 
-FROM pokemon 
-WHERE Total >= 500 
-ORDER BY `Type 1`, Name;
-```
-
----
-
-### 5. Visualizzare i tre Pokémon con il valore di difesa più alto
+### 11. Visualizzare i tre Pokémon con il valore di difesa più alto
 
 ```sql
 SELECT Name, Defense 
@@ -237,7 +194,7 @@ LIMIT 3;
 
 ---
 
-### 6. Recuperare il nome e il tipo principale dei Pokémon che hanno un attacco maggiore della loro difesa
+### 12. Recuperare il nome e il tipo principale dei Pokémon che hanno un attacco maggiore della loro difesa
 
 ```sql
 SELECT Name, `Type 1`, Attack, Defense 
@@ -247,17 +204,7 @@ WHERE Attack > Defense;
 
 ---
 
-### 7. Contare quanti Pokémon ci sono per ogni combinazione di tipo principale e secondario
-
-```sql
-SELECT `Type 1`, `Type 2`, COUNT(*) AS PokemonCount 
-FROM pokemon 
-GROUP BY `Type 1`, `Type 2`;
-```
-
----
-
-### 8. Ottenere i Pokémon di tipo "Dragon" che appartengono alla terza generazione
+### 13. Ottenere i Pokémon di tipo "Dragon" che appartengono alla terza generazione
 
 ```sql
 SELECT Name, `Type 1`, `Type 2` 
@@ -268,7 +215,7 @@ WHERE (`Type 1` = 'Dragon' OR `Type 2` = 'Dragon')
 
 ---
 
-### 9. Visualizzare i Pokémon non leggendari che hanno una velocità massima tra 80 e 100
+### 14. Visualizzare i Pokémon non leggendari che hanno una velocità massima tra 80 e 100
 
 ```sql
 SELECT Name, Speed 
@@ -278,7 +225,77 @@ WHERE Legendary = 'False' AND Speed BETWEEN 80 AND 100;
 
 ---
 
-### 10. Calcolare il valore medio di HP, Attacco e Difesa per Pokémon leggendari e non leggendari
+
+### 15. Trovare i Pokémon con il minor valore totale tra quelli della prima generazione con entrambi i tipi definiti (`Type 1` e `Type 2` non NULL)
+
+```sql
+SELECT Name, `Type 1`, `Type 2`, Total
+FROM pokemon
+WHERE Generation = 1 AND `Type 1` IS NOT NULL AND `Type 2` IS NOT NULL
+ORDER BY Total ASC
+LIMIT 1;
+```
+
+---
+
+
+### 16. Trovare i 5 Pokémon con il miglior rapporto Attacco/Difesa
+
+```sql
+SELECT Name, `Type 1`, `Type 2`, Attack, Defense, 
+       (Attack / Defense) AS AttackToDefenseRatio
+FROM pokemon
+ORDER BY AttackToDefenseRatio DESC
+LIMIT 5;
+```
+
+---
+
+Queste query sfruttano aggregazioni, filtri avanzati, ordinamenti e alcune funzionalità di calcolo per rendere l'interazione con i dati più approfondita.
+
+---
+
+### 17. Ottenere i Pokémon con il valore totale più alto per ogni generazione
+
+```sql
+SELECT Generation,  MAX(Total) AS MaxTotal 
+FROM pokemon 
+GROUP BY Generation;
+```
+
+---
+
+### 18. Calcolare la media di attacco per ogni tipo principale
+
+```sql
+SELECT `Type 1`, AVG(Attack) AS AvgAttack 
+FROM pokemon 
+GROUP BY `Type 1`;
+```
+
+---
+
+### 19. Contare i Pokémon per ogni generazione
+
+```sql
+SELECT Generation, COUNT(*) AS PokemonCount 
+FROM pokemon 
+GROUP BY Generation;
+```
+
+---
+
+
+### 20. Contare quanti Pokémon ci sono per ogni combinazione di tipo principale e secondario
+
+```sql
+SELECT `Type 1`, `Type 2`, COUNT(*) AS PokemonCount 
+FROM pokemon 
+GROUP BY `Type 1`, `Type 2`;
+```
+
+
+### 21. Calcolare il valore medio di HP, Attacco e Difesa per Pokémon leggendari e non leggendari
 
 ```sql
 SELECT Legendary, 
@@ -295,7 +312,7 @@ Queste query includono l'uso di sottoquery correlate, aggregazioni avanzate, ord
 
 ---
 
-### 1. Creare una tabella virtuale con tutti i possibili tipi distinti (combinazioni di `Type 1` e `Type 2`) e il numero di Pokémon per ciascuna combinazione
+### 22. Creare una tabella virtuale con tutti i possibili tipi distinti (combinazioni di `Type 1` e `Type 2`) e il numero di Pokémon per ciascuna combinazione
 
 ```sql
 SELECT DISTINCT `Type 1`, `Type 2`, COUNT(*) AS Count
@@ -306,7 +323,7 @@ ORDER BY `Type 1`, `Type 2`;
 
 ---
 
-### 2. Trovare i Pokémon leggendari con il massimo valore di ogni statistica (HP, Attack, Defense, Sp. Atk, Sp. Def, Speed)
+### 23. Trovare i Pokémon leggendari con il massimo valore di ogni statistica (HP, Attack, Defense, Sp. Atk, Sp. Def, Speed)
 
 ```sql
 SELECT Name, `Type 1`, `Type 2`, 
@@ -321,9 +338,54 @@ WHERE Legendary = 'True'
 GROUP BY Name, `Type 1`, `Type 2`;
 ```
 
+
+### 24. Creare un elenco di Pokémon raggruppati per generazione, calcolando il totale complessivo delle statistiche per ciascuna generazione
+
+```sql
+SELECT Generation, SUM(Total) AS TotalStats
+FROM pokemon
+GROUP BY Generation
+ORDER BY TotalStats DESC;
+```
+
 ---
 
-### 3. Elencare tutti i Pokémon con il valore totale massimo per ogni combinazione di tipo principale (`Type 1`) e secondario (`Type 2`)
+### 25. Contare il numero di Pokémon leggendari e non leggendari per ciascun tipo principale
+
+```sql
+SELECT `Type 1`, Legendary, COUNT(*) AS Count
+FROM pokemon
+GROUP BY `Type 1`, Legendary
+ORDER BY `Type 1`, Legendary;
+```
+
+---
+
+### 26. Creare una classifica per tipo principale (`Type 1`) basata sulla media di attacco dei Pokémon di quel tipo
+
+```sql
+SELECT `Type 1`, AVG(Attack) AS AvgAttack
+FROM pokemon
+GROUP BY `Type 1`
+ORDER BY AvgAttack DESC;
+```
+
+---
+
+
+### 27. Creare un elenco con il numero di Pokémon per ciascuna combinazione di generazione e stato leggendario, ordinato per generazione e numero di Pokémon
+
+```sql
+SELECT Generation, Legendary, COUNT(*) AS Count
+FROM pokemon
+GROUP BY Generation, Legendary
+ORDER BY Generation, Count DESC;
+```
+
+
+---
+
+### 28. Elencare tutti i Pokémon con il valore totale massimo per ogni combinazione di tipo principale (`Type 1`) e secondario (`Type 2`)
 
 ```sql
 SELECT p1.Name, p1.`Type 1`, p1.`Type 2`, p1.Total
@@ -338,30 +400,17 @@ ORDER BY `Type 1`, `Type 2`;
 
 ---
 
-### 4. Trovare i 5 Pokémon con il miglior rapporto Attacco/Difesa
+### 29. Mostrare i Pokémon con velocità superiore alla media della tabella
 
 ```sql
-SELECT Name, `Type 1`, `Type 2`, Attack, Defense, 
-       (Attack / Defense) AS AttackToDefenseRatio
-FROM pokemon
-ORDER BY AttackToDefenseRatio DESC
-LIMIT 5;
+SELECT Name, Speed 
+FROM pokemon 
+WHERE Speed > (SELECT AVG(Speed) FROM pokemon);
 ```
 
 ---
 
-### 5. Creare un elenco di Pokémon raggruppati per generazione, calcolando il totale complessivo delle statistiche per ciascuna generazione
-
-```sql
-SELECT Generation, SUM(Total) AS TotalStats
-FROM pokemon
-GROUP BY Generation
-ORDER BY TotalStats DESC;
-```
-
----
-
-### 6. Elencare tutti i Pokémon con una velocità maggiore della media per il loro tipo principale (`Type 1`)
+### 30. Elencare tutti i Pokémon con una velocità maggiore della media per il loro tipo principale (`Type 1`)
 
 ```sql
 SELECT Name, `Type 1`, Speed
@@ -372,49 +421,4 @@ WHERE Speed > (
     WHERE p1.`Type 1` = p2.`Type 1`
 )
 ORDER BY `Type 1`, Speed DESC;
-```
-
----
-
-### 7. Contare il numero di Pokémon leggendari e non leggendari per ciascun tipo principale
-
-```sql
-SELECT `Type 1`, Legendary, COUNT(*) AS Count
-FROM pokemon
-GROUP BY `Type 1`, Legendary
-ORDER BY `Type 1`, Legendary;
-```
-
----
-
-### 8. Creare una classifica per tipo principale (`Type 1`) basata sulla media di attacco dei Pokémon di quel tipo
-
-```sql
-SELECT `Type 1`, AVG(Attack) AS AvgAttack
-FROM pokemon
-GROUP BY `Type 1`
-ORDER BY AvgAttack DESC;
-```
-
----
-
-### 9. Trovare i Pokémon con il minor valore totale tra quelli della prima generazione con entrambi i tipi definiti (`Type 1` e `Type 2` non NULL)
-
-```sql
-SELECT Name, `Type 1`, `Type 2`, Total
-FROM pokemon
-WHERE Generation = 1 AND `Type 1` IS NOT NULL AND `Type 2` IS NOT NULL
-ORDER BY Total ASC
-LIMIT 1;
-```
-
----
-
-### 10. Creare un elenco con il numero di Pokémon per ciascuna combinazione di generazione e stato leggendario, ordinato per generazione e numero di Pokémon
-
-```sql
-SELECT Generation, Legendary, COUNT(*) AS Count
-FROM pokemon
-GROUP BY Generation, Legendary
-ORDER BY Generation, Count DESC;
 ```
