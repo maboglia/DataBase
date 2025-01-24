@@ -212,104 +212,7 @@ SELECT country, (exports + imports) AS total_trade FROM country_data WHERE (expo
 
 ---
 
-## Query SQL con **funzioni aggregate**, **sottoquery** e **calcoli su colonne**.
-
-
-### 1. Trovare i 5 paesi con il PIL pro capite (gdpp) più alto
-
-```sql
-SELECT country, gdpp 
-FROM country_data 
-ORDER BY gdpp DESC 
-LIMIT 5;
-```
-
----
-
-### 2. Calcolare la media del tasso di fertilità per i paesi con un’aspettativa di vita superiore a 70 anni
-
-```sql
-SELECT AVG(total_fer) AS avg_fertility 
-FROM country_data 
-WHERE life_expec > 70;
-```
-
----
-
-### 3. Trovare i paesi con il massimo e il minimo reddito pro capite
-
-```sql
-SELECT country, income 
-FROM country_data 
-WHERE income = (SELECT MAX(income) FROM country_data) 
-   OR income = (SELECT MIN(income) FROM country_data);
-```
-
----
-
-### 4. Contare il numero di paesi con inflazione negativa
-
-```sql
-SELECT COUNT(*) AS deflation_countries 
-FROM country_data 
-WHERE inflation < 0;
-```
-
----
-
-### 5. Trovare i paesi con il massimo tasso di mortalità infantile in ogni fascia di reddito
-
-```sql
-SELECT income, country, MAX(child_mort) AS max_child_mort 
-FROM country_data 
-GROUP BY income 
-ORDER BY income;
-```
-
----
-
-### 6. Calcolare la somma delle esportazioni e delle importazioni per ciascun paese
-
-```sql
-SELECT country, (exports + imports) AS total_trade 
-FROM country_data 
-ORDER BY total_trade DESC;
-```
-
----
-
-### 7. Trovare i paesi dove il totale delle esportazioni è almeno il doppio delle importazioni
-
-```sql
-SELECT country, exports, imports 
-FROM country_data 
-WHERE exports >= 2 * imports;
-```
-
----
-
-### 8. Calcolare il PIL pro capite medio (gdpp) per ogni gruppo di aspettativa di vita (fasce di 10 anni)
-
-```sql
-SELECT FLOOR(life_expec / 10) * 10 AS life_expectancy_range, AVG(gdpp) AS avg_gdpp 
-FROM country_data 
-GROUP BY life_expectancy_range 
-ORDER BY life_expectancy_range;
-```
-
----
-
-### 9. Trovare i paesi con un tasso di mortalità infantile superiore alla media globale
-
-```sql
-SELECT country, child_mort 
-FROM country_data 
-WHERE child_mort > (SELECT AVG(child_mort) FROM country_data);
-```
-
----
-
-### 10. Trovare i 3 paesi con il più alto rapporto tra spesa sanitaria e reddito pro capite
+### 20. Trovare i 3 paesi con il più alto rapporto tra spesa sanitaria e reddito pro capite
 
 ```sql
 SELECT country, (health / income) AS health_income_ratio 
@@ -320,11 +223,106 @@ LIMIT 3;
 
 ---
 
-### 11. Trovare il rapporto tra fertilità totale e aspettativa di vita per ogni paese e ordinarlo in ordine crescente
+### 21. Trovare il rapporto tra fertilità totale e aspettativa di vita per ogni paese e ordinarlo in ordine crescente
 
 ```sql
 SELECT country, (total_fer / life_expec) AS fertility_life_ratio 
 FROM country_data 
 ORDER BY fertility_life_ratio ASC;
+```
+
+
+---
+
+### 22. Calcolare la media del tasso di fertilità per i paesi con un’aspettativa di vita superiore a 70 anni
+
+```sql
+SELECT AVG(total_fer) AS avg_fertility 
+FROM country_data 
+WHERE life_expec > 70;
+```
+
+---
+
+### 23. Trovare i paesi con il massimo e il minimo reddito pro capite
+
+```sql
+SELECT country, income 
+FROM country_data 
+WHERE income = (SELECT MAX(income) FROM country_data) 
+   OR income = (SELECT MIN(income) FROM country_data);
+```
+
+---
+
+### 24. Contare il numero di paesi con inflazione negativa
+
+```sql
+SELECT COUNT(*) AS deflation_countries 
+FROM country_data 
+WHERE inflation < 0;
+```
+
+---
+
+### 25. Trovare i 5 paesi con il PIL pro capite (gdpp) più alto
+
+```sql
+SELECT country, gdpp 
+FROM country_data 
+ORDER BY gdpp DESC 
+LIMIT 5;
+```
+
+---
+
+### 26. Calcolare la somma delle esportazioni e delle importazioni per ciascun paese
+
+```sql
+SELECT country, (exports + imports) AS total_trade 
+FROM country_data 
+ORDER BY total_trade DESC;
+```
+
+---
+
+### 27. Trovare i paesi dove il totale delle esportazioni è almeno il doppio delle importazioni
+
+```sql
+SELECT country, exports, imports 
+FROM country_data 
+WHERE exports >= 2 * imports;
+```
+
+---
+
+### 28. Calcolare il PIL pro capite medio (gdpp) per ogni gruppo di aspettativa di vita (fasce di 10 anni)
+
+```sql
+SELECT FLOOR(life_expec / 10) * 10 AS life_expectancy_range, AVG(gdpp) AS avg_gdpp 
+FROM country_data 
+GROUP BY life_expectancy_range 
+ORDER BY life_expectancy_range;
+```
+
+---
+
+### 29. Trovare i paesi con un tasso di mortalità infantile superiore alla media globale
+
+```sql
+SELECT country, child_mort 
+FROM country_data 
+WHERE child_mort > (SELECT AVG(child_mort) FROM country_data);
+```
+
+---
+
+### 30. Trovare i paesi con il massimo tasso di mortalità infantile in ogni fascia di reddito
+
+```sql
+SELECT income, country, MAX(child_mort) AS max_child_mort 
+FROM country_data 
+GROUP BY income 
+ORDER BY income;
 ```
 
