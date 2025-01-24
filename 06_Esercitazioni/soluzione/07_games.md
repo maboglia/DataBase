@@ -47,13 +47,16 @@ WHERE Publisher = 'Nintendo';
 
 ---
 
-### 6. Contare il numero totale di giochi nella tabella.
+### 6. Elencare i giochi di un genere specifico, ad esempio "RPG", pubblicati da "Square Enix"
+
 ```sql
-SELECT COUNT(*) AS TotalGames 
-FROM games;
+SELECT Game, year
+FROM games
+WHERE Genre = 'RPG' AND Publisher = 'Square Enix';
 ```
 
 ---
+
 
 ### 7. Mostrare tutti i giochi pubblicati su una piattaforma specifica, ad esempio "PlayStation".
 ```sql
@@ -90,21 +93,17 @@ ORDER BY year DESC;
 
 ---
 
-## 10 query SQL di difficoltà intermedia per la tabella **games**:  
-
----
-
-### 1. Trovare il numero di giochi per ogni genere
+### 11. Elencare tutti i giochi che non appartengono ai generi "Action" o "Adventure"
 
 ```sql
-SELECT Genre, COUNT(*) AS TotalGames
+SELECT Game, Genre
 FROM games
-GROUP BY Genre;
+WHERE Genre NOT IN ('Action', 'Adventure');
 ```
 
 ---
 
-### 2. Elencare i giochi con anno di pubblicazione compreso tra il 2000 e il 2010
+### 12. Elencare i giochi con anno di pubblicazione compreso tra il 2000 e il 2010
 
 ```sql
 SELECT Game, year
@@ -115,17 +114,37 @@ ORDER BY year;
 
 ---
 
-### 3. Elencare i giochi di un genere specifico, ad esempio "RPG", pubblicati da "Square Enix"
+### 13. Mostrare il nome dei giochi e il loro editore per tutti i giochi pubblicati dopo il 2015, ordinati per editore
 
 ```sql
-SELECT Game, year
+SELECT Game, Publisher, year
 FROM games
-WHERE Genre = 'RPG' AND Publisher = 'Square Enix';
+WHERE year > 2015
+ORDER BY Publisher, Game;
 ```
 
 ---
 
-### 4. Trovare i giochi pubblicati nell'anno più recente disponibile nella tabella
+### 14. Contare il numero totale di giochi nella tabella
+
+```sql
+SELECT COUNT(*) AS TotalGames 
+FROM games;
+```
+
+---
+
+### 15. Trovare il numero di giochi per ogni genere
+
+```sql
+SELECT Genre, COUNT(*) AS TotalGames
+FROM games
+GROUP BY Genre;
+```
+
+---
+
+### 16. Trovare i giochi pubblicati nell'anno più recente disponibile nella tabella
 
 ```sql
 SELECT Game, year
@@ -135,7 +154,7 @@ WHERE year = (SELECT MAX(year) FROM games);
 
 ---
 
-### 5. Contare il numero di giochi pubblicati da ciascun editore
+### 17. Contare il numero di giochi pubblicati da ciascun editore
 
 ```sql
 SELECT Publisher, COUNT(*) AS TotalGames
@@ -146,28 +165,8 @@ ORDER BY TotalGames DESC;
 
 ---
 
-### 6. Elencare tutti i giochi che non appartengono ai generi "Action" o "Adventure"
 
-```sql
-SELECT Game, Genre
-FROM games
-WHERE Genre NOT IN ('Action', 'Adventure');
-```
-
----
-
-### 7. Mostrare l'elenco dei giochi pubblicati su più piattaforme (conteggiando le occorrenze di ciascun gioco)
-
-```sql
-SELECT Game, COUNT(DISTINCT Original_platform) AS PlatformCount
-FROM games
-GROUP BY Game
-HAVING PlatformCount > 1;
-```
-
----
-
-### 8. Trovare il genere più comune nella tabella
+### 18. Trovare il genere più comune nella tabella
 
 ```sql
 SELECT Genre, COUNT(*) AS TotalGames
@@ -179,18 +178,7 @@ LIMIT 1;
 
 ---
 
-### 9. Mostrare il nome dei giochi e il loro editore per tutti i giochi pubblicati dopo il 2015, ordinati per editore
-
-```sql
-SELECT Game, Publisher, year
-FROM games
-WHERE year > 2015
-ORDER BY Publisher, Game;
-```
-
----
-
-### 10. Trovare il numero di giochi pubblicati per ciascun anno
+### 19. Trovare il numero di giochi pubblicati per ciascun anno
 
 ```sql
 SELECT year, COUNT(*) AS TotalGames
@@ -201,11 +189,66 @@ ORDER BY year DESC;
 
 ---
 
-## Ecco 10 query SQL avanzate per la tabella **games**, focalizzate su analisi e aggregazioni più complesse  
+
 
 ---
 
-### 1. Trovare l'editore con il maggior numero di giochi pubblicati per ogni genere
+### 20. Mostrare l'elenco dei giochi pubblicati su più piattaforme (conteggiando le occorrenze di ciascun gioco)
+
+```sql
+SELECT Game, COUNT(DISTINCT Original_platform) AS PlatformCount
+FROM games
+GROUP BY Game
+HAVING PlatformCount > 1;
+```
+
+---
+
+### 21. Trovare i giochi con lo stesso nome e anno, ma pubblicati da editori diversi
+
+```sql
+SELECT Game, year, COUNT(DISTINCT Publisher) AS PublisherCount
+FROM games
+GROUP BY Game, year
+HAVING PublisherCount > 1;
+```
+
+---
+
+### 22. Identificare gli editori che hanno pubblicato giochi per almeno 3 piattaforme diverse
+
+```sql
+SELECT Publisher, COUNT(DISTINCT Original_platform) AS PlatformCount
+FROM games
+GROUP BY Publisher
+HAVING PlatformCount >= 3;
+```
+
+---
+
+### 23. Elencare il numero di giochi per piattaforma e per anno, solo per piattaforme con più di 5 giochi pubblicati in un anno
+
+```sql
+SELECT Original_platform, year, COUNT(*) AS TotalGames
+FROM games
+GROUP BY Original_platform, year
+HAVING COUNT(*) > 5;
+```
+
+---
+
+### 24. Trovare i giochi che appartengono a più di un genere
+
+```sql
+SELECT Game, COUNT(DISTINCT Genre) AS GenreCount
+FROM games
+GROUP BY Game
+HAVING GenreCount > 1;
+```
+
+---
+
+### 25. Trovare l'editore con il maggior numero di giochi pubblicati per ogni genere
 
 ```sql
 SELECT Genre, Publisher, COUNT(*) AS TotalGames
@@ -224,18 +267,7 @@ HAVING COUNT(*) = (
 
 ---
 
-### 2. Creare una "classifica" degli editori in base al numero di giochi pubblicati, assegnando un rank
-
-```sql
-SELECT Publisher, COUNT(*) AS TotalGames, 
-       RANK() OVER (ORDER BY COUNT(*) DESC) AS Rank
-FROM games
-GROUP BY Publisher;
-```
-
----
-
-### 3. Trovare il gioco più vecchio per ogni piattaforma
+### 26. Trovare il gioco più vecchio per ogni piattaforma
 
 ```sql
 SELECT Original_platform, Game, year
@@ -249,7 +281,7 @@ WHERE (Original_platform, year) IN (
 
 ---
 
-### 4. Trovare tutti i giochi che condividono lo stesso nome ma appartengono a generi o editori diversi
+### 27. Trovare tutti i giochi che condividono lo stesso nome ma appartengono a generi o editori diversi
 
 ```sql
 SELECT Game, Genre, Publisher
@@ -265,29 +297,7 @@ ORDER BY Game;
 
 ---
 
-### 5. Elencare il numero di giochi per piattaforma e per anno, solo per piattaforme con più di 5 giochi pubblicati in un anno
-
-```sql
-SELECT Original_platform, year, COUNT(*) AS TotalGames
-FROM games
-GROUP BY Original_platform, year
-HAVING COUNT(*) > 5;
-```
-
----
-
-### 6. Trovare i giochi che appartengono a più di un genere
-
-```sql
-SELECT Game, COUNT(DISTINCT Genre) AS GenreCount
-FROM games
-GROUP BY Game
-HAVING GenreCount > 1;
-```
-
----
-
-### 7. Calcolare la distribuzione percentuale dei giochi per genere
+### 28. Calcolare la distribuzione percentuale dei giochi per genere
 
 ```sql
 SELECT Genre, COUNT(*) AS TotalGames, 
@@ -299,29 +309,18 @@ ORDER BY Percentage DESC;
 
 ---
 
-### 8. Trovare i giochi con lo stesso nome e anno, ma pubblicati da editori diversi
+### 29. Creare una "classifica" degli editori in base al numero di giochi pubblicati, assegnando un rank
 
 ```sql
-SELECT Game, year, COUNT(DISTINCT Publisher) AS PublisherCount
+SELECT Publisher, COUNT(*) AS TotalGames, 
+       RANK() OVER (ORDER BY COUNT(*) DESC) AS Rank
 FROM games
-GROUP BY Game, year
-HAVING PublisherCount > 1;
+GROUP BY Publisher;
 ```
 
 ---
 
-### 9. Identificare gli editori che hanno pubblicato giochi per almeno 3 piattaforme diverse
-
-```sql
-SELECT Publisher, COUNT(DISTINCT Original_platform) AS PlatformCount
-FROM games
-GROUP BY Publisher
-HAVING PlatformCount >= 3;
-```
-
----
-
-### 10. Creare una classifica per anno dei generi più pubblicati
+### 30. Creare una classifica per anno dei generi più pubblicati
 
 ```sql
 SELECT year, Genre, COUNT(*) AS TotalGames,
@@ -330,4 +329,3 @@ FROM games
 GROUP BY year, Genre
 ORDER BY year, Rank;
 ```
-
