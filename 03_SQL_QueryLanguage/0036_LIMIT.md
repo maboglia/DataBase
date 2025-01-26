@@ -8,7 +8,7 @@ Accetta due argomenti:
 
 Esempi:
 
-La seguente query mostra solo i primi 10 record della tabella `studente`:
+## La seguente query mostra **solo i primi 10 record** della tabella `studente`:
 
 ```sql
 SELECT *
@@ -19,7 +19,7 @@ LIMIT 10;
 
 ---
 
-La seguente query mostra 10 record della tabella `studenti` presi a partire dall'undicesimo record:
+## La seguente query mostra 10 record della tabella `studenti` presi **a partire dall'undicesimo** record:
 
 ```sql
 SELECT *

@@ -6,7 +6,9 @@ L'ordine predefinito è crescente (`ASC`). Utilizzando l'istruzione `DESC`, si o
 
 Esempi:
 
-Per ordinare per nome in modo crescente:
+---
+
+## Per ordinare per nome in modo crescente:
 
 ```sql
 SELECT *
@@ -14,7 +16,9 @@ FROM studenti
 ORDER BY cognome;
 ```
 
-Per ordinare per nome in modo decrescente:
+---
+
+## Per ordinare per nome in modo decrescente:
 
 ```sql
 SELECT *
@@ -22,7 +26,9 @@ FROM studenti
 ORDER BY cognome DESC;
 ```
 
-Per ordinare per nome in modo decrescente e, in caso di cognomi uguali, per età in modo crescente:
+---
+
+## Per ordinare per nome in modo decrescente e, in caso di cognomi uguali, per età in modo crescente:
 
 ```sql
 SELECT *
