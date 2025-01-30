@@ -54,4 +54,6 @@ FROM sconti
 WHERE prezzo_scontato > 100;  
 ```  
 
-💡 *Le subquery e le CTE sono particolarmente utili per espressioni complesse o per migliorare la leggibilità del codice.*  
+*Le subquery e le CTE sono particolarmente utili per espressioni complesse o per migliorare la leggibilità del codice.*  
+
+[CTE - Common Table Expression](0650_CTE.md)
