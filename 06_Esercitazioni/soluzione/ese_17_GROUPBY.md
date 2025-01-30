@@ -230,3 +230,117 @@ JOIN FornitoriProdotti FP ON F.CodF = FP.CodF
 WHERE F.NSoci > 5
 GROUP BY F.CodF, F.NomeF;
 ```
+
+---
+
+
+### **11. Contare il numero di ordini effettuati da ciascun cliente**
+
+```sql
+SELECT C.Nome, COUNT(O.CodOrdine) AS NumeroOrdini
+FROM Clienti C
+LEFT JOIN Ordini O ON C.CodCliente = O.CodCliente
+GROUP BY C.CodCliente, C.Nome;
+```
+
+---
+
+### **12. Calcolare il totale delle vendite per ciascun prodotto**
+
+```sql
+SELECT P.NomeP, SUM(V.Quantita * V.PrezzoUnitario) AS TotaleVendite
+FROM Prodotti P
+JOIN Vendite V ON P.CodP = V.CodProdotto
+GROUP BY P.CodP, P.NomeP;
+```
+
+---
+
+### **13. Determinare la quantità media venduta per ciascun prodotto**
+
+```sql
+SELECT P.NomeP, AVG(V.Quantita) AS QuantitaMediaVenduta
+FROM Prodotti P
+JOIN Vendite V ON P.CodP = V.CodProdotto
+GROUP BY P.CodP, P.NomeP;
+```
+
+---
+
+### **14. Trovare i clienti che hanno effettuato più di 2 ordini**
+
+```sql
+SELECT C.Nome, COUNT(O.CodOrdine) AS NumeroOrdini
+FROM Clienti C
+JOIN Ordini O ON C.CodCliente = O.CodCliente
+GROUP BY C.CodCliente, C.Nome
+HAVING COUNT(O.CodOrdine) > 2;
+```
+
+---
+
+### **15. Calcolare il numero totale di prodotti per ciascun magazzino**
+
+```sql
+SELECT P.Magazzino, COUNT(P.CodP) AS NumeroProdotti
+FROM Prodotti P
+GROUP BY P.Magazzino;
+```
+
+---
+
+### **16. Determinare il massimo e il minimo totale di una vendita per ciascun prodotto**
+
+```sql
+SELECT P.NomeP, MAX(V.Totale) AS MaxTotaleVendita, MIN(V.Totale) AS MinTotaleVendita
+FROM Prodotti P
+JOIN Vendite V ON P.CodP = V.CodProdotto
+GROUP BY P.CodP, P.NomeP;
+```
+
+---
+
+### **17. Contare il numero di ordini effettuati per ciascun mese**
+
+```sql
+SELECT MONTH(O.DataOrdine) AS Mese, COUNT(O.CodOrdine) AS NumeroOrdini
+FROM Ordini O
+GROUP BY MONTH(O.DataOrdine)
+ORDER BY Mese;
+```
+
+---
+
+### **18. Determinare il totale delle vendite per ciascun cliente**
+
+```sql
+SELECT C.Nome, SUM(V.Totale) AS TotaleSpeso
+FROM Clienti C
+JOIN Ordini O ON C.CodCliente = O.CodCliente
+JOIN Vendite V ON O.CodOrdine = V.CodVendita
+GROUP BY C.CodCliente, C.Nome;
+```
+
+---
+
+### **19. Trovare i fornitori che hanno fornito più di 50 unità di prodotti in totale**
+
+```sql
+SELECT F.NomeF, SUM(FP.Qta) AS QuantitaTotaleFornita
+FROM Fornitori F
+JOIN FornitoriProdotti FP ON F.CodF = FP.CodF
+GROUP BY F.CodF, F.NomeF
+HAVING SUM(FP.Qta) > 50;
+```
+
+---
+
+### **20. Determinare il numero di prodotti venduti per ciascun giorno**
+
+```sql
+SELECT O.DataOrdine, SUM(V.Quantita) AS ProdottiVenduti
+FROM Ordini O
+JOIN Vendite V ON O.CodOrdine = V.CodVendita
+GROUP BY O.DataOrdine
+ORDER BY O.DataOrdine;
+```
