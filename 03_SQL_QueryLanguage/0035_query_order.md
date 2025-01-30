@@ -16,7 +16,7 @@ L'elaborazione di una query SQL segue un ordine preciso, e questo è il motivo p
 ```sql
 SELECT prezzo * 0.9 AS prezzo_scontato  
 FROM prodotti  
-WHERE prezzo_scontato > 100; -- ❌ Errore! L'alias non è ancora stato definito  
+WHERE prezzo_scontato > 100; -- Errore! L'alias non è ancora stato definito  
 ```  
 
 **Soluzioni:**  
