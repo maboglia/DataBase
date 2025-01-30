@@ -4,7 +4,7 @@
 
 1. **Creare il database `liceo`.**
 
-2. **Assegnare i privilegi all'utente `app_java` per questo nuovo database.**
+2. **Assegnare i privilegi all'utente `username` per questo nuovo database.**
 
 3. **Nel database `liceo` creare 2 tabelle: `aule` e `alunni`:**
    - La tabella `aule` deve avere i seguenti attributi:
@@ -69,7 +69,7 @@ CREATE DATABASE liceo;
 ### **Assegnazione dei privilegi**
 
 ```sql
-GRANT ALL PRIVILEGES ON liceo.* TO 'app_java'@'localhost';
+GRANT ALL PRIVILEGES ON liceo.* TO 'username'@'localhost';
 ```
 
 ---

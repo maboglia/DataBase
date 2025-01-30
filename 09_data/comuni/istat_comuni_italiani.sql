@@ -8102,10 +8102,10 @@ INSERT INTO `comuni` (`id`, `idprovincia`, `idcittametropolitana`, `codicecatast
 -- --------------------------------------------------------
 
 --
--- Table structure for table `provincie`
+-- Table structure for table `province`
 --
 
-CREATE TABLE `provincie` (
+CREATE TABLE `province` (
   `id` int(11) NOT NULL,
   `idregione` int(11) NOT NULL,
   `denominazione` varchar(255) NOT NULL,
@@ -8113,10 +8113,10 @@ CREATE TABLE `provincie` (
 );
 
 --
--- Dumping data for table `provincie`
+-- Dumping data for table `province`
 --
 
-INSERT INTO `provincie` (`id`, `idregione`, `denominazione`, `sigla`) VALUES
+INSERT INTO `province` (`id`, `idregione`, `denominazione`, `sigla`) VALUES
 (1, 1, 'Torino', 'TO'),
 (2, 1, 'Vercelli', 'VC'),
 (3, 1, 'Novara', 'NO'),
@@ -8300,9 +8300,9 @@ ALTER TABLE `comuni`
   ADD KEY `idprovincia` (`idprovincia`);
 
 --
--- Indexes for table `provincie`
+-- Indexes for table `province`
 --
-ALTER TABLE `provincie`
+ALTER TABLE `province`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idregione` (`idregione`);
 
@@ -8329,9 +8329,9 @@ ALTER TABLE `ripartizioni`
 ALTER TABLE `comuni`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8192;
 --
--- AUTO_INCREMENT for table `provincie`
+-- AUTO_INCREMENT for table `province`
 --
-ALTER TABLE `provincie`
+ALTER TABLE `province`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 --
 -- AUTO_INCREMENT for table `regioni`
@@ -8351,13 +8351,13 @@ ALTER TABLE `ripartizioni`
 -- Constraints for table `comuni`
 --
 ALTER TABLE `comuni`
-  ADD CONSTRAINT `fk_001` FOREIGN KEY (`idprovincia`) REFERENCES `provincie` (`id`);
+  ADD CONSTRAINT `fk_001` FOREIGN KEY (`idprovincia`) REFERENCES `province` (`id`);
 
 --
--- Constraints for table `provincie`
+-- Constraints for table `province`
 --
-ALTER TABLE `provincie`
-  ADD CONSTRAINT `provincie_ibfk_1` FOREIGN KEY (`idregione`) REFERENCES `regioni` (`id`);
+ALTER TABLE `province`
+  ADD CONSTRAINT `province_ibfk_1` FOREIGN KEY (`idregione`) REFERENCES `regioni` (`id`);
 
 --
 -- Constraints for table `regioni`
