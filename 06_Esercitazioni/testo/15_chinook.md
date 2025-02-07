@@ -1,6 +1,10 @@
-### **1-5: Selezioni base**
+# Chinook
 
+[Database](../../09_data/chinook/Chinook_MySql.sql)
 
+---
+
+## **1-5: Selezioni base**
 
 1. **Trova tutti gli album nella tabella `Album`.**
 
@@ -12,7 +16,9 @@
 
 5. **Trova i generi musicali elencati nella tabella `Genre`.**
 
-### **6-10: Filtri e ordinamenti**
+---
+
+## **6-10: Filtri e ordinamenti**
 
 6. **Trova i clienti la cui città inizia con "San".**
 
@@ -24,7 +30,9 @@
 
 10. **Trova le fatture con un totale superiore a $50, ordinate per data.**
 
-### **11-15: Funzioni aggregate**
+---
+
+## **11-15: Funzioni aggregate**
 
 11. **Conta il numero totale di clienti.**
 
@@ -36,7 +44,9 @@
 
 15. **Trova il prezzo medio per unità dei brani.**
 
-### **16-20: Join semplici**
+---
+
+## **16-20: Join semplici**
 
 16. **Trova i dettagli degli album e degli artisti associati.**
 
@@ -48,7 +58,9 @@
 
 20. **Trova i brani con il rispettivo tipo di supporto.**
 
-### **21-25: Filtri avanzati e subquery**
+---
+
+## **21-25: Filtri avanzati e subquery**
 
 21. **Trova i brani più lunghi (durata superiore alla media).**
 
@@ -60,7 +72,9 @@
 
 25. **Trova i brani appartenenti a generi diversi da "Rock".**
 
-### **26-30: Query avanzate**
+---
+
+## **26-30: Query avanzate**
 
 26. **Trova i dettagli delle fatture e dei dipendenti di supporto associati.**
 

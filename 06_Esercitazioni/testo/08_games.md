@@ -1,3 +1,7 @@
+# Video games
+
+[Database](../../09_data/games.sql)
+
 ### -- 1. Selezionare tutti i campi della tabella
 
 ### -- 2. Elencare i nomi di tutti i giochi

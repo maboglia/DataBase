@@ -1,4 +1,10 @@
-### **1-5: Selezioni semplici**
+# Comuni italiani
+
+[Database](../../09_data/comuni/istat_comuni_italiani.sql)
+
+---
+
+## **1-5: Selezioni semplici**
 
 1. **Seleziona tutti i comuni.**
 
@@ -10,7 +16,9 @@
 
 5. **Trova i comuni con una superficie maggiore di 100 km².**
 
-### **6-10: Filtri e ordinamenti**
+---
+
+## **6-10: Filtri e ordinamenti**
 
 6. **Trova i comuni che iniziano con la lettera "A".**
 
@@ -22,7 +30,9 @@
 
 10. **Ordina i comuni per altitudine e denominazione.**
 
-### **11-15: Funzioni aggregate**
+---
+
+## **11-15: Funzioni aggregate**
 
 11. **Trova il numero totale di comuni.**
 
@@ -34,7 +44,9 @@
 
 15. **Trova il numero di comuni per ogni provincia.**
 
-### **16-20: Raggruppamenti e filtri avanzati**
+---
+
+## **16-20: Raggruppamenti e filtri avanzati**
 
 16. **Trova la superficie totale dei comuni per ciascuna provincia.**
 
@@ -46,7 +58,9 @@
 
 20. **Trova i comuni con una superficie maggiore di 50 e una popolazione inferiore a 10.000.**
 
-### **21-25: Subquery e condizioni complesse**
+---
+
+## **21-25: Subquery e condizioni complesse**
 
 21. **Trova i comuni con la popolazione più alta in ogni provincia.**
 
@@ -58,7 +72,9 @@
 
 25. **Trova i comuni situati ad altitudini pari a multipli di 100.**
 
-### **26-30: Query avanzate**
+---
+
+## **26-30: Query avanzate**
 
 26. **Trova i comuni che appartengono sia alla provincia 1 sia alla provincia 2.**
 

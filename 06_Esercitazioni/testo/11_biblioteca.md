@@ -1,6 +1,10 @@
+# Biblioteca
 
+[Database](../../09_data/biblioteca/biblioteca.sql)
 
-### **1-5: Selezioni semplici**
+---
+
+## **1-5: Selezioni semplici**
 
 1. **Seleziona tutti i record dalla tabella `biblioteca`.**
 
@@ -12,7 +16,9 @@
 
 5. **Trova i dettagli dei libri con più di 300 pagine.**
 
-### **6-10: Filtri e ordinamenti**
+---
+
+## **6-10: Filtri e ordinamenti**
 
 6. **Trova i libri il cui titolo contiene la parola "Storia".**
 
@@ -24,7 +30,9 @@
 
 10. **Ordina i libri per anno di pubblicazione e titolo.**
 
-### **11-15: Funzioni aggregate**
+---
+
+## **11-15: Funzioni aggregate**
 
 
 11. **Trova il numero totale di libri nella tabella.**
@@ -37,7 +45,9 @@
 
 15. **Trova l'anno di pubblicazione più recente nella tabella.**
 
-### **16-20: Join simulati e raggruppamenti**
+---
+
+## **16-20: Join simulati e raggruppamenti**
 16. **Trova i libri classificati come "Storia".**
 
 17. **Trova i libri pubblicati in anni compresi tra il 2000 e il 2020.**
@@ -48,7 +58,9 @@
 
 20. **Trova i libri che non hanno informazioni sul numero di pagine.**
 
-### **21-25: Subquery e filtri avanzati**
+---
+
+## **21-25: Subquery e filtri avanzati**
 
 21. **Trova i libri pubblicati nello stesso anno del libro con il titolo "Il Nome della Rosa".**
 
@@ -60,7 +72,9 @@
 
 25. **Trova i libri il cui numero di pagine è superiore alla media.**
 
-### **26-30: Query avanzate**
+---
+
+## **26-30: Query avanzate**
 
 26. **Trova i libri pubblicati in anni dispari.**
 
