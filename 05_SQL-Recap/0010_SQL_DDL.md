@@ -96,7 +96,7 @@ CREATE DOMAIN voto AS SMALLINT DEFAULT 18 CHECK (VALUE BETWEEN 18 AND 30);
 Uno schema contiene tabelle, viste, indici e permessi:  
 
 ```sql
-CREATE SCHEMA azienda AUTHORIZATION antonio;
+CREATE SCHEMA azienda AUTHORIZATION utente_registrato;
 ```
 
 ---
