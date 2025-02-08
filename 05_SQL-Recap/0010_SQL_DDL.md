@@ -200,3 +200,49 @@ DROP SCHEMA azienda RESTRICT;
 
 ---
 
+Le parole chiave **CASCADE** e **RESTRICT** vengono utilizzate insieme ai comandi **DROP** in SQL per specificare come devono essere gestiti i vincoli di integrità referenziale quando si elimina una tabella o uno schema. Ecco cosa fanno:
+
+---
+
+### 1. **CASCADE**
+
+- La parola chiave **CASCADE** viene utilizzata quando si elimina una tabella o uno schema che è referenziato da altre tabelle tramite chiavi esterne.
+- **CASCADE** indica che l'eliminazione della tabella o dello schema principale (ad esempio, la tabella `Progetto`) deve comportare anche l'eliminazione di tutte le righe nelle altre tabelle che fanno riferimento a tale tabella tramite chiavi esterne.
+
+---
+
+Nel caso del comando:
+
+```sql
+DROP TABLE Progetto CASCADE;
+```
+
+- Questo comando elimina la tabella `Progetto`, ma prima di farlo, elimina automaticamente tutte le righe nelle altre tabelle che contengono riferimenti a `Progetto` (ad esempio, tramite chiavi esterne).
+- È utile per evitare errori di violazione dei vincoli di integrità referenziale.
+
+---
+
+### 2. **RESTRICT**
+
+- La parola chiave **RESTRICT** viene utilizzata per impedire l'eliminazione di una tabella o di uno schema se esistono altre tabelle che dipendono da essa tramite vincoli di chiave esterna.
+- Con **RESTRICT**, se una tabella è referenziata da altre tabelle tramite chiavi esterne, la tabella non può essere eliminata finché non vengono rimosse prima le dipendenze.
+
+---
+
+Nel caso del comando:
+
+```sql
+DROP SCHEMA azienda RESTRICT;
+```
+
+- Questo comando cerca di eliminare lo schema `azienda`.
+- Se lo schema `azienda` contiene tabelle o altri oggetti che sono referenziati da altre tabelle in altri schemi (tramite chiavi esterne), l'eliminazione dello schema **fallirà** e restituirà un errore, perché **RESTRICT** impedisce la rimozione di oggetti che sono referenziati.
+
+---
+
+### Riepilogo
+
+- **CASCADE**: Se elimini un oggetto (tabella, schema, ecc.), elimina anche tutte le righe che dipendono da esso tramite vincoli di chiave esterna.
+- **RESTRICT**: Se esistono dipendenze tramite chiavi esterne, impedisce l'eliminazione dell'oggetto fino a quando non vengono rimosse tali dipendenze.
+
+**Nota**: Di default, molti database utilizzano **RESTRICT** se non viene specificato diversamente.
