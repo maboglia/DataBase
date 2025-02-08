@@ -1,47 +1,47 @@
-00044_vincoli_integrita.md
-0010_CREATE.md
-0012_SELECT.md
-0014_UPDATE.md
-0016_DELETE.md
-0018_WHERE.md
-0019 alias.md
-0020_Operatori_Aritmetici.md
-0022_OperatoriLogici.md
-0024_Operatori_avanzati.md
-0026_AND_OR_NOT.md
-0027_IS_NULL.md
-0028_=_IN_LIKE.md
-0030_BETWEEN_IN.md
-0032_REGEXP.md
-0034_ORDER BY.md
-0035_query_order.md
-0036_LIMIT.md
-0038_Raggruppamento.md
-0040_Having.md
-0060_Date_Time.md
-0080_Constraints.md
-0081_UNIQUE_Constraint.md
-0082_CHECK_Constraint.md
-0085_Join.md
-0086_Inner_Join.md
-0087_Left_Join.md
-0088_Right_Join.md
-0089_USING.md
-0090 mysql_functions.md
-0092_Fx_Stringhe.md
-0094_Fx_Numbers.md
-0100 Limiti nella scrittura dell'espression.md
-0130_operatori_insiemistici.md
-0140_viste.md
-0150_indici.md
-0190_stored_procedures.md
-0200_trigger.md
-0300_stored_functions.md
-0450_transazioni.md
-0500_windows_functions.md
-0550_ottimizzazione_query.md
-0600_load_data.md
-0650_CTE.md
-096_Fx_Date.md
-0990_domande.md
-0990_mysql_workbench_shortcuts.md
+'0010_CREATE.md',
+'0012_SELECT.md',
+'0014_UPDATE.md',
+'0016_DELETE.md',
+'0018_WHERE.md',
+'0019 alias.md',
+'0020_Operatori_Aritmetici.md',
+'0022_OperatoriLogici.md',
+'0024_Operatori_avanzati.md',
+'0026_AND_OR_NOT.md',
+'0027_IS_NULL.md',
+'0028_=_IN_LIKE.md',
+'0030_BETWEEN_IN.md',
+'0032_REGEXP.md',
+'0034_ORDER BY.md',
+'0035_query_order.md',
+'0036_LIMIT.md',
+'0038_Raggruppamento.md',
+'0040_Having.md',
+'0044_vincoli_integrita.md',
+'0060_Date_Time.md',
+'0080_Constraints.md',
+'0081_UNIQUE_Constraint.md',
+'0082_CHECK_Constraint.md',
+'0085_Join.md',
+'0086_Inner_Join.md',
+'0087_Left_Join.md',
+'0088_Right_Join.md',
+'0089_USING.md',
+'0090 mysql_functions.md',
+'0092_Fx_Stringhe.md',
+'0094_Fx_Numbers.md',
+'0100 Limiti nella scrittura dell'espression.md',
+'0130_operatori_insiemistici.md',
+'0140_viste.md',
+'0150_indici.md',
+'0190_stored_procedures.md',
+'0200_trigger.md',
+'0300_stored_functions.md',
+'0450_transazioni.md',
+'0500_windows_functions.md',
+'0550_ottimizzazione_query.md',
+'0600_load_data.md',
+'0650_CTE.md',
+'096_Fx_Date.md',
+'0990_domande.md',
+'0990_mysql_workbench_shortcuts.md',

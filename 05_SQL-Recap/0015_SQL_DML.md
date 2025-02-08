@@ -245,9 +245,6 @@ WHERE Figlio.nome = Nonno.nome AND Figlio.sesso = 'M';
 ```
 
 ---
-Ecco la revisione della seconda parte, con esempi di codice migliorati per maggiore chiarezza e leggibilità.  
-
----
 
 ## **Query con Raggruppamento (1/2)**  
 
