@@ -162,12 +162,12 @@ SELECT * FROM Impiegato
 WHERE nome IN ('Marco', 'Maria', 'Marta', 'Francesco');
 ```
 
-11️⃣ **Dipendenti del DEE con stipendio fuori dall'intervallo [1000, 3000]**
+11️⃣ **Dipendenti del DAI con stipendio fuori dall'intervallo [1000, 3000]**
 
 ```sql
 SELECT nome, cognome
 FROM Impiegato
-WHERE dipartimento = 'DEE' AND stipendio_mensile NOT BETWEEN 1000 AND 3000;
+WHERE dipartimento = 'DAI' AND stipendio_mensile NOT BETWEEN 1000 AND 3000;
 ```
 
 ---
@@ -367,16 +367,16 @@ GROUP BY cod_concerto;
 
 ## **Funzioni Aggregate nella WHERE (Subquery)**  
 
-#### **Impiegati del dipartimento DEE con lo stipendio massimo**  
+#### **Impiegati del dipartimento DAI con lo stipendio massimo**  
 
 ```sql
 SELECT *
 FROM Impiegato
-WHERE dipartimento = 'DEE'
+WHERE dipartimento = 'DAI'
 AND stipendio_mensile = (
     SELECT MAX(stipendio_mensile)
     FROM Impiegato
-    WHERE dipartimento = 'DEE'
+    WHERE dipartimento = 'DAI'
 );
 ```
 
@@ -508,7 +508,7 @@ WHERE dipartimento IN (
 ```sql
 UPDATE Impiegato
 SET stipendio = stipendio * 1.1, extra = NULL
-WHERE dipartimento = 'DEE' AND stipendio > 3000;
+WHERE dipartimento = 'DAI' AND stipendio > 3000;
 ```
 
 ---
