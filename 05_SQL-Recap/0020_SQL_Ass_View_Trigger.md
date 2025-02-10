@@ -336,3 +336,119 @@ BEGIN
 END;
 ```
 
+### **Spiegazione del codice SQL**
+
+#### **1. Asserzione: Controllo sulla Media degli Stipendi**
+
+```sql
+CREATE ASSERTION MediaStipendi
+CHECK (
+    (SELECT AVG(stipendio) FROM Impiegato) <= 5000
+);
+```
+
+✅ **Cosa fa?**  
+Questa asserzione (`ASSERTION`) impone un vincolo sull'intera tabella `Impiegato`: la media degli stipendi non deve superare i 5000 euro.
+
+❌ **Problema:**  
+Le asserzioni non sono supportate nella maggior parte dei database SQL moderni (inclusi MySQL e PostgreSQL). In alternativa, si possono usare trigger per applicare questo controllo.
+
+---
+
+#### **2. Vista: Impiegati con Stipendio Superiore a 4000**
+
+```sql
+CREATE VIEW Impiegati_Alti_Stipendi AS
+SELECT codice, nome, cognome, stipendio
+FROM Impiegato
+WHERE stipendio > 4000;
+```
+
+✅ **Cosa fa?**  
+Crea una vista (`VIEW`) chiamata `Impiegati_Alti_Stipendi`, che contiene solo gli impiegati con stipendio superiore a 4000. Una vista è una tabella virtuale che consente di interrogare facilmente i dati filtrati senza modificarli nella tabella originale.
+
+---
+
+#### **3. Vista Aggiornabile con CHECK OPTION**
+
+```sql
+CREATE VIEW Impiegati_Informatica AS
+SELECT codice, nome, cognome, stipendio, dipartimento
+FROM Impiegato
+WHERE dipartimento = 'D001'
+WITH CHECK OPTION;
+```
+
+✅ **Cosa fa?**  
+
+- Crea una vista `Impiegati_Informatica` con i soli impiegati del dipartimento `D001` (es. Informatica).
+- Il `WITH CHECK OPTION` impedisce di **inserire o aggiornare** dati che non rispettano la condizione `WHERE dipartimento = 'D001'`.  
+  🔹 **Esempio:**  
+  - ✅ `UPDATE Impiegato SET stipendio = 4500 WHERE dipartimento = 'D001'` → Permesso  
+  - ❌ `UPDATE Impiegato SET dipartimento = 'D002' WHERE codice = 10` → Negato, perché violerebbe il filtro della vista.
+
+---
+
+#### **4. Trigger: Riduzione Stipendio se la Media Supera 5000**
+
+```sql
+CREATE TRIGGER ControlloStipendio
+AFTER INSERT OR UPDATE OR DELETE
+ON Impiegato
+FOR EACH STATEMENT
+BEGIN
+    UPDATE Impiegato
+    SET stipendio = stipendio * 0.9
+    WHERE 5000 < (SELECT AVG(stipendio) FROM Impiegato);
+END;
+```
+
+✅ **Cosa fa?**  
+
+- Questo trigger si attiva **dopo** ogni inserimento, modifica o cancellazione di un impiegato.  
+- Se la **media degli stipendi supera i 5000**, riduce automaticamente tutti gli stipendi del **10%** (`stipendio * 0.9`).
+
+⚠ **Problema:**  
+
+- Questo trigger **può ridurre ripetutamente** gli stipendi finché la media non rientra nel limite, il che potrebbe portare a stipendi eccessivamente bassi.
+
+---
+
+#### **5. Trigger: Gestione Cancellazione Dipartimento**
+
+```sql
+CREATE TRIGGER CancellaDipart
+AFTER DELETE
+ON Dipartimento
+FOR EACH ROW
+WHEN (EXISTS (SELECT * FROM Impiegato WHERE dipartimento = OLD.codDip))
+BEGIN
+    UPDATE Impiegato
+    SET dipartimento = NULL
+    WHERE dipartimento = OLD.codDip;
+END;
+```
+
+✅ **Cosa fa?**  
+
+- Quando un dipartimento viene cancellato (`DELETE` su `Dipartimento`), il trigger verifica se esistono impiegati associati a quel dipartimento.  
+- Se esistono, imposta `NULL` nel campo `dipartimento` degli impiegati, evitando errori di riferimento.
+
+🔹 **Esempio:**  
+
+- Se il dipartimento `D003` viene eliminato, tutti gli impiegati che lavoravano in `D003` avranno `dipartimento = NULL`.
+
+⚠ **Problema:**  
+
+- Se il database ha vincoli di **integrità referenziale (FOREIGN KEY con ON DELETE CASCADE)**, questa logica potrebbe essere superflua.
+
+---
+
+### **Conclusione**
+
+✅ Questo codice SQL copre vari aspetti di gestione dei dati:
+
+- **Vincoli di integrità** (`ASSERTION`, `CHECK OPTION`).
+- **Query predefinite** per consultare dati filtrati (`VIEW`).
+- **Automazione delle modifiche** con trigger (`AFTER INSERT/UPDATE/DELETE`).
+

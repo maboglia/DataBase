@@ -40,7 +40,7 @@ CREATE TABLE Clienti (
     CodCliente VARCHAR(10) PRIMARY KEY, -- Codice cliente
     Nome VARCHAR(100) NOT NULL,         -- Nome del cliente
     Email VARCHAR(100),                 -- Email del cliente
-    DataRegistrazione DATE DEFAULT CURRENT_DATE -- Data di registrazione
+    DataRegistrazione DATE DEFAULT (CURRENT_DATE) -- Data di registrazione
 );
 ```
 
