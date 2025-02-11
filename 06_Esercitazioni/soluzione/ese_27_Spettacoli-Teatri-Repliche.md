@@ -622,3 +622,161 @@ WHERE id IN (
 
 ✅ *Trova il teatro che ha ospitato il maggior numero di spettacoli diversi.*
 
+---
+
+## **9 esercizi** per sperimentare le principali funzioni avanzate in SQL, tra cui **funzioni analitiche, funzioni di finestra, CTE (Common Table Expressions), e JSON/XML processing**
+
+---
+
+### **1️⃣ Classificare gli spettacoli in base alla durata (Ranking Function)**
+
+📌 *Assegna un numero di classifica agli spettacoli ordinandoli per durata, dal più lungo al più corto.*  
+
+```sql
+SELECT titolo, durata,
+       RANK() OVER (ORDER BY durata DESC) AS classifica
+FROM Spettacoli;
+```
+
+✅ *Usa `RANK()` per assegnare un numero progressivo senza saltare valori in caso di parità.*
+
+---
+
+### **2️⃣ Trovare lo spettacolo con la durata massima per ogni genere (Partition By)**
+
+📌 *Trova il titolo dello spettacolo più lungo per ogni genere.*  
+
+```sql
+SELECT titolo, genere, durata
+FROM (
+    SELECT titolo, genere, durata,
+           RANK() OVER (PARTITION BY genere ORDER BY durata DESC) AS classifica
+    FROM Spettacoli
+) AS subquery
+WHERE classifica = 1;
+```
+
+✅ *Usa `PARTITION BY` per dividere i dati per genere e trova il più lungo.*
+
+---
+
+### **3️⃣ Calcolare la durata media delle repliche per ogni teatro (Aggregate + Window Function)**
+
+📌 *Calcola la durata media degli spettacoli per ogni teatro usando funzioni di finestra.*  
+
+```sql
+SELECT T.nome AS teatro, 
+       S.titolo, 
+       S.durata, 
+       AVG(S.durata) OVER (PARTITION BY T.id) AS durata_media_teatro
+FROM Repliche R
+JOIN Spettacoli S ON R.id_spettacolo = S.id
+JOIN Teatri T ON R.id_teatro = T.id;
+```
+
+✅ *Mostra la durata di ogni spettacolo con la media delle durate nel teatro.*
+
+---
+
+### **4️⃣ Mostrare la data della replica precedente per ogni spettacolo (LAG Function)**
+
+📌 *Per ogni replica, mostra la data della replica precedente per lo stesso spettacolo.*  
+
+```sql
+SELECT id_spettacolo, data_ora,
+       LAG(data_ora) OVER (PARTITION BY id_spettacolo ORDER BY data_ora) AS replica_precedente
+FROM Repliche;
+```
+
+✅ *Usa `LAG()` per ottenere il valore della riga precedente nella stessa partizione.*
+
+---
+
+### **5️⃣ Calcolare il numero di repliche cumulative per ogni spettacolo (Cumulative SUM)**
+
+📌 *Conta il numero cumulativo di repliche per ogni spettacolo nel tempo.*  
+
+```sql
+SELECT id_spettacolo, data_ora,
+       COUNT(*) OVER (PARTITION BY id_spettacolo ORDER BY data_ora ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS repliche_cumulative
+FROM Repliche;
+```
+
+✅ *Usa `COUNT() OVER` per ottenere un conteggio progressivo delle repliche per ogni spettacolo.*
+
+---
+
+### **6️⃣ Identificare il teatro con più spettacoli unici (CTE + Aggregate)**
+
+📌 *Trova il teatro che ha ospitato il maggior numero di spettacoli diversi.*  
+
+```sql
+WITH TeatroSpettacoli AS (
+    SELECT id_teatro, COUNT(DISTINCT id_spettacolo) AS num_spettacoli
+    FROM Repliche
+    GROUP BY id_teatro
+)
+SELECT T.nome, TS.num_spettacoli
+FROM TeatroSpettacoli TS
+JOIN Teatri T ON TS.id_teatro = T.id
+ORDER BY num_spettacoli DESC
+LIMIT 1;
+```
+
+✅ *Usa una `WITH` CTE per contare il numero di spettacoli per ogni teatro e seleziona il migliore.*
+
+---
+
+### **7️⃣ Convertire l'elenco delle repliche di uno spettacolo in formato JSON**
+
+📌 *Restituisce tutte le repliche di un determinato spettacolo in formato JSON.*  
+
+```sql
+SELECT JSON_ARRAYAGG(JSON_OBJECT(
+    'teatro', T.nome, 
+    'data_ora', R.data_ora
+)) AS repliche_json
+FROM Repliche R
+JOIN Teatri T ON R.id_teatro = T.id
+WHERE id_spettacolo = 1;
+```
+
+✅ *Utilizza `JSON_ARRAYAGG()` e `JSON_OBJECT()` per generare una lista JSON delle repliche.*
+
+---
+
+### **8️⃣ Trovare il tempo medio tra una replica e l'altra per ogni spettacolo**
+
+📌 *Calcola l'intervallo medio di tempo tra le repliche di ogni spettacolo.*  
+
+```sql
+SELECT id_spettacolo,
+       AVG(TIMESTAMPDIFF(HOUR, replica_precedente, data_ora)) AS media_ore_intervallo
+FROM (
+    SELECT id_spettacolo, data_ora,
+           LAG(data_ora) OVER (PARTITION BY id_spettacolo ORDER BY data_ora) AS replica_precedente
+    FROM Repliche
+) AS subquery
+WHERE replica_precedente IS NOT NULL
+GROUP BY id_spettacolo;
+```
+
+✅ *Usa `LAG()` e `TIMESTAMPDIFF()` per calcolare l'intervallo tra repliche.*
+
+---
+
+### **9️⃣ Trovare il numero massimo di spettacoli in scena contemporaneamente**
+
+📌 *Trova il massimo numero di spettacoli attivi nello stesso momento.*  
+
+```sql
+SELECT MAX(num_spettacoli) AS max_contemporanei
+FROM (
+    SELECT data_ora, COUNT(*) AS num_spettacoli
+    FROM Repliche
+    GROUP BY data_ora
+) AS subquery;
+```
+
+✅ *Conta il numero di spettacoli attivi per ogni orario e trova il massimo.*
+
