@@ -1,6 +1,6 @@
 # **Windows Function in SQL**
 
-Le **Windows Function** (funzioni di finestra) in SQL sono funzioni avanzate utilizzate per eseguire calcoli su un insieme specifico di righe correlate a una riga corrente, chiamato *window* (finestra). A differenza delle funzioni aggregate, che restituiscono un singolo valore per un gruppo di righe, le funzioni di finestra restituiscono un valore per ogni riga.
+Le **Windows Function** (funzioni di finestra) in SQL sono funzioni avanzate utilizzate per eseguire calcoli su un insieme specifico di righe correlate a una riga corrente, chiamato *window* (finestra). A differenza delle funzioni aggregate, che restituiscono un singolo valore per un gruppo di righe, le funzioni finestra **restituiscono un valore per ogni riga**.
 
 ---
 
@@ -123,3 +123,87 @@ Tabella: `Dipendenti`
 - Permettono di calcolare valori su subset di dati senza dover aggregare o eliminare righe.
 - Facilitano analisi come trend, classifiche, e confronti temporali.
 - Eliminano la necessità di query nidificate complesse.
+
+---
+
+## Esempio pokemon
+
+Esempi di **window functions** che potrebbero essere utilizzate sulla tabella `pokemon`. Supponiamo che la tabella `pokemon` abbia la seguente struttura:
+
+```sql
+CREATE TABLE pokemon (
+    id INT,
+    nome VARCHAR(100),
+    tipo VARCHAR(50),
+    livello INT,
+    attacco INT
+);
+```
+
+### 1. **Esempio di `ROW_NUMBER()`**
+
+Immaginiamo di voler assegnare un numero progressivo a ciascun Pokémon, ordinato per livello decrescente. La funzione `ROW_NUMBER()` restituisce un numero progressivo per ogni riga all'interno della finestra di partenza.
+
+```sql
+SELECT 
+    id, 
+    nome, 
+    tipo, 
+    livello,
+    ROW_NUMBER() OVER (ORDER BY livello DESC) AS posizione
+FROM pokemon;
+```
+
+#### Spiegazione
+
+- **`ROW_NUMBER()`**: Restituisce un numero progressivo per ogni riga, basato sull'ordinamento fornito.
+- **`OVER (ORDER BY livello DESC)`**: La funzione `ROW_NUMBER()` si applica su tutte le righe ordinate per il campo `livello` in ordine decrescente.
+- La colonna `posizione` indica la posizione di ciascun Pokémon in base al livello.
+
+### 2. **Esempio di `RANK()`**
+
+Supponiamo di voler assegnare un rango ai Pokémon in base al loro livello, e di voler gestire i pareggi (due Pokémon con lo stesso livello dovrebbero ricevere lo stesso rango).
+
+```sql
+SELECT 
+    id, 
+    nome, 
+    tipo, 
+    livello,
+    RANK() OVER (ORDER BY livello DESC) AS rango
+FROM pokemon;
+```
+
+#### Spiegazione
+
+- **`RANK()`**: Assegna un rango ai Pokémon. Se due Pokémon hanno lo stesso livello, entrambi ottengono lo stesso rango, ma il rango successivo salta (ad esempio, se due Pokémon sono al 1° posto, il successivo sarà al 3° posto).
+- **`OVER (ORDER BY livello DESC)`**: Ordinamento per il campo `livello` in ordine decrescente.
+- La colonna `rango` rappresenta il rango di ciascun Pokémon.
+
+### 3. **Esempio di `AVG()` con finestra per tipo**
+
+Ora, se vogliamo calcolare la media degli attacchi per ogni tipo di Pokémon, possiamo usare la funzione `AVG()` con la finestra `PARTITION BY`:
+
+```sql
+SELECT 
+    id, 
+    nome, 
+    tipo, 
+    attacco,
+    AVG(attacco) OVER (PARTITION BY tipo) AS media_attacco_per_tipo
+FROM pokemon;
+```
+
+#### Spiegazione
+
+- **`AVG(attacco)`**: Calcola la media degli attacchi.
+- **`PARTITION BY tipo`**: Calcola la media separatamente per ogni tipo di Pokémon. Ad esempio, se ci sono più Pokémon di tipo "Fuoco", la media degli attacchi sarà calcolata solo per i Pokémon di quel tipo.
+- La colonna `media_attacco_per_tipo` mostra la media degli attacchi per ciascun tipo di Pokémon.
+
+### Considerazioni
+
+- **`ROW_NUMBER()`**: Utilizzato per ordinare e numerare le righe in modo progressivo.
+- **`RANK()`**: Assegna un rango, gestendo correttamente i pareggi.
+- **`AVG()`**: Utilizzata con `PARTITION BY` per calcolare aggregazioni come la media su gruppi specifici di dati.
+
+Le funzioni di finestra ti permettono di ottenere risultati complessi senza dover fare operazioni di raggruppamento (`GROUP BY`), e possono essere molto utili quando si desidera calcolare aggregazioni mantenendo comunque i dati dettagliati delle singole righe.

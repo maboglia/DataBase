@@ -1,124 +1,124 @@
 # Tabelle per esercitazione ESE
 
-### **1. Tabella `Prodotti`**
+### **1. Tabella `prodotti`**
 
 Rappresenta i prodotti disponibili.
 
 ```sql
-CREATE TABLE Prodotti (
-    CodP VARCHAR(10) PRIMARY KEY,       -- Codice prodotto
-    NomeP VARCHAR(100) NOT NULL,        -- Nome del prodotto
-    Colore VARCHAR(50),                 -- Colore del prodotto
-    Taglia VARCHAR(10),                 -- Taglia del prodotto
-    Magazzino VARCHAR(10)               -- Codice magazzino
+CREATE TABLE prodotti (
+    codice_prodotto VARCHAR(10) PRIMARY KEY,       -- Codice prodotto
+    nome_prodotto_ VARCHAR(100) NOT NULL,        -- Nome del prodotto
+    colore VARCHAR(50),                 -- colore del prodotto
+    taglia VARCHAR(10),                 -- taglia del prodotto
+    magazzino VARCHAR(10)               -- Codice magazzino
 );
 ```
 
 ---
 
-### **2. Tabella `Fornitori`**
+### **2. Tabella `fornitori`**
 
 Contiene informazioni sui fornitori.
 
 ```sql
-CREATE TABLE Fornitori (
-    CodF VARCHAR(10) PRIMARY KEY,       -- Codice fornitore
-    NomeF VARCHAR(100) NOT NULL,        -- Nome del fornitore
-    NSoci INT,                          -- Numero di soci
-    Sede VARCHAR(100)                   -- Sede del fornitore
+CREATE TABLE fornitori (
+    codice_fornitore VARCHAR(10) PRIMARY KEY,       -- Codice fornitore
+    nome_fornitore VARCHAR(100) NOT NULL,        -- Nome del fornitore
+    numero_soci INT,                          -- Numero di soci
+    sede VARCHAR(100)                   -- Sede del fornitore
 );
 ```
 
 ---
 
-### **3. Tabella `Clienti`**
+### **3. Tabella `clienti`**
 
 Raccoglie i dettagli dei clienti.
 
 ```sql
-CREATE TABLE Clienti (
-    CodCliente VARCHAR(10) PRIMARY KEY, -- Codice cliente
+CREATE TABLE clienti (
+    codice_cliente VARCHAR(10) PRIMARY KEY, -- Codice cliente
     Nome VARCHAR(100) NOT NULL,         -- Nome del cliente
     Email VARCHAR(100),                 -- Email del cliente
-    DataRegistrazione DATE DEFAULT (CURRENT_DATE) -- Data di registrazione
+    data_registrazione DATE DEFAULT (CURRENT_DATE) -- Data di registrazione
 );
 ```
 
 ---
 
-### **4. Tabella `ProdottiArchivio`**
+### **4. Tabella `prodotti_archivio`**
 
 Archivia i prodotti obsoleti o meno utilizzati.
 
 ```sql
-CREATE TABLE ProdottiArchivio (
-    CodP VARCHAR(10) PRIMARY KEY,       -- Codice prodotto
-    NomeP VARCHAR(100) NOT NULL,        -- Nome del prodotto
-    Colore VARCHAR(50),                 -- Colore del prodotto
-    Taglia VARCHAR(10)                  -- Taglia del prodotto
+CREATE TABLE prodotti_archivio (
+    codice_prodotto VARCHAR(10) PRIMARY KEY,       -- Codice prodotto
+    nome_prodotto_ VARCHAR(100) NOT NULL,        -- Nome del prodotto
+    colore VARCHAR(50),                 -- colore del prodotto
+    taglia VARCHAR(10)                  -- taglia del prodotto
 );
 ```
 
 ---
 
-### **5. Tabella `Ordini`**
+### **5. Tabella `ordini`**
 
 Memorizza gli ordini dei clienti.
 
 ```sql
-CREATE TABLE Ordini (
-    CodOrdine VARCHAR(10) PRIMARY KEY,  -- Codice ordine
-    CodCliente VARCHAR(10) NOT NULL,    -- Codice cliente
-    DataOrdine DATE NOT NULL,           -- Data dell'ordine
-    FOREIGN KEY (CodCliente) REFERENCES Clienti(CodCliente)
+CREATE TABLE ordini (
+    codice_ordine VARCHAR(10) PRIMARY KEY,  -- Codice ordine
+    codice_cliente VARCHAR(10) NOT NULL,    -- Codice cliente
+    data_ordine DATE NOT NULL,           -- Data dell'ordine
+    FOREIGN KEY (codice_cliente) REFERENCES clienti(codice_cliente)
 );
 ```
 
 ---
 
-### **6. Tabella `Vendite`**
+### **6. Tabella `vendite`**
 
 Registra le vendite dei prodotti.
 
 ```sql
-CREATE TABLE Vendite (
-    CodVendita VARCHAR(10) PRIMARY KEY, -- Codice vendita
-    CodProdotto VARCHAR(10) NOT NULL,  -- Codice prodotto
+CREATE TABLE vendite (
+    codice_vendita VARCHAR(10) PRIMARY KEY, -- Codice vendita
+    codice_prodotto VARCHAR(10) NOT NULL,  -- Codice prodotto
     Quantita INT NOT NULL,             -- Quantità venduta
     PrezzoUnitario DECIMAL(10, 2),     -- Prezzo per unità
     Totale DECIMAL(10, 2),             -- Totale della vendita
-    FOREIGN KEY (CodProdotto) REFERENCES Prodotti(CodP)
+    FOREIGN KEY (codice_prodotto) REFERENCES prodotti(codice_prodotto)
 );
 ```
 
 ---
 
-### **7. Tabella `FornitoriProdotti`**
+### **7. Tabella `fornitori_prodotti`**
 
 Gestisce l'associazione tra fornitori e prodotti.
 
 ```sql
-CREATE TABLE FornitoriProdotti (
-    CodF VARCHAR(10) NOT NULL,          -- Codice fornitore
-    CodP VARCHAR(10) NOT NULL,          -- Codice prodotto
+CREATE TABLE fornitori_prodotti (
+    codice_fornitore VARCHAR(10) NOT NULL,          -- Codice fornitore
+    codice_prodotto VARCHAR(10) NOT NULL,          -- Codice prodotto
     Qta INT NOT NULL,                   -- Quantità fornita
-    PRIMARY KEY (CodF, CodP),           -- Chiave primaria composita
-    FOREIGN KEY (CodF) REFERENCES Fornitori(CodF),
-    FOREIGN KEY (CodP) REFERENCES Prodotti(CodP)
+    PRIMARY KEY (codice_fornitore, codice_prodotto),           -- Chiave primaria composita
+    FOREIGN KEY (codice_fornitore) REFERENCES fornitori(codice_fornitore),
+    FOREIGN KEY (codice_prodotto) REFERENCES prodotti(codice_prodotto)
 );
 ```
 
 ---
 
-### **8. Tabella `OrdiniTemp`**
+### **8. Tabella `ordini_temp`**
 
-Una tabella temporanea per gestire dati prima di inserirli in `Ordini`.
+Una tabella temporanea per gestire dati prima di inserirli in `ordini`.
 
 ```sql
-CREATE TABLE OrdiniTemp (
-    CodOrdine VARCHAR(10) PRIMARY KEY,  -- Codice ordine temporaneo
-    CodCliente VARCHAR(10) NOT NULL,    -- Codice cliente
-    DataOrdine DATE NOT NULL            -- Data dell'ordine
+CREATE TABLE ordini_temp (
+    codice_ordine VARCHAR(10) PRIMARY KEY,  -- Codice ordine temporaneo
+    codice_cliente VARCHAR(10) NOT NULL,    -- Codice cliente
+    data_ordine DATE NOT NULL            -- Data dell'ordine
 );
 ```
 
@@ -130,10 +130,10 @@ Ecco le istruzioni SQL per inserire 10 record fittizi in ciascuna delle tabelle 
 
 ---
 
-### **1. Inserire record nella tabella `Prodotti`**
+### **1. Inserire record nella tabella `prodotti`**
 
 ```sql
-INSERT INTO Prodotti (CodP, NomeP, Colore, Taglia, Magazzino) VALUES
+INSERT INTO prodotti (codice_prodotto, nome_prodotto_, colore, taglia, magazzino) VALUES
 ('P001', 'Maglietta', 'Rosso', 'M', 'MZ01'),
 ('P002', 'Pantaloni', 'Blu', 'L', 'MZ02'),
 ('P003', 'Scarpe', 'Nero', '42', 'MZ03'),
@@ -148,12 +148,12 @@ INSERT INTO Prodotti (CodP, NomeP, Colore, Taglia, Magazzino) VALUES
 
 ---
 
-### **2. Inserire record nella tabella `Fornitori`**
+### **2. Inserire record nella tabella `fornitori`**
 
 ```sql
-INSERT INTO Fornitori (CodF, NomeF, NSoci, Sede) VALUES
-('F001', 'Forniture Srl', 10, 'Milano'),
-('F002', 'Prodotti Spa', 15, 'Roma'),
+INSERT INTO fornitori (codice_fornitore, nome_fornitore, numero_soci, Sede) VALUES
+('F001', 'Forniture Srl', 10, 'sede'),
+('F002', 'prodotti Spa', 15, 'Roma'),
 ('F003', 'Servizi & Co.', 8, 'Napoli'),
 ('F004', 'Global Supply', 20, 'Torino'),
 ('F005', 'Tech Parts', 5, 'Bologna'),
@@ -166,10 +166,10 @@ INSERT INTO Fornitori (CodF, NomeF, NSoci, Sede) VALUES
 
 ---
 
-### **3. Inserire record nella tabella `Clienti`**
+### **3. Inserire record nella tabella `clienti`**
 
 ```sql
-INSERT INTO Clienti (CodCliente, Nome, Email, DataRegistrazione) VALUES
+INSERT INTO clienti (codice_cliente, Nome, Email, data_registrazione) VALUES
 ('C001', 'Mario Rossi', 'mario.rossi@example.com', '2024-01-01'),
 ('C002', 'Anna Bianchi', 'anna.bianchi@example.com', '2024-01-02'),
 ('C003', 'Luca Verdi', 'luca.verdi@example.com', '2024-01-03'),
@@ -184,10 +184,10 @@ INSERT INTO Clienti (CodCliente, Nome, Email, DataRegistrazione) VALUES
 
 ---
 
-### **4. Inserire record nella tabella `ProdottiArchivio`**
+### **4. Inserire record nella tabella `prodotti_archivio`**
 
 ```sql
-INSERT INTO ProdottiArchivio (CodP, NomeP, Colore, Taglia) VALUES
+INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto_, colore, taglia) VALUES
 ('A001', 'Maglietta Vintage', 'Rosso', 'M'),
 ('A002', 'Pantaloni Retrò', 'Blu', 'L'),
 ('A003', 'Scarpe Classiche', 'Nero', '42'),
@@ -202,10 +202,10 @@ INSERT INTO ProdottiArchivio (CodP, NomeP, Colore, Taglia) VALUES
 
 ---
 
-### **5. Inserire record nella tabella `Ordini`**
+### **5. Inserire record nella tabella `ordini`**
 
 ```sql
-INSERT INTO Ordini (CodOrdine, CodCliente, DataOrdine) VALUES
+INSERT INTO ordini (codice_ordine, codice_cliente, data_ordine) VALUES
 ('O001', 'C001', '2024-01-11'),
 ('O002', 'C002', '2024-01-12'),
 ('O003', 'C003', '2024-01-13'),
@@ -220,10 +220,10 @@ INSERT INTO Ordini (CodOrdine, CodCliente, DataOrdine) VALUES
 
 ---
 
-### **6. Inserire record nella tabella `Vendite`**
+### **6. Inserire record nella tabella `vendite`**
 
 ```sql
-INSERT INTO Vendite (CodVendita, CodProdotto, Quantita, PrezzoUnitario, Totale) VALUES
+INSERT INTO vendite (codice_vendita, codice_prodotto, Quantita, PrezzoUnitario, Totale) VALUES
 ('V001', 'P001', 10, 15.99, 159.90),
 ('V002', 'P002', 5, 29.99, 149.95),
 ('V003', 'P003', 8, 49.99, 399.92),
@@ -238,10 +238,10 @@ INSERT INTO Vendite (CodVendita, CodProdotto, Quantita, PrezzoUnitario, Totale) 
 
 ---
 
-### **7. Inserire record nella tabella `FornitoriProdotti`**
+### **7. Inserire record nella tabella `fornitori_prodotti`**
 
 ```sql
-INSERT INTO FornitoriProdotti (CodF, CodP, Qta) VALUES
+INSERT INTO fornitori_prodotti (codice_fornitore, codice_prodotto, Qta) VALUES
 ('F001', 'P001', 100),
 ('F002', 'P002', 200),
 ('F003', 'P003', 150),
@@ -256,10 +256,10 @@ INSERT INTO FornitoriProdotti (CodF, CodP, Qta) VALUES
 
 ---
 
-### **8. Inserire record nella tabella `OrdiniTemp`**
+### **8. Inserire record nella tabella `ordini_temp`**
 
 ```sql
-INSERT INTO OrdiniTemp (CodOrdine, CodCliente, DataOrdine) VALUES
+INSERT INTO ordini_temp (codice_ordine, codice_cliente, data_ordine) VALUES
 ('T001', 'C001', '2024-01-21'),
 ('T002', 'C002', '2024-01-22'),
 ('T003', 'C003', '2024-01-23'),

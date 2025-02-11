@@ -40,24 +40,24 @@ FROM clienti;
 
 ### **Esercizio 4: Estrarre una parte di testo**
 
-**Descrizione:** Estrai i primi tre caratteri del nome del corso.  
+**Descrizione:** Estrai i primi tre caratteri del nome del cliente.  
 **Query:**
 
 ```sql
-SELECT titolo, SUBSTRING(titolo, 1, 3) AS abbreviazione 
-FROM corsi;
+SELECT nome, SUBSTRING(nome, 1, 3) AS abbreviazione 
+FROM clienti;
 ```
 
 ---
 
 ### **Esercizio 5: Calcolare la lunghezza di una stringa**
 
-**Descrizione:** Trova la lunghezza del nome dei libri.  
+**Descrizione:** Trova la lunghezza del nome dei clienti.  
 **Query:**
 
 ```sql
-SELECT titolo, CHAR_LENGTH(titolo) AS lunghezza 
-FROM libri;
+SELECT nome, CHAR_LENGTH(nome) AS lunghezza 
+FROM clienti;
 ```
 
 ---
@@ -76,25 +76,25 @@ FROM clienti;
 
 ### **Esercizio 7: Sostituire una parte di testo**
 
-**Descrizione:** Sostituisci "Corso" con "Lezione" nei titoli dei corsi.  
+**Descrizione:** Sostituisci "Rosso" con "Red" nei colori dei prodotti.  
 **Query:**
 
 ```sql
-SELECT titolo, REPLACE(titolo, 'Corso', 'Lezione') AS titolo_modificato 
-FROM corsi;
+SELECT colore, REPLACE(colore, 'Rosso', 'Red') AS colore_modificato 
+FROM prodotti;
 ```
 
 ---
 
 ### **Esercizio 8: Cercare una sottostringa**
 
-**Descrizione:** Trova i corsi che contengono la parola "Base".  
+**Descrizione:** Trova i clienti con lettera iniziale del nome "A".  
 **Query:**
 
 ```sql
-SELECT titolo 
-FROM corsi 
-WHERE titolo LIKE '%Base%';
+SELECT nome 
+FROM clienti 
+WHERE nome LIKE 'A%';
 ```
 
 ---
