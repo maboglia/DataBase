@@ -39,7 +39,7 @@ Un trigger è un tipo di procedura memorizzata che viene eseguita automaticament
 
 ## Creazione di Trigger
 
-- Ecco un esempio di creazione di un trigger in SQL Server che registra le modifiche apportate a una tabella degli ordini:
+- Ecco un esempio di creazione di un trigger in **SQL Server** che registra le modifiche apportate a una tabella degli ordini:
 
    ```sql
    CREATE TRIGGER Trig_AuditOrdini
