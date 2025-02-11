@@ -1,5 +1,7 @@
 # sperimentare le principali funzioni di testo in SQL 
 
+[tabelle](../testo/ese_10_tabelle_esercizi.md)
+
 ---
 
 ### **Esercizio 1: Convertire il testo in maiuscolo**
