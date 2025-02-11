@@ -189,7 +189,7 @@ FROM Prodotti;
 ## Creazione di Funzioni Definite dall'Utente
 
 - Alcuni database consentono agli utenti di definire le proprie funzioni per eseguire operazioni personalizzate sui dati.
-- Esempio di creazione di una funzione in SQL Server:
+- Esempio di creazione di una funzione in **SQL Server**:
 
    ```sql
    CREATE FUNCTION CalcolaIva(@prezzo DECIMAL(10, 2)) 
@@ -203,6 +203,54 @@ FROM Prodotti;
    ```
 
    Questa funzione calcola l'IVA per un dato importo di prezzo.
+
+---
+
+Ecco la versione corretta della funzione `CalcolaIva` in **MySQL**. In MySQL, le funzioni non utilizzano il prefisso `@` per i parametri e il `DECLARE` va all'interno del corpo della funzione.  
+
+---
+
+### **Versione MySQL Corretta**
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION CalcolaIva(prezzo DECIMAL(10,2)) 
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    DECLARE iva DECIMAL(10,2);
+    SET iva = prezzo * 0.22;
+    RETURN iva;
+END $$
+
+DELIMITER ;
+```
+
+---
+
+### **Spiegazione**
+
+1. **`DELIMITER $$`** → Cambia il delimitatore temporaneamente per evitare problemi con il `BEGIN...END`.
+2. **`CREATE FUNCTION CalcolaIva(prezzo DECIMAL(10,2))`** → Definisce la funzione con un parametro `prezzo`.
+3. **`RETURNS DECIMAL(10,2)`** → Specifica il tipo di dato restituito.
+4. **`DETERMINISTIC`** → Indica che la funzione restituisce sempre lo stesso output per lo stesso input (necessario per alcune configurazioni di sicurezza).
+5. **`DECLARE iva DECIMAL(10,2);`** → Dichiarazione della variabile locale.
+6. **`SET iva = prezzo * 0.22;`** → Calcola l'IVA del prezzo dato.
+7. **`RETURN iva;`** → Restituisce il valore calcolato.
+8. **`DELIMITER ;`** → Ripristina il delimitatore standard `;`.
+
+---
+
+### **Esempio di utilizzo**
+
+```sql
+SELECT CalcolaIva(100.00) AS IVA;
+```
+
+🔹 *Output: `22.00`*  
+
+Questa funzione può essere usata all'interno di query per calcolare automaticamente l'IVA sui prezzi. 🚀
 
 ---
 

@@ -25,7 +25,7 @@ Le procedure memorizzate sono un tipo di oggetto di database che contengono una 
 ## Creazione di Procedure
 
 3. **Creazione di Procedure Memorizzate
-   - Le procedure memorizzate vengono create attraverso il linguaggio SQL. Un esempio di creazione di una procedura memorizzata in MySQL potrebbe apparire così:
+   - Le procedure memorizzate vengono create attraverso il linguaggio SQL. Un esempio di creazione di una procedura memorizzata in **MySQL** potrebbe apparire così:
 
    ```sql
    DELIMITER //

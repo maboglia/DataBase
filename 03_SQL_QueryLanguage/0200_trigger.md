@@ -56,6 +56,76 @@ Un trigger è un tipo di procedura memorizzata che viene eseguita automaticament
 
 ---
 
+## Ecco la versione del **trigger `Trig_AuditOrdini` in MySQL**.  
+
+---
+
+### **Versione MySQL**
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER Trig_AuditOrdini
+AFTER INSERT OR UPDATE OR DELETE
+ON Ordini
+FOR EACH ROW
+BEGIN
+    INSERT INTO LogOrdini (Evento, DataEvento)
+    VALUES ('Modifica agli ordini', NOW());
+END $$
+
+DELIMITER ;
+```
+
+---
+
+### **Spiegazione**
+
+1. **`DELIMITER $$`** → Cambia temporaneamente il delimitatore per gestire correttamente il `BEGIN...END`.
+2. **`CREATE TRIGGER Trig_AuditOrdini`** → Definisce il trigger con il nome `Trig_AuditOrdini`.
+3. **`AFTER INSERT OR UPDATE OR DELETE`** → Il trigger si attiva dopo un'**inserzione**, una **modifica** o una **cancellazione** sulla tabella `Ordini`.
+4. **`ON Ordini`** → Il trigger è associato alla tabella `Ordini`.
+5. **`FOR EACH ROW`** → Il trigger viene eseguito per ogni riga interessata dall'operazione.
+6. **`INSERT INTO LogOrdini (Evento, DataEvento)`** → Registra l'evento nella tabella di log.
+7. **`VALUES ('Modifica agli ordini', NOW());`** → Inserisce il messaggio "Modifica agli ordini" e la data e ora correnti (`NOW()`).
+8. **`DELIMITER ;`** → Ripristina il delimitatore standard `;`.
+
+---
+
+### **Esempio di Tabella di Log**
+
+Se la tabella **LogOrdini** non esiste, puoi crearla con:
+
+```sql
+CREATE TABLE LogOrdini (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    Evento VARCHAR(255),
+    DataEvento DATETIME
+);
+```
+
+---
+
+### **Test del Trigger**
+
+Dopo aver creato il trigger, prova ad eseguire una delle seguenti operazioni per vedere l'effetto sul log:
+
+```sql
+INSERT INTO Ordini (id, cliente, totale) VALUES (1, 'Mario Rossi', 100.50);
+UPDATE Ordini SET totale = 120.00 WHERE id = 1;
+DELETE FROM Ordini WHERE id = 1;
+```
+
+Poi verifica il log:
+
+```sql
+SELECT * FROM LogOrdini;
+```
+
+🔹 *Ogni modifica agli ordini verrà registrata automaticamente in `LogOrdini`!* 
+
+---
+
 ## Accesso ai Dati
 
 - I trigger possono accedere ai dati interessati attraverso i riferimenti `INSERTED` e `DELETED`, che contengono le nuove e vecchie versioni delle righe coinvolte.
@@ -77,6 +147,84 @@ Un trigger è un tipo di procedura memorizzata che viene eseguita automaticament
    ```
 
    Questo trigger registra le modifiche al nome degli studenti nella tabella LogModificheStudenti.
+
+---
+
+## Ecco la versione corretta del **trigger `Trig_AuditStudenti` in MySQL**:
+
+---
+
+### **Versione MySQL**
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER Trig_AuditStudenti
+AFTER UPDATE
+ON Studenti
+FOR EACH ROW
+BEGIN
+    INSERT INTO LogModificheStudenti (NomeVecchio, NomeNuovo, DataModifica)
+    VALUES (OLD.Nome, NEW.Nome, NOW());
+END $$
+
+DELIMITER ;
+```
+
+---
+
+### **Spiegazione**
+
+1. **`DELIMITER $$`** → Modifica temporaneamente il delimitatore per consentire `BEGIN...END`.
+2. **`CREATE TRIGGER Trig_AuditStudenti`** → Crea un trigger chiamato `Trig_AuditStudenti`.
+3. **`AFTER UPDATE`** → Il trigger si attiva **dopo** un'operazione di **UPDATE** sulla tabella `Studenti`.
+4. **`ON Studenti`** → Il trigger è associato alla tabella `Studenti`.
+5. **`FOR EACH ROW`** → Si attiva per **ogni riga** modificata.
+6. **`INSERT INTO LogModificheStudenti (NomeVecchio, NomeNuovo, DataModifica)`** → Inserisce nel log il vecchio e il nuovo nome dello studente.
+7. **`VALUES (OLD.Nome, NEW.Nome, NOW());`**  
+   - `OLD.Nome`: il valore **prima** della modifica.  
+   - `NEW.Nome`: il valore **dopo** la modifica.  
+   - `NOW()`: registra la data e l'ora della modifica.
+8. **`DELIMITER ;`** → Ripristina il delimitatore standard `;`.
+
+---
+
+### **Tabella di Log**
+
+Se la tabella **LogModificheStudenti** non esiste, puoi crearla con:
+
+```sql
+CREATE TABLE LogModificheStudenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    NomeVecchio VARCHAR(50),
+    NomeNuovo VARCHAR(50),
+    DataModifica DATETIME
+);
+```
+
+---
+
+### **Test del Trigger**
+
+1. **Inseriamo uno studente di prova:**
+
+   ```sql
+   INSERT INTO Studenti (id, Nome) VALUES (1, 'Marco');
+   ```
+
+2. **Aggiorniamo il nome dello studente:**
+
+   ```sql
+   UPDATE Studenti SET Nome = 'Luca' WHERE id = 1;
+   ```
+
+3. **Verifichiamo il log:**
+
+   ```sql
+   SELECT * FROM LogModificheStudenti;
+   ```
+
+🔹 *Ora ogni modifica al nome degli studenti sarà registrata automaticamente nel log!*
 
 ---
 
