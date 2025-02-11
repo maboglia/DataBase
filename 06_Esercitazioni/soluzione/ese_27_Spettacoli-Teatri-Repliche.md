@@ -145,3 +145,480 @@ LIMIT 1;
 ```sql
 SELECT COUNT(DISTINCT id_spettacolo) AS num_spettacoli_totali FROM Repliche;
 ```
+
+---
+
+## **10 query SQL** per il **filtraggio dei dati** dalle tabelle `Spettacoli`, `Teatri` e `Repliche`
+
+---
+
+### **1️⃣ Elenco degli spettacoli di genere "Opera"**
+
+```sql
+SELECT * 
+FROM Spettacoli 
+WHERE genere = 'Opera';
+```
+
+---
+
+### **2️⃣ Spettacoli con durata superiore a 150 minuti**
+
+```sql
+SELECT * 
+FROM Spettacoli 
+WHERE durata > 150;
+```
+
+---
+
+### **3️⃣ Tutti i teatri di Napoli**
+
+```sql
+SELECT * 
+FROM Teatri 
+WHERE città = 'Napoli';
+```
+
+---
+
+### **4️⃣ Tutte le repliche che si terranno nel "Teatro alla Scala"**
+
+```sql
+SELECT R.*
+FROM Repliche R
+JOIN Teatri T ON R.id_teatro = T.id
+WHERE T.nome = 'Teatro alla Scala';
+```
+
+---
+
+### **5️⃣ Elenco delle repliche con il titolo dello spettacolo e il nome del teatro**
+
+```sql
+SELECT S.titolo, T.nome AS teatro, R.data_ora
+FROM Repliche R
+JOIN Spettacoli S ON R.id_spettacolo = S.id
+JOIN Teatri T ON R.id_teatro = T.id
+ORDER BY R.data_ora;
+```
+
+---
+
+### **6️⃣ Spettacoli programmati tra il 3 e il 7 aprile 2024**
+
+```sql
+SELECT S.titolo, R.data_ora
+FROM Repliche R
+JOIN Spettacoli S ON R.id_spettacolo = S.id
+WHERE R.data_ora BETWEEN '2024-04-03' AND '2024-04-07 23:59:59';
+```
+
+---
+
+### **7️⃣ Numero di repliche per ciascuno spettacolo**
+
+```sql
+SELECT S.titolo, COUNT(R.id) AS numero_repliche
+FROM Spettacoli S
+LEFT JOIN Repliche R ON S.id = R.id_spettacolo
+GROUP BY S.titolo
+ORDER BY numero_repliche DESC;
+```
+
+---
+
+### **8️⃣ Numero di repliche in ogni teatro**
+
+```sql
+SELECT T.nome AS teatro, COUNT(R.id) AS numero_repliche
+FROM Teatri T
+LEFT JOIN Repliche R ON T.id = R.id_teatro
+GROUP BY T.nome
+ORDER BY numero_repliche DESC;
+```
+
+---
+
+### **9️⃣ Spettacoli che si terranno in più di un teatro**
+
+```sql
+SELECT S.titolo, COUNT(DISTINCT R.id_teatro) AS numero_teatri
+FROM Spettacoli S
+JOIN Repliche R ON S.id = R.id_spettacolo
+GROUP BY S.titolo
+HAVING COUNT(DISTINCT R.id_teatro) > 1;
+```
+
+---
+
+### **🔟 Prossima replica di ogni spettacolo**
+
+```sql
+SELECT S.titolo, MIN(R.data_ora) AS prossima_replica
+FROM Spettacoli S
+JOIN Repliche R ON S.id = R.id_spettacolo
+WHERE R.data_ora > NOW()
+GROUP BY S.titolo
+ORDER BY prossima_replica;
+```
+
+---
+
+## **10 query SQL con subquery** per il filtraggio dei dati dalle tabelle `Spettacoli`, `Teatri` e `Repliche`
+
+---
+
+### **1️⃣ Spettacoli con almeno una replica programmata**
+
+```sql
+SELECT * 
+FROM Spettacoli 
+WHERE id IN (SELECT DISTINCT id_spettacolo FROM Repliche);
+```
+
+✅ *Seleziona tutti gli spettacoli che hanno almeno una replica programmata.*
+
+---
+
+### **2️⃣ Teatri che ospitano almeno una replica di un'opera**
+
+```sql
+SELECT * 
+FROM Teatri 
+WHERE id IN (
+    SELECT DISTINCT id_teatro 
+    FROM Repliche 
+    WHERE id_spettacolo IN (
+        SELECT id FROM Spettacoli WHERE genere = 'Opera'
+    )
+);
+```
+
+✅ *Seleziona i teatri che ospitano almeno una replica di spettacoli di genere "Opera".*
+
+---
+
+### **3️⃣ Spettacoli con la durata maggiore della durata media di tutti gli spettacoli**
+
+```sql
+SELECT * 
+FROM Spettacoli 
+WHERE durata > (
+    SELECT AVG(durata) FROM Spettacoli
+);
+```
+
+✅ *Restituisce gli spettacoli la cui durata è superiore alla durata media di tutti gli spettacoli.*
+
+---
+
+### **4️⃣ Replica più recente di ciascuno spettacolo**
+
+```sql
+SELECT * 
+FROM Repliche 
+WHERE data_ora = (
+    SELECT MAX(data_ora) 
+    FROM Repliche 
+    WHERE id_spettacolo = Repliche.id_spettacolo
+);
+```
+
+✅ *Trova la replica più recente per ciascuno spettacolo.*
+
+---
+
+### **5️⃣ Spettacoli rappresentati nel maggior numero di teatri**
+
+```sql
+SELECT titolo 
+FROM Spettacoli 
+WHERE id IN (
+    SELECT id_spettacolo 
+    FROM Repliche 
+    GROUP BY id_spettacolo 
+    HAVING COUNT(DISTINCT id_teatro) = (
+        SELECT MAX(teatri_per_spettacolo) 
+        FROM (
+            SELECT COUNT(DISTINCT id_teatro) AS teatri_per_spettacolo 
+            FROM Repliche 
+            GROUP BY id_spettacolo
+        ) AS subquery
+    )
+);
+```
+
+✅ *Restituisce il titolo degli spettacoli che sono stati rappresentati nel maggior numero di teatri.*
+
+---
+
+### **6️⃣ Teatri con il maggior numero di repliche**
+
+```sql
+SELECT * 
+FROM Teatri 
+WHERE id IN (
+    SELECT id_teatro 
+    FROM Repliche 
+    GROUP BY id_teatro 
+    HAVING COUNT(*) = (
+        SELECT MAX(numero_repliche) 
+        FROM (
+            SELECT COUNT(*) AS numero_repliche 
+            FROM Repliche 
+            GROUP BY id_teatro
+        ) AS subquery
+    )
+);
+```
+
+✅ *Trova i teatri che hanno ospitato il maggior numero di repliche.*
+
+---
+
+### **7️⃣ Trova lo spettacolo con la durata più lunga**
+
+```sql
+SELECT * 
+FROM Spettacoli 
+WHERE durata = (SELECT MAX(durata) FROM Spettacoli);
+```
+
+✅ *Seleziona lo spettacolo con la durata più lunga.*
+
+---
+
+### **8️⃣ Trova i teatri che non hanno ospitato nessuna replica**
+
+```sql
+SELECT * 
+FROM Teatri 
+WHERE id NOT IN (SELECT DISTINCT id_teatro FROM Repliche);
+```
+
+✅ *Seleziona i teatri che non hanno mai ospitato alcuno spettacolo.*
+
+---
+
+### **9️⃣ Trova il numero di repliche per ciascuno spettacolo e mostra solo quelli con più repliche della media**
+
+```sql
+SELECT titolo, 
+       (SELECT COUNT(*) FROM Repliche WHERE Repliche.id_spettacolo = Spettacoli.id) AS numero_repliche
+FROM Spettacoli
+WHERE (SELECT COUNT(*) FROM Repliche WHERE Repliche.id_spettacolo = Spettacoli.id) > 
+      (SELECT AVG(repliche_count) FROM (SELECT COUNT(*) AS repliche_count FROM Repliche GROUP BY id_spettacolo) AS subquery);
+```
+
+✅ *Restituisce gli spettacoli che hanno più repliche rispetto alla media di tutti gli spettacoli.*
+
+---
+
+### **🔟 Prossima replica per ogni spettacolo**
+
+```sql
+SELECT * 
+FROM Repliche 
+WHERE data_ora = (
+    SELECT MIN(data_ora) 
+    FROM Repliche 
+    WHERE id_spettacolo = Repliche.id_spettacolo 
+    AND data_ora > NOW()
+);
+```
+
+✅ *Restituisce la prossima replica futura per ogni spettacolo.*
+
+---
+
+## **10 query SQL avanzate con subquery** per esercitarsi con interrogazioni più complesse sui dati delle tabelle `Spettacoli`, `Teatri` e `Repliche`
+
+---
+
+### **1️⃣ Spettacoli con più repliche del numero medio di repliche per spettacolo**
+
+```sql
+SELECT titolo, COUNT(Repliche.id) AS numero_repliche
+FROM Spettacoli
+JOIN Repliche ON Spettacoli.id = Repliche.id_spettacolo
+GROUP BY titolo
+HAVING COUNT(Repliche.id) > (
+    SELECT AVG(repliche_count) 
+    FROM (
+        SELECT COUNT(*) AS repliche_count 
+        FROM Repliche 
+        GROUP BY id_spettacolo
+    ) AS subquery
+);
+```
+
+✅ *Restituisce gli spettacoli che hanno più repliche rispetto alla media di tutte le repliche per spettacolo.*
+
+---
+
+### **2️⃣ Teatri che hanno ospitato tutti i generi di spettacoli presenti nel database**
+
+```sql
+SELECT nome
+FROM Teatri
+WHERE id IN (
+    SELECT id_teatro
+    FROM Repliche
+    GROUP BY id_teatro
+    HAVING COUNT(DISTINCT id_spettacolo) = (
+        SELECT COUNT(DISTINCT genere) FROM Spettacoli
+    )
+);
+```
+
+✅ *Restituisce i teatri che hanno ospitato almeno uno spettacolo per ogni genere esistente.*
+
+---
+
+### **3️⃣ Spettacoli che sono stati rappresentati in almeno due città diverse**
+
+```sql
+SELECT titolo
+FROM Spettacoli
+WHERE id IN (
+    SELECT id_spettacolo
+    FROM Repliche
+    JOIN Teatri ON Repliche.id_teatro = Teatri.id
+    GROUP BY id_spettacolo
+    HAVING COUNT(DISTINCT città) >= 2
+);
+```
+
+✅ *Trova gli spettacoli che sono stati rappresentati in almeno due città diverse.*
+
+---
+
+### **4️⃣ Città con il maggior numero di repliche totali**
+
+```sql
+SELECT città
+FROM Teatri
+WHERE id IN (
+    SELECT id_teatro
+    FROM Repliche
+    GROUP BY id_teatro
+    HAVING COUNT(*) = (
+        SELECT MAX(numero_repliche)
+        FROM (
+            SELECT COUNT(*) AS numero_repliche
+            FROM Repliche
+            GROUP BY id_teatro
+        ) AS subquery
+    )
+);
+```
+
+✅ *Trova la città in cui si sono tenute più repliche.*
+
+---
+
+### **5️⃣ Spettacolo con la durata massima per ciascun genere**
+
+```sql
+SELECT S.*
+FROM Spettacoli S
+WHERE durata = (
+    SELECT MAX(durata)
+    FROM Spettacoli
+    WHERE genere = S.genere
+);
+```
+
+✅ *Restituisce per ogni genere lo spettacolo con la durata maggiore.*
+
+---
+
+### **6️⃣ Teatri che hanno ospitato solo spettacoli di un unico genere**
+
+```sql
+SELECT nome
+FROM Teatri
+WHERE id IN (
+    SELECT id_teatro
+    FROM Repliche
+    GROUP BY id_teatro
+    HAVING COUNT(DISTINCT id_spettacolo) = 1
+);
+```
+
+✅ *Trova i teatri che hanno ospitato solo spettacoli di un unico genere.*
+
+---
+
+### **7️⃣ Spettacolo più recente rappresentato in ogni teatro**
+
+```sql
+SELECT *
+FROM Repliche R1
+WHERE data_ora = (
+    SELECT MAX(data_ora)
+    FROM Repliche R2
+    WHERE R1.id_teatro = R2.id_teatro
+);
+```
+
+✅ *Restituisce l'ultima replica rappresentata in ogni teatro.*
+
+---
+
+### **8️⃣ Trova gli spettacoli rappresentati solo in un singolo teatro**
+
+```sql
+SELECT titolo
+FROM Spettacoli
+WHERE id IN (
+    SELECT id_spettacolo
+    FROM Repliche
+    GROUP BY id_spettacolo
+    HAVING COUNT(DISTINCT id_teatro) = 1
+);
+```
+
+✅ *Mostra gli spettacoli che sono stati rappresentati in un solo teatro.*
+
+---
+
+### **9️⃣ Trova la prima replica per ogni spettacolo**
+
+```sql
+SELECT *
+FROM Repliche R1
+WHERE data_ora = (
+    SELECT MIN(data_ora)
+    FROM Repliche R2
+    WHERE R1.id_spettacolo = R2.id_spettacolo
+);
+```
+
+✅ *Restituisce la prima replica registrata per ogni spettacolo.*
+
+---
+
+### **🔟 Trova il teatro che ha ospitato il maggior numero di spettacoli diversi**
+
+```sql
+SELECT nome
+FROM Teatri
+WHERE id IN (
+    SELECT id_teatro
+    FROM Repliche
+    GROUP BY id_teatro
+    HAVING COUNT(DISTINCT id_spettacolo) = (
+        SELECT MAX(spettacoli_count)
+        FROM (
+            SELECT COUNT(DISTINCT id_spettacolo) AS spettacoli_count
+            FROM Repliche
+            GROUP BY id_teatro
+        ) AS subquery
+    )
+);
+```
+
+✅ *Trova il teatro che ha ospitato il maggior numero di spettacoli diversi.*
+
