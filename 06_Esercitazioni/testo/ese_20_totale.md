@@ -271,6 +271,9 @@ INSERT INTO ordini_temp (codice_ordine, codice_cliente, data_ordine) VALUES
 ('T009', 'C009', '2024-01-29'),
 ('T010', 'C010', '2024-01-30');
 ```
+
+---
+
 # Esercizi di INSERT
 
 Scarica le seguenti tabelle per gli esercizi
@@ -333,61 +336,7 @@ Aggiungere una relazione tra fornitori e prodotti:
 ### **10. Inserire dati provenienti da una tabella di log**
 Inserire tutti i record da una tabella temporanea a una tabella definitiva:
 
-# Esercizi di SELECT
-
-Scarica le seguenti tabelle per gli esercizi
-
-- [Tabelle](ese_10_tabelle_esercizi.md)
-
 ---
-
-
-Esegui 10 esercizi di `SELECT` in SQL per esercitarsi con la sintassi e i concetti. 
-
----
-
-### **1. Selezionare tutti i dettagli dei prodotti di colore rosso**
-`
-
----
-
-### **2. Trovare i nomi e le sedi dei fornitori con più di 5 soci**
-
----
-
-### **3. Trovare il nome e l'email dei clienti registrati negli ultimi 30 giorni**
-
-
----
-
-### **4. Calcolare il totale delle vendite per ogni prodotto**
-
----
-
-### **5. Recuperare i dettagli dei fornitori che forniscono almeno un prodotto di colore "verde"**
-
----
-
-### **6. Trovare i nomi dei clienti che hanno effettuato ordini**
-
-
----
-
-### **7. Visualizzare i prodotti mai forniti da alcun fornitore**
-
-
----
-
-### **8. Trovare i fornitori che forniscono almeno due prodotti diversi**
-
----
-
-### **9. Recuperare i dettagli delle vendite per prodotti il cui prezzo unitario è maggiore della media**
-
-
----
-
-### **10. Trovare i prodotti venduti esclusivamente nel magazzino "MZ001"**
 
 # Esercizi di UPDATE
 
@@ -442,6 +391,8 @@ Esegui 10 esercizi di `UPDATE` in SQL per esercitarsi con la sintassi e i concet
 
 ### **10. Aggiornare il nome dei fornitori che hanno fornito almeno un prodotto con quantità superiore a 100 in "Fornitore Premium"**
 
+---
+
 # Esercizi di DELETE
 Scarica le seguenti tabelle per gli esercizi
 
@@ -491,6 +442,62 @@ Esegui 10 esercizi di `DELETE` in SQL per esercitarsi con la sintassi e i concet
 ---
 
 ### **10. Rimuovere tutti i prodotti di taglia "S" e colore "giallo"**
+
+---
+
+# Esercizi di SELECT
+
+Scarica le seguenti tabelle per gli esercizi
+
+- [Tabelle](ese_10_tabelle_esercizi.md)
+
+---
+
+Esegui 10 esercizi di `SELECT` in SQL per esercitarsi con la sintassi e i concetti.
+
+---
+
+### **1. Selezionare tutti i dettagli dei prodotti di colore rosso**
+
+`
+
+---
+
+### **2. Trovare i nomi e le sedi dei fornitori con più di 5 soci**
+
+---
+
+### **3. Trovare il nome e l'email dei clienti registrati negli ultimi 30 giorni**
+
+---
+
+### **4. Calcolare il totale delle vendite per ogni prodotto**
+
+---
+
+### **5. Recuperare i dettagli dei fornitori che forniscono almeno un prodotto di colore "verde"**
+
+---
+
+### **6. Trovare i nomi dei clienti che hanno effettuato ordini**
+
+---
+
+### **7. Visualizzare i prodotti mai forniti da alcun fornitore**
+
+---
+
+### **8. Trovare i fornitori che forniscono almeno due prodotti diversi**
+
+---
+
+### **9. Recuperare i dettagli delle vendite per prodotti il cui prezzo unitario è maggiore della media**
+
+---
+
+### **10. Trovare i prodotti venduti esclusivamente nel magazzino "MZ001"**
+
+---
 
 # Esercizi con OPERATORI
 
@@ -551,6 +558,8 @@ Questi esercizi coprono diversi tipi di operatori:
 
 ### **10. Visualizzare i prodotti con prezzo maggiore di 20 e in magazzini diversi da "MZ001"**
 
+---
+
 # Esercizi con JOIN
 
 Scarica le seguenti tabelle per gli esercizi
@@ -608,6 +617,8 @@ Questi esercizi coprono i seguenti tipi di **JOIN**:
 ---
 
 ### **10. Visualizzare i prodotti e il numero di fornitori che li forniscono**
+
+---
 
 # Esercizi con GROUP BY
 
