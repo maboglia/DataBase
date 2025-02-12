@@ -1,6 +1,6 @@
 # Tabelle per esercitazione ESE
 
-### **1. Tabella `prodotti`**
+### -- **1. Tabella `prodotti`**
 
 Rappresenta i prodotti disponibili.
 
@@ -16,7 +16,7 @@ CREATE TABLE prodotti (
 
 ---
 
-### **2. Tabella `fornitori`**
+### -- **2. Tabella `fornitori`**
 
 Contiene informazioni sui fornitori.
 
@@ -31,7 +31,7 @@ CREATE TABLE fornitori (
 
 ---
 
-### **3. Tabella `clienti`**
+### -- **3. Tabella `clienti`**
 
 Raccoglie i dettagli dei clienti.
 
@@ -46,7 +46,7 @@ CREATE TABLE clienti (
 
 ---
 
-### **4. Tabella `prodotti_archivio`**
+### -- **4. Tabella `prodotti_archivio`**
 
 Archivia i prodotti obsoleti o meno utilizzati.
 
@@ -61,7 +61,7 @@ CREATE TABLE prodotti_archivio (
 
 ---
 
-### **5. Tabella `ordini`**
+### -- **5. Tabella `ordini`**
 
 Memorizza gli ordini dei clienti.
 
@@ -76,7 +76,7 @@ CREATE TABLE ordini (
 
 ---
 
-### **6. Tabella `vendite`**
+### -- **6. Tabella `vendite`**
 
 Registra le vendite dei prodotti.
 
@@ -93,7 +93,7 @@ CREATE TABLE vendite (
 
 ---
 
-### **7. Tabella `fornitori_prodotti`**
+### -- **7. Tabella `fornitori_prodotti`**
 
 Gestisce l'associazione tra fornitori e prodotti.
 
@@ -110,7 +110,7 @@ CREATE TABLE fornitori_prodotti (
 
 ---
 
-### **8. Tabella `ordini_temp`**
+### -- **8. Tabella `ordini_temp`**
 
 Una tabella temporanea per gestire dati prima di inserirli in `ordini`.
 
@@ -130,7 +130,7 @@ Ecco le istruzioni SQL per inserire 10 record fittizi in ciascuna delle tabelle 
 
 ---
 
-### **1. Inserire record nella tabella `prodotti`**
+### -- **1. Inserire record nella tabella `prodotti`**
 
 ```sql
 INSERT INTO prodotti (codice_prodotto, nome_prodotto, colore, taglia, magazzino) VALUES
@@ -148,7 +148,7 @@ INSERT INTO prodotti (codice_prodotto, nome_prodotto, colore, taglia, magazzino)
 
 ---
 
-### **2. Inserire record nella tabella `fornitori`**
+### -- **2. Inserire record nella tabella `fornitori`**
 
 ```sql
 INSERT INTO fornitori (codice_fornitore, nome_fornitore, numero_soci, Sede) VALUES
@@ -166,7 +166,7 @@ INSERT INTO fornitori (codice_fornitore, nome_fornitore, numero_soci, Sede) VALU
 
 ---
 
-### **3. Inserire record nella tabella `clienti`**
+### -- **3. Inserire record nella tabella `clienti`**
 
 ```sql
 INSERT INTO clienti (codice_cliente, Nome, Email, data_registrazione) VALUES
@@ -184,7 +184,7 @@ INSERT INTO clienti (codice_cliente, Nome, Email, data_registrazione) VALUES
 
 ---
 
-### **4. Inserire record nella tabella `prodotti_archivio`**
+### -- **4. Inserire record nella tabella `prodotti_archivio`**
 
 ```sql
 INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto, colore, taglia) VALUES
@@ -202,7 +202,7 @@ INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto, colore, taglia) V
 
 ---
 
-### **5. Inserire record nella tabella `ordini`**
+### -- **5. Inserire record nella tabella `ordini`**
 
 ```sql
 INSERT INTO ordini (codice_ordine, codice_cliente, data_ordine) VALUES
@@ -220,7 +220,7 @@ INSERT INTO ordini (codice_ordine, codice_cliente, data_ordine) VALUES
 
 ---
 
-### **6. Inserire record nella tabella `vendite`**
+### -- **6. Inserire record nella tabella `vendite`**
 
 ```sql
 INSERT INTO vendite (codice_vendita, codice_prodotto, Quantita, PrezzoUnitario, Totale) VALUES
@@ -238,7 +238,7 @@ INSERT INTO vendite (codice_vendita, codice_prodotto, Quantita, PrezzoUnitario, 
 
 ---
 
-### **7. Inserire record nella tabella `fornitori_prodotti`**
+### -- **7. Inserire record nella tabella `fornitori_prodotti`**
 
 ```sql
 INSERT INTO fornitori_prodotti (codice_fornitore, codice_prodotto, Qta) VALUES
@@ -256,7 +256,7 @@ INSERT INTO fornitori_prodotti (codice_fornitore, codice_prodotto, Qta) VALUES
 
 ---
 
-### **8. Inserire record nella tabella `ordini_temp`**
+### -- **8. Inserire record nella tabella `ordini_temp`**
 
 ```sql
 INSERT INTO ordini_temp (codice_ordine, codice_cliente, data_ordine) VALUES

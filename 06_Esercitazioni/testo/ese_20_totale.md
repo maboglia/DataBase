@@ -1,6 +1,6 @@
 # Tabelle per esercitazione ESE
 
-### **1. Tabella `prodotti`**
+### -- **1. Tabella `prodotti`**
 
 Rappresenta i prodotti disponibili.
 
@@ -16,7 +16,7 @@ CREATE TABLE prodotti (
 
 ---
 
-### **2. Tabella `fornitori`**
+### -- **2. Tabella `fornitori`**
 
 Contiene informazioni sui fornitori.
 
@@ -31,7 +31,7 @@ CREATE TABLE fornitori (
 
 ---
 
-### **3. Tabella `clienti`**
+### -- **3. Tabella `clienti`**
 
 Raccoglie i dettagli dei clienti.
 
@@ -46,7 +46,7 @@ CREATE TABLE clienti (
 
 ---
 
-### **4. Tabella `prodotti_archivio`**
+### -- **4. Tabella `prodotti_archivio`**
 
 Archivia i prodotti obsoleti o meno utilizzati.
 
@@ -61,7 +61,7 @@ CREATE TABLE prodotti_archivio (
 
 ---
 
-### **5. Tabella `ordini`**
+### -- **5. Tabella `ordini`**
 
 Memorizza gli ordini dei clienti.
 
@@ -76,7 +76,7 @@ CREATE TABLE ordini (
 
 ---
 
-### **6. Tabella `vendite`**
+### -- **6. Tabella `vendite`**
 
 Registra le vendite dei prodotti.
 
@@ -93,7 +93,7 @@ CREATE TABLE vendite (
 
 ---
 
-### **7. Tabella `fornitori_prodotti`**
+### -- **7. Tabella `fornitori_prodotti`**
 
 Gestisce l'associazione tra fornitori e prodotti.
 
@@ -110,7 +110,7 @@ CREATE TABLE fornitori_prodotti (
 
 ---
 
-### **8. Tabella `ordini_temp`**
+### -- **8. Tabella `ordini_temp`**
 
 Una tabella temporanea per gestire dati prima di inserirli in `ordini`.
 
@@ -141,53 +141,53 @@ Esegui 10 esercizi di `INSERT` in SQL per esercitarsi con la sintassi e i concet
 
 ---
 
-### **1. Inserire un singolo record**
+### -- **1. Inserire un singolo record**
 Inserire un prodotto nella tabella `Prodotti`:
 
 ---
 
-### **2. Inserire più record in una sola istruzione**
+### -- **2. Inserire più record in una sola istruzione**
 Inserire più fornitori nella tabella `Fornitori`:
 `
 
 ---
 
-### **3. Inserire un record parziale**
+### -- **3. Inserire un record parziale**
 Inserire un cliente con alcuni campi lasciati nulli:
 
 ---
 
-### **4. Inserire un record calcolato da un'altra tabella**
+### -- **4. Inserire un record calcolato da un'altra tabella**
 Copiare un prodotto dalla tabella `Prodotti` alla tabella `ProdottiArchivio`:
 
 ---
 
-### **5. Inserire una riga con una sottoquery**
+### -- **5. Inserire una riga con una sottoquery**
 Inserire un ordine per il cliente più recente:
 
 ---
 
-### **6. Inserire un record con valori default**
+### -- **6. Inserire un record con valori default**
 Inserire un fornitore con i valori predefiniti per alcuni campi:
 
 ---
 
-### **7. Inserire dati con valori calcolati**
+### -- **7. Inserire dati con valori calcolati**
 Inserire un record nella tabella `Vendite` calcolando il totale:
 
 ---
 
-### **8. Inserire dati duplicati con modifiche**
+### -- **8. Inserire dati duplicati con modifiche**
 Duplicare un prodotto con un nuovo codice e colore:
 
 ---
 
-### **9. Inserire dati nella tabella di associazione**
+### -- **9. Inserire dati nella tabella di associazione**
 Aggiungere una relazione tra fornitori e prodotti:
 
 ---
 
-### **10. Inserire dati provenienti da una tabella di log**
+### -- **10. Inserire dati provenienti da una tabella di log**
 Inserire tutti i record da una tabella temporanea a una tabella definitiva:
 
 ---
@@ -205,45 +205,45 @@ Esegui 10 esercizi di `UPDATE` in SQL per esercitarsi con la sintassi e i concet
 
 ---
 
-### **1. Aggiornare il colore dei prodotti con il codice "P001" in "rosso"**
+### -- **1. Aggiornare il colore dei prodotti con il codice "P001" in "rosso"**
 
 ---
 
-### **2. Incrementare il numero di soci di tutti i fornitori con sede a "Milano" di 2**
+### -- **2. Incrementare il numero di soci di tutti i fornitori con sede a "Milano" di 2**
 
 ---
 
-### **3. Aggiornare il magazzino del prodotto "P002" a "MZ002"**
-
-
----
-
-### **4. Ridurre del 10% la quantità disponibile per tutti i prodotti forniti da "F001"**
-
----
-
-### **5. Impostare il colore dei prodotti senza un colore definito a "bianco"**
-
----
-
-### **6. Cambiare l'indirizzo di tutti i fornitori con codice "F002" in "Via Roma, 10"**
-
----
-
-### **7. Impostare la quantità a 0 per i prodotti mai forniti da alcun fornitore**
-
----
-
-### **8. Aggiornare la sede dei fornitori con meno di 3 soci a "Sede Sconosciuta"**
+### -- **3. Aggiornare il magazzino del prodotto "P002" a "MZ002"**
 
 
 ---
 
-### **9. Cambiare la taglia di tutti i prodotti di colore "verde" a "L"**
+### -- **4. Ridurre del 10% la quantità disponibile per tutti i prodotti forniti da "F001"**
 
 ---
 
-### **10. Aggiornare il nome dei fornitori che hanno fornito almeno un prodotto con quantità superiore a 100 in "Fornitore Premium"**
+### -- **5. Impostare il colore dei prodotti senza un colore definito a "bianco"**
+
+---
+
+### -- **6. Cambiare l'indirizzo di tutti i fornitori con codice "F002" in "Via Roma, 10"**
+
+---
+
+### -- **7. Impostare la quantità a 0 per i prodotti mai forniti da alcun fornitore**
+
+---
+
+### -- **8. Aggiornare la sede dei fornitori con meno di 3 soci a "Sede Sconosciuta"**
+
+
+---
+
+### -- **9. Cambiare la taglia di tutti i prodotti di colore "verde" a "L"**
+
+---
+
+### -- **10. Aggiornare il nome dei fornitori che hanno fornito almeno un prodotto con quantità superiore a 100 in "Fornitore Premium"**
 
 ---
 
@@ -259,43 +259,43 @@ Esegui 10 esercizi di `DELETE` in SQL per esercitarsi con la sintassi e i concet
 
 ---
 
-### **1. Eliminare i prodotti con magazzino "MZ003"**
+### -- **1. Eliminare i prodotti con magazzino "MZ003"**
 
 ---
 
-### **2. Rimuovere tutti i fornitori con sede a "Napoli"**
+### -- **2. Rimuovere tutti i fornitori con sede a "Napoli"**
 
 ---
 
-### **3. Eliminare tutte le relazioni prodotto-fornitore per il prodotto con codice "P004"**
+### -- **3. Eliminare tutte le relazioni prodotto-fornitore per il prodotto con codice "P004"**
 
 ---
 
-### **4. Rimuovere tutti i prodotti con colore "nero"**
+### -- **4. Rimuovere tutti i prodotti con colore "nero"**
 
 ---
 
-### **5. Eliminare tutti i fornitori con meno di 5 soci**
+### -- **5. Eliminare tutti i fornitori con meno di 5 soci**
 
 ---
 
-### **6. Eliminare le relazioni prodotto-fornitore per i fornitori con codice "F003"**
+### -- **6. Eliminare le relazioni prodotto-fornitore per i fornitori con codice "F003"**
 
 ---
 
-### **7. Eliminare tutti i prodotti mai forniti da alcun fornitore**
+### -- **7. Eliminare tutti i prodotti mai forniti da alcun fornitore**
 
 ---
 
-### **8. Rimuovere tutti i fornitori che non hanno fornito prodotti**
+### -- **8. Rimuovere tutti i fornitori che non hanno fornito prodotti**
 
 ---
 
-### **9. Eliminare tutti i prodotti con quantità inferiore a 10 in qualsiasi relazione prodotto-fornitore**
+### -- **9. Eliminare tutti i prodotti con quantità inferiore a 10 in qualsiasi relazione prodotto-fornitore**
 
 ---
 
-### **10. Rimuovere tutti i prodotti di taglia "S" e colore "giallo"**
+### -- **10. Rimuovere tutti i prodotti di taglia "S" e colore "giallo"**
 
 ---
 
@@ -309,7 +309,7 @@ Ecco le istruzioni SQL per inserire 10 record fittizi in ciascuna delle tabelle 
 
 ---
 
-### **1. Inserire record nella tabella `prodotti`**
+### -- **1. Inserire record nella tabella `prodotti`**
 
 ```sql
 INSERT INTO prodotti (codice_prodotto, nome_prodotto, colore, taglia, magazzino) VALUES
@@ -327,7 +327,7 @@ INSERT INTO prodotti (codice_prodotto, nome_prodotto, colore, taglia, magazzino)
 
 ---
 
-### **2. Inserire record nella tabella `fornitori`**
+### -- **2. Inserire record nella tabella `fornitori`**
 
 ```sql
 INSERT INTO fornitori (codice_fornitore, nome_fornitore, numero_soci, Sede) VALUES
@@ -345,7 +345,7 @@ INSERT INTO fornitori (codice_fornitore, nome_fornitore, numero_soci, Sede) VALU
 
 ---
 
-### **3. Inserire record nella tabella `clienti`**
+### -- **3. Inserire record nella tabella `clienti`**
 
 ```sql
 INSERT INTO clienti (codice_cliente, Nome, Email, data_registrazione) VALUES
@@ -363,7 +363,7 @@ INSERT INTO clienti (codice_cliente, Nome, Email, data_registrazione) VALUES
 
 ---
 
-### **4. Inserire record nella tabella `prodotti_archivio`**
+### -- **4. Inserire record nella tabella `prodotti_archivio`**
 
 ```sql
 INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto, colore, taglia) VALUES
@@ -381,7 +381,7 @@ INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto, colore, taglia) V
 
 ---
 
-### **5. Inserire record nella tabella `ordini`**
+### -- **5. Inserire record nella tabella `ordini`**
 
 ```sql
 INSERT INTO ordini (codice_ordine, codice_cliente, data_ordine) VALUES
@@ -399,7 +399,7 @@ INSERT INTO ordini (codice_ordine, codice_cliente, data_ordine) VALUES
 
 ---
 
-### **6. Inserire record nella tabella `vendite`**
+### -- **6. Inserire record nella tabella `vendite`**
 
 ```sql
 INSERT INTO vendite (codice_vendita, codice_prodotto, Quantita, PrezzoUnitario, Totale) VALUES
@@ -417,7 +417,7 @@ INSERT INTO vendite (codice_vendita, codice_prodotto, Quantita, PrezzoUnitario, 
 
 ---
 
-### **7. Inserire record nella tabella `fornitori_prodotti`**
+### -- **7. Inserire record nella tabella `fornitori_prodotti`**
 
 ```sql
 INSERT INTO fornitori_prodotti (codice_fornitore, codice_prodotto, Qta) VALUES
@@ -435,7 +435,7 @@ INSERT INTO fornitori_prodotti (codice_fornitore, codice_prodotto, Qta) VALUES
 
 ---
 
-### **8. Inserire record nella tabella `ordini_temp`**
+### -- **8. Inserire record nella tabella `ordini_temp`**
 
 ```sql
 INSERT INTO ordini_temp (codice_ordine, codice_cliente, data_ordine) VALUES
@@ -465,45 +465,45 @@ Esegui 10 esercizi di `SELECT` in SQL per esercitarsi con la sintassi e i concet
 
 ---
 
-### **1. Selezionare tutti i dettagli dei prodotti di colore rosso**
+### -- **1. Selezionare tutti i dettagli dei prodotti di colore rosso**
 
 `
 
 ---
 
-### **2. Trovare i nomi e le sedi dei fornitori con più di 5 soci**
+### -- **2. Trovare i nomi e le sedi dei fornitori con più di 5 soci**
 
 ---
 
-### **3. Trovare il nome e l'email dei clienti registrati negli ultimi 30 giorni**
+### -- **3. Trovare il nome e l'email dei clienti registrati negli ultimi 30 giorni**
 
 ---
 
-### **4. Calcolare il totale delle vendite per ogni prodotto**
+### -- **4. Calcolare il totale delle vendite per ogni prodotto**
 
 ---
 
-### **5. Recuperare i dettagli dei fornitori che forniscono almeno un prodotto di colore "verde"**
+### -- **5. Recuperare i dettagli dei fornitori che forniscono almeno un prodotto di colore "verde"**
 
 ---
 
-### **6. Trovare i nomi dei clienti che hanno effettuato ordini**
+### -- **6. Trovare i nomi dei clienti che hanno effettuato ordini**
 
 ---
 
-### **7. Visualizzare i prodotti mai forniti da alcun fornitore**
+### -- **7. Visualizzare i prodotti mai forniti da alcun fornitore**
 
 ---
 
-### **8. Trovare i fornitori che forniscono almeno due prodotti diversi**
+### -- **8. Trovare i fornitori che forniscono almeno due prodotti diversi**
 
 ---
 
-### **9. Recuperare i dettagli delle vendite per prodotti il cui prezzo unitario è maggiore della media**
+### -- **9. Recuperare i dettagli delle vendite per prodotti il cui prezzo unitario è maggiore della media**
 
 ---
 
-### **10. Trovare i prodotti venduti esclusivamente nel magazzino "MZ001"**
+### -- **10. Trovare i prodotti venduti esclusivamente nel magazzino "MZ001"**
 
 ---
 
@@ -528,43 +528,43 @@ Questi esercizi coprono diversi tipi di operatori:
 
 ---
 
-### **1. Selezionare il nome e il prezzo aumentato del 10% per tutti i prodotti**
+### -- **1. Selezionare il nome e il prezzo aumentato del 10% per tutti i prodotti**
 
 ---
 
-### **2. Trovare i prodotti con un prezzo tra 50 e 100 (inclusi)**
+### -- **2. Trovare i prodotti con un prezzo tra 50 e 100 (inclusi)**
 
 ---
 
-### **3. Visualizzare i fornitori con un numero di soci maggiore o uguale a 10**
+### -- **3. Visualizzare i fornitori con un numero di soci maggiore o uguale a 10**
 
 ---
 
-### **4. Calcolare la quantità totale fornita per ogni prodotto**
+### -- **4. Calcolare la quantità totale fornita per ogni prodotto**
 
 ---
 
-### **5. Trovare i fornitori con il nome che inizia con "A"**
+### -- **5. Trovare i fornitori con il nome che inizia con "A"**
 
 ---
 
-### **6. Mostrare tutti i prodotti che non sono né rossi né gialli**
+### -- **6. Mostrare tutti i prodotti che non sono né rossi né gialli**
 
 ---
 
-### **7. Trovare i fornitori che si trovano in città diverse da "Milano"**
+### -- **7. Trovare i fornitori che si trovano in città diverse da "Milano"**
 
 ---
 
-### **8. Calcolare la media delle quantità fornite da ciascun fornitore**
+### -- **8. Calcolare la media delle quantità fornite da ciascun fornitore**
 
 ---
 
-### **9. Selezionare tutti i fornitori che forniscono almeno un prodotto in quantità superiore a 50**
+### -- **9. Selezionare tutti i fornitori che forniscono almeno un prodotto in quantità superiore a 50**
 
 ---
 
-### **10. Visualizzare i prodotti con prezzo maggiore di 20 e in magazzini diversi da "MZ001"**
+### -- **10. Visualizzare i prodotti con prezzo maggiore di 20 e in magazzini diversi da "MZ001"**
 
 ---
 
@@ -588,43 +588,43 @@ Questi esercizi coprono i seguenti tipi di **JOIN**:
 
 ---
 
-### **1. Mostrare il nome dei prodotti e i nomi dei fornitori che li forniscono**
+### -- **1. Mostrare il nome dei prodotti e i nomi dei fornitori che li forniscono**
 
 ---
 
-### **2. Trovare i fornitori che non forniscono alcun prodotto (LEFT JOIN con condizione NULL)**
+### -- **2. Trovare i fornitori che non forniscono alcun prodotto (LEFT JOIN con condizione NULL)**
 
 ---
 
-### **3. Calcolare la quantità totale fornita per ogni prodotto e visualizzare anche i prodotti che non sono forniti (LEFT JOIN)**
+### -- **3. Calcolare la quantità totale fornita per ogni prodotto e visualizzare anche i prodotti che non sono forniti (LEFT JOIN)**
 
 ---
 
-### **4. Visualizzare i fornitori che forniscono prodotti con quantità maggiore di 50**
+### -- **4. Visualizzare i fornitori che forniscono prodotti con quantità maggiore di 50**
 
 ---
 
-### **5. Trovare i prodotti non forniti da nessun fornitore**
+### -- **5. Trovare i prodotti non forniti da nessun fornitore**
 
 ---
 
-### **6. Trovare i fornitori che forniscono solo prodotti di colore "rosso"**
+### -- **6. Trovare i fornitori che forniscono solo prodotti di colore "rosso"**
 
 ---
 
-### **7. Visualizzare i fornitori che forniscono almeno due prodotti diversi**
+### -- **7. Visualizzare i fornitori che forniscono almeno due prodotti diversi**
 
 ---
 
-### **8. Trovare i prodotti forniti solo da un unico fornitore**
+### -- **8. Trovare i prodotti forniti solo da un unico fornitore**
 
 ---
 
-### **9. Trovare i fornitori che forniscono prodotti con quantità media superiore a 30**
+### -- **9. Trovare i fornitori che forniscono prodotti con quantità media superiore a 30**
 
 ---
 
-### **10. Visualizzare i prodotti e il numero di fornitori che li forniscono**
+### -- **10. Visualizzare i prodotti e il numero di fornitori che li forniscono**
 
 ---
 
@@ -649,43 +649,43 @@ Questi esercizi includono:
 
 ---
 
-### **1. Contare il numero totale di prodotti disponibili**
+### -- **1. Contare il numero totale di prodotti disponibili**
 
 ---
 
-### **2. Calcolare la quantità totale fornita per ogni prodotto**
+### -- **2. Calcolare la quantità totale fornita per ogni prodotto**
 
 ---
 
-### **3. Determinare la quantità media di prodotti forniti da ciascun fornitore**
+### -- **3. Determinare la quantità media di prodotti forniti da ciascun fornitore**
 
 ---
 
-### **4. Calcolare il numero di fornitori per ciascun prodotto**
+### -- **4. Calcolare il numero di fornitori per ciascun prodotto**
 
 ---
 
-### **5. Trovare il prodotto con la quantità massima fornita**
+### -- **5. Trovare il prodotto con la quantità massima fornita**
 
 ---
 
-### **6. Determinare la quantità totale fornita per ciascun colore di prodotto**
+### -- **6. Determinare la quantità totale fornita per ciascun colore di prodotto**
 
 ---
 
-### **7. Contare il numero di prodotti forniti da ogni fornitore**
+### -- **7. Contare il numero di prodotti forniti da ogni fornitore**
 
 ---
 
-### **8. Calcolare il numero medio di soci dei fornitori per città**
+### -- **8. Calcolare il numero medio di soci dei fornitori per città**
 
 ---
 
-### **9. Trovare i prodotti con una quantità totale fornita superiore a 100**
+### -- **9. Trovare i prodotti con una quantità totale fornita superiore a 100**
 
 ---
 
-### **10. Determinare il numero di prodotti forniti e la quantità totale fornita da fornitori con più di 5 soci**
+### -- **10. Determinare il numero di prodotti forniti e la quantità totale fornita da fornitori con più di 5 soci**
 
 ---
 
@@ -693,55 +693,55 @@ Questi esercizi includono:
 
 ---
 
-### **Esercizio 1: Convertire il testo in maiuscolo**
+### -- **Esercizio 1: Convertire il testo in maiuscolo**
 
 **Descrizione:** Seleziona i nomi dei clienti in maiuscolo.  
 
 ---
 
-### **Esercizio 2: Convertire il testo in minuscolo**
+### -- **Esercizio 2: Convertire il testo in minuscolo**
 
 **Descrizione:** Seleziona i cognomi dei clienti in minuscolo.  
 
 ---
 
-### **Esercizio 3: Concatenare stringhe**
+### -- **Esercizio 3: Concatenare stringhe**
 
 **Descrizione:** Crea una colonna che mostri il nome completo (nome + cognome).  
 
 ---
 
-### **Esercizio 4: Estrarre una parte di testo**
+### -- **Esercizio 4: Estrarre una parte di testo**
 
 **Descrizione:** Estrai i primi tre caratteri del nome del cliente.  
 
 ---
 
-### **Esercizio 5: Calcolare la lunghezza di una stringa**
+### -- **Esercizio 5: Calcolare la lunghezza di una stringa**
 
 **Descrizione:** Trova la lunghezza del nome dei clienti.  
 
 ---
 
-### **Esercizio 6: Rimuovere spazi iniziali e finali**
+### -- **Esercizio 6: Rimuovere spazi iniziali e finali**
 
 **Descrizione:** Rimuovi spazi inutili dai nomi dei clienti.  
 
 ---
 
-### **Esercizio 7: Sostituire una parte di testo**
+### -- **Esercizio 7: Sostituire una parte di testo**
 
 **Descrizione:** Sostituisci "Rosso" con "Red" nei colori dei prodotti.  
 
 ---
 
-### **Esercizio 8: Cercare una sottostringa**
+### -- **Esercizio 8: Cercare una sottostringa**
 
 **Descrizione:** Trova i clienti con lettera iniziale del nome "A".  
 
 ---
 
-### **Esercizio 9: Inserire testo con zeri a sinistra**
+### -- **Esercizio 9: Inserire testo con zeri a sinistra**
 
 **Descrizione:** Formatta gli ID degli ordini in modo che abbiano sempre 5 cifre (es. 00001).  
 
@@ -751,55 +751,55 @@ Questi esercizi includono:
 
 ---
 
-### **Esercizio 1: Arrotondare un numero**
+### -- **Esercizio 1: Arrotondare un numero**
 
 **Descrizione:** Arrotonda il prezzo dei prodotti a due decimali.  
 ---
 
 
-### **Esercizio 2: Trovare il valore assoluto**
+### -- **Esercizio 2: Trovare il valore assoluto**
 
 **Descrizione:** Calcola il valore assoluto della differenza tra quantità e 50.  
 
 ---
 
-### **Esercizio 3: Calcolare la potenza**
+### -- **Esercizio 3: Calcolare la potenza**
 
 **Descrizione:** Calcola il quadrato della quantità dei prodotti.  
 
 ---
 
-### **Esercizio 4: Calcolare la radice quadrata**
+### -- **Esercizio 4: Calcolare la radice quadrata**
 
 **Descrizione:** Trova la radice quadrata del prezzo di ogni prodotto.  
 
 ---
 
-### **Esercizio 5: Generare numeri casuali**
+### -- **Esercizio 5: Generare numeri casuali**
 
 **Descrizione:** Associa un numero casuale a ogni cliente.  
 
 ---
 
-### **Esercizio 6: Trovare il valore massimo e minimo**
+### -- **Esercizio 6: Trovare il valore massimo e minimo**
 
 **Descrizione:** Mostra il prezzo massimo e minimo dei prodotti.  
 
 ---
 
-### **Esercizio 7: Arrotondare per eccesso e per difetto**
+### -- **Esercizio 7: Arrotondare per eccesso e per difetto**
 
 **Descrizione:** Mostra il prezzo arrotondato per eccesso e per difetto.  
 
 ---
 
-### **Esercizio 8: Calcolare il resto della divisione (MOD)**
+### -- **Esercizio 8: Calcolare il resto della divisione (MOD)**
 
 **Descrizione:** Trova il resto della divisione tra quantità e 3 per ogni prodotto.  
 
 ---
 
-### **Esercizio 9: Calcolare una media**
+### -- **Esercizio 9: Calcolare una media**
 
 **Descrizione:** Calcola la media dei prezzi dei prodotti.  
 
@@ -811,54 +811,54 @@ Questi esercizi includono:
 
 ---
 
-### **Esercizio 1: Estrarre la data corrente**
+### -- **Esercizio 1: Estrarre la data corrente**
 
 **Descrizione:** Visualizza la data corrente per ogni ordine.  
 
 ---
 
-### **Esercizio 2: Calcolare l'età di un cliente**
+### -- **Esercizio 2: Calcolare l'età di un cliente**
 
 **Descrizione:** Calcola l'età in anni di ogni cliente in base alla data di nascita.  
 
 ---
 
-### **Esercizio 3: Estrarre anno, mese e giorno**
+### -- **Esercizio 3: Estrarre anno, mese e giorno**
 
 **Descrizione:** Estrai l'anno, il mese e il giorno dalla data di un ordine.  
 
 ---
 
-### **Esercizio 4: Calcolare la differenza tra date**
+### -- **Esercizio 4: Calcolare la differenza tra date**
 
 **Descrizione:** Calcola il numero di giorni trascorsi tra la data dell'ordine e oggi.  
 
 ---
 
-### **Esercizio 5: Aggiungere giorni a una data**
+### -- **Esercizio 5: Aggiungere giorni a una data**
 
 **Descrizione:** Aggiungi 10 giorni alla data di ogni ordine.  
 
 ---
 
-### **Esercizio 6: Sottrarre mesi da una data**
+### -- **Esercizio 6: Sottrarre mesi da una data**
 
 **Descrizione:** Sottrai 3 mesi alla data di ogni ordine.  
 
 ---
 
-### **Esercizio 7: Estrarre il giorno della settimana**
+### -- **Esercizio 7: Estrarre il giorno della settimana**
 
 **Descrizione:** Mostra il giorno della settimana per ogni ordine (1 = Domenica, 7 = Sabato).  
 
 ---
 
-### **Esercizio 8: Formattare una data**
+### -- **Esercizio 8: Formattare una data**
 
 **Descrizione:** Formatta la data degli ordini nel formato "GG/MM/AAAA".  
 
 ---
 
-### **Esercizio 9: Calcolare il numero di mesi tra due date**
+### -- **Esercizio 9: Calcolare il numero di mesi tra due date**
 
 **Descrizione:** Calcola il numero di mesi tra la data dell'ordine e oggi.  
