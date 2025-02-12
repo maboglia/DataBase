@@ -7,7 +7,7 @@ Rappresenta i prodotti disponibili.
 ```sql
 CREATE TABLE prodotti (
     codice_prodotto VARCHAR(10) PRIMARY KEY,       -- Codice prodotto
-    nome_prodotto_ VARCHAR(100) NOT NULL,        -- Nome del prodotto
+    nome_prodotto VARCHAR(100) NOT NULL,        -- Nome del prodotto
     colore VARCHAR(50),                 -- colore del prodotto
     taglia VARCHAR(10),                 -- taglia del prodotto
     magazzino VARCHAR(10)               -- Codice magazzino
@@ -53,7 +53,7 @@ Archivia i prodotti obsoleti o meno utilizzati.
 ```sql
 CREATE TABLE prodotti_archivio (
     codice_prodotto VARCHAR(10) PRIMARY KEY,       -- Codice prodotto
-    nome_prodotto_ VARCHAR(100) NOT NULL,        -- Nome del prodotto
+    nome_prodotto VARCHAR(100) NOT NULL,        -- Nome del prodotto
     colore VARCHAR(50),                 -- colore del prodotto
     taglia VARCHAR(10)                  -- taglia del prodotto
 );
@@ -133,7 +133,7 @@ Ecco le istruzioni SQL per inserire 10 record fittizi in ciascuna delle tabelle 
 ### **1. Inserire record nella tabella `prodotti`**
 
 ```sql
-INSERT INTO prodotti (codice_prodotto, nome_prodotto_, colore, taglia, magazzino) VALUES
+INSERT INTO prodotti (codice_prodotto, nome_prodotto, colore, taglia, magazzino) VALUES
 ('P001', 'Maglietta', 'Rosso', 'M', 'MZ01'),
 ('P002', 'Pantaloni', 'Blu', 'L', 'MZ02'),
 ('P003', 'Scarpe', 'Nero', '42', 'MZ03'),
@@ -187,7 +187,7 @@ INSERT INTO clienti (codice_cliente, Nome, Email, data_registrazione) VALUES
 ### **4. Inserire record nella tabella `prodotti_archivio`**
 
 ```sql
-INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto_, colore, taglia) VALUES
+INSERT INTO prodotti_archivio (codice_prodotto, nome_prodotto, colore, taglia) VALUES
 ('A001', 'Maglietta Vintage', 'Rosso', 'M'),
 ('A002', 'Pantaloni Retrò', 'Blu', 'L'),
 ('A003', 'Scarpe Classiche', 'Nero', '42'),
