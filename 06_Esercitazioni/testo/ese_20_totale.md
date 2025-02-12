@@ -686,3 +686,179 @@ Questi esercizi includono:
 ---
 
 ### **10. Determinare il numero di prodotti forniti e la quantità totale fornita da fornitori con più di 5 soci**
+
+---
+
+# sperimentare le principali funzioni di testo in SQL
+
+---
+
+### **Esercizio 1: Convertire il testo in maiuscolo**
+
+**Descrizione:** Seleziona i nomi dei clienti in maiuscolo.  
+
+---
+
+### **Esercizio 2: Convertire il testo in minuscolo**
+
+**Descrizione:** Seleziona i cognomi dei clienti in minuscolo.  
+
+---
+
+### **Esercizio 3: Concatenare stringhe**
+
+**Descrizione:** Crea una colonna che mostri il nome completo (nome + cognome).  
+
+---
+
+### **Esercizio 4: Estrarre una parte di testo**
+
+**Descrizione:** Estrai i primi tre caratteri del nome del cliente.  
+
+---
+
+### **Esercizio 5: Calcolare la lunghezza di una stringa**
+
+**Descrizione:** Trova la lunghezza del nome dei clienti.  
+
+---
+
+### **Esercizio 6: Rimuovere spazi iniziali e finali**
+
+**Descrizione:** Rimuovi spazi inutili dai nomi dei clienti.  
+
+---
+
+### **Esercizio 7: Sostituire una parte di testo**
+
+**Descrizione:** Sostituisci "Rosso" con "Red" nei colori dei prodotti.  
+
+---
+
+### **Esercizio 8: Cercare una sottostringa**
+
+**Descrizione:** Trova i clienti con lettera iniziale del nome "A".  
+
+---
+
+### **Esercizio 9: Inserire testo con zeri a sinistra**
+
+**Descrizione:** Formatta gli ID degli ordini in modo che abbiano sempre 5 cifre (es. 00001).  
+
+---
+
+# Funzioni numeriche
+
+---
+
+### **Esercizio 1: Arrotondare un numero**
+
+**Descrizione:** Arrotonda il prezzo dei prodotti a due decimali.  
+---
+
+
+### **Esercizio 2: Trovare il valore assoluto**
+
+**Descrizione:** Calcola il valore assoluto della differenza tra quantità e 50.  
+
+---
+
+### **Esercizio 3: Calcolare la potenza**
+
+**Descrizione:** Calcola il quadrato della quantità dei prodotti.  
+
+---
+
+### **Esercizio 4: Calcolare la radice quadrata**
+
+**Descrizione:** Trova la radice quadrata del prezzo di ogni prodotto.  
+
+---
+
+### **Esercizio 5: Generare numeri casuali**
+
+**Descrizione:** Associa un numero casuale a ogni cliente.  
+
+---
+
+### **Esercizio 6: Trovare il valore massimo e minimo**
+
+**Descrizione:** Mostra il prezzo massimo e minimo dei prodotti.  
+
+---
+
+### **Esercizio 7: Arrotondare per eccesso e per difetto**
+
+**Descrizione:** Mostra il prezzo arrotondato per eccesso e per difetto.  
+
+---
+
+### **Esercizio 8: Calcolare il resto della divisione (MOD)**
+
+**Descrizione:** Trova il resto della divisione tra quantità e 3 per ogni prodotto.  
+
+---
+
+### **Esercizio 9: Calcolare una media**
+
+**Descrizione:** Calcola la media dei prezzi dei prodotti.  
+
+---
+
+# Funzioni data, ora, datetime
+
+---
+
+---
+
+### **Esercizio 1: Estrarre la data corrente**
+
+**Descrizione:** Visualizza la data corrente per ogni ordine.  
+
+---
+
+### **Esercizio 2: Calcolare l'età di un cliente**
+
+**Descrizione:** Calcola l'età in anni di ogni cliente in base alla data di nascita.  
+
+---
+
+### **Esercizio 3: Estrarre anno, mese e giorno**
+
+**Descrizione:** Estrai l'anno, il mese e il giorno dalla data di un ordine.  
+
+---
+
+### **Esercizio 4: Calcolare la differenza tra date**
+
+**Descrizione:** Calcola il numero di giorni trascorsi tra la data dell'ordine e oggi.  
+
+---
+
+### **Esercizio 5: Aggiungere giorni a una data**
+
+**Descrizione:** Aggiungi 10 giorni alla data di ogni ordine.  
+
+---
+
+### **Esercizio 6: Sottrarre mesi da una data**
+
+**Descrizione:** Sottrai 3 mesi alla data di ogni ordine.  
+
+---
+
+### **Esercizio 7: Estrarre il giorno della settimana**
+
+**Descrizione:** Mostra il giorno della settimana per ogni ordine (1 = Domenica, 7 = Sabato).  
+
+---
+
+### **Esercizio 8: Formattare una data**
+
+**Descrizione:** Formatta la data degli ordini nel formato "GG/MM/AAAA".  
+
+---
+
+### **Esercizio 9: Calcolare il numero di mesi tra due date**
+
+**Descrizione:** Calcola il numero di mesi tra la data dell'ordine e oggi.  
