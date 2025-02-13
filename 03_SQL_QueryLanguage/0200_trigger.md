@@ -10,6 +10,46 @@ Un trigger è un tipo di procedura memorizzata che viene eseguita automaticament
 
 ---
 
+```sql
+CREATE TABLE test1(a1 INT);
+CREATE TABLE test2(a2 INT);
+CREATE TABLE test3(a3 INT NOT NULL AUTO_INCREMENT PRIMARY KEY);
+CREATE TABLE test4(
+  a4 INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  b4 INT DEFAULT 0
+);
+
+delimiter |
+
+CREATE TRIGGER testref BEFORE INSERT ON test1
+  FOR EACH ROW
+  BEGIN
+    INSERT INTO test2 SET a2 = NEW.a1;
+    DELETE FROM test3 WHERE a3 = NEW.a1;
+    UPDATE test4 SET b4 = b4 + 1 WHERE a4 = NEW.a1;
+  END;
+|
+
+delimiter ;
+
+INSERT INTO test3 (a3) VALUES
+  (NULL), (NULL), (NULL), (NULL), (NULL),
+  (NULL), (NULL), (NULL), (NULL), (NULL);
+
+INSERT INTO test4 (a4) VALUES
+  (0), (0), (0), (0), (0), (0), (0), (0), (0), (0);
+```
+
+
+```sql
+mysql> INSERT INTO test1 VALUES 
+       (1), (3), (1), (7), (1), (8), (4), (4);
+Query OK, 8 rows affected (0.01 sec)
+Records: 8  Duplicates: 0  Warnings: 0  
+```
+
+---
+
 ## Definizione di Trigger
 
 - Un trigger è un insieme di istruzioni SQL che viene attivato automaticamente ("triggered") in risposta a specifici eventi del database, come l'inserimento, l'aggiornamento o la cancellazione di dati in una tabella.
@@ -43,9 +83,8 @@ Un trigger è un tipo di procedura memorizzata che viene eseguita automaticament
 
    ```sql
    CREATE TRIGGER Trig_AuditOrdini
-   ON Ordini
-   AFTER INSERT, UPDATE, DELETE
-   AS
+   AFTER INSERT -- , UPDATE, DELETE
+   ON Ordini FOR EACH ROW
    BEGIN
        INSERT INTO LogOrdini (Evento, DataEvento)
        VALUES ('Modifica agli ordini', GETDATE());
@@ -132,11 +171,12 @@ SELECT * FROM LogOrdini;
 
    ```sql
    CREATE TRIGGER Trig_AuditStudenti
-   ON Studenti
    AFTER UPDATE
-   AS
+   ON Studenti
    BEGIN
-       DECLARE @NomeVecchio VARCHAR(50), @NomeNuovo VARCHAR(50);
+       DECLARE 
+         @NomeVecchio VARCHAR(50), 
+         @NomeNuovo VARCHAR(50);
 
        SELECT @NomeVecchio = Nome FROM DELETED;
        SELECT @NomeNuovo = Nome FROM INSERTED;
