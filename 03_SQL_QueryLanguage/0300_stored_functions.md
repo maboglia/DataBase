@@ -10,6 +10,23 @@ Le **Stored Functions** (funzioni memorizzate) sono blocchi di codice SQL predef
 
 ---
 
+```sql
+mysql> CREATE FUNCTION hello (s CHAR(20))
+mysql> RETURNS CHAR(50) DETERMINISTIC
+    -> RETURN CONCAT('Hello, ',s,'!');
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT hello('world');
++----------------+
+| hello('world') |
++----------------+
+| Hello, world!  |
++----------------+
+1 row in set (0.00 sec)
+```
+
+---
+
 ## **Caratteristiche principali**
 
 - **Restituiscono un valore unico:** Le Stored Functions sono progettate per restituire un risultato, come un numero, una stringa o una data.
