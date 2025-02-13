@@ -279,6 +279,11 @@ CREATE TABLE LogModificheStudenti (
 - I trigger possono essere temporaneamente disabilitati o eliminati se necessario. La disabilitazione può essere utile durante l'importazione di grandi quantità di dati o durante operazioni di manutenzione.
 
    ```sql
+   
+   SHOW CREATE TRIGGER;
+   SHOW TRIGGERS;
+
+
    -- Disabilita un trigger
    DISABLE TRIGGER Trig_AuditOrdini ON Ordini;
 
