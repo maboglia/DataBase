@@ -4,84 +4,73 @@
 
 ---
 
-## **1-5: Selezioni base**
+## **10 Query con JOIN**  
 
-1. **Trova tutti gli album nella tabella `Album`.**
 
-2. **Trova il nome degli artisti nella tabella `Artist`.**
+1. **Trova il nome del cliente e il nome del dipendente che ha gestito il loro ordine**  
 
-3. **Trova i dettagli dei clienti che vivono negli Stati Uniti.**
+2. **Mostra il nome del cliente e i dettagli della sua ultima fattura**  
 
-4. **Trova i dipendenti con il titolo "Sales Manager".**
+3. **Lista di brani con il loro artista e album**  
 
-5. **Trova i generi musicali elencati nella tabella `Genre`.**
+4. **Mostra il nome dei clienti e i brani acquistati**  
 
----
+5. **Elenca tutti gli album con il numero di tracce in ciascuno**  
 
-## **6-10: Filtri e ordinamenti**
+6. **Trova il totale speso da ogni cliente**  
 
-6. **Trova i clienti la cui città inizia con "San".**
+7. **Mostra gli impiegati e i loro supervisori**  
 
-7. **Trova i brani con una durata superiore a 5 minuti (300000 millisecondi).**
+8. **Trova le tracce vendute con il nome del genere**  
 
-8. **Ordina gli artisti in ordine alfabetico.**
+9. **Elenca gli artisti che hanno più di un album**  
 
-9. **Trova gli album associati all'artista con `ArtistId` 5.**
-
-10. **Trova le fatture con un totale superiore a $50, ordinate per data.**
+10. **Trova i clienti con più di una fattura**  
 
 ---
 
-## **11-15: Funzioni aggregate**
+## **10 Query con Subquery**  
 
-11. **Conta il numero totale di clienti.**
+11. **Trova il brano più costoso venduto**  
 
-12. **Calcola il totale delle vendite registrate nella tabella `Invoice`.**
+12. **Trova i clienti che hanno speso più della media**  
 
-13. **Trova il prezzo massimo tra i brani nella tabella `Track`.**
+13. **Trova il totale venduto per ogni genere**  
 
-14. **Trova il numero di dipendenti per ogni città.**
+14. **Trova il nome degli artisti che hanno album**  
 
-15. **Trova il prezzo medio per unità dei brani.**
+15. **Trova gli artisti senza album**  
 
----
+16. **Trova i clienti che hanno fatto almeno una fattura sopra i 10€**  
 
-## **16-20: Join semplici**
+17. **Trova la durata media delle tracce per album**  
 
-16. **Trova i dettagli degli album e degli artisti associati.**
+18. **Trova gli impiegati che hanno dipendenti sotto di loro**  
 
-17. **Trova i brani e i loro generi.**
+19. **Trova il numero di fatture per ogni cliente e ordinalo per numero decrescente**  
 
-18. **Trova i dettagli delle fatture e dei clienti.**
-
-19. **Trova le playlist e i brani associati.**
-
-20. **Trova i brani con il rispettivo tipo di supporto.**
+20. **Trova gli artisti che hanno più di un album (con subquery invece di JOIN)**  
 
 ---
 
-## **21-25: Filtri avanzati e subquery**
+## **10 Query con Filtraggio Avanzato**  
 
-21. **Trova i brani più lunghi (durata superiore alla media).**
+21. **Trova le tracce con una durata superiore alla media**  
 
-22. **Trova i dipendenti che non riportano a nessuno.**
+22. **Trova le fatture superiori a 20€**  
 
-23. **Trova i clienti che non hanno effettuato fatture.**
+23. **Trova i clienti in Brasile**  
 
-24. **Trova le città che hanno più di 2 dipendenti.**
+24. **Trova i 5 album con il maggior numero di tracce**  
 
-25. **Trova i brani appartenenti a generi diversi da "Rock".**
+25. **Trova le tracce con il prezzo più alto**  
 
----
+26. **Trova gli artisti il cui nome inizia con 'A'**  
 
-## **26-30: Query avanzate**
+27. **Trova le tracce vendute più di 3 volte**  
 
-26. **Trova i dettagli delle fatture e dei dipendenti di supporto associati.**
+28. **Trova i clienti con email che terminano in '.com'**  
 
-27. **Trova i brani presenti in più di una playlist.**
+29. **Trova i clienti che hanno fatto almeno 5 acquisti**  
 
-28. **Conta il numero di album per artista.**
-
-29. **Trova il cliente con la spesa totale più alta.**
-
-30. **Trova le città in cui vivono sia dipendenti che clienti.**
+30. **Trova gli artisti più popolari in base alle vendite**  
