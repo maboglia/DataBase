@@ -3,10 +3,10 @@
 Si vuole realizzare una base di dati per la gestione delle attività di una rete di biblioteche pubbliche.  
 
 - **Biblioteche:**  
-  Ogni biblioteca è identificata da un codice univoco e possiede un nome, un indirizzo e la città in cui si trova. Ogni biblioteca ha un elenco di numeri di telefono e un orario di apertura che varia in base al giorno della settimana.  
+  Ogni biblioteca è identificata da un codice univoco e possiede un nome, un indirizzo e la città in cui si trova. Ogni biblioteca ha un elenco di numeri di telefono e un orario di apertura che varia in base al giorno della settimana. Occorre predisporre le tabelle relazionali per gestire numeri di telefono e orari di apertura delle varie biblioteche.
 
 - **Libri:**  
-  Ogni libro è identificato da un codice ISBN univoco e possiede un titolo, un autore, un genere letterario e un anno di pubblicazione. Un libro può essere presente in più copie all'interno della stessa biblioteca. Ogni copia è identificata da un numero univoco per biblioteca ed è caratterizzata dallo stato di conservazione (es. "Ottimo", "Buono", "Danneggiato").  
+  Ogni libro è identificato da un codice ISBN univoco e possiede un titolo, un autore, un genere letterario e un anno di pubblicazione. Un libro può essere presente in più copie all'interno della stessa biblioteca. Ogni copia è identificata da un numero univoco per biblioteca ed è caratterizzata dallo stato di conservazione (es. "Ottimo", "Buono", "Danneggiato"). Occorre predisporre le tabelle relazionali per gestire le copie dei libri nelle bibliote 
 
 - **Utenti:**  
   Gli utenti della biblioteca sono identificati da un codice univoco e sono caratterizzati dal nome, cognome, data di nascita e numero di cellulare. Ogni utente può essere iscritto a più biblioteche.  

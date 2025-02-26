@@ -17,9 +17,6 @@ Ecco una routine completa per esercitarsi e consolidare le conoscenze SQL. Quest
 -- Crea un nuovo database
 CREATE DATABASE EsercizioSQL;
 
--- Seleziona il database
-USE EsercizioSQL;
-
 -- Crea un nuovo utente con password
 CREATE USER 'esercizio_user'@'localhost' IDENTIFIED BY 'password123';
 
@@ -28,13 +25,21 @@ GRANT ALL PRIVILEGES ON EsercizioSQL.* TO 'esercizio_user'@'localhost';
 
 -- Ricarica i permessi
 FLUSH PRIVILEGES;
+
 ```
 
 ---
 
 ### **2️⃣ Creazione Tabelle**
 
+Apri la console e accedi con l'utente `esercizio_user`
+
 ```sql
+
+
+-- Seleziona il database
+USE EsercizioSQL;
+
 -- Creazione tabella Clienti
 CREATE TABLE Clienti (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,
