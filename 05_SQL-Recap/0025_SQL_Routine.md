@@ -91,27 +91,27 @@ INSERT INTO Ordini (id_cliente, id_prodotto, quantita) VALUES
 SELECT Ordini.id_ordine, Clienti.nome AS Cliente, Prodotti.nome AS Prodotto, 
        Ordini.quantita, Prodotti.prezzo, (Ordini.quantita * Prodotti.prezzo) AS Totale
 FROM Ordini
-INNER JOIN Clienti ON Ordini.id_cliente = Clienti.id_cliente
-INNER JOIN Prodotti ON Ordini.id_prodotto = Prodotti.id_prodotto;
+INNER JOIN Clienti USING(id_cliente)
+INNER JOIN Prodotti USING(id_prodotto);
 
 -- 4b. Conta quanti ordini ha fatto ogni cliente
 SELECT Clienti.nome, COUNT(Ordini.id_ordine) AS NumeroOrdini
 FROM Clienti
-LEFT JOIN Ordini ON Clienti.id_cliente = Ordini.id_cliente
+LEFT JOIN Ordini USING(id_cliente)
 GROUP BY Clienti.nome;
 
 -- 4c. Mostra solo i clienti che hanno fatto più di un ordine
 SELECT Clienti.nome, COUNT(Ordini.id_ordine) AS NumeroOrdini
 FROM Clienti
-JOIN Ordini ON Clienti.id_cliente = Ordini.id_cliente
+JOIN Ordini USING(id_cliente)
 GROUP BY Clienti.nome
 HAVING COUNT(Ordini.id_ordine) > 1;
 
 -- 4d. Mostra il totale speso da ogni cliente
 SELECT Clienti.nome, SUM(Prodotti.prezzo * Ordini.quantita) AS TotaleSpeso
 FROM Ordini
-JOIN Clienti ON Ordini.id_cliente = Clienti.id_cliente
-JOIN Prodotti ON Ordini.id_prodotto = Prodotti.id_prodotto
+JOIN Clienti USING(id_cliente)
+JOIN Prodotti USING(id_prodotto)
 GROUP BY Clienti.nome;
 ```
 

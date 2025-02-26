@@ -119,6 +119,209 @@ DEALLOCATE PREPARE stmt;
 
 ---
 
+### **📌 Uso delle Variabili nelle Funzioni in MySQL**  
+
+Le **funzioni** in MySQL permettono di eseguire operazioni e restituire un valore.  
+Le variabili **locali** in una funzione vengono dichiarate con `DECLARE` e sono utilizzabili solo all'interno della funzione stessa.
+
+---
+
+## **🔹 1. Funzione che Calcola il Prezzo Medio di una Categoria**
+
+Questa funzione riceve l'`id` di una categoria e restituisce il prezzo medio dei prodotti in essa contenuti.
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION PrezzoMedioCategoria(cat_id INT) RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    DECLARE prezzo_medio DECIMAL(10,2);
+
+    -- Calcoliamo il prezzo medio dei prodotti della categoria specificata
+    SELECT AVG(prezzo) INTO prezzo_medio 
+    FROM Prodotti 
+    WHERE categoria_id = cat_id;
+
+    -- Restituiamo il valore calcolato
+    RETURN prezzo_medio;
+END $$
+
+DELIMITER ;
+```
+
+### **🔹 Uso della Funzione**
+
+```sql
+SELECT PrezzoMedioCategoria(3) AS PrezzoMedio;
+```
+
+✅ Questa funzione prende in ingresso un `categoria_id` e restituisce il prezzo medio dei prodotti appartenenti a quella categoria.
+
+---
+
+## **🔹 2. Funzione per Contare il Numero di Ordini di un Cliente**
+
+Questa funzione prende l'ID di un cliente e restituisce il numero di ordini effettuati.
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION ContatoreOrdini(cliente_id INT) RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE totale_ordini INT;
+
+    -- Conta gli ordini del cliente specificato
+    SELECT COUNT(*) INTO totale_ordini 
+    FROM Ordini 
+    WHERE cliente_id = cliente_id;
+
+    RETURN totale_ordini;
+END $$
+
+DELIMITER ;
+```
+
+### **🔹 Uso della Funzione**
+
+```sql
+SELECT ContatoreOrdini(5) AS NumeroOrdini;
+```
+
+✅ Questa funzione può essere usata per sapere quanti ordini ha effettuato un determinato cliente.
+
+---
+
+## **🔹 3. Funzione per Determinare se un Cliente è VIP**
+
+Questa funzione restituisce `"VIP"` se un cliente ha speso più di 5000€, altrimenti `"REGOLARE"`.
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION TipoCliente(cliente_id INT) RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+    DECLARE totale_speso DECIMAL(10,2);
+    DECLARE tipo VARCHAR(10);
+
+    -- Calcoliamo il totale speso dal cliente
+    SELECT SUM(totale) INTO totale_speso 
+    FROM Ordini 
+    WHERE cliente_id = cliente_id;
+
+    -- Determiniamo il tipo di cliente
+    IF totale_speso >= 5000 THEN
+        SET tipo = 'VIP';
+    ELSE
+        SET tipo = 'REGOLARE';
+    END IF;
+
+    RETURN tipo;
+END $$
+
+DELIMITER ;
+```
+
+### **🔹 Uso della Funzione**
+
+```sql
+SELECT TipoCliente(10) AS CategoriaCliente;
+```
+
+✅ Questa funzione aiuta a categorizzare i clienti in base alla loro spesa totale.
+
+---
+
+## **🔹 4. Funzione che Calcola il Prezzo Totale di un Ordine**
+
+Questa funzione restituisce il totale di un ordine dato il suo `ordine_id`.
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION TotaleOrdine(ordine_id INT) RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    DECLARE totale DECIMAL(10,2);
+
+    -- Somma i prezzi di tutti i prodotti in un ordine
+    SELECT SUM(prezzo * quantita) INTO totale 
+    FROM DettagliOrdine
+    WHERE ordine_id = ordine_id;
+
+    RETURN totale;
+END $$
+
+DELIMITER ;
+```
+
+### **🔹 Uso della Funzione**
+
+```sql
+SELECT TotaleOrdine(15) AS TotaleOrdine;
+```
+
+✅ Questo permette di ottenere rapidamente il costo totale di un ordine.
+
+---
+
+## **🔹 5. Funzione per Ottenere lo Sconto su un Ordine**
+
+Questa funzione calcola lo sconto applicato in base al valore dell'ordine.
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION CalcolaSconto(ordine_id INT) RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    DECLARE totale DECIMAL(10,2);
+    DECLARE sconto DECIMAL(10,2);
+
+    -- Recuperiamo il totale dell'ordine
+    SELECT SUM(prezzo * quantita) INTO totale 
+    FROM DettagliOrdine
+    WHERE ordine_id = ordine_id;
+
+    -- Applichiamo lo sconto in base al totale
+    IF totale >= 1000 THEN
+        SET sconto = totale * 0.10; -- 10% di sconto
+    ELSEIF totale >= 500 THEN
+        SET sconto = totale * 0.05; -- 5% di sconto
+    ELSE
+        SET sconto = 0;
+    END IF;
+
+    RETURN sconto;
+END $$
+
+DELIMITER ;
+```
+
+### **🔹 Uso della Funzione**
+
+```sql
+SELECT CalcolaSconto(15) AS ScontoApplicato;
+```
+
+✅ Questa funzione aiuta a gestire automaticamente gli sconti sugli ordini.
+
+---
+
+## **📌 Conclusione**
+
+| **Tipo di Funzione**   | **Descrizione** |
+|-----------------------|----------------|
+| `PrezzoMedioCategoria` | Calcola il prezzo medio dei prodotti in una categoria |
+| `ContatoreOrdini` | Conta il numero di ordini di un cliente |
+| `TipoCliente` | Determina se un cliente è **VIP** o **REGOLARE** |
+| `TotaleOrdine` | Restituisce il totale di un ordine |
+| `CalcolaSconto` | Applica uno sconto in base al valore dell'ordine |
+
+---
+
 ### **📌 Esempi Avanzati di Uso delle Variabili in SQL**  
 
 Vediamo ora esempi pratici di utilizzo delle variabili locali nelle query e nelle **stored procedure** e **funzioni** in MySQL, SQL Server e PostgreSQL.
