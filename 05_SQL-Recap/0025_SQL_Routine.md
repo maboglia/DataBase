@@ -32,7 +32,7 @@ FLUSH PRIVILEGES;
 
 ### **2️⃣ Creazione Tabelle**
 
-Apri la console e accedi con l'utente `esercizio_user`
+Apri il terminale/CLI e accedi con l'utente `esercizio_user`
 
 ```sql
 
