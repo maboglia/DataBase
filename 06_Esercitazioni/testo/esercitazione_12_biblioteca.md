@@ -215,6 +215,20 @@ Gestisce gli eventi organizzati nelle biblioteche.
 
 ---
 
+### **🔹 Test dei Vincoli di Integrità**  
+
+Definire **5 query di test** per verificare il corretto funzionamento dei vincoli di integrità del database. Le query devono coprire i seguenti aspetti:  
+
+1. **Verifica delle chiavi primarie e univocità**: Inserire un record duplicato e controllare che venga bloccato dal database.  
+2. **Vincoli di chiave esterna**: Provare a inserire un record che faccia riferimento a un valore inesistente in una chiave esterna e verificare che l’operazione fallisca.  
+3. **Restrizioni su valori specifici (CHECK constraints)**: Tentare di inserire o aggiornare un campo con un valore non consentito (es. stato di un prestito, orario di disponibilità, importo negativo) e verificare il blocco dell’operazione.  
+4. **Vincoli di cardinalità (LIMIT constraints)**: Eseguire operazioni che superano i limiti impostati, come il numero massimo di prestiti attivi, il numero di partecipanti a un evento o il limite di appuntamenti per medico in un giorno.  
+5. **Restrizioni di eliminazione e aggiornamento (ON DELETE/ON UPDATE constraints)**: Provare a eliminare o aggiornare un record referenziato in altre tabelle e verificare il comportamento del database (cascata, restrizione, impostazione a NULL).  
+
+📌 **Obiettivo**: Assicurarsi che i vincoli di integrità proteggano la consistenza dei dati e impediscano operazioni errate.
+
+---
+
 ### **Valutazione dell’esercitazione (30 punti totali)**  
 
 - **Implementazione della struttura del database - 10 punti**  
