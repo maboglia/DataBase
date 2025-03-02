@@ -93,9 +93,9 @@ Oracle Database è un sistema complesso e la sua installazione richiede più pas
 
 ---
 
-### Visualizza i Tavoli
+### Visualizza le tabelle
 
-1. **Visualizza i Tavoli
+1. **Visualizza le tabelle
    - Puoi visualizzare le tabelle disponibili nel database con il comando SQL*Plus:
 
      ```sql
