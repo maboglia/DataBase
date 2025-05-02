@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "marca": "Yamaha",
+        "modello": "MT-07",
+        "cilindrata": 689,
+        "prezzo": 7699
+    },
+    {
+        "id": 2,
+        "marca": "Kawasaki",
+        "modello": "Z650",
+        "cilindrata": 649,
+        "prezzo": 7490
+    },
+    {
+        "id": 3,
+        "marca": "Ducati",
+        "modello": "Monster 937",
+        "cilindrata": 937,
+        "prezzo": 11990
+    },
+    {
+        "id": 4,
+        "marca": "Honda",
+        "modello": "CB500F",
+        "cilindrata": 471,
+        "prezzo": 6590
+    },
+    {
+        "id": 5,
+        "marca": "BMW",
+        "modello": "G 310 R",
+        "cilindrata": 313,
+        "prezzo": 5990
+    }
+]
