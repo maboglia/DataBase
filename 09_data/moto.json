@@ -33,5 +33,75 @@
         "modello": "G 310 R",
         "cilindrata": 313,
         "prezzo": 5990
+    },
+    {
+        "id": 6,
+        "marca": "Suzuki",
+        "modello": "SV650",
+        "cilindrata": 645,
+        "prezzo": 7290
+    },
+    {
+        "id": 7,
+        "marca": "Triumph",
+        "modello": "Street Triple 765",
+        "cilindrata": 765,
+        "prezzo": 11295
+    },
+    {
+        "id": 8,
+        "marca": "Aprilia",
+        "modello": "RS 660",
+        "cilindrata": 659,
+        "prezzo": 11200
+    },
+    {
+        "id": 9,
+        "marca": "KTM",
+        "modello": "Duke 390",
+        "cilindrata": 373,
+        "prezzo": 6199
+    },
+    {
+        "id": 10,
+        "marca": "Harley-Davidson",
+        "modello": "Iron 883",
+        "cilindrata": 883,
+        "prezzo": 9990
+    },
+    {
+        "id": 11,
+        "marca": "Moto Guzzi",
+        "modello": "V7 Stone",
+        "cilindrata": 853,
+        "prezzo": 8990
+    },
+    {
+        "id": 12,
+        "marca": "Benelli",
+        "modello": "Leoncino 500",
+        "cilindrata": 500,
+        "prezzo": 6490
+    },
+    {
+        "id": 13,
+        "marca": "Royal Enfield",
+        "modello": "Meteor 350",
+        "cilindrata": 349,
+        "prezzo": 4390
+    },
+    {
+        "id": 14,
+        "marca": "CFMOTO",
+        "modello": "300NK",
+        "cilindrata": 292,
+        "prezzo": 3990
+    },
+    {
+        "id": 15,
+        "marca": "Husqvarna",
+        "modello": "Vitpilen 401",
+        "cilindrata": 373,
+        "prezzo": 6899
     }
 ]
