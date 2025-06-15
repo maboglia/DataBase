@@ -24,9 +24,7 @@ INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, dispon
 ('Radicchio Rosso', 'Ortaggi', 'Veneto', 2.50, 'bassa'),
 ('Finocchi', 'Ortaggi', 'Toscana', 1.45, 'media'),
 ('Peperoni Rossi', 'Verdura', 'Calabria', 2.75, 'bassa'),
-('Uva Italia', 'Frutta', 'Puglia', 2.20, 'media');
-
-INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, disponibilita) VALUES
+('Uva Italia', 'Frutta', 'Puglia', 2.20, 'media'),
 ('Fragole', 'Frutta', 'Basilicata', 3.50, 'alta'),
 ('Ciliegie Ferrovia', 'Frutta', 'Puglia', 4.20, 'media'),
 ('Albicocche', 'Frutta', 'Campania', 2.80, 'bassa'),
@@ -41,10 +39,7 @@ INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, dispon
 ('Spinaci', 'Ortaggi', 'Campania', 1.65, 'alta'),
 ('Zucca', 'Verdura', 'Lombardia', 1.20, 'bassa'),
 ('Cavolini di Bruxelles', 'Verdura', 'Trentino-Alto Adige', 2.50, 'media'),
-('Asparagi', 'Ortaggi', 'Veneto', 3.80, 'bassa');
-
-
-INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, disponibilita) VALUES
+('Asparagi', 'Ortaggi', 'Veneto', 3.80, 'bassa'),
 ('Pomodori Datterini Bio', 'Verdura', 'Sicilia', 3.20, 'alta'),
 ('Mele Fuji Bio', 'Frutta', 'Trentino', 2.90, 'media'),
 ('Pere Williams', 'Frutta', 'Piemonte', 2.30, 'alta'),
@@ -59,9 +54,7 @@ INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, dispon
 ('Radicchio Tardivo', 'Ortaggi', 'Veneto', 3.40, 'bassa'),
 ('Ravanelli', 'Verdura', 'Emilia-Romagna', 1.00, 'media'),
 ('Zucchine', 'Verdura', 'Lombardia', 1.60, 'alta'),
-('Patate Novelle', 'Ortaggi', 'Campania', 1.10, 'alta');
-
-INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, disponibilita) VALUES
+('Patate Novelle', 'Ortaggi', 'Campania', 1.10, 'alta'),
 ('Pomodori San Marzano', 'Verdura', 'Campania', 2.80, 'alta'),
 ('Carciofi Romaneschi', 'Ortaggi', 'Lazio', 3.50, 'media'),
 ('Cavolo Nero', 'Ortaggi', 'Toscana', 2.90, 'alta'),
@@ -80,7 +73,7 @@ INSERT INTO prodotti_ortofrutticoli (nome, categoria, origine, prezzo_kg, dispon
 ('Broccoli Romaneschi Bio', 'Ortaggi', 'Lazio', 3.00, 'media'),
 ('Spinaci Novelli Bio', 'Ortaggi', 'Campania', 2.50, 'alta'),
 ('Cavolo di Bruxelles Bio', 'Ortaggi', 'Trentino-Alto Adige', 3.20, 'media'),
-('Cavolo Broccolo Bio', 'Ortaggi', 'Emilia-Romagna', 2.90, 'alta');
+('Cavolo Broccolo Bio', 'Ortaggi', 'Emilia-Romagna', 2.90, 'alta'),
 ('Fagiolini Bio', 'Verdura', 'Toscana', 2.80, 'alta'),
 ('Piselli Freschi', 'Verdura', 'Emilia-Romagna', 2.50, 'media'),
 ('Cavolini di Bruxelles Bio', 'Ortaggi', 'Trentino-Alto Adige', 3.00, 'bassa'),
