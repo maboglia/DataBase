@@ -34,7 +34,7 @@ Parliamo ora di "Normalizzazione", un processo chiave nella progettazione di dat
 
 ---
 
-   - **Terza Forma Normale (3NF):** Una tabella è in 3NF se è in 2NF e se non esistono dipendenze transitiva tra le colonne non chiave.
+   - **Terza Forma Normale (3NF):** Una tabella è in 3NF se è in 2NF e se non esistono dipendenze transitive tra le colonne non chiave.
 
 
 ---
