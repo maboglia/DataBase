@@ -72,4 +72,6 @@ Questi sono solo alcuni dei concetti di base relativi alle basi di dati. La prog
 
 ---
 
+## Link approfondimento
 
+- Corso fondamenti di bai di dati [Repo di anskat](https://github.com/anskat/Corso-Fondamenti-base-di-dati)
