@@ -31,3 +31,91 @@ Le transazioni ACID sono cruciali in scenari dove i dati devono essere altamente
 - Sistemi di gestione delle prenotazioni.
 
 Queste proprietà rendono i database relazionali ideali per applicazioni in cui la consistenza e l'affidabilità dei dati sono essenziali.
+
+---
+
+## In sintesi
+
+Le **proprietà ACID** descrivono le **caratteristiche fondamentali di una transazione** in un database relazionale.
+Servono a garantire **affidabilità e coerenza dei dati**, anche in caso di errori o crash.
+
+ACID è un acronimo:
+
+---
+
+## 🔹 A – Atomicità (Atomicity)
+
+👉 **O tutto o niente**
+
+- una transazione è indivisibile
+- se una sola operazione fallisce, **tutta la transazione viene annullata**
+
+📌 Esempio:
+
+```text
+Prelievo -100€
+Versamento +100€
+```
+
+Se il versamento fallisce → anche il prelievo viene annullato (`ROLLBACK`).
+
+---
+
+## 🔹 C – Consistenza (Consistency)
+
+👉 **Da uno stato valido a un altro stato valido**
+
+- dopo una transazione, il database **rispetta tutti i vincoli**
+- chiavi, tipi, CHECK, relazioni restano coerenti
+
+📌 Esempio:
+
+- un voto deve restare tra 18 e 30
+- una chiave esterna deve riferirsi a un record esistente
+
+---
+
+## 🔹 I – Isolamento (Isolation)
+
+👉 **Le transazioni non si disturbano tra loro**
+
+- una transazione in corso **non vede i dati parziali** di un’altra
+- l’esecuzione concorrente equivale a una sequenziale
+
+📌 Problemi evitati:
+
+- dirty read
+- non-repeatable read
+- phantom read
+
+---
+
+## 🔹 D – Durabilità (Durability)
+
+👉 **Una volta confermate, le modifiche non si perdono**
+
+- dopo `COMMIT`, i dati sopravvivono:
+
+  - crash
+  - spegnimenti
+  - riavvii
+
+📌 Il DB usa log e scrittura su disco.
+
+---
+
+## 📊 Schema riassuntivo
+
+| Proprietà   | Significato                  |
+| ----------- | ---------------------------- |
+| Atomicità   | Tutto o niente               |
+| Consistenza | Regole sempre rispettate     |
+| Isolamento  | Transazioni indipendenti     |
+| Durabilità  | Dati persistenti dopo COMMIT |
+
+---
+
+## 🧠 Frase perfetta da esame
+
+📌 **Le proprietà ACID garantiscono che ogni transazione sia atomica, coerente, isolata e durabile, assicurando affidabilità e integrità dei dati nel database.**
+
