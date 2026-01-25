@@ -1,4 +1,4 @@
-# # Introduzione alla Clausola `WHERE` in SQL
+# Introduzione alla Clausola `WHERE` in SQL
 
 La clausola **`WHERE`** viene utilizzata in SQL per filtrare i dati su cui operare. È applicabile non solo alle query di selezione (**`SELECT`**), ma anche alle operazioni di aggiornamento (**`UPDATE`**) e cancellazione (**`DELETE`**). Grazie a questa clausola, puoi specificare le condizioni che determinano quali righe includere o modificare.
 
