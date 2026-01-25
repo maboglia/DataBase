@@ -7,10 +7,6 @@ paginate: true
 author: mauro
 ---
 
-![logo](../09_data/LOGO%20PNRR%20Regione.png)
-
----
-
 # Evoluzione standard SQL
 
 L'evoluzione dello standard **SQL (Structured Query Language)** si è sviluppata attraverso diverse fasi e versioni, ognuna delle quali ha aggiunto nuove funzionalità e miglioramenti per soddisfare le esigenze crescenti del mondo dei database. Di seguito, le principali fasi e versioni:
