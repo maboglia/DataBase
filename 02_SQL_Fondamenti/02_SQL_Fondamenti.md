@@ -1,27 +1,59 @@
-0005_dominio.md
-0010_tipi_numerici.md
-0020_tipi_testo.md
-0030_tipi_enum.md
-00_Fondamenti_DB.md
-01_evoluzione_SQL.md
-02_tipi_di_dato.md
-03_LinguaggiSQL.md
-04_DCL.md
-05_DDL.md
-06_DBA_access.md
-07_User_access.md
-08_backup_restore.md
-09_SQL_mode.md
-10_Informazioni_Tabelle.md
-11_commenti.md
-12_Source.md
-13_DML.md
-14_QueryLanguage.md
-15_SQL_programmazione_dichiarativa.md
-16_Alter_Table.md
-17_auto_commit.md
-20_storage_engine.md
-25_collation.md
-99_esempi_create_table.md
-_006 Calcolo campi al volo.md
-_070_backup_restore.md
+# Elementi fondamentali del linguaggio SQL
+
+Possiamo suddividere il linguaggio SQL in cinque categorie principali, ognuna con uno scopo specifico all'interno del ciclo di vita dei dati.
+
+---
+
+### 1. DDL – Data Definition Language
+
+Si occupa della **struttura** del database. Serve a definire, modificare o eliminare gli schemi, le tabelle e gli indici (l'ossatura, non il contenuto).
+
+* **CREATE**: Crea nuovi oggetti (database, tabelle, viste).
+* **ALTER**: Modifica la struttura di un oggetto esistente (es. aggiunge una colonna).
+* **DROP**: Elimina definitivamente un oggetto e il suo contenuto.
+* **TRUNCATE**: Svuota una tabella di tutti i record, ma mantiene la struttura.
+
+### 2. DML – Data Manipulation Language
+
+Si occupa della **gestione dei dati** all'interno delle tabelle. È il "motore" che permette di popolare e aggiornare le informazioni.
+
+* **INSERT**: Inserisce nuove righe (tuple) in una tabella.
+* **UPDATE**: Modifica i valori nelle righe esistenti.
+* **DELETE**: Rimuove righe specifiche da una tabella.
+
+### 3. DQL – Data Query Language
+
+È la componente più utilizzata. Serve esclusivamente a **interrogare** il database per estrarre informazioni.
+
+* **SELECT**: Recupera i dati da una o più tabelle. È il comando che permette di filtrare, ordinare e aggregare i risultati.
+> *Nota: Spesso il comando SELECT viene raggruppato sotto il DML, ma data la sua importanza e specificità, viene quasi sempre trattato come categoria a sé (DQL).*
+
+
+
+### 4. DCL – Data Control Language
+
+Si occupa della **sicurezza** e dei permessi. Definisce chi può fare cosa all'interno del database.
+
+* **GRANT**: Concede privilegi agli utenti (es. permesso di sola lettura).
+* **REVOKE**: Revoca i privilegi precedentemente concessi.
+
+### 5. TCL – Transaction Control Language
+
+Gestisce le **transazioni**, ovvero sequenze di operazioni che devono essere trattate come un'unica unità di lavoro "atomica" (o vanno tutte a buon fine, o nessuna).
+
+* **COMMIT**: Rende permanenti le modifiche effettuate durante la transazione.
+* **ROLLBACK**: Annulla le modifiche se qualcosa è andato storto, riportando il DB allo stato precedente.
+* **SAVEPOINT**: Crea punti di ripristino intermedi all'interno di una transazione.
+
+---
+
+### Tabella Riassuntiva
+
+| Categoria | Scopo Principale      | Comandi Chiave               |
+| --------- | --------------------- | ---------------------------- |
+| **DDL**   | Struttura (Schema)    | `CREATE`, `ALTER`, `DROP`    |
+| **DML**   | Contenuto (Dati)      | `INSERT`, `UPDATE`, `DELETE` |
+| **DQL**   | Interrogazione        | `SELECT`                     |
+| **DCL**   | Sicurezza/Permessi    | `GRANT`, `REVOKE`            |
+| **TCL**   | Integrità/Transazioni | `COMMIT`, `ROLLBACK`         |
+
