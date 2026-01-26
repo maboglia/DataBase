@@ -40,4 +40,5 @@ Ecco 10 query base che puoi utilizzare per esercitarti con SQL sulla [tabella `a
 ---
 
 ### 10. **Trovare tutte le auto con un prezzo tra 20.000 e 30.000 euro**
+
 ---
