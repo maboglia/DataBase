@@ -7,7 +7,7 @@ ATTENZIONE eventuali errori nel testo sono voluti, dovrete più avanti eseguire 
 4) PRD00004, Passata di pomodoro, Passata di pomodoro biologica 700g, 1.29, 120,
 5) PRD00005, Riso basmati, Riso basmati confezione da 1kg, 3.10, 60;
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 2:
 Inserisci i seguenti 10 ordini nella tabella "Orders"
@@ -22,7 +22,7 @@ Inserisci i seguenti 10 ordini nella tabella "Orders"
 9) 2025-06-07, 19.80, to ship, Via Marconi 22 Palermo, 101,
 10) 2025-06-08, 34.60, shipped, Via Leopardi 9 Verona, 102;
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 3:
 Inserisci i seguenti 8 clienti nella tabella "Customers"
@@ -35,7 +35,7 @@ Inserisci i seguenti 8 clienti nella tabella "Customers"
 7) Davide, Ferrari, 3491122334, davide.ferrari@email.it, Via Manzoni 8, Genova, GE, Liguria, 16121, 2025-05-15,
 8) Chiara, Gallo, 3278899001, chiara.gallo@email.it, Via Roma 77, Palermo, PA, Sicilia, 90133, 2025-05-18;
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 4:
 Inserisci i seguenti record
@@ -56,7 +56,7 @@ Tabella: "Asia":
 1) Giappone', 9, 125000000;
 
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 5:
 Inserisci i seguenti 7 libri nella tabella "Books"
@@ -68,7 +68,7 @@ Inserisci i seguenti 7 libri nella tabella "Books"
 6) 9788812345678, La storia, 19.00, 23.18, 430, 3,
 7) 9788823456789, Cristo si è fermato a Eboli, 16.50, 20.13, 300, 1;
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 6:
 Aggiorna la tabella "Products"
@@ -76,14 +76,14 @@ con la descrizione corretta per il prodotto con code = PRD00001
 descrizione corretta: 
 Pasta di grano duro 100% integrale, 500g
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 7:
 Aggiorna la tabella "Books" e imposta i seguenti valori
 editor_id: 2
 dove l'editor_id' è = 3
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 8:
 Aggiorna la tabella "Customers" e imposta i seguenti valori
@@ -93,14 +93,14 @@ regione: Lombardia
 postal_code: 20121
 dove la regione è "Campania"
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 9:
 Cancella dalla tabella "Books" il record il cui codeice ISBN = 9788812345678
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
 
 /* 10:
 Cancella dalla tabella customers i record la cui provincia è = 'MI'
 */
--- istrizione SQL di seguito
+-- istruzione SQL di seguito
