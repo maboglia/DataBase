@@ -11,7 +11,7 @@ mysqldump -u nome_utente -p nome_database > /percorso/del/backup/backup_file.sql
 
 - **`-u nome_utente`**: Sostituisci `nome_utente` con il tuo nome utente MySQL (es. `root`).
 - **`-p`**: Chiede la password per l'utente.
-- **`nome_database`**: Sostituisci con il nome del database che vuoi fare il backup.
+- **`nome_database`**: Sostituisci con il nome del database di cui vuoi fare il backup.
 - **`/percorso/del/backup/backup_file.sql`**: Il percorso dove verrà salvato il backup (sarà un file `.sql`).
 
 ---
