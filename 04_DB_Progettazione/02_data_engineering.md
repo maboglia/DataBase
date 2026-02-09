@@ -201,6 +201,4 @@ Alla fine del corso lo studente deve saper:
 
 > Prima di fare grafici, intelligenza artificiale o machine learning
 > bisogna **saper costruire dati buoni**.
-
----
-
+> L’ingegneria del dato è la base di tutto,
