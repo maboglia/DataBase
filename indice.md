@@ -1,44 +1,4 @@
-
-
-- [Algebra Relazionale]()
-- [Modello_concettuale_logico]()
-- [Il Modello RELAZIONALE]()
-- [Codd]()
-- [12 regole]()
-- [Diagramm_ER]()
-- [ERD_entities]()
-- [ERD_attributes]()
-- [ERD_relations]()
-- [cardinalita]()
-- [DMNS]()
-- [Normalizzazione]()
-- [SQL]()
-- [Tipi di dato]()
-- [DDL]()
-- [DCL]()
-- [DML]()
-- [Query]()
-- [Integrità referenziale]()
-- [Union e JOIN]()
-- [Funzioni]()
-- [Raggruppamenti]()
-- [Viste]()
-- [Sub Query]()
-- [Indici]()
-- [Triggers]()
-- [Funzioni finestra (Windows Function)]()
-- [Stored Function]()
-- Events
-- [Stored Procedures]()
-- [Transaction]()
-- [Installazione MySQL]()
-- [Accesso DBMS (DBA)]()
-- [Accesso DBMS (user)]()
-- [Backup/Restoring]()
-
----
-
-## Percorso
+# Percorso didattico Fondamenti di basi di dati SQL
 
 1. **SQL Introduction**  
    Introduzione ai concetti fondamentali di SQL e alla sua utilità per interagire con database relazionali.
@@ -141,6 +101,4 @@
 
 7. **SQL Union All**  
    Come UNION, ma include duplicati, utile per vedere tutti i risultati non filtrati.
-
-Se hai bisogno di ulteriori esempi o approfondimenti, chiedimi pure!
 
