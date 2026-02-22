@@ -17,29 +17,180 @@ Parliamo ora di "Normalizzazione", un processo chiave nella progettazione di dat
 
 ---
 
-### Forme Normali
+La **normalizzazione** è il processo con cui progettiamo le tabelle di un database relazionale per:
 
-2. **Forme Normali:** La normalizzazione viene comunemente descritta in diverse forme normali (1NF, 2NF, 3NF, BCNF, ecc.). Ogni forma normale introduce regole specifiche per garantire una struttura dati ben progettata.
+✅ evitare ridondanza dei dati
+✅ prevenire anomalie (inserimento, aggiornamento, cancellazione)
+✅ rendere il modello più chiaro e manutenibile
 
-
----
-
-   - **Prima Forma Normale (1NF):** Ogni colonna in una tabella deve contenere solo valori atomici (non decomponibili) e ogni cella della tabella deve contenere un singolo valore.
-   
+Vediamo le forme normali con esempi semplici, pensati per programmatori junior.
 
 ---
 
-   - **Seconda Forma Normale (2NF):** Una tabella è in 2NF se è in 1NF e se tutte le colonne non chiave dipendono completamente dalla chiave primaria.
+# ✅ **Prima Forma Normale (1NF)**
 
-
----
-
-   - **Terza Forma Normale (3NF):** Una tabella è in 3NF se è in 2NF e se non esistono dipendenze transitive tra le colonne non chiave.
-
+👉 **Regola:** ogni campo deve contenere un valore *atomico* (singolo, non scomponibile).
+👉 Niente liste, array o campi multipli nella stessa colonna.
 
 ---
 
-   - **Forma Normale di Boyce-Codd (BCNF):** Una forma più avanzata che estende la 3NF, eliminando le dipendenze funzionali non banali su chiavi candidate.
+## ❌ Tabella NON in 1NF
+
+| StudenteID | Nome        | Telefoni       |
+| ---------- | ----------- | -------------- |
+| 1          | Mario Rossi | 333111, 333222 |
+
+**Problema:** la colonna *Telefoni* contiene più valori.
+
+---
+
+## ✅ Soluzione in 1NF
+
+| StudenteID | Nome        |
+| ---------- | ----------- |
+| 1          | Mario Rossi |
+
+| TelefonoID | StudenteID | Telefono |
+| ---------- | ---------- | -------- |
+| 1          | 1          | 333111   |
+| 2          | 1          | 333222   |
+
+👉 Abbiamo separato i dati ripetuti in un’altra tabella (relazione 1-N).
+
+---
+
+# ✅ **Seconda Forma Normale (2NF)**
+
+👉 **Regola:**
+
+* deve essere già in 1NF
+* ogni attributo non chiave deve dipendere dall’intera chiave primaria (non solo da una parte)
+
+⚠️ Il problema nasce soprattutto con **chiavi composte**.
+
+---
+
+## ❌ Tabella NON in 2NF
+
+| StudenteID | CorsoID | NomeStudente | NomeCorso |
+| ---------- | ------- | ------------ | --------- |
+
+Chiave primaria: **(StudenteID, CorsoID)**
+
+**Problema:**
+
+* NomeStudente dipende solo da StudenteID
+* NomeCorso dipende solo da CorsoID
+
+👉 Dipendenze parziali.
+
+---
+
+## ✅ Soluzione in 2NF
+
+**Studenti**
+| StudenteID | NomeStudente |
+
+**Corsi**
+| CorsoID | NomeCorso |
+
+**Iscrizioni**
+| StudenteID | CorsoID |
+
+👉 Separiamo ciò che non dipende dalla chiave composta.
+
+---
+
+# ✅ **Terza Forma Normale (3NF)**
+
+👉 **Regola:**
+
+* deve essere in 2NF
+* nessuna dipendenza transitiva tra attributi non chiave
+
+💡 Dipendenza transitiva = un campo dipende da un altro campo non chiave.
+
+---
+
+## ❌ Tabella NON in 3NF
+
+| StudenteID | CittàID | NomeStudente | NomeCittà | CAP |
+| ---------- | ------- | ------------ | --------- | --- |
+
+**Problema:**
+
+* StudenteID → CittàID
+* CittàID → NomeCittà, CAP
+
+👉 NomeCittà e CAP dipendono indirettamente da StudenteID (dipendenza transitiva).
+
+---
+
+## ✅ Soluzione in 3NF
+
+**Studenti**
+| StudenteID | NomeStudente | CittàID |
+
+**Città**
+| CittàID | NomeCittà | CAP |
+
+👉 Ogni attributo dipende solo dalla chiave della sua tabella.
+
+---
+
+# ✅ **Forma Normale di Boyce-Codd (BCNF)**
+
+👉 Versione più rigorosa della 3NF
+👉 **Regola:** per ogni dipendenza funzionale X → Y, X deve essere una chiave candidata
+
+💡 Serve a eliminare casi rari ma insidiosi che la 3NF non risolve.
+
+---
+
+## ❌ Esempio NON in BCNF
+
+| Docente | Corso | Aula |
+
+Regole:
+
+* Docente → Aula (ogni docente usa sempre la stessa aula)
+* Corso → Docente
+
+Chiave candidata: **Corso**
+
+👉 Ma esiste Docente → Aula dove Docente NON è chiave → violazione BCNF
+
+---
+
+## ✅ Soluzione BCNF
+
+**Docenti**
+| Docente | Aula |
+
+**Corsi**
+| Corso | Docente |
+
+---
+
+# 🎯 **Riassunto veloce per studenti**
+
+| Forma    | Obiettivo                                     |
+| -------- | --------------------------------------------- |
+| **1NF**  | Campi atomici                                 |
+| **2NF**  | Niente dipendenze parziali da chiavi composte |
+| **3NF**  | Niente dipendenze transitive                  |
+| **BCNF** | Ogni dipendenza parte da una chiave candidata |
+
+---
+
+# 💡 Consiglio pratico (molto importante)
+
+Nella realtà:
+
+✅ 3NF è quasi sempre sufficiente
+✅ BCNF si usa in progettazioni più complesse
+⚠️ A volte si *denormalizza* per performance (report, analytics)
+
 
 ---
 
@@ -59,7 +210,6 @@ Parliamo ora di "Normalizzazione", un processo chiave nella progettazione di dat
 
 5. **Considerazioni nella Progettazione:** Mentre la normalizzazione è importante, è anche cruciale bilanciarla con la necessità di prestazioni ottimali in alcune situazioni. In alcuni casi, potrebbe essere necessario denormalizzare parte del database per migliorare le prestazioni delle query.
 
-
 ---
 
 La normalizzazione è una pratica chiave nella progettazione di basi di dati relazionali, e una comprensione approfondita delle forme normali aiuta a garantire una struttura di database efficiente e resistente agli errori.
@@ -70,64 +220,36 @@ La normalizzazione è un processo di progettazione delle tabelle in un database 
 
 ---
 
-### Obiettivo della Normalizzazione
-
-1. **Obiettivo della Normalizzazione:** L'obiettivo principale della normalizzazione è eliminare la duplicazione e la ridondanza dei dati, garantendo al contempo che le informazioni siano mantenute in modo coerente. Una progettazione normalizzata facilita l'aggiornamento dei dati, riduce il rischio di errori e semplifica le operazioni di interrogazione.
-
----
-
-### Forme Normali
-
-2. **Forme Normali:** La normalizzazione si basa su una serie di regole definite come forme normali. Le più comuni sono la Prima Forma Normale (1NF), la Seconda Forma Normale (2NF), e la Terza Forma Normale (3NF).
-
-
----
-
-   - **1NF:** Ogni colonna in una tabella deve contenere solo valori atomici, e ogni cella della tabella deve contenere un singolo valore, non una lista o un set di valori.
-
-
----
-
-   - **2NF:** Deve essere in 1NF e ogni non-chiave deve dipendere completamente dalla chiave primaria.
-
-
----
-
-   - **3NF:** Deve essere in 2NF e non deve esistere dipendenza transitiva, ovvero una colonna non chiave non deve dipendere da altre colonne non chiave.
-
----
-
 ### Esempio di Normalizzazione
 
-3. **Esempio di Normalizzazione:** Consideriamo una tabella che registra informazioni sugli studenti, tra cui il corso di studi e il professore assegnato. 
-4. Se il professore è associato solo al corso di studi e non a uno specifico studente, potremmo avere una ridondanza. 
-5. In questo caso, la normalizzazione potrebbe prevedere la creazione di una tabella separata per i corsi e i professori, collegata alla tabella degli studenti attraverso le chiavi.
+- **Esempio di Normalizzazione:** Consideriamo una tabella che registra informazioni sugli studenti, tra cui il corso di studi e il professore assegnato. 
+- Se il professore è associato solo al corso di studi e non a uno specifico studente, potremmo avere una ridondanza. 
+- In questo caso, la normalizzazione potrebbe prevedere la creazione di una tabella separata per i corsi e i professori, collegata alla tabella degli studenti attraverso le chiavi.
 
 ---
 
 ### Tabella originale
 
-| StudenteID | Nome    | CorsoDiStudi | Professore     |
-|------------|---------|--------------|----------------|
-| 1          | Mario   | Informatica  | Prof. Rossi    |
-| 2          | Laura   | Fisica       | Prof. Bianchi  |
-| 3          | Carlo   | Chimica       | Prof. Rossi    |
+| StudenteID | Nome  | CorsoDiStudi | Professore    |
+| ---------- | ----- | ------------ | ------------- |
+| 1          | Mario | Informatica  | Prof. Rossi   |
+| 2          | Laura | Fisica       | Prof. Bianchi |
+| 3          | Carlo | Chimica      | Prof. Rossi   |
 
 ---
 
 ### Tabella normalizzata
 
-| CorsoDiStudi | Professore     |
-|--------------|----------------|
-| Informatica  | Prof. Rossi    |
-| Fisica       | Prof. Bianchi  |
-| Chimica      | Prof. Rossi    |
+| CorsoDiStudi | Professore    |
+| ------------ | ------------- |
+| Informatica  | Prof. Rossi   |
+| Fisica       | Prof. Bianchi |
+| Chimica      | Prof. Rossi   |
 
 ---
 
-
 | StudenteID | Nome  | CorsoDiStudi |
-|------------|-------|--------------|
+| ---------- | ----- | ------------ |
 | 1          | Mario | Informatica  |
 | 2          | Laura | Fisica       |
 | 3          | Carlo | Chimica      |
