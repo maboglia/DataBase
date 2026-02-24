@@ -6,7 +6,6 @@
 
 ## **10 Query con JOIN**  
 
-
 1. **Trova il nome del cliente e il nome del dipendente che ha gestito il loro ordine**  
 
 2. **Mostra il nome del cliente e i dettagli della sua ultima fattura**  
