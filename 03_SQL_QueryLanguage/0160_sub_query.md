@@ -486,3 +486,136 @@ WHERE (
 4. Perché `NOT IN` può dare risultati errati con valori NULL?
 5. Qual è la differenza tra subquery in FROM e subquery in WHERE?
 
+---
+
+## 1) Cos’è una subquery scalare?
+
+Una **subquery scalare** è una sottoquery che restituisce **un solo valore** (una sola riga e una sola colonna).
+
+Esempio:
+
+```sql
+SELECT *
+FROM studenti
+WHERE eta > (SELECT AVG(eta) FROM studenti);
+```
+
+La subquery `(SELECT AVG(eta) ...)` restituisce un unico valore numerico.
+
+---
+
+## 2) Differenza tra IN ed EXISTS?
+
+### **IN**
+
+* confronta un valore con una **lista di valori** restituiti dalla subquery
+* è utile quando vuoi verificare se un valore appartiene a un insieme
+
+Esempio:
+
+```sql
+SELECT *
+FROM studenti
+WHERE id IN (SELECT id_studente FROM esami);
+```
+
+### **EXISTS**
+
+* verifica se la subquery restituisce **almeno una riga**
+* spesso si usa con subquery correlate
+
+Esempio:
+
+```sql
+SELECT *
+FROM studenti s
+WHERE EXISTS (
+    SELECT 1
+    FROM esami e
+    WHERE e.id_studente = s.id
+);
+```
+
+📌 Differenza chiave:
+
+* `IN` lavora su un elenco di valori
+* `EXISTS` lavora sul concetto di “esistenza di righe” (true/false)
+
+---
+
+## 3) Cosa significa subquery correlata?
+
+Una **subquery correlata** è una subquery che usa valori della query esterna, quindi **dipende dalla riga corrente** della query principale.
+
+Esempio:
+
+```sql
+SELECT s.nome
+FROM studenti s
+WHERE EXISTS (
+    SELECT 1
+    FROM esami e
+    WHERE e.id_studente = s.id
+);
+```
+
+📌 Qui la subquery usa `s.id` (della query esterna), quindi viene valutata per ogni studente.
+
+---
+
+## 4) Perché NOT IN può dare risultati errati con valori NULL?
+
+Perché se la subquery restituisce anche un solo `NULL`, il confronto diventa **indefinito** (UNKNOWN).
+
+Esempio:
+
+```sql
+SELECT *
+FROM studenti
+WHERE id NOT IN (SELECT id_studente FROM esami);
+```
+
+Se nella tabella `esami` esiste una riga con `id_studente = NULL`, allora la lista contiene `NULL` e SQL ragiona così:
+
+* `id NOT IN (1, 2, NULL)` → non può stabilire con certezza se è vero o falso
+* risultato: spesso non restituisce nessuna riga (comportamento “strano”)
+
+📌 Soluzione tipica: usare `NOT EXISTS` al posto di `NOT IN`.
+
+---
+
+## 5) Differenza tra subquery in FROM e subquery in WHERE?
+
+### **Subquery in WHERE**
+
+Serve come **condizione di filtro** (selezione righe).
+
+Esempio:
+
+```sql
+SELECT *
+FROM studenti
+WHERE classe = (SELECT classe FROM studenti WHERE nome='Mario');
+```
+
+📌 La subquery restituisce un valore/insieme usato nel filtro.
+
+---
+
+### **Subquery in FROM**
+
+Serve a creare una **tabella temporanea** (derived table), su cui poi fare query.
+
+Esempio:
+
+```sql
+SELECT classe, media_eta
+FROM (
+    SELECT classe, AVG(eta) AS media_eta
+    FROM studenti
+    GROUP BY classe
+) t
+WHERE media_eta > 18;
+```
+
+📌 Qui la subquery produce una tabella con colonne e righe, poi filtrata dalla query esterna.
